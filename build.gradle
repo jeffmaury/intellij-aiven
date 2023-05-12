@@ -1,0 +1,143 @@
+
+plugins {
+    id "org.jetbrains.intellij" version "1.13.3"
+    id "idea"
+    id "java"
+    id "jacoco"
+    id "org.sonarqube" version "4.0.0.2929"
+    id "org.openapi.generator" version "6.6.0"
+}
+
+repositories {
+    mavenLocal()
+    maven { url 'https://repository.jboss.org' }
+    mavenCentral()
+    maven { url 'https://packages.jetbrains.team/maven/p/ij/intellij-dependencies' }
+}
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+intellij {
+    version = ideaVersion //for a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
+    pluginName = 'Aiven'
+    // use '<git repo clone>/build/idea-sandbox/plugins/<plugin>' if working from source
+    plugins = [
+    ]
+	updateSinceUntilBuild = false
+}
+
+//with this option enabled, build will fail about IDEA expiration builds
+buildSearchableOptions.enabled = false
+
+runPluginVerifier {
+    ideVersions = [ideaVersion]
+}
+
+publishPlugin {
+    token = jetBrainsToken
+    channels = [jetBrainsChannel]
+}
+
+configurations {
+    implementation {
+        exclude group: 'org.slf4j', module: 'slf4j-api'
+    }
+    integrationTestImplementation.extendsFrom testImplementation
+    integrationTestRuntimeOnly.extendsFrom testRuntimeOnly
+}
+
+sourceSets {
+    integrationTest {
+        java.srcDir file('src/it/java')
+        resources.srcDir file('src/it/resources')
+        compileClasspath += sourceSets.main.output + configurations.testRuntimeClasspath
+        runtimeClasspath += output + compileClasspath
+    }
+    main {
+        java.srcDirs += file("$buildDir/aivenapi-java/src/main/java")
+    }
+    test {
+        java.srcDirs += file("$buildDir/aivenapi-java/src/test/java")
+    }
+}
+
+task integrationTest(type: Test) {
+    description = 'Runs the integration tests.'
+    group = 'verification'
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    outputs.upToDateWhen { false }
+    mustRunAfter test
+}
+
+task integrationUITest(type: Test) {
+    useJUnitPlatform {
+    	includeTags 'ui-test'
+    }
+    description = 'Runs the integration UI tests.'
+    group = 'verification'
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    outputs.upToDateWhen { true }
+    mustRunAfter test
+}
+
+dependencies {
+    implementation(
+            'com.redhat.devtools.intellij:intellij-common:1.9.0',
+            'com.squareup.okhttp3:okhttp:4.11.0',
+            'com.squareup.okhttp3:logging-interceptor:4.11.0',
+            'jakarta.ws.rs:jakarta.ws.rs-api:2.1.6',
+            'org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:1.0.2',
+            'io.gsonfire:gson-fire:1.8.5')
+    testImplementation(
+            'com.redhat.devtools.intellij:intellij-common:1.9.0:test',
+            'com.redhat.devtools.intellij:intellij-common-ui-test-library:0.2.0',
+            'org.junit.jupiter:junit-jupiter-engine:5.9.2',
+            'org.junit.jupiter:junit-jupiter-api:5.9.2',
+            'org.junit.jupiter:junit-jupiter:5.9.2')
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", ""
+        property "sonar.organization", ""
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.junit.reportsPath", "$buildDir/test-results/"
+    }
+}
+
+jacocoTestReport {
+    getExecutionData().setFrom(fileTree(buildDir).include("/jacoco/*.exec"))
+    reports {
+        xml.enabled = true
+    }
+}
+
+runIde {
+}
+
+openApiGenerate {
+    generatorName = "java"
+    inputSpec = "$rootDir/src/main/resources/openapi.json".toString()
+    outputDir = "$buildDir/aivenapi-java".toString()
+    apiPackage = "com.jeffmaury.aiven.intellij.api"
+    invokerPackage = "com.jeffmaury.aiven.intellij.api.invoker"
+    modelPackage = "com.jeffmaury.aiven.intellij.api.model"
+    configOptions = [
+            dateLibrary: "java8"
+    ]
+    skipValidateSpec = true
+    logToStderr = true
+    generateAliasAsModel = false
+    // set to true and set environment variable {LANG}_POST_PROCESS_FILE
+    // (e.g. SCALA_POST_PROCESS_FILE) to the linter/formatter to be processed.
+    // This command will be passed one file at a time for most supported post processors.
+    enablePostProcessFile = false
+}
+
+compileJava.dependsOn tasks.openApiGenerate
+
+group 'com.jeffmaury.aiven.intellij.jboss.tools.intellij'
+version projectVersion // Plugin version

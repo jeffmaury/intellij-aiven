@@ -1,0 +1,29 @@
+<idea-plugin>
+  <id>com.jeffmaury.aiven.intellij</id>
+  <name>Aiven</name>
+  <version>1.0</version>
+  <vendor email="jeffmaury@jeffmaury.com" url="http://github.com/jeffmaury">jeffmaury</vendor>
+
+  <description><![CDATA[
+  <h2>Aiven for IntelliJ</h2>
+  <p>A plugin allowing to use Aiven services</p>
+    ]]></description>
+
+  <change-notes><![CDATA[
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="213"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+ </extensions>
+
+  <actions>
+  </actions>
+
+</idea-plugin>
