@@ -88,7 +88,7 @@ dependencies {
             'com.redhat.devtools.intellij:intellij-common:1.9.0',
             'com.squareup.okhttp3:okhttp:4.11.0',
             'com.squareup.okhttp3:logging-interceptor:4.11.0',
-            'jakarta.ws.rs:jakarta.ws.rs-api:2.1.6',
+            'jakarta.ws.rs:jakarta.ws.rs-api:3.1.0',
             'org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:1.0.2',
             'io.gsonfire:gson-fire:1.8.5')
     testImplementation(
