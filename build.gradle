@@ -85,15 +85,11 @@ task integrationUITest(type: Test) {
 
 dependencies {
     implementation(
-            'com.redhat.devtools.intellij:intellij-common:1.9.0',
-            'com.squareup.okhttp3:okhttp:4.11.0',
-            'com.squareup.okhttp3:logging-interceptor:4.11.0',
-            'jakarta.ws.rs:jakarta.ws.rs-api:2.1.6',
-            'org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:1.0.2',
-            'io.gsonfire:gson-fire:1.8.5')
+            'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2',
+            'org.openapitools:jackson-databind-nullable:0.2.4',
+            'javax.validation:validation-api:2.0.1.Final',
+            'com.google.code.findbugs:annotations:3.0.1u2')
     testImplementation(
-            'com.redhat.devtools.intellij:intellij-common:1.9.0:test',
-            'com.redhat.devtools.intellij:intellij-common-ui-test-library:0.2.0',
             'org.junit.jupiter:junit-jupiter-engine:5.9.2',
             'org.junit.jupiter:junit-jupiter-api:5.9.2',
             'org.junit.jupiter:junit-jupiter:5.9.2')
@@ -126,7 +122,8 @@ openApiGenerate {
     invokerPackage = "com.jeffmaury.aiven.intellij.api.invoker"
     modelPackage = "com.jeffmaury.aiven.intellij.api.model"
     configOptions = [
-            dateLibrary: "java8"
+            dateLibrary: "java8",
+            library: "native"
     ]
     skipValidateSpec = true
     logToStderr = true
