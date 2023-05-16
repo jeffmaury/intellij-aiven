@@ -90,9 +90,9 @@ dependencies {
             'javax.validation:validation-api:2.0.1.Final',
             'com.google.code.findbugs:annotations:3.0.1u2')
     testImplementation(
-            'org.junit.jupiter:junit-jupiter-engine:5.9.2',
-            'org.junit.jupiter:junit-jupiter-api:5.9.2',
-            'org.junit.jupiter:junit-jupiter:5.9.2')
+            "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
+            "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
+            "org.junit.jupiter:junit-jupiter:${junitVersion}")
 }
 
 sonarqube {
