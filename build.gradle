@@ -85,7 +85,7 @@ task integrationUITest(type: Test) {
 
 dependencies {
     implementation(
-            'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2',
+            'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.16.0',
             'org.openapitools:jackson-databind-nullable:0.2.4',
             'javax.validation:validation-api:2.0.1.Final',
             'com.google.code.findbugs:annotations:3.0.1u2')
