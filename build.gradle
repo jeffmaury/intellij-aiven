@@ -32,6 +32,8 @@ buildSearchableOptions.enabled = false
 
 runPluginVerifier {
     ideVersions = [ideaVersion]
+    subsystemsToCheck = 'without-android'
+    externalPrefixes = ['org.bouncycastle.jsse', 'org.openjsse', 'org.conscrypt']
 }
 
 publishPlugin {
@@ -55,10 +57,10 @@ sourceSets {
         runtimeClasspath += output + compileClasspath
     }
     main {
-        java.srcDirs += file("$buildDir/aivenapi-java/src/main/java")
+        java.srcDirs += file("aivenapi-java/src/main/java")
     }
     test {
-        java.srcDirs += file("$buildDir/aivenapi-java/src/test/java")
+        java.srcDirs += file("aivenapi-java/src/test/java")
     }
 }
 
@@ -85,10 +87,16 @@ task integrationUITest(type: Test) {
 
 dependencies {
     implementation(
-            'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2',
-            'org.openapitools:jackson-databind-nullable:0.2.4',
-            'javax.validation:validation-api:2.0.1.Final',
-            'com.google.code.findbugs:annotations:3.0.1u2')
+            'com.microsoft.kiota:microsoft-kiota-abstractions:0.8.0',
+
+            'com.microsoft.kiota:microsoft-kiota-serialization-form:0.8.0',
+            'com.microsoft.kiota:microsoft-kiota-serialization-json:0.8.0',
+            'com.microsoft.kiota:microsoft-kiota-serialization-text:0.8.0',
+            'com.microsoft.kiota:microsoft-kiota-serialization-multipart:0.8.0',
+            'jakarta.annotation:jakarta.annotation-api:2.1.1')
+    implementation('com.microsoft.kiota:microsoft-kiota-http-okHttp:0.8.0') {
+        exclude group: 'org.jetbrains.kotlin'
+    }
     testImplementation(
             "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
             "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
@@ -113,28 +121,6 @@ jacocoTestReport {
 
 runIde {
 }
-
-openApiGenerate {
-    generatorName = "java"
-    inputSpec = "$rootDir/src/main/resources/openapi.json".toString()
-    outputDir = "$buildDir/aivenapi-java".toString()
-    apiPackage = "com.jeffmaury.aiven.intellij.api"
-    invokerPackage = "com.jeffmaury.aiven.intellij.api.invoker"
-    modelPackage = "com.jeffmaury.aiven.intellij.api.model"
-    configOptions = [
-            dateLibrary: "java8",
-            library: "native"
-    ]
-    skipValidateSpec = true
-    logToStderr = true
-    generateAliasAsModel = false
-    // set to true and set environment variable {LANG}_POST_PROCESS_FILE
-    // (e.g. SCALA_POST_PROCESS_FILE) to the linter/formatter to be processed.
-    // This command will be passed one file at a time for most supported post processors.
-    enablePostProcessFile = false
-}
-
-compileJava.dependsOn tasks.openApiGenerate
 
 group 'com.jeffmaury.aiven.intellij.jboss.tools.intellij'
 version projectVersion // Plugin version

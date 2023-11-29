@@ -1,0 +1,2 @@
+Warning: KiotaBuilder OpenAPI warning: #/components/parameters/serviceupdate_allow_unclean_poweroff/schema/default - Data and type mismatch found.
+Error: KiotaBuilder OpenAPI error: #/paths//project/{project}/invite/{invited_email} - The path signature '/project/{}/invite/{}' MUST be unique.
