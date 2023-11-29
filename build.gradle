@@ -90,7 +90,8 @@ dependencies {
             'com.microsoft.kiota:microsoft-kiota-serialization-form:0.4.3',
             'com.microsoft.kiota:microsoft-kiota-serialization-json:0.4.3',
             'com.microsoft.kiota:microsoft-kiota-authentication-azure:0.4.3',
-            'com.microsoft.kiota:microsoft-kiota-serialization-text:0.4.3')
+            'com.microsoft.kiota:microsoft-kiota-serialization-text:0.4.3',
+            'com.google.code.findbugs:annotations:3.0.1u2')
     testImplementation(
             "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
             "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
