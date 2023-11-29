@@ -8,7 +8,7 @@ public enum ServiceOpenSearchIndexListResponseIndexesHealth implements ValuedEnu
     Green("green"),
     Yellow("yellow"),
     Red("red"),
-    Red_("red*"),
+    Red("red*"),
     Unknown("unknown");
     public final String value;
     ServiceOpenSearchIndexListResponseIndexesHealth(final String value) {
