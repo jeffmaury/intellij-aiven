@@ -7,6 +7,10 @@
 
 A JetBrains IntelliJ plugin for Aiven.
 
+## Client
+
+The openapi.json file located in src/main/resources has been downloaded from blob:https://api.aiven.io/21abb852-cb74-4498-baad-a9aa38d9606b
+The script to generated it is: kiota generate -d src/main/resources/openapi.json -o aivenapi-java/src/main/java/com/jeffmaury/aiven/intellij/api -l Java -c AivenClient -n com.jeffmaury.aiven.intellij.api
 
 ## Release notes
 
