@@ -33,7 +33,7 @@ buildSearchableOptions.enabled = false
 runPluginVerifier {
     ideVersions = [ideaVersion]
     subsystemsToCheck = 'without-android'
-    externalPrefixes = ['org.bouncycastle.jsse', 'org.openjsse', 'org.conscrypt', 'org.jetbrains.yaml', 'io.fabric8']
+    externalPrefixes = ['org.bouncycastle.jsse', 'org.openjsse', 'org.conscrypt', 'org.jetbrains.yaml', 'io.fabric8', 'com.fasterxml.jackson.dataformat']
 }
 
 publishPlugin {
