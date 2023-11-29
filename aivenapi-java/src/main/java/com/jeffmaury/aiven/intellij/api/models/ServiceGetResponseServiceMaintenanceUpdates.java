@@ -7,22 +7,31 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceGetResponseServiceMaintenanceUpdates implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Deadline for installing the update */
+    /**
+     * Deadline for installing the update
+     */
     private String deadline;
-    /** Description of the update */
+    /**
+     * Description of the update
+     */
     private String description;
-    /** The earliest time the update will be automatically applied */
+    /**
+     * The earliest time the update will be automatically applied
+     */
     private String startAfter;
-    /** The time when the update will be automatically applied */
+    /**
+     * The time when the update will be automatically applied
+     */
     private String startAt;
     /**
      * Instantiates a new ServiceGetResponseServiceMaintenanceUpdates and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceGetResponseServiceMaintenanceUpdates() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -31,32 +40,32 @@ public class ServiceGetResponseServiceMaintenanceUpdates implements AdditionalDa
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceGetResponseServiceMaintenanceUpdates
      */
-    @javax.annotation.Nonnull
-    public static ServiceGetResponseServiceMaintenanceUpdates createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceGetResponseServiceMaintenanceUpdates createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceGetResponseServiceMaintenanceUpdates();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the deadline property value. Deadline for installing the update
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDeadline() {
         return this.deadline;
     }
     /**
      * Gets the description property value. Description of the update
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDescription() {
         return this.description;
     }
@@ -64,7 +73,7 @@ public class ServiceGetResponseServiceMaintenanceUpdates implements AdditionalDa
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("deadline", (n) -> { this.setDeadline(n.getStringValue()); });
@@ -75,27 +84,25 @@ public class ServiceGetResponseServiceMaintenanceUpdates implements AdditionalDa
     }
     /**
      * Gets the start_after property value. The earliest time the update will be automatically applied
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getStartAfter() {
         return this.startAfter;
     }
     /**
      * Gets the start_at property value. The time when the update will be automatically applied
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getStartAt() {
         return this.startAt;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("deadline", this.getDeadline());
         writer.writeStringValue("description", this.getDescription());
@@ -104,48 +111,38 @@ public class ServiceGetResponseServiceMaintenanceUpdates implements AdditionalDa
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the deadline property value. Deadline for installing the update
      * @param value Value to set for the deadline property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDeadline(@javax.annotation.Nullable final String value) {
+    public void setDeadline(@jakarta.annotation.Nullable final String value) {
         this.deadline = value;
     }
     /**
      * Sets the description property value. Description of the update
      * @param value Value to set for the description property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDescription(@javax.annotation.Nullable final String value) {
+    public void setDescription(@jakarta.annotation.Nullable final String value) {
         this.description = value;
     }
     /**
      * Sets the start_after property value. The earliest time the update will be automatically applied
-     * @param value Value to set for the startAfter property.
-     * @return a void
+     * @param value Value to set for the start_after property.
      */
-    @javax.annotation.Nonnull
-    public void setStartAfter(@javax.annotation.Nullable final String value) {
+    public void setStartAfter(@jakarta.annotation.Nullable final String value) {
         this.startAfter = value;
     }
     /**
      * Sets the start_at property value. The time when the update will be automatically applied
-     * @param value Value to set for the startAt property.
-     * @return a void
+     * @param value Value to set for the start_at property.
      */
-    @javax.annotation.Nonnull
-    public void setStartAt(@javax.annotation.Nullable final String value) {
+    public void setStartAt(@jakarta.annotation.Nullable final String value) {
         this.startAt = value;
     }
 }

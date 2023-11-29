@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** DNS usage name */
+/**
+ * DNS usage name
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceUserCredentialsModifyResponseServiceComponentsUsage implements ValuedEnum {
     Primary("primary"),
     Replica("replica");
@@ -11,10 +14,10 @@ public enum ServiceUserCredentialsModifyResponseServiceComponentsUsage implement
     ServiceUserCredentialsModifyResponseServiceComponentsUsage(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceUserCredentialsModifyResponseServiceComponentsUsage forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceUserCredentialsModifyResponseServiceComponentsUsage forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "primary": return Primary;

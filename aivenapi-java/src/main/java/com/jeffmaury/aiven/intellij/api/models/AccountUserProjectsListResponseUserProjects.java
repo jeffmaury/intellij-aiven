@@ -7,32 +7,51 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class AccountUserProjectsListResponseUserProjects implements AdditionalDataHolder, Parsable {
-    /** Access type */
+    /**
+     * Access type
+     */
     private String accessType;
-    /** Account ID */
+    /**
+     * Account ID
+     */
     private String accountId;
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Timestamp in ISO 8601 format, always in UTC */
+    /**
+     * Timestamp in ISO 8601 format, always in UTC
+     */
     private String createTime;
-    /** Project member type */
+    /**
+     * Project member type
+     */
     private AccountUserProjectsListResponseUserProjectsMemberType memberType;
-    /** Project name */
+    /**
+     * Project name
+     */
     private String projectName;
-    /** User real name */
+    /**
+     * User real name
+     */
     private String realName;
-    /** Team ID */
+    /**
+     * Team ID
+     */
     private String teamId;
-    /** Team name */
+    /**
+     * Team name
+     */
     private String teamName;
-    /** User email address */
+    /**
+     * User email address
+     */
     private String userEmail;
     /**
      * Instantiates a new AccountUserProjectsListResponseUserProjects and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public AccountUserProjectsListResponseUserProjects() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -41,40 +60,40 @@ public class AccountUserProjectsListResponseUserProjects implements AdditionalDa
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a AccountUserProjectsListResponseUserProjects
      */
-    @javax.annotation.Nonnull
-    public static AccountUserProjectsListResponseUserProjects createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static AccountUserProjectsListResponseUserProjects createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new AccountUserProjectsListResponseUserProjects();
     }
     /**
      * Gets the access_type property value. Access type
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccessType() {
         return this.accessType;
     }
     /**
      * Gets the account_id property value. Account ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccountId() {
         return this.accountId;
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the create_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCreateTime() {
         return this.createTime;
     }
@@ -82,7 +101,7 @@ public class AccountUserProjectsListResponseUserProjects implements AdditionalDa
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
         deserializerMap.put("access_type", (n) -> { this.setAccessType(n.getStringValue()); });
@@ -100,57 +119,55 @@ public class AccountUserProjectsListResponseUserProjects implements AdditionalDa
      * Gets the member_type property value. Project member type
      * @return a AccountUserProjectsListResponseUserProjectsMemberType
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public AccountUserProjectsListResponseUserProjectsMemberType getMemberType() {
         return this.memberType;
     }
     /**
      * Gets the project_name property value. Project name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getProjectName() {
         return this.projectName;
     }
     /**
      * Gets the real_name property value. User real name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getRealName() {
         return this.realName;
     }
     /**
      * Gets the team_id property value. Team ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTeamId() {
         return this.teamId;
     }
     /**
      * Gets the team_name property value. Team name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTeamName() {
         return this.teamName;
     }
     /**
      * Gets the user_email property value. User email address
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUserEmail() {
         return this.userEmail;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("access_type", this.getAccessType());
         writer.writeStringValue("account_id", this.getAccountId());
@@ -165,92 +182,72 @@ public class AccountUserProjectsListResponseUserProjects implements AdditionalDa
     }
     /**
      * Sets the access_type property value. Access type
-     * @param value Value to set for the accessType property.
-     * @return a void
+     * @param value Value to set for the access_type property.
      */
-    @javax.annotation.Nonnull
-    public void setAccessType(@javax.annotation.Nullable final String value) {
+    public void setAccessType(@jakarta.annotation.Nullable final String value) {
         this.accessType = value;
     }
     /**
      * Sets the account_id property value. Account ID
-     * @param value Value to set for the accountId property.
-     * @return a void
+     * @param value Value to set for the account_id property.
      */
-    @javax.annotation.Nonnull
-    public void setAccountId(@javax.annotation.Nullable final String value) {
+    public void setAccountId(@jakarta.annotation.Nullable final String value) {
         this.accountId = value;
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the create_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @param value Value to set for the createTime property.
-     * @return a void
+     * @param value Value to set for the create_time property.
      */
-    @javax.annotation.Nonnull
-    public void setCreateTime(@javax.annotation.Nullable final String value) {
+    public void setCreateTime(@jakarta.annotation.Nullable final String value) {
         this.createTime = value;
     }
     /**
      * Sets the member_type property value. Project member type
-     * @param value Value to set for the memberType property.
-     * @return a void
+     * @param value Value to set for the member_type property.
      */
-    @javax.annotation.Nonnull
-    public void setMemberType(@javax.annotation.Nullable final AccountUserProjectsListResponseUserProjectsMemberType value) {
+    public void setMemberType(@jakarta.annotation.Nullable final AccountUserProjectsListResponseUserProjectsMemberType value) {
         this.memberType = value;
     }
     /**
      * Sets the project_name property value. Project name
-     * @param value Value to set for the projectName property.
-     * @return a void
+     * @param value Value to set for the project_name property.
      */
-    @javax.annotation.Nonnull
-    public void setProjectName(@javax.annotation.Nullable final String value) {
+    public void setProjectName(@jakarta.annotation.Nullable final String value) {
         this.projectName = value;
     }
     /**
      * Sets the real_name property value. User real name
-     * @param value Value to set for the realName property.
-     * @return a void
+     * @param value Value to set for the real_name property.
      */
-    @javax.annotation.Nonnull
-    public void setRealName(@javax.annotation.Nullable final String value) {
+    public void setRealName(@jakarta.annotation.Nullable final String value) {
         this.realName = value;
     }
     /**
      * Sets the team_id property value. Team ID
-     * @param value Value to set for the teamId property.
-     * @return a void
+     * @param value Value to set for the team_id property.
      */
-    @javax.annotation.Nonnull
-    public void setTeamId(@javax.annotation.Nullable final String value) {
+    public void setTeamId(@jakarta.annotation.Nullable final String value) {
         this.teamId = value;
     }
     /**
      * Sets the team_name property value. Team name
-     * @param value Value to set for the teamName property.
-     * @return a void
+     * @param value Value to set for the team_name property.
      */
-    @javax.annotation.Nonnull
-    public void setTeamName(@javax.annotation.Nullable final String value) {
+    public void setTeamName(@jakarta.annotation.Nullable final String value) {
         this.teamName = value;
     }
     /**
      * Sets the user_email property value. User email address
-     * @param value Value to set for the userEmail property.
-     * @return a void
+     * @param value Value to set for the user_email property.
      */
-    @javax.annotation.Nonnull
-    public void setUserEmail(@javax.annotation.Nullable final String value) {
+    public void setUserEmail(@jakarta.annotation.Nullable final String value) {
         this.userEmail = value;
     }
 }

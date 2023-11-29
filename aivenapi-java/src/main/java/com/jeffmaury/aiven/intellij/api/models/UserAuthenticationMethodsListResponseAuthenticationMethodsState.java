@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** State for authentication method */
+/**
+ * State for authentication method
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum UserAuthenticationMethodsListResponseAuthenticationMethodsState implements ValuedEnum {
     Active("active"),
     Deleted("deleted");
@@ -11,10 +14,10 @@ public enum UserAuthenticationMethodsListResponseAuthenticationMethodsState impl
     UserAuthenticationMethodsListResponseAuthenticationMethodsState(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static UserAuthenticationMethodsListResponseAuthenticationMethodsState forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static UserAuthenticationMethodsListResponseAuthenticationMethodsState forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "active": return Active;

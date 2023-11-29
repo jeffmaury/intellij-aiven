@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Deployment status */
+/**
+ * Deployment status
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceFlinkGetApplicationDeploymentResponseStatus implements ValuedEnum {
     INITIALIZING("INITIALIZING"),
     CREATED("CREATED"),
@@ -26,10 +29,10 @@ public enum ServiceFlinkGetApplicationDeploymentResponseStatus implements Valued
     ServiceFlinkGetApplicationDeploymentResponseStatus(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceFlinkGetApplicationDeploymentResponseStatus forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceFlinkGetApplicationDeploymentResponseStatus forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "INITIALIZING": return INITIALIZING;

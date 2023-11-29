@@ -10,84 +10,155 @@ import java.util.Objects;
 /**
  * Service information
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceCreateResponseService implements AdditionalDataHolder, Parsable {
-    /** List of Kafka ACL entries */
+    /**
+     * List of Kafka ACL entries
+     */
     private java.util.List<ServiceCreateResponseServiceAcl> acl;
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** List of backups for the service */
+    /**
+     * List of backups for the service
+     */
     private java.util.List<ServiceCreateResponseServiceBackups> backups;
-    /** Cloud provider and location */
+    /**
+     * Cloud provider and location
+     */
     private String cloudDescription;
-    /** Target cloud */
+    /**
+     * Target cloud
+     */
     private String cloudName;
-    /** Service component information objects */
+    /**
+     * Service component information objects
+     */
     private java.util.List<ServiceCreateResponseServiceComponents> components;
-    /** Service-specific connection information properties */
+    /**
+     * Service-specific connection information properties
+     */
     private ServiceCreateResponseServiceConnectionInfo connectionInfo;
-    /** PostgreSQL PGBouncer connection pools */
+    /**
+     * PostgreSQL PGBouncer connection pools
+     */
     private java.util.List<ServiceCreateResponseServiceConnectionPools> connectionPools;
-    /** Service creation timestamp (ISO 8601) */
+    /**
+     * Service creation timestamp (ISO 8601)
+     */
     private String createTime;
-    /** List of service's user database names */
+    /**
+     * List of service's user database names
+     */
     private java.util.List<String> databases;
-    /** Megabytes of disk space for data storage */
+    /**
+     * Megabytes of disk space for data storage
+     */
     private Double diskSpaceMb;
-    /** Feature flags */
+    /**
+     * Feature flags
+     */
     private ServiceCreateResponseServiceFeatures features;
-    /** List of service groups the service belongs to. This field is deprecated. It is always set to single element with value 'default' */
+    /**
+     * List of service groups the service belongs to. This field is deprecated. It is always set to single element with value 'default'
+     */
     private java.util.List<String> groupList;
-    /** Automatic maintenance settings */
+    /**
+     * Automatic maintenance settings
+     */
     private ServiceCreateResponseServiceMaintenance maintenance;
-    /** Service type specific metadata */
+    /**
+     * Service type specific metadata
+     */
     private ServiceCreateResponseServiceMetadata metadata;
-    /** Number of service nodes in the active plan */
+    /**
+     * Number of service nodes in the active plan
+     */
     private Integer nodeCount;
-    /** Number of CPUs for each node */
+    /**
+     * Number of CPUs for each node
+     */
     private Integer nodeCpuCount;
-    /** Megabytes of memory for each node */
+    /**
+     * Megabytes of memory for each node
+     */
     private Double nodeMemoryMb;
-    /** State of individual service nodes */
+    /**
+     * State of individual service nodes
+     */
     private java.util.List<ServiceCreateResponseServiceNodeStates> nodeStates;
-    /** Subscription plan */
+    /**
+     * Subscription plan
+     */
     private String plan;
-    /** Project VPC ID */
+    /**
+     * Project VPC ID
+     */
     private String projectVpcId;
-    /** List of Schema Registry ACL entries */
+    /**
+     * List of Schema Registry ACL entries
+     */
     private java.util.List<ServiceCreateResponseServiceSchemaRegistryAcl> schemaRegistryAcl;
-    /** Integrations with other services */
+    /**
+     * Integrations with other services
+     */
     private java.util.List<ServiceCreateResponseServiceServiceIntegrations> serviceIntegrations;
-    /** Service name */
+    /**
+     * Service name
+     */
     private String serviceName;
-    /** Service notifications */
+    /**
+     * Service notifications
+     */
     private java.util.List<ServiceCreateResponseServiceServiceNotifications> serviceNotifications;
-    /** Service type code */
+    /**
+     * Service type code
+     */
     private String serviceType;
-    /** Single line description of the service */
+    /**
+     * Single line description of the service
+     */
     private String serviceTypeDescription;
-    /** URI for connecting to the service (may be null) */
+    /**
+     * URI for connecting to the service (may be null)
+     */
     private String serviceUri;
-    /** service_uri parameterized into key-value pairs */
+    /**
+     * service_uri parameterized into key-value pairs
+     */
     private ServiceCreateResponseServiceServiceUriParams serviceUriParams;
-    /** State of the service */
+    /**
+     * State of the service
+     */
     private ServiceCreateResponseServiceState state;
-    /** Set of resource tags */
+    /**
+     * Set of resource tags
+     */
     private ServiceCreateResponseServiceTags tags;
-    /** Service is protected against termination and powering off */
+    /**
+     * Service is protected against termination and powering off
+     */
     private Boolean terminationProtection;
-    /** Kafka topics. DEPRECATED: Use /project/$project/service/$service/topic instead */
+    /**
+     * Kafka topics. DEPRECATED: Use /project/$project/service/$service/topic instead
+     */
     private java.util.List<ServiceCreateResponseServiceTopics> topics;
-    /** Service last update timestamp (ISO 8601) */
+    /**
+     * Service last update timestamp (ISO 8601)
+     */
     private String updateTime;
-    /** Service type-specific settings */
+    /**
+     * Service type-specific settings
+     */
     private ServiceCreateResponseServiceUserConfig userConfig;
-    /** List of service users */
+    /**
+     * List of service users
+     */
     private java.util.List<ServiceCreateResponseServiceUsers> users;
     /**
      * Instantiates a new ServiceCreateResponseService and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceCreateResponseService() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -96,56 +167,56 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceCreateResponseService
      */
-    @javax.annotation.Nonnull
-    public static ServiceCreateResponseService createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceCreateResponseService createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceCreateResponseService();
     }
     /**
      * Gets the acl property value. List of Kafka ACL entries
-     * @return a ServiceCreateResponseServiceAcl
+     * @return a java.util.List<ServiceCreateResponseServiceAcl>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceCreateResponseServiceAcl> getAcl() {
         return this.acl;
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the backups property value. List of backups for the service
-     * @return a ServiceCreateResponseServiceBackups
+     * @return a java.util.List<ServiceCreateResponseServiceBackups>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceCreateResponseServiceBackups> getBackups() {
         return this.backups;
     }
     /**
      * Gets the cloud_description property value. Cloud provider and location
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCloudDescription() {
         return this.cloudDescription;
     }
     /**
      * Gets the cloud_name property value. Target cloud
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCloudName() {
         return this.cloudName;
     }
     /**
      * Gets the components property value. Service component information objects
-     * @return a ServiceCreateResponseServiceComponents
+     * @return a java.util.List<ServiceCreateResponseServiceComponents>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceCreateResponseServiceComponents> getComponents() {
         return this.components;
     }
@@ -153,39 +224,39 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
      * Gets the connection_info property value. Service-specific connection information properties
      * @return a ServiceCreateResponseServiceConnectionInfo
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceCreateResponseServiceConnectionInfo getConnectionInfo() {
         return this.connectionInfo;
     }
     /**
      * Gets the connection_pools property value. PostgreSQL PGBouncer connection pools
-     * @return a ServiceCreateResponseServiceConnectionPools
+     * @return a java.util.List<ServiceCreateResponseServiceConnectionPools>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceCreateResponseServiceConnectionPools> getConnectionPools() {
         return this.connectionPools;
     }
     /**
      * Gets the create_time property value. Service creation timestamp (ISO 8601)
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCreateTime() {
         return this.createTime;
     }
     /**
      * Gets the databases property value. List of service's user database names
-     * @return a string
+     * @return a java.util.List<String>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<String> getDatabases() {
         return this.databases;
     }
     /**
      * Gets the disk_space_mb property value. Megabytes of disk space for data storage
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getDiskSpaceMb() {
         return this.diskSpaceMb;
     }
@@ -193,7 +264,7 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
      * Gets the features property value. Feature flags
      * @return a ServiceCreateResponseServiceFeatures
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceCreateResponseServiceFeatures getFeatures() {
         return this.features;
     }
@@ -201,7 +272,7 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(35);
         deserializerMap.put("acl", (n) -> { this.setAcl(n.getCollectionOfObjectValues(ServiceCreateResponseServiceAcl::createFromDiscriminatorValue)); });
@@ -243,9 +314,9 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
     }
     /**
      * Gets the group_list property value. List of service groups the service belongs to. This field is deprecated. It is always set to single element with value 'default'
-     * @return a string
+     * @return a java.util.List<String>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<String> getGroupList() {
         return this.groupList;
     }
@@ -253,7 +324,7 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
      * Gets the maintenance property value. Automatic maintenance settings
      * @return a ServiceCreateResponseServiceMaintenance
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceCreateResponseServiceMaintenance getMaintenance() {
         return this.maintenance;
     }
@@ -261,111 +332,111 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
      * Gets the metadata property value. Service type specific metadata
      * @return a ServiceCreateResponseServiceMetadata
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceCreateResponseServiceMetadata getMetadata() {
         return this.metadata;
     }
     /**
      * Gets the node_count property value. Number of service nodes in the active plan
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getNodeCount() {
         return this.nodeCount;
     }
     /**
      * Gets the node_cpu_count property value. Number of CPUs for each node
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getNodeCpuCount() {
         return this.nodeCpuCount;
     }
     /**
      * Gets the node_memory_mb property value. Megabytes of memory for each node
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getNodeMemoryMb() {
         return this.nodeMemoryMb;
     }
     /**
      * Gets the node_states property value. State of individual service nodes
-     * @return a ServiceCreateResponseServiceNodeStates
+     * @return a java.util.List<ServiceCreateResponseServiceNodeStates>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceCreateResponseServiceNodeStates> getNodeStates() {
         return this.nodeStates;
     }
     /**
      * Gets the plan property value. Subscription plan
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getPlan() {
         return this.plan;
     }
     /**
      * Gets the project_vpc_id property value. Project VPC ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getProjectVpcId() {
         return this.projectVpcId;
     }
     /**
      * Gets the schema_registry_acl property value. List of Schema Registry ACL entries
-     * @return a ServiceCreateResponseServiceSchemaRegistryAcl
+     * @return a java.util.List<ServiceCreateResponseServiceSchemaRegistryAcl>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceCreateResponseServiceSchemaRegistryAcl> getSchemaRegistryAcl() {
         return this.schemaRegistryAcl;
     }
     /**
      * Gets the service_integrations property value. Integrations with other services
-     * @return a ServiceCreateResponseServiceServiceIntegrations
+     * @return a java.util.List<ServiceCreateResponseServiceServiceIntegrations>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceCreateResponseServiceServiceIntegrations> getServiceIntegrations() {
         return this.serviceIntegrations;
     }
     /**
      * Gets the service_name property value. Service name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getServiceName() {
         return this.serviceName;
     }
     /**
      * Gets the service_notifications property value. Service notifications
-     * @return a ServiceCreateResponseServiceServiceNotifications
+     * @return a java.util.List<ServiceCreateResponseServiceServiceNotifications>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceCreateResponseServiceServiceNotifications> getServiceNotifications() {
         return this.serviceNotifications;
     }
     /**
      * Gets the service_type property value. Service type code
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getServiceType() {
         return this.serviceType;
     }
     /**
      * Gets the service_type_description property value. Single line description of the service
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getServiceTypeDescription() {
         return this.serviceTypeDescription;
     }
     /**
      * Gets the service_uri property value. URI for connecting to the service (may be null)
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getServiceUri() {
         return this.serviceUri;
     }
@@ -373,7 +444,7 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
      * Gets the service_uri_params property value. service_uri parameterized into key-value pairs
      * @return a ServiceCreateResponseServiceServiceUriParams
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceCreateResponseServiceServiceUriParams getServiceUriParams() {
         return this.serviceUriParams;
     }
@@ -381,7 +452,7 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
      * Gets the state property value. State of the service
      * @return a ServiceCreateResponseServiceState
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceCreateResponseServiceState getState() {
         return this.state;
     }
@@ -389,31 +460,31 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
      * Gets the tags property value. Set of resource tags
      * @return a ServiceCreateResponseServiceTags
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceCreateResponseServiceTags getTags() {
         return this.tags;
     }
     /**
      * Gets the termination_protection property value. Service is protected against termination and powering off
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getTerminationProtection() {
         return this.terminationProtection;
     }
     /**
      * Gets the topics property value. Kafka topics. DEPRECATED: Use /project/$project/service/$service/topic instead
-     * @return a ServiceCreateResponseServiceTopics
+     * @return a java.util.List<ServiceCreateResponseServiceTopics>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceCreateResponseServiceTopics> getTopics() {
         return this.topics;
     }
     /**
      * Gets the update_time property value. Service last update timestamp (ISO 8601)
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUpdateTime() {
         return this.updateTime;
     }
@@ -421,25 +492,23 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
      * Gets the user_config property value. Service type-specific settings
      * @return a ServiceCreateResponseServiceUserConfig
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceCreateResponseServiceUserConfig getUserConfig() {
         return this.userConfig;
     }
     /**
      * Gets the users property value. List of service users
-     * @return a ServiceCreateResponseServiceUsers
+     * @return a java.util.List<ServiceCreateResponseServiceUsers>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceCreateResponseServiceUsers> getUsers() {
         return this.users;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfObjectValues("acl", this.getAcl());
         writer.writeCollectionOfObjectValues("backups", this.getBackups());
@@ -481,325 +550,253 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
     /**
      * Sets the acl property value. List of Kafka ACL entries
      * @param value Value to set for the acl property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAcl(@javax.annotation.Nullable final java.util.List<ServiceCreateResponseServiceAcl> value) {
+    public void setAcl(@jakarta.annotation.Nullable final java.util.List<ServiceCreateResponseServiceAcl> value) {
         this.acl = value;
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the backups property value. List of backups for the service
      * @param value Value to set for the backups property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setBackups(@javax.annotation.Nullable final java.util.List<ServiceCreateResponseServiceBackups> value) {
+    public void setBackups(@jakarta.annotation.Nullable final java.util.List<ServiceCreateResponseServiceBackups> value) {
         this.backups = value;
     }
     /**
      * Sets the cloud_description property value. Cloud provider and location
-     * @param value Value to set for the cloudDescription property.
-     * @return a void
+     * @param value Value to set for the cloud_description property.
      */
-    @javax.annotation.Nonnull
-    public void setCloudDescription(@javax.annotation.Nullable final String value) {
+    public void setCloudDescription(@jakarta.annotation.Nullable final String value) {
         this.cloudDescription = value;
     }
     /**
      * Sets the cloud_name property value. Target cloud
-     * @param value Value to set for the cloudName property.
-     * @return a void
+     * @param value Value to set for the cloud_name property.
      */
-    @javax.annotation.Nonnull
-    public void setCloudName(@javax.annotation.Nullable final String value) {
+    public void setCloudName(@jakarta.annotation.Nullable final String value) {
         this.cloudName = value;
     }
     /**
      * Sets the components property value. Service component information objects
      * @param value Value to set for the components property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setComponents(@javax.annotation.Nullable final java.util.List<ServiceCreateResponseServiceComponents> value) {
+    public void setComponents(@jakarta.annotation.Nullable final java.util.List<ServiceCreateResponseServiceComponents> value) {
         this.components = value;
     }
     /**
      * Sets the connection_info property value. Service-specific connection information properties
-     * @param value Value to set for the connectionInfo property.
-     * @return a void
+     * @param value Value to set for the connection_info property.
      */
-    @javax.annotation.Nonnull
-    public void setConnectionInfo(@javax.annotation.Nullable final ServiceCreateResponseServiceConnectionInfo value) {
+    public void setConnectionInfo(@jakarta.annotation.Nullable final ServiceCreateResponseServiceConnectionInfo value) {
         this.connectionInfo = value;
     }
     /**
      * Sets the connection_pools property value. PostgreSQL PGBouncer connection pools
-     * @param value Value to set for the connectionPools property.
-     * @return a void
+     * @param value Value to set for the connection_pools property.
      */
-    @javax.annotation.Nonnull
-    public void setConnectionPools(@javax.annotation.Nullable final java.util.List<ServiceCreateResponseServiceConnectionPools> value) {
+    public void setConnectionPools(@jakarta.annotation.Nullable final java.util.List<ServiceCreateResponseServiceConnectionPools> value) {
         this.connectionPools = value;
     }
     /**
      * Sets the create_time property value. Service creation timestamp (ISO 8601)
-     * @param value Value to set for the createTime property.
-     * @return a void
+     * @param value Value to set for the create_time property.
      */
-    @javax.annotation.Nonnull
-    public void setCreateTime(@javax.annotation.Nullable final String value) {
+    public void setCreateTime(@jakarta.annotation.Nullable final String value) {
         this.createTime = value;
     }
     /**
      * Sets the databases property value. List of service's user database names
      * @param value Value to set for the databases property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDatabases(@javax.annotation.Nullable final java.util.List<String> value) {
+    public void setDatabases(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.databases = value;
     }
     /**
      * Sets the disk_space_mb property value. Megabytes of disk space for data storage
-     * @param value Value to set for the diskSpaceMb property.
-     * @return a void
+     * @param value Value to set for the disk_space_mb property.
      */
-    @javax.annotation.Nonnull
-    public void setDiskSpaceMb(@javax.annotation.Nullable final Double value) {
+    public void setDiskSpaceMb(@jakarta.annotation.Nullable final Double value) {
         this.diskSpaceMb = value;
     }
     /**
      * Sets the features property value. Feature flags
      * @param value Value to set for the features property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setFeatures(@javax.annotation.Nullable final ServiceCreateResponseServiceFeatures value) {
+    public void setFeatures(@jakarta.annotation.Nullable final ServiceCreateResponseServiceFeatures value) {
         this.features = value;
     }
     /**
      * Sets the group_list property value. List of service groups the service belongs to. This field is deprecated. It is always set to single element with value 'default'
-     * @param value Value to set for the groupList property.
-     * @return a void
+     * @param value Value to set for the group_list property.
      */
-    @javax.annotation.Nonnull
-    public void setGroupList(@javax.annotation.Nullable final java.util.List<String> value) {
+    public void setGroupList(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.groupList = value;
     }
     /**
      * Sets the maintenance property value. Automatic maintenance settings
      * @param value Value to set for the maintenance property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMaintenance(@javax.annotation.Nullable final ServiceCreateResponseServiceMaintenance value) {
+    public void setMaintenance(@jakarta.annotation.Nullable final ServiceCreateResponseServiceMaintenance value) {
         this.maintenance = value;
     }
     /**
      * Sets the metadata property value. Service type specific metadata
      * @param value Value to set for the metadata property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMetadata(@javax.annotation.Nullable final ServiceCreateResponseServiceMetadata value) {
+    public void setMetadata(@jakarta.annotation.Nullable final ServiceCreateResponseServiceMetadata value) {
         this.metadata = value;
     }
     /**
      * Sets the node_count property value. Number of service nodes in the active plan
-     * @param value Value to set for the nodeCount property.
-     * @return a void
+     * @param value Value to set for the node_count property.
      */
-    @javax.annotation.Nonnull
-    public void setNodeCount(@javax.annotation.Nullable final Integer value) {
+    public void setNodeCount(@jakarta.annotation.Nullable final Integer value) {
         this.nodeCount = value;
     }
     /**
      * Sets the node_cpu_count property value. Number of CPUs for each node
-     * @param value Value to set for the nodeCpuCount property.
-     * @return a void
+     * @param value Value to set for the node_cpu_count property.
      */
-    @javax.annotation.Nonnull
-    public void setNodeCpuCount(@javax.annotation.Nullable final Integer value) {
+    public void setNodeCpuCount(@jakarta.annotation.Nullable final Integer value) {
         this.nodeCpuCount = value;
     }
     /**
      * Sets the node_memory_mb property value. Megabytes of memory for each node
-     * @param value Value to set for the nodeMemoryMb property.
-     * @return a void
+     * @param value Value to set for the node_memory_mb property.
      */
-    @javax.annotation.Nonnull
-    public void setNodeMemoryMb(@javax.annotation.Nullable final Double value) {
+    public void setNodeMemoryMb(@jakarta.annotation.Nullable final Double value) {
         this.nodeMemoryMb = value;
     }
     /**
      * Sets the node_states property value. State of individual service nodes
-     * @param value Value to set for the nodeStates property.
-     * @return a void
+     * @param value Value to set for the node_states property.
      */
-    @javax.annotation.Nonnull
-    public void setNodeStates(@javax.annotation.Nullable final java.util.List<ServiceCreateResponseServiceNodeStates> value) {
+    public void setNodeStates(@jakarta.annotation.Nullable final java.util.List<ServiceCreateResponseServiceNodeStates> value) {
         this.nodeStates = value;
     }
     /**
      * Sets the plan property value. Subscription plan
      * @param value Value to set for the plan property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setPlan(@javax.annotation.Nullable final String value) {
+    public void setPlan(@jakarta.annotation.Nullable final String value) {
         this.plan = value;
     }
     /**
      * Sets the project_vpc_id property value. Project VPC ID
-     * @param value Value to set for the projectVpcId property.
-     * @return a void
+     * @param value Value to set for the project_vpc_id property.
      */
-    @javax.annotation.Nonnull
-    public void setProjectVpcId(@javax.annotation.Nullable final String value) {
+    public void setProjectVpcId(@jakarta.annotation.Nullable final String value) {
         this.projectVpcId = value;
     }
     /**
      * Sets the schema_registry_acl property value. List of Schema Registry ACL entries
-     * @param value Value to set for the schemaRegistryAcl property.
-     * @return a void
+     * @param value Value to set for the schema_registry_acl property.
      */
-    @javax.annotation.Nonnull
-    public void setSchemaRegistryAcl(@javax.annotation.Nullable final java.util.List<ServiceCreateResponseServiceSchemaRegistryAcl> value) {
+    public void setSchemaRegistryAcl(@jakarta.annotation.Nullable final java.util.List<ServiceCreateResponseServiceSchemaRegistryAcl> value) {
         this.schemaRegistryAcl = value;
     }
     /**
      * Sets the service_integrations property value. Integrations with other services
-     * @param value Value to set for the serviceIntegrations property.
-     * @return a void
+     * @param value Value to set for the service_integrations property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceIntegrations(@javax.annotation.Nullable final java.util.List<ServiceCreateResponseServiceServiceIntegrations> value) {
+    public void setServiceIntegrations(@jakarta.annotation.Nullable final java.util.List<ServiceCreateResponseServiceServiceIntegrations> value) {
         this.serviceIntegrations = value;
     }
     /**
      * Sets the service_name property value. Service name
-     * @param value Value to set for the serviceName property.
-     * @return a void
+     * @param value Value to set for the service_name property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceName(@javax.annotation.Nullable final String value) {
+    public void setServiceName(@jakarta.annotation.Nullable final String value) {
         this.serviceName = value;
     }
     /**
      * Sets the service_notifications property value. Service notifications
-     * @param value Value to set for the serviceNotifications property.
-     * @return a void
+     * @param value Value to set for the service_notifications property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceNotifications(@javax.annotation.Nullable final java.util.List<ServiceCreateResponseServiceServiceNotifications> value) {
+    public void setServiceNotifications(@jakarta.annotation.Nullable final java.util.List<ServiceCreateResponseServiceServiceNotifications> value) {
         this.serviceNotifications = value;
     }
     /**
      * Sets the service_type property value. Service type code
-     * @param value Value to set for the serviceType property.
-     * @return a void
+     * @param value Value to set for the service_type property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceType(@javax.annotation.Nullable final String value) {
+    public void setServiceType(@jakarta.annotation.Nullable final String value) {
         this.serviceType = value;
     }
     /**
      * Sets the service_type_description property value. Single line description of the service
-     * @param value Value to set for the serviceTypeDescription property.
-     * @return a void
+     * @param value Value to set for the service_type_description property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceTypeDescription(@javax.annotation.Nullable final String value) {
+    public void setServiceTypeDescription(@jakarta.annotation.Nullable final String value) {
         this.serviceTypeDescription = value;
     }
     /**
      * Sets the service_uri property value. URI for connecting to the service (may be null)
-     * @param value Value to set for the serviceUri property.
-     * @return a void
+     * @param value Value to set for the service_uri property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceUri(@javax.annotation.Nullable final String value) {
+    public void setServiceUri(@jakarta.annotation.Nullable final String value) {
         this.serviceUri = value;
     }
     /**
      * Sets the service_uri_params property value. service_uri parameterized into key-value pairs
-     * @param value Value to set for the serviceUriParams property.
-     * @return a void
+     * @param value Value to set for the service_uri_params property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceUriParams(@javax.annotation.Nullable final ServiceCreateResponseServiceServiceUriParams value) {
+    public void setServiceUriParams(@jakarta.annotation.Nullable final ServiceCreateResponseServiceServiceUriParams value) {
         this.serviceUriParams = value;
     }
     /**
      * Sets the state property value. State of the service
      * @param value Value to set for the state property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setState(@javax.annotation.Nullable final ServiceCreateResponseServiceState value) {
+    public void setState(@jakarta.annotation.Nullable final ServiceCreateResponseServiceState value) {
         this.state = value;
     }
     /**
      * Sets the tags property value. Set of resource tags
      * @param value Value to set for the tags property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setTags(@javax.annotation.Nullable final ServiceCreateResponseServiceTags value) {
+    public void setTags(@jakarta.annotation.Nullable final ServiceCreateResponseServiceTags value) {
         this.tags = value;
     }
     /**
      * Sets the termination_protection property value. Service is protected against termination and powering off
-     * @param value Value to set for the terminationProtection property.
-     * @return a void
+     * @param value Value to set for the termination_protection property.
      */
-    @javax.annotation.Nonnull
-    public void setTerminationProtection(@javax.annotation.Nullable final Boolean value) {
+    public void setTerminationProtection(@jakarta.annotation.Nullable final Boolean value) {
         this.terminationProtection = value;
     }
     /**
      * Sets the topics property value. Kafka topics. DEPRECATED: Use /project/$project/service/$service/topic instead
      * @param value Value to set for the topics property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setTopics(@javax.annotation.Nullable final java.util.List<ServiceCreateResponseServiceTopics> value) {
+    public void setTopics(@jakarta.annotation.Nullable final java.util.List<ServiceCreateResponseServiceTopics> value) {
         this.topics = value;
     }
     /**
      * Sets the update_time property value. Service last update timestamp (ISO 8601)
-     * @param value Value to set for the updateTime property.
-     * @return a void
+     * @param value Value to set for the update_time property.
      */
-    @javax.annotation.Nonnull
-    public void setUpdateTime(@javax.annotation.Nullable final String value) {
+    public void setUpdateTime(@jakarta.annotation.Nullable final String value) {
         this.updateTime = value;
     }
     /**
      * Sets the user_config property value. Service type-specific settings
-     * @param value Value to set for the userConfig property.
-     * @return a void
+     * @param value Value to set for the user_config property.
      */
-    @javax.annotation.Nonnull
-    public void setUserConfig(@javax.annotation.Nullable final ServiceCreateResponseServiceUserConfig value) {
+    public void setUserConfig(@jakarta.annotation.Nullable final ServiceCreateResponseServiceUserConfig value) {
         this.userConfig = value;
     }
     /**
      * Sets the users property value. List of service users
      * @param value Value to set for the users property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setUsers(@javax.annotation.Nullable final java.util.List<ServiceCreateResponseServiceUsers> value) {
+    public void setUsers(@jakarta.annotation.Nullable final java.util.List<ServiceCreateResponseServiceUsers> value) {
         this.users = value;
     }
 }

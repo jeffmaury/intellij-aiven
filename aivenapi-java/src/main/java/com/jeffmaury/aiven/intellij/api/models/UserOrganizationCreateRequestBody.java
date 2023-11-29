@@ -10,20 +10,27 @@ import java.util.Objects;
 /**
  * UserOrganizationCreateRequestBody
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class UserOrganizationCreateRequestBody implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Organization's name */
+    /**
+     * Organization's name
+     */
     private String organizationName;
-    /** Billing group ID */
+    /**
+     * Billing group ID
+     */
     private String primaryBillingGroupId;
-    /** Tier of the organization */
+    /**
+     * Tier of the organization
+     */
     private UserOrganizationCreateRequestBodyTier tier;
     /**
      * Instantiates a new UserOrganizationCreateRequestBody and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public UserOrganizationCreateRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -32,16 +39,16 @@ public class UserOrganizationCreateRequestBody implements AdditionalDataHolder, 
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a UserOrganizationCreateRequestBody
      */
-    @javax.annotation.Nonnull
-    public static UserOrganizationCreateRequestBody createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static UserOrganizationCreateRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new UserOrganizationCreateRequestBody();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
@@ -49,7 +56,7 @@ public class UserOrganizationCreateRequestBody implements AdditionalDataHolder, 
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("organization_name", (n) -> { this.setOrganizationName(n.getStringValue()); });
@@ -59,17 +66,17 @@ public class UserOrganizationCreateRequestBody implements AdditionalDataHolder, 
     }
     /**
      * Gets the organization_name property value. Organization's name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getOrganizationName() {
         return this.organizationName;
     }
     /**
      * Gets the primary_billing_group_id property value. Billing group ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getPrimaryBillingGroupId() {
         return this.primaryBillingGroupId;
     }
@@ -77,17 +84,15 @@ public class UserOrganizationCreateRequestBody implements AdditionalDataHolder, 
      * Gets the tier property value. Tier of the organization
      * @return a UserOrganizationCreateRequestBodyTier
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public UserOrganizationCreateRequestBodyTier getTier() {
         return this.tier;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("organization_name", this.getOrganizationName());
         writer.writeStringValue("primary_billing_group_id", this.getPrimaryBillingGroupId());
@@ -95,39 +100,31 @@ public class UserOrganizationCreateRequestBody implements AdditionalDataHolder, 
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the organization_name property value. Organization's name
-     * @param value Value to set for the organizationName property.
-     * @return a void
+     * @param value Value to set for the organization_name property.
      */
-    @javax.annotation.Nonnull
-    public void setOrganizationName(@javax.annotation.Nullable final String value) {
+    public void setOrganizationName(@jakarta.annotation.Nullable final String value) {
         this.organizationName = value;
     }
     /**
      * Sets the primary_billing_group_id property value. Billing group ID
-     * @param value Value to set for the primaryBillingGroupId property.
-     * @return a void
+     * @param value Value to set for the primary_billing_group_id property.
      */
-    @javax.annotation.Nonnull
-    public void setPrimaryBillingGroupId(@javax.annotation.Nullable final String value) {
+    public void setPrimaryBillingGroupId(@jakarta.annotation.Nullable final String value) {
         this.primaryBillingGroupId = value;
     }
     /**
      * Sets the tier property value. Tier of the organization
      * @param value Value to set for the tier property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setTier(@javax.annotation.Nullable final UserOrganizationCreateRequestBodyTier value) {
+    public void setTier(@jakarta.annotation.Nullable final UserOrganizationCreateRequestBodyTier value) {
         this.tier = value;
     }
 }

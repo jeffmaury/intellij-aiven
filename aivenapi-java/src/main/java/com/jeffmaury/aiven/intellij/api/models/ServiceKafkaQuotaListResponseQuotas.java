@@ -7,24 +7,35 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceKafkaQuotaListResponseQuotas implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** client-id */
+    /**
+     * client-id
+     */
     private String clientId;
-    /** consumer network throttle */
+    /**
+     * consumer network throttle
+     */
     private Double consumerByteRate;
-    /** producer network throttle */
+    /**
+     * producer network throttle
+     */
     private Double producerByteRate;
-    /** cpu percentage throttle */
+    /**
+     * cpu percentage throttle
+     */
     private Double requestPercentage;
-    /** user */
+    /**
+     * user
+     */
     private String user;
     /**
      * Instantiates a new ServiceKafkaQuotaListResponseQuotas and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceKafkaQuotaListResponseQuotas() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -33,32 +44,32 @@ public class ServiceKafkaQuotaListResponseQuotas implements AdditionalDataHolder
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceKafkaQuotaListResponseQuotas
      */
-    @javax.annotation.Nonnull
-    public static ServiceKafkaQuotaListResponseQuotas createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceKafkaQuotaListResponseQuotas createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceKafkaQuotaListResponseQuotas();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the client-id property value. client-id
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getClientId() {
         return this.clientId;
     }
     /**
      * Gets the consumer_byte_rate property value. consumer network throttle
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getConsumerByteRate() {
         return this.consumerByteRate;
     }
@@ -66,7 +77,7 @@ public class ServiceKafkaQuotaListResponseQuotas implements AdditionalDataHolder
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("client-id", (n) -> { this.setClientId(n.getStringValue()); });
@@ -78,35 +89,33 @@ public class ServiceKafkaQuotaListResponseQuotas implements AdditionalDataHolder
     }
     /**
      * Gets the producer_byte_rate property value. producer network throttle
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getProducerByteRate() {
         return this.producerByteRate;
     }
     /**
      * Gets the request_percentage property value. cpu percentage throttle
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getRequestPercentage() {
         return this.requestPercentage;
     }
     /**
      * Gets the user property value. user
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUser() {
         return this.user;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("client-id", this.getClientId());
         writer.writeDoubleValue("consumer_byte_rate", this.getConsumerByteRate());
@@ -116,57 +125,45 @@ public class ServiceKafkaQuotaListResponseQuotas implements AdditionalDataHolder
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the client-id property value. client-id
-     * @param value Value to set for the clientId property.
-     * @return a void
+     * @param value Value to set for the client-id property.
      */
-    @javax.annotation.Nonnull
-    public void setClientId(@javax.annotation.Nullable final String value) {
+    public void setClientId(@jakarta.annotation.Nullable final String value) {
         this.clientId = value;
     }
     /**
      * Sets the consumer_byte_rate property value. consumer network throttle
-     * @param value Value to set for the consumerByteRate property.
-     * @return a void
+     * @param value Value to set for the consumer_byte_rate property.
      */
-    @javax.annotation.Nonnull
-    public void setConsumerByteRate(@javax.annotation.Nullable final Double value) {
+    public void setConsumerByteRate(@jakarta.annotation.Nullable final Double value) {
         this.consumerByteRate = value;
     }
     /**
      * Sets the producer_byte_rate property value. producer network throttle
-     * @param value Value to set for the producerByteRate property.
-     * @return a void
+     * @param value Value to set for the producer_byte_rate property.
      */
-    @javax.annotation.Nonnull
-    public void setProducerByteRate(@javax.annotation.Nullable final Double value) {
+    public void setProducerByteRate(@jakarta.annotation.Nullable final Double value) {
         this.producerByteRate = value;
     }
     /**
      * Sets the request_percentage property value. cpu percentage throttle
-     * @param value Value to set for the requestPercentage property.
-     * @return a void
+     * @param value Value to set for the request_percentage property.
      */
-    @javax.annotation.Nonnull
-    public void setRequestPercentage(@javax.annotation.Nullable final Double value) {
+    public void setRequestPercentage(@jakarta.annotation.Nullable final Double value) {
         this.requestPercentage = value;
     }
     /**
      * Sets the user property value. user
      * @param value Value to set for the user property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setUser(@javax.annotation.Nullable final String value) {
+    public void setUser(@jakarta.annotation.Nullable final String value) {
         this.user = value;
     }
 }

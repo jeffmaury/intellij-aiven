@@ -8,9 +8,12 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}/service/{service_name}/kafka/schema/compatibility
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class CompatibilityRequestBuilder extends BaseRequestBuilder {
-    /** The subjects property */
-    @javax.annotation.Nonnull
+    /**
+     * The subjects property
+     */
+    @jakarta.annotation.Nonnull
     public SubjectsRequestBuilder subjects() {
         return new SubjectsRequestBuilder(pathParameters, requestAdapter);
     }
@@ -18,20 +21,16 @@ public class CompatibilityRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new CompatibilityRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public CompatibilityRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public CompatibilityRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/kafka/schema/compatibility", pathParameters);
     }
     /**
      * Instantiates a new CompatibilityRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public CompatibilityRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public CompatibilityRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/kafka/schema/compatibility", rawUrl);
     }
 }

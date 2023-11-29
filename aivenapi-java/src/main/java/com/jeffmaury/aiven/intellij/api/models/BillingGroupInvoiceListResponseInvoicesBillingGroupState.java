@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Billing group state */
+/**
+ * Billing group state
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum BillingGroupInvoiceListResponseInvoicesBillingGroupState implements ValuedEnum {
     Active("active"),
     Deleted("deleted");
@@ -11,10 +14,10 @@ public enum BillingGroupInvoiceListResponseInvoicesBillingGroupState implements 
     BillingGroupInvoiceListResponseInvoicesBillingGroupState(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static BillingGroupInvoiceListResponseInvoicesBillingGroupState forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static BillingGroupInvoiceListResponseInvoicesBillingGroupState forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "active": return Active;

@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** message.format.version */
+/**
+ * message.format.version
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceKafkaTopicUpdateRequestBodyConfigMessageFormatVersion implements ValuedEnum {
     ZeroEightZero("0.8.0"),
     ZeroEightOne("0.8.1"),
@@ -79,10 +82,10 @@ public enum ServiceKafkaTopicUpdateRequestBodyConfigMessageFormatVersion impleme
     ServiceKafkaTopicUpdateRequestBodyConfigMessageFormatVersion(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceKafkaTopicUpdateRequestBodyConfigMessageFormatVersion forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceKafkaTopicUpdateRequestBodyConfigMessageFormatVersion forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "0.8.0": return ZeroEightZero;

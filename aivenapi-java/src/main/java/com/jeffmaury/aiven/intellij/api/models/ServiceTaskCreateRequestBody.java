@@ -10,22 +10,31 @@ import java.util.Objects;
 /**
  * ServiceTaskCreateRequestBody
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceTaskCreateRequestBody implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Payload to be used with dataset_import */
+    /**
+     * Payload to be used with dataset_import
+     */
     private ServiceTaskCreateRequestBodyDatasetImport datasetImport;
-    /** Payload to be used with migration_check */
+    /**
+     * Payload to be used with migration_check
+     */
     private ServiceTaskCreateRequestBodyMigrationCheck migrationCheck;
-    /** Target version used with upgrade_check */
+    /**
+     * Target version used with upgrade_check
+     */
     private ServiceTaskCreateRequestBodyTargetVersion targetVersion;
-    /** Service task type */
+    /**
+     * Service task type
+     */
     private ServiceTaskCreateRequestBodyTaskType taskType;
     /**
      * Instantiates a new ServiceTaskCreateRequestBody and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceTaskCreateRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -34,16 +43,16 @@ public class ServiceTaskCreateRequestBody implements AdditionalDataHolder, Parsa
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceTaskCreateRequestBody
      */
-    @javax.annotation.Nonnull
-    public static ServiceTaskCreateRequestBody createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceTaskCreateRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceTaskCreateRequestBody();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
@@ -51,7 +60,7 @@ public class ServiceTaskCreateRequestBody implements AdditionalDataHolder, Parsa
      * Gets the dataset_import property value. Payload to be used with dataset_import
      * @return a ServiceTaskCreateRequestBodyDatasetImport
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceTaskCreateRequestBodyDatasetImport getDatasetImport() {
         return this.datasetImport;
     }
@@ -59,7 +68,7 @@ public class ServiceTaskCreateRequestBody implements AdditionalDataHolder, Parsa
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("dataset_import", (n) -> { this.setDatasetImport(n.getObjectValue(ServiceTaskCreateRequestBodyDatasetImport::createFromDiscriminatorValue)); });
@@ -72,7 +81,7 @@ public class ServiceTaskCreateRequestBody implements AdditionalDataHolder, Parsa
      * Gets the migration_check property value. Payload to be used with migration_check
      * @return a ServiceTaskCreateRequestBodyMigrationCheck
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceTaskCreateRequestBodyMigrationCheck getMigrationCheck() {
         return this.migrationCheck;
     }
@@ -80,7 +89,7 @@ public class ServiceTaskCreateRequestBody implements AdditionalDataHolder, Parsa
      * Gets the target_version property value. Target version used with upgrade_check
      * @return a ServiceTaskCreateRequestBodyTargetVersion
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceTaskCreateRequestBodyTargetVersion getTargetVersion() {
         return this.targetVersion;
     }
@@ -88,17 +97,15 @@ public class ServiceTaskCreateRequestBody implements AdditionalDataHolder, Parsa
      * Gets the task_type property value. Service task type
      * @return a ServiceTaskCreateRequestBodyTaskType
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceTaskCreateRequestBodyTaskType getTaskType() {
         return this.taskType;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeObjectValue("dataset_import", this.getDatasetImport());
         writer.writeObjectValue("migration_check", this.getMigrationCheck());
@@ -107,48 +114,38 @@ public class ServiceTaskCreateRequestBody implements AdditionalDataHolder, Parsa
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the dataset_import property value. Payload to be used with dataset_import
-     * @param value Value to set for the datasetImport property.
-     * @return a void
+     * @param value Value to set for the dataset_import property.
      */
-    @javax.annotation.Nonnull
-    public void setDatasetImport(@javax.annotation.Nullable final ServiceTaskCreateRequestBodyDatasetImport value) {
+    public void setDatasetImport(@jakarta.annotation.Nullable final ServiceTaskCreateRequestBodyDatasetImport value) {
         this.datasetImport = value;
     }
     /**
      * Sets the migration_check property value. Payload to be used with migration_check
-     * @param value Value to set for the migrationCheck property.
-     * @return a void
+     * @param value Value to set for the migration_check property.
      */
-    @javax.annotation.Nonnull
-    public void setMigrationCheck(@javax.annotation.Nullable final ServiceTaskCreateRequestBodyMigrationCheck value) {
+    public void setMigrationCheck(@jakarta.annotation.Nullable final ServiceTaskCreateRequestBodyMigrationCheck value) {
         this.migrationCheck = value;
     }
     /**
      * Sets the target_version property value. Target version used with upgrade_check
-     * @param value Value to set for the targetVersion property.
-     * @return a void
+     * @param value Value to set for the target_version property.
      */
-    @javax.annotation.Nonnull
-    public void setTargetVersion(@javax.annotation.Nullable final ServiceTaskCreateRequestBodyTargetVersion value) {
+    public void setTargetVersion(@jakarta.annotation.Nullable final ServiceTaskCreateRequestBodyTargetVersion value) {
         this.targetVersion = value;
     }
     /**
      * Sets the task_type property value. Service task type
-     * @param value Value to set for the taskType property.
-     * @return a void
+     * @param value Value to set for the task_type property.
      */
-    @javax.annotation.Nonnull
-    public void setTaskType(@javax.annotation.Nullable final ServiceTaskCreateRequestBodyTaskType value) {
+    public void setTaskType(@jakarta.annotation.Nullable final ServiceTaskCreateRequestBodyTaskType value) {
         this.taskType = value;
     }
 }

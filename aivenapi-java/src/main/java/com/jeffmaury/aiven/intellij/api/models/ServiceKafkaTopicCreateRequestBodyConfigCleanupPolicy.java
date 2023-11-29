@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** cleanup.policy */
+/**
+ * cleanup.policy
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceKafkaTopicCreateRequestBodyConfigCleanupPolicy implements ValuedEnum {
     Delete("delete"),
     Compact("compact"),
@@ -12,10 +15,10 @@ public enum ServiceKafkaTopicCreateRequestBodyConfigCleanupPolicy implements Val
     ServiceKafkaTopicCreateRequestBodyConfigCleanupPolicy(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceKafkaTopicCreateRequestBodyConfigCleanupPolicy forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceKafkaTopicCreateRequestBodyConfigCleanupPolicy forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "delete": return Delete;

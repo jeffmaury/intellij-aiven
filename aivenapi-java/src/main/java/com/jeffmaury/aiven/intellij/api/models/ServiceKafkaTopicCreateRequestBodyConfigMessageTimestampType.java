@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** message.timestamp.type */
+/**
+ * message.timestamp.type
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceKafkaTopicCreateRequestBodyConfigMessageTimestampType implements ValuedEnum {
     CreateTime("CreateTime"),
     LogAppendTime("LogAppendTime");
@@ -11,10 +14,10 @@ public enum ServiceKafkaTopicCreateRequestBodyConfigMessageTimestampType impleme
     ServiceKafkaTopicCreateRequestBodyConfigMessageTimestampType(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceKafkaTopicCreateRequestBodyConfigMessageTimestampType forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceKafkaTopicCreateRequestBodyConfigMessageTimestampType forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "CreateTime": return CreateTime;

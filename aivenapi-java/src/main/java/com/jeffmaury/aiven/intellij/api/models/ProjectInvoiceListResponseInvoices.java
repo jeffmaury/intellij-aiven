@@ -7,38 +7,63 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProjectInvoiceListResponseInvoices implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Billing group ID */
+    /**
+     * Billing group ID
+     */
     private String billingGroupId;
-    /** Billing group name */
+    /**
+     * Billing group name
+     */
     private String billingGroupName;
-    /** Billing group state */
+    /**
+     * Billing group state
+     */
     private ProjectInvoiceListResponseInvoicesBillingGroupState billingGroupState;
-    /** Billing currency */
+    /**
+     * Billing currency
+     */
     private ProjectInvoiceListResponseInvoicesCurrency currency;
-    /** Authentication cookie for downloads */
+    /**
+     * Authentication cookie for downloads
+     */
     private String downloadCookie;
-    /** The time when the invoice was generated */
+    /**
+     * The time when the invoice was generated
+     */
     private String generatedAt;
-    /** Unique invoice reference code */
+    /**
+     * Unique invoice reference code
+     */
     private String invoiceNumber;
-    /** Period begin */
+    /**
+     * Period begin
+     */
     private String periodBegin;
-    /** Period end */
+    /**
+     * Period end
+     */
     private String periodEnd;
-    /** State of this invoice */
+    /**
+     * State of this invoice
+     */
     private ProjectInvoiceListResponseInvoicesState state;
-    /** Total including taxes */
+    /**
+     * Total including taxes
+     */
     private String totalIncVat;
-    /** Total excluding taxes */
+    /**
+     * Total excluding taxes
+     */
     private String totalVatZero;
     /**
      * Instantiates a new ProjectInvoiceListResponseInvoices and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ProjectInvoiceListResponseInvoices() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -47,32 +72,32 @@ public class ProjectInvoiceListResponseInvoices implements AdditionalDataHolder,
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ProjectInvoiceListResponseInvoices
      */
-    @javax.annotation.Nonnull
-    public static ProjectInvoiceListResponseInvoices createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ProjectInvoiceListResponseInvoices createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ProjectInvoiceListResponseInvoices();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the billing_group_id property value. Billing group ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getBillingGroupId() {
         return this.billingGroupId;
     }
     /**
      * Gets the billing_group_name property value. Billing group name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getBillingGroupName() {
         return this.billingGroupName;
     }
@@ -80,7 +105,7 @@ public class ProjectInvoiceListResponseInvoices implements AdditionalDataHolder,
      * Gets the billing_group_state property value. Billing group state
      * @return a ProjectInvoiceListResponseInvoicesBillingGroupState
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ProjectInvoiceListResponseInvoicesBillingGroupState getBillingGroupState() {
         return this.billingGroupState;
     }
@@ -88,15 +113,15 @@ public class ProjectInvoiceListResponseInvoices implements AdditionalDataHolder,
      * Gets the currency property value. Billing currency
      * @return a ProjectInvoiceListResponseInvoicesCurrency
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ProjectInvoiceListResponseInvoicesCurrency getCurrency() {
         return this.currency;
     }
     /**
      * Gets the download_cookie property value. Authentication cookie for downloads
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDownloadCookie() {
         return this.downloadCookie;
     }
@@ -104,7 +129,7 @@ public class ProjectInvoiceListResponseInvoices implements AdditionalDataHolder,
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(12);
         deserializerMap.put("billing_group_id", (n) -> { this.setBillingGroupId(n.getStringValue()); });
@@ -123,33 +148,33 @@ public class ProjectInvoiceListResponseInvoices implements AdditionalDataHolder,
     }
     /**
      * Gets the generated_at property value. The time when the invoice was generated
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getGeneratedAt() {
         return this.generatedAt;
     }
     /**
      * Gets the invoice_number property value. Unique invoice reference code
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getInvoiceNumber() {
         return this.invoiceNumber;
     }
     /**
      * Gets the period_begin property value. Period begin
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getPeriodBegin() {
         return this.periodBegin;
     }
     /**
      * Gets the period_end property value. Period end
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getPeriodEnd() {
         return this.periodEnd;
     }
@@ -157,33 +182,31 @@ public class ProjectInvoiceListResponseInvoices implements AdditionalDataHolder,
      * Gets the state property value. State of this invoice
      * @return a ProjectInvoiceListResponseInvoicesState
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ProjectInvoiceListResponseInvoicesState getState() {
         return this.state;
     }
     /**
      * Gets the total_inc_vat property value. Total including taxes
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTotalIncVat() {
         return this.totalIncVat;
     }
     /**
      * Gets the total_vat_zero property value. Total excluding taxes
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTotalVatZero() {
         return this.totalVatZero;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("billing_group_id", this.getBillingGroupId());
         writer.writeStringValue("billing_group_name", this.getBillingGroupName());
@@ -200,120 +223,94 @@ public class ProjectInvoiceListResponseInvoices implements AdditionalDataHolder,
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the billing_group_id property value. Billing group ID
-     * @param value Value to set for the billingGroupId property.
-     * @return a void
+     * @param value Value to set for the billing_group_id property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingGroupId(@javax.annotation.Nullable final String value) {
+    public void setBillingGroupId(@jakarta.annotation.Nullable final String value) {
         this.billingGroupId = value;
     }
     /**
      * Sets the billing_group_name property value. Billing group name
-     * @param value Value to set for the billingGroupName property.
-     * @return a void
+     * @param value Value to set for the billing_group_name property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingGroupName(@javax.annotation.Nullable final String value) {
+    public void setBillingGroupName(@jakarta.annotation.Nullable final String value) {
         this.billingGroupName = value;
     }
     /**
      * Sets the billing_group_state property value. Billing group state
-     * @param value Value to set for the billingGroupState property.
-     * @return a void
+     * @param value Value to set for the billing_group_state property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingGroupState(@javax.annotation.Nullable final ProjectInvoiceListResponseInvoicesBillingGroupState value) {
+    public void setBillingGroupState(@jakarta.annotation.Nullable final ProjectInvoiceListResponseInvoicesBillingGroupState value) {
         this.billingGroupState = value;
     }
     /**
      * Sets the currency property value. Billing currency
      * @param value Value to set for the currency property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCurrency(@javax.annotation.Nullable final ProjectInvoiceListResponseInvoicesCurrency value) {
+    public void setCurrency(@jakarta.annotation.Nullable final ProjectInvoiceListResponseInvoicesCurrency value) {
         this.currency = value;
     }
     /**
      * Sets the download_cookie property value. Authentication cookie for downloads
-     * @param value Value to set for the downloadCookie property.
-     * @return a void
+     * @param value Value to set for the download_cookie property.
      */
-    @javax.annotation.Nonnull
-    public void setDownloadCookie(@javax.annotation.Nullable final String value) {
+    public void setDownloadCookie(@jakarta.annotation.Nullable final String value) {
         this.downloadCookie = value;
     }
     /**
      * Sets the generated_at property value. The time when the invoice was generated
-     * @param value Value to set for the generatedAt property.
-     * @return a void
+     * @param value Value to set for the generated_at property.
      */
-    @javax.annotation.Nonnull
-    public void setGeneratedAt(@javax.annotation.Nullable final String value) {
+    public void setGeneratedAt(@jakarta.annotation.Nullable final String value) {
         this.generatedAt = value;
     }
     /**
      * Sets the invoice_number property value. Unique invoice reference code
-     * @param value Value to set for the invoiceNumber property.
-     * @return a void
+     * @param value Value to set for the invoice_number property.
      */
-    @javax.annotation.Nonnull
-    public void setInvoiceNumber(@javax.annotation.Nullable final String value) {
+    public void setInvoiceNumber(@jakarta.annotation.Nullable final String value) {
         this.invoiceNumber = value;
     }
     /**
      * Sets the period_begin property value. Period begin
-     * @param value Value to set for the periodBegin property.
-     * @return a void
+     * @param value Value to set for the period_begin property.
      */
-    @javax.annotation.Nonnull
-    public void setPeriodBegin(@javax.annotation.Nullable final String value) {
+    public void setPeriodBegin(@jakarta.annotation.Nullable final String value) {
         this.periodBegin = value;
     }
     /**
      * Sets the period_end property value. Period end
-     * @param value Value to set for the periodEnd property.
-     * @return a void
+     * @param value Value to set for the period_end property.
      */
-    @javax.annotation.Nonnull
-    public void setPeriodEnd(@javax.annotation.Nullable final String value) {
+    public void setPeriodEnd(@jakarta.annotation.Nullable final String value) {
         this.periodEnd = value;
     }
     /**
      * Sets the state property value. State of this invoice
      * @param value Value to set for the state property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setState(@javax.annotation.Nullable final ProjectInvoiceListResponseInvoicesState value) {
+    public void setState(@jakarta.annotation.Nullable final ProjectInvoiceListResponseInvoicesState value) {
         this.state = value;
     }
     /**
      * Sets the total_inc_vat property value. Total including taxes
-     * @param value Value to set for the totalIncVat property.
-     * @return a void
+     * @param value Value to set for the total_inc_vat property.
      */
-    @javax.annotation.Nonnull
-    public void setTotalIncVat(@javax.annotation.Nullable final String value) {
+    public void setTotalIncVat(@jakarta.annotation.Nullable final String value) {
         this.totalIncVat = value;
     }
     /**
      * Sets the total_vat_zero property value. Total excluding taxes
-     * @param value Value to set for the totalVatZero property.
-     * @return a void
+     * @param value Value to set for the total_vat_zero property.
      */
-    @javax.annotation.Nonnull
-    public void setTotalVatZero(@javax.annotation.Nullable final String value) {
+    public void setTotalVatZero(@jakarta.annotation.Nullable final String value) {
         this.totalVatZero = value;
     }
 }

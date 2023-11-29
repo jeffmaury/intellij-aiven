@@ -7,26 +7,39 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceFlinkCreateApplicationVersionResponseSources implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Columns */
+    /**
+     * Columns
+     */
     private java.util.List<ServiceFlinkCreateApplicationVersionResponseSourcesColumns> columns;
-    /** The CREATE TABLE statement */
+    /**
+     * The CREATE TABLE statement
+     */
     private String createTable;
-    /** Integration ID */
+    /**
+     * Integration ID
+     */
     private String integrationId;
-    /** Option */
+    /**
+     * Option
+     */
     private ServiceFlinkCreateApplicationVersionResponseSourcesOptions options;
-    /** Source ID */
+    /**
+     * Source ID
+     */
     private String tableId;
-    /** Table name */
+    /**
+     * Table name
+     */
     private String tableName;
     /**
      * Instantiates a new ServiceFlinkCreateApplicationVersionResponseSources and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceFlinkCreateApplicationVersionResponseSources() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -35,32 +48,32 @@ public class ServiceFlinkCreateApplicationVersionResponseSources implements Addi
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceFlinkCreateApplicationVersionResponseSources
      */
-    @javax.annotation.Nonnull
-    public static ServiceFlinkCreateApplicationVersionResponseSources createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceFlinkCreateApplicationVersionResponseSources createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceFlinkCreateApplicationVersionResponseSources();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the columns property value. Columns
-     * @return a ServiceFlinkCreateApplicationVersionResponseSourcesColumns
+     * @return a java.util.List<ServiceFlinkCreateApplicationVersionResponseSourcesColumns>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceFlinkCreateApplicationVersionResponseSourcesColumns> getColumns() {
         return this.columns;
     }
     /**
      * Gets the create_table property value. The CREATE TABLE statement
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCreateTable() {
         return this.createTable;
     }
@@ -68,7 +81,7 @@ public class ServiceFlinkCreateApplicationVersionResponseSources implements Addi
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("columns", (n) -> { this.setColumns(n.getCollectionOfObjectValues(ServiceFlinkCreateApplicationVersionResponseSourcesColumns::createFromDiscriminatorValue)); });
@@ -81,9 +94,9 @@ public class ServiceFlinkCreateApplicationVersionResponseSources implements Addi
     }
     /**
      * Gets the integration_id property value. Integration ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getIntegrationId() {
         return this.integrationId;
     }
@@ -91,33 +104,31 @@ public class ServiceFlinkCreateApplicationVersionResponseSources implements Addi
      * Gets the options property value. Option
      * @return a ServiceFlinkCreateApplicationVersionResponseSourcesOptions
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceFlinkCreateApplicationVersionResponseSourcesOptions getOptions() {
         return this.options;
     }
     /**
      * Gets the table_id property value. Source ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTableId() {
         return this.tableId;
     }
     /**
      * Gets the table_name property value. Table name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTableName() {
         return this.tableName;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfObjectValues("columns", this.getColumns());
         writer.writeStringValue("create_table", this.getCreateTable());
@@ -128,66 +139,52 @@ public class ServiceFlinkCreateApplicationVersionResponseSources implements Addi
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the columns property value. Columns
      * @param value Value to set for the columns property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setColumns(@javax.annotation.Nullable final java.util.List<ServiceFlinkCreateApplicationVersionResponseSourcesColumns> value) {
+    public void setColumns(@jakarta.annotation.Nullable final java.util.List<ServiceFlinkCreateApplicationVersionResponseSourcesColumns> value) {
         this.columns = value;
     }
     /**
      * Sets the create_table property value. The CREATE TABLE statement
-     * @param value Value to set for the createTable property.
-     * @return a void
+     * @param value Value to set for the create_table property.
      */
-    @javax.annotation.Nonnull
-    public void setCreateTable(@javax.annotation.Nullable final String value) {
+    public void setCreateTable(@jakarta.annotation.Nullable final String value) {
         this.createTable = value;
     }
     /**
      * Sets the integration_id property value. Integration ID
-     * @param value Value to set for the integrationId property.
-     * @return a void
+     * @param value Value to set for the integration_id property.
      */
-    @javax.annotation.Nonnull
-    public void setIntegrationId(@javax.annotation.Nullable final String value) {
+    public void setIntegrationId(@jakarta.annotation.Nullable final String value) {
         this.integrationId = value;
     }
     /**
      * Sets the options property value. Option
      * @param value Value to set for the options property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setOptions(@javax.annotation.Nullable final ServiceFlinkCreateApplicationVersionResponseSourcesOptions value) {
+    public void setOptions(@jakarta.annotation.Nullable final ServiceFlinkCreateApplicationVersionResponseSourcesOptions value) {
         this.options = value;
     }
     /**
      * Sets the table_id property value. Source ID
-     * @param value Value to set for the tableId property.
-     * @return a void
+     * @param value Value to set for the table_id property.
      */
-    @javax.annotation.Nonnull
-    public void setTableId(@javax.annotation.Nullable final String value) {
+    public void setTableId(@jakarta.annotation.Nullable final String value) {
         this.tableId = value;
     }
     /**
      * Sets the table_name property value. Table name
-     * @param value Value to set for the tableName property.
-     * @return a void
+     * @param value Value to set for the table_name property.
      */
-    @javax.annotation.Nonnull
-    public void setTableName(@javax.annotation.Nullable final String value) {
+    public void setTableName(@jakarta.annotation.Nullable final String value) {
         this.tableName = value;
     }
 }

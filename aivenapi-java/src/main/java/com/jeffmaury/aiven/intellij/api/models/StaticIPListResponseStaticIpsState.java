@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Static IP address state */
+/**
+ * Static IP address state
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum StaticIPListResponseStaticIpsState implements ValuedEnum {
     Creating("creating"),
     Created("created"),
@@ -15,10 +18,10 @@ public enum StaticIPListResponseStaticIpsState implements ValuedEnum {
     StaticIPListResponseStaticIpsState(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static StaticIPListResponseStaticIpsState forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static StaticIPListResponseStaticIpsState forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "creating": return Creating;

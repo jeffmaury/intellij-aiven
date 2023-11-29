@@ -7,40 +7,67 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class AccessTokenListResponseTokens implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** True for tokens explicitly created via the access_tokens API, false for tokens created via login. */
+    /**
+     * True for tokens explicitly created via the access_tokens API, false for tokens created via login.
+     */
     private Boolean createdManually;
-    /** Timestamp when the access token was created */
+    /**
+     * Timestamp when the access token was created
+     */
     private String createTime;
-    /** true if API request was made with this access token */
+    /**
+     * true if API request was made with this access token
+     */
     private Boolean currentlyActive;
-    /** Name / description of an access token */
+    /**
+     * Name / description of an access token
+     */
     private String description;
-    /** Timestamp when the access token will expire unless extended, if ever */
+    /**
+     * Timestamp when the access token will expire unless extended, if ever
+     */
     private String expiryTime;
-    /** Extend token expiration time when token is used. Only applicable if max_age_seconds is specified. */
+    /**
+     * Extend token expiration time when token is used. Only applicable if max_age_seconds is specified.
+     */
     private Boolean extendWhenUsed;
-    /** IP address the access token was last used from in case it has ever been used */
+    /**
+     * IP address the access token was last used from in case it has ever been used
+     */
     private String lastIp;
-    /** Timestamp when the access token was last used, if ever */
+    /**
+     * Timestamp when the access token was last used, if ever
+     */
     private String lastUsedTime;
-    /** User agent string of the client that last used the token in case it has ever been used */
+    /**
+     * User agent string of the client that last used the token in case it has ever been used
+     */
     private String lastUserAgent;
-    /** Human readable user agent string of the client that last used the token in case user agent is known */
+    /**
+     * Human readable user agent string of the client that last used the token in case user agent is known
+     */
     private String lastUserAgentHumanReadable;
-    /** Time the token remains valid since creation (or since last use if extend_when_used is true) */
+    /**
+     * Time the token remains valid since creation (or since last use if extend_when_used is true)
+     */
     private Double maxAgeSeconds;
-    /** Scopes this token is restricted to, if specified */
+    /**
+     * Scopes this token is restricted to, if specified
+     */
     private java.util.List<String> scopes;
-    /** First characters of the actual token value. Full value is only exposed after creation. This value is used when updating or revoking tokens. Note that the value may contain /, + and = characters and must be URL encoded when used (/ =&gt; %2F, + =&gt; %2B, = =&gt; %3D). */
+    /**
+     * First characters of the actual token value. Full value is only exposed after creation. This value is used when updating or revoking tokens. Note that the value may contain /, + and = characters and must be URL encoded when used (/ =&gt; %2F, + =&gt; %2B, = =&gt; %3D).
+     */
     private String tokenPrefix;
     /**
      * Instantiates a new AccessTokenListResponseTokens and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public AccessTokenListResponseTokens() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -49,64 +76,64 @@ public class AccessTokenListResponseTokens implements AdditionalDataHolder, Pars
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a AccessTokenListResponseTokens
      */
-    @javax.annotation.Nonnull
-    public static AccessTokenListResponseTokens createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static AccessTokenListResponseTokens createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new AccessTokenListResponseTokens();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the created_manually property value. True for tokens explicitly created via the access_tokens API, false for tokens created via login.
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getCreatedManually() {
         return this.createdManually;
     }
     /**
      * Gets the create_time property value. Timestamp when the access token was created
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCreateTime() {
         return this.createTime;
     }
     /**
      * Gets the currently_active property value. true if API request was made with this access token
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getCurrentlyActive() {
         return this.currentlyActive;
     }
     /**
      * Gets the description property value. Name / description of an access token
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDescription() {
         return this.description;
     }
     /**
      * Gets the expiry_time property value. Timestamp when the access token will expire unless extended, if ever
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getExpiryTime() {
         return this.expiryTime;
     }
     /**
      * Gets the extend_when_used property value. Extend token expiration time when token is used. Only applicable if max_age_seconds is specified.
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getExtendWhenUsed() {
         return this.extendWhenUsed;
     }
@@ -114,7 +141,7 @@ public class AccessTokenListResponseTokens implements AdditionalDataHolder, Pars
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(13);
         deserializerMap.put("created_manually", (n) -> { this.setCreatedManually(n.getBooleanValue()); });
@@ -134,67 +161,65 @@ public class AccessTokenListResponseTokens implements AdditionalDataHolder, Pars
     }
     /**
      * Gets the last_ip property value. IP address the access token was last used from in case it has ever been used
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLastIp() {
         return this.lastIp;
     }
     /**
      * Gets the last_used_time property value. Timestamp when the access token was last used, if ever
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLastUsedTime() {
         return this.lastUsedTime;
     }
     /**
      * Gets the last_user_agent property value. User agent string of the client that last used the token in case it has ever been used
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLastUserAgent() {
         return this.lastUserAgent;
     }
     /**
      * Gets the last_user_agent_human_readable property value. Human readable user agent string of the client that last used the token in case user agent is known
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLastUserAgentHumanReadable() {
         return this.lastUserAgentHumanReadable;
     }
     /**
      * Gets the max_age_seconds property value. Time the token remains valid since creation (or since last use if extend_when_used is true)
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getMaxAgeSeconds() {
         return this.maxAgeSeconds;
     }
     /**
      * Gets the scopes property value. Scopes this token is restricted to, if specified
-     * @return a string
+     * @return a java.util.List<String>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<String> getScopes() {
         return this.scopes;
     }
     /**
      * Gets the token_prefix property value. First characters of the actual token value. Full value is only exposed after creation. This value is used when updating or revoking tokens. Note that the value may contain /, + and = characters and must be URL encoded when used (/ =&gt; %2F, + =&gt; %2B, = =&gt; %3D).
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTokenPrefix() {
         return this.tokenPrefix;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeBooleanValue("created_manually", this.getCreatedManually());
         writer.writeStringValue("create_time", this.getCreateTime());
@@ -212,129 +237,101 @@ public class AccessTokenListResponseTokens implements AdditionalDataHolder, Pars
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the created_manually property value. True for tokens explicitly created via the access_tokens API, false for tokens created via login.
-     * @param value Value to set for the createdManually property.
-     * @return a void
+     * @param value Value to set for the created_manually property.
      */
-    @javax.annotation.Nonnull
-    public void setCreatedManually(@javax.annotation.Nullable final Boolean value) {
+    public void setCreatedManually(@jakarta.annotation.Nullable final Boolean value) {
         this.createdManually = value;
     }
     /**
      * Sets the create_time property value. Timestamp when the access token was created
-     * @param value Value to set for the createTime property.
-     * @return a void
+     * @param value Value to set for the create_time property.
      */
-    @javax.annotation.Nonnull
-    public void setCreateTime(@javax.annotation.Nullable final String value) {
+    public void setCreateTime(@jakarta.annotation.Nullable final String value) {
         this.createTime = value;
     }
     /**
      * Sets the currently_active property value. true if API request was made with this access token
-     * @param value Value to set for the currentlyActive property.
-     * @return a void
+     * @param value Value to set for the currently_active property.
      */
-    @javax.annotation.Nonnull
-    public void setCurrentlyActive(@javax.annotation.Nullable final Boolean value) {
+    public void setCurrentlyActive(@jakarta.annotation.Nullable final Boolean value) {
         this.currentlyActive = value;
     }
     /**
      * Sets the description property value. Name / description of an access token
      * @param value Value to set for the description property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDescription(@javax.annotation.Nullable final String value) {
+    public void setDescription(@jakarta.annotation.Nullable final String value) {
         this.description = value;
     }
     /**
      * Sets the expiry_time property value. Timestamp when the access token will expire unless extended, if ever
-     * @param value Value to set for the expiryTime property.
-     * @return a void
+     * @param value Value to set for the expiry_time property.
      */
-    @javax.annotation.Nonnull
-    public void setExpiryTime(@javax.annotation.Nullable final String value) {
+    public void setExpiryTime(@jakarta.annotation.Nullable final String value) {
         this.expiryTime = value;
     }
     /**
      * Sets the extend_when_used property value. Extend token expiration time when token is used. Only applicable if max_age_seconds is specified.
-     * @param value Value to set for the extendWhenUsed property.
-     * @return a void
+     * @param value Value to set for the extend_when_used property.
      */
-    @javax.annotation.Nonnull
-    public void setExtendWhenUsed(@javax.annotation.Nullable final Boolean value) {
+    public void setExtendWhenUsed(@jakarta.annotation.Nullable final Boolean value) {
         this.extendWhenUsed = value;
     }
     /**
      * Sets the last_ip property value. IP address the access token was last used from in case it has ever been used
-     * @param value Value to set for the lastIp property.
-     * @return a void
+     * @param value Value to set for the last_ip property.
      */
-    @javax.annotation.Nonnull
-    public void setLastIp(@javax.annotation.Nullable final String value) {
+    public void setLastIp(@jakarta.annotation.Nullable final String value) {
         this.lastIp = value;
     }
     /**
      * Sets the last_used_time property value. Timestamp when the access token was last used, if ever
-     * @param value Value to set for the lastUsedTime property.
-     * @return a void
+     * @param value Value to set for the last_used_time property.
      */
-    @javax.annotation.Nonnull
-    public void setLastUsedTime(@javax.annotation.Nullable final String value) {
+    public void setLastUsedTime(@jakarta.annotation.Nullable final String value) {
         this.lastUsedTime = value;
     }
     /**
      * Sets the last_user_agent property value. User agent string of the client that last used the token in case it has ever been used
-     * @param value Value to set for the lastUserAgent property.
-     * @return a void
+     * @param value Value to set for the last_user_agent property.
      */
-    @javax.annotation.Nonnull
-    public void setLastUserAgent(@javax.annotation.Nullable final String value) {
+    public void setLastUserAgent(@jakarta.annotation.Nullable final String value) {
         this.lastUserAgent = value;
     }
     /**
      * Sets the last_user_agent_human_readable property value. Human readable user agent string of the client that last used the token in case user agent is known
-     * @param value Value to set for the lastUserAgentHumanReadable property.
-     * @return a void
+     * @param value Value to set for the last_user_agent_human_readable property.
      */
-    @javax.annotation.Nonnull
-    public void setLastUserAgentHumanReadable(@javax.annotation.Nullable final String value) {
+    public void setLastUserAgentHumanReadable(@jakarta.annotation.Nullable final String value) {
         this.lastUserAgentHumanReadable = value;
     }
     /**
      * Sets the max_age_seconds property value. Time the token remains valid since creation (or since last use if extend_when_used is true)
-     * @param value Value to set for the maxAgeSeconds property.
-     * @return a void
+     * @param value Value to set for the max_age_seconds property.
      */
-    @javax.annotation.Nonnull
-    public void setMaxAgeSeconds(@javax.annotation.Nullable final Double value) {
+    public void setMaxAgeSeconds(@jakarta.annotation.Nullable final Double value) {
         this.maxAgeSeconds = value;
     }
     /**
      * Sets the scopes property value. Scopes this token is restricted to, if specified
      * @param value Value to set for the scopes property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setScopes(@javax.annotation.Nullable final java.util.List<String> value) {
+    public void setScopes(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.scopes = value;
     }
     /**
      * Sets the token_prefix property value. First characters of the actual token value. Full value is only exposed after creation. This value is used when updating or revoking tokens. Note that the value may contain /, + and = characters and must be URL encoded when used (/ =&gt; %2F, + =&gt; %2B, = =&gt; %3D).
-     * @param value Value to set for the tokenPrefix property.
-     * @return a void
+     * @param value Value to set for the token_prefix property.
      */
-    @javax.annotation.Nonnull
-    public void setTokenPrefix(@javax.annotation.Nullable final String value) {
+    public void setTokenPrefix(@jakarta.annotation.Nullable final String value) {
         this.tokenPrefix = value;
     }
 }

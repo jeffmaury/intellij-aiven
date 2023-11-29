@@ -10,34 +10,55 @@ import java.util.Objects;
 /**
  * ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Topic configuration properties that should not be replicated */
+    /**
+     * Topic configuration properties that should not be replicated
+     */
     private String configPropertiesExclude;
-    /** Emit backward heartbeats enabled */
+    /**
+     * Emit backward heartbeats enabled
+     */
     private Boolean emitBackwardHeartbeatsEnabled;
-    /** Emit heartbeats enabled */
+    /**
+     * Emit heartbeats enabled
+     */
     private Boolean emitHeartbeatsEnabled;
-    /** Is replication flow enabled */
+    /**
+     * Is replication flow enabled
+     */
     private Boolean enabled;
-    /** Offset syncs topic location */
+    /**
+     * Offset syncs topic location
+     */
     private ServiceKafkaMirrorMakerPatchReplicationFlowRequestBodyOffsetSyncsTopicLocation offsetSyncsTopicLocation;
-    /** Replication policy class */
+    /**
+     * Replication policy class
+     */
     private ServiceKafkaMirrorMakerPatchReplicationFlowRequestBodyReplicationPolicyClass replicationPolicyClass;
-    /** Sync consumer group offsets */
+    /**
+     * Sync consumer group offsets
+     */
     private Boolean syncGroupOffsetsEnabled;
-    /** Frequency of consumer group offset sync */
+    /**
+     * Frequency of consumer group offset sync
+     */
     private Integer syncGroupOffsetsIntervalSeconds;
-    /** List of topics and/or regular expressions to replicate. */
+    /**
+     * List of topics and/or regular expressions to replicate.
+     */
     private java.util.List<String> topics;
-    /** List of topics and/or regular expressions to not replicate. */
+    /**
+     * List of topics and/or regular expressions to not replicate.
+     */
     private java.util.List<String> topicsBlacklist;
     /**
      * Instantiates a new ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -46,48 +67,48 @@ public class ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody implements A
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody
      */
-    @javax.annotation.Nonnull
-    public static ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the config_properties_exclude property value. Topic configuration properties that should not be replicated
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getConfigPropertiesExclude() {
         return this.configPropertiesExclude;
     }
     /**
      * Gets the emit_backward_heartbeats_enabled property value. Emit backward heartbeats enabled
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getEmitBackwardHeartbeatsEnabled() {
         return this.emitBackwardHeartbeatsEnabled;
     }
     /**
      * Gets the emit_heartbeats_enabled property value. Emit heartbeats enabled
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getEmitHeartbeatsEnabled() {
         return this.emitHeartbeatsEnabled;
     }
     /**
      * Gets the enabled property value. Is replication flow enabled
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -95,7 +116,7 @@ public class ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody implements A
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
         deserializerMap.put("config_properties_exclude", (n) -> { this.setConfigPropertiesExclude(n.getStringValue()); });
@@ -114,7 +135,7 @@ public class ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody implements A
      * Gets the offset_syncs_topic_location property value. Offset syncs topic location
      * @return a ServiceKafkaMirrorMakerPatchReplicationFlowRequestBodyOffsetSyncsTopicLocation
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceKafkaMirrorMakerPatchReplicationFlowRequestBodyOffsetSyncsTopicLocation getOffsetSyncsTopicLocation() {
         return this.offsetSyncsTopicLocation;
     }
@@ -122,49 +143,47 @@ public class ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody implements A
      * Gets the replication_policy_class property value. Replication policy class
      * @return a ServiceKafkaMirrorMakerPatchReplicationFlowRequestBodyReplicationPolicyClass
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceKafkaMirrorMakerPatchReplicationFlowRequestBodyReplicationPolicyClass getReplicationPolicyClass() {
         return this.replicationPolicyClass;
     }
     /**
      * Gets the sync_group_offsets_enabled property value. Sync consumer group offsets
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getSyncGroupOffsetsEnabled() {
         return this.syncGroupOffsetsEnabled;
     }
     /**
      * Gets the sync_group_offsets_interval_seconds property value. Frequency of consumer group offset sync
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getSyncGroupOffsetsIntervalSeconds() {
         return this.syncGroupOffsetsIntervalSeconds;
     }
     /**
      * Gets the topics property value. List of topics and/or regular expressions to replicate.
-     * @return a string
+     * @return a java.util.List<String>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<String> getTopics() {
         return this.topics;
     }
     /**
      * Gets the topics.blacklist property value. List of topics and/or regular expressions to not replicate.
-     * @return a string
+     * @return a java.util.List<String>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<String> getTopicsBlacklist() {
         return this.topicsBlacklist;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("config_properties_exclude", this.getConfigPropertiesExclude());
         writer.writeBooleanValue("emit_backward_heartbeats_enabled", this.getEmitBackwardHeartbeatsEnabled());
@@ -179,102 +198,80 @@ public class ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody implements A
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the config_properties_exclude property value. Topic configuration properties that should not be replicated
-     * @param value Value to set for the configPropertiesExclude property.
-     * @return a void
+     * @param value Value to set for the config_properties_exclude property.
      */
-    @javax.annotation.Nonnull
-    public void setConfigPropertiesExclude(@javax.annotation.Nullable final String value) {
+    public void setConfigPropertiesExclude(@jakarta.annotation.Nullable final String value) {
         this.configPropertiesExclude = value;
     }
     /**
      * Sets the emit_backward_heartbeats_enabled property value. Emit backward heartbeats enabled
-     * @param value Value to set for the emitBackwardHeartbeatsEnabled property.
-     * @return a void
+     * @param value Value to set for the emit_backward_heartbeats_enabled property.
      */
-    @javax.annotation.Nonnull
-    public void setEmitBackwardHeartbeatsEnabled(@javax.annotation.Nullable final Boolean value) {
+    public void setEmitBackwardHeartbeatsEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.emitBackwardHeartbeatsEnabled = value;
     }
     /**
      * Sets the emit_heartbeats_enabled property value. Emit heartbeats enabled
-     * @param value Value to set for the emitHeartbeatsEnabled property.
-     * @return a void
+     * @param value Value to set for the emit_heartbeats_enabled property.
      */
-    @javax.annotation.Nonnull
-    public void setEmitHeartbeatsEnabled(@javax.annotation.Nullable final Boolean value) {
+    public void setEmitHeartbeatsEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.emitHeartbeatsEnabled = value;
     }
     /**
      * Sets the enabled property value. Is replication flow enabled
      * @param value Value to set for the enabled property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setEnabled(@javax.annotation.Nullable final Boolean value) {
+    public void setEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.enabled = value;
     }
     /**
      * Sets the offset_syncs_topic_location property value. Offset syncs topic location
-     * @param value Value to set for the offsetSyncsTopicLocation property.
-     * @return a void
+     * @param value Value to set for the offset_syncs_topic_location property.
      */
-    @javax.annotation.Nonnull
-    public void setOffsetSyncsTopicLocation(@javax.annotation.Nullable final ServiceKafkaMirrorMakerPatchReplicationFlowRequestBodyOffsetSyncsTopicLocation value) {
+    public void setOffsetSyncsTopicLocation(@jakarta.annotation.Nullable final ServiceKafkaMirrorMakerPatchReplicationFlowRequestBodyOffsetSyncsTopicLocation value) {
         this.offsetSyncsTopicLocation = value;
     }
     /**
      * Sets the replication_policy_class property value. Replication policy class
-     * @param value Value to set for the replicationPolicyClass property.
-     * @return a void
+     * @param value Value to set for the replication_policy_class property.
      */
-    @javax.annotation.Nonnull
-    public void setReplicationPolicyClass(@javax.annotation.Nullable final ServiceKafkaMirrorMakerPatchReplicationFlowRequestBodyReplicationPolicyClass value) {
+    public void setReplicationPolicyClass(@jakarta.annotation.Nullable final ServiceKafkaMirrorMakerPatchReplicationFlowRequestBodyReplicationPolicyClass value) {
         this.replicationPolicyClass = value;
     }
     /**
      * Sets the sync_group_offsets_enabled property value. Sync consumer group offsets
-     * @param value Value to set for the syncGroupOffsetsEnabled property.
-     * @return a void
+     * @param value Value to set for the sync_group_offsets_enabled property.
      */
-    @javax.annotation.Nonnull
-    public void setSyncGroupOffsetsEnabled(@javax.annotation.Nullable final Boolean value) {
+    public void setSyncGroupOffsetsEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.syncGroupOffsetsEnabled = value;
     }
     /**
      * Sets the sync_group_offsets_interval_seconds property value. Frequency of consumer group offset sync
-     * @param value Value to set for the syncGroupOffsetsIntervalSeconds property.
-     * @return a void
+     * @param value Value to set for the sync_group_offsets_interval_seconds property.
      */
-    @javax.annotation.Nonnull
-    public void setSyncGroupOffsetsIntervalSeconds(@javax.annotation.Nullable final Integer value) {
+    public void setSyncGroupOffsetsIntervalSeconds(@jakarta.annotation.Nullable final Integer value) {
         this.syncGroupOffsetsIntervalSeconds = value;
     }
     /**
      * Sets the topics property value. List of topics and/or regular expressions to replicate.
      * @param value Value to set for the topics property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setTopics(@javax.annotation.Nullable final java.util.List<String> value) {
+    public void setTopics(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.topics = value;
     }
     /**
      * Sets the topics.blacklist property value. List of topics and/or regular expressions to not replicate.
-     * @param value Value to set for the topicsBlacklist property.
-     * @return a void
+     * @param value Value to set for the topics.blacklist property.
      */
-    @javax.annotation.Nonnull
-    public void setTopicsBlacklist(@javax.annotation.Nullable final java.util.List<String> value) {
+    public void setTopicsBlacklist(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.topicsBlacklist = value;
     }
 }

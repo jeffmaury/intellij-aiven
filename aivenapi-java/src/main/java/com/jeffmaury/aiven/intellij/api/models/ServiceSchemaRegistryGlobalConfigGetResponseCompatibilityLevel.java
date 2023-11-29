@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Configuration */
+/**
+ * Configuration
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceSchemaRegistryGlobalConfigGetResponseCompatibilityLevel implements ValuedEnum {
     BACKWARD("BACKWARD"),
     BACKWARD_TRANSITIVE("BACKWARD_TRANSITIVE"),
@@ -16,10 +19,10 @@ public enum ServiceSchemaRegistryGlobalConfigGetResponseCompatibilityLevel imple
     ServiceSchemaRegistryGlobalConfigGetResponseCompatibilityLevel(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceSchemaRegistryGlobalConfigGetResponseCompatibilityLevel forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceSchemaRegistryGlobalConfigGetResponseCompatibilityLevel forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "BACKWARD": return BACKWARD;

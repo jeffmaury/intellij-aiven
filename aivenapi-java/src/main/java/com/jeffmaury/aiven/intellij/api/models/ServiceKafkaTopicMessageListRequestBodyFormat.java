@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** The format of consumed messages, which is used to convert messages into a JSON-compatible form. If unspecified, defaults to binary */
+/**
+ * The format of consumed messages, which is used to convert messages into a JSON-compatible form. If unspecified, defaults to binary
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceKafkaTopicMessageListRequestBodyFormat implements ValuedEnum {
     Binary("binary"),
     Json("json"),
@@ -14,10 +17,10 @@ public enum ServiceKafkaTopicMessageListRequestBodyFormat implements ValuedEnum 
     ServiceKafkaTopicMessageListRequestBodyFormat(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceKafkaTopicMessageListRequestBodyFormat forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceKafkaTopicMessageListRequestBodyFormat forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "binary": return Binary;

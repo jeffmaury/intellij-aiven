@@ -1,17 +1,19 @@
 {
   "descriptionHash": "C9022EA07B6D98578273359103846FF0248D225C2D181F5E8D68ACD7431AE79FDF2FA38796A8675BAD2A43A4DAF4CBC6501DB388B96395DE9462427D281C0FEB",
-  "descriptionLocation": "C:\\Users\\Jeff\\work\\src\\github.com\\jeffmaury\\intellij-aiven\\src\\main\\resources\\openapi.json",
+  "descriptionLocation": "..\\..\\..\\..\\..\\..\\..\\..\\..\\src\\main\\resources\\openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.2.0",
+  "kiotaVersion": "1.8.2",
   "clientClassName": "AivenClient",
   "clientNamespaceName": "com.jeffmaury.aiven.intellij.api",
   "language": "Java",
   "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
   "includeAdditionalData": true,
   "serializers": [
     "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
     "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
-    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory"
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
   ],
   "deserializers": [
     "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
@@ -20,8 +22,9 @@
   ],
   "structuredMimeTypes": [
     "application/json",
-    "text/plain",
-    "application/x-www-form-urlencoded"
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
   ],
   "includePatterns": [],
   "excludePatterns": [],

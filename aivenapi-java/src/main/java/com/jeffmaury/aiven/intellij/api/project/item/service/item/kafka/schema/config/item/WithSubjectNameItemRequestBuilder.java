@@ -11,7 +11,6 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,73 +18,50 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}/service/{service_name}/kafka/schema/config/{subject_name}
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithSubjectNameItemRequestBuilder extends BaseRequestBuilder {
     /**
      * Instantiates a new WithSubject_nameItemRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public WithSubjectNameItemRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public WithSubjectNameItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/kafka/schema/config/{subject_name}", pathParameters);
     }
     /**
      * Instantiates a new WithSubject_nameItemRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public WithSubjectNameItemRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public WithSubjectNameItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/kafka/schema/config/{subject_name}", rawUrl);
     }
     /**
      * Get configuration for Schema Registry subject
      * @return a CompletableFuture of ServiceSchemaRegistrySubjectConfigGetResponse
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigGetResponse> get() {
-        try {
-            final RequestInformation requestInfo = toGetRequestInformation(null);
-            return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectConfigGetResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigGetResponse> executionException = new java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigGetResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+        return get(null);
     }
     /**
      * Get configuration for Schema Registry subject
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a CompletableFuture of ServiceSchemaRegistrySubjectConfigGetResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigGetResponse> get(@javax.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        try {
-            final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-            return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectConfigGetResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigGetResponse> executionException = new java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigGetResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
+        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectConfigGetResponse::createFromDiscriminatorValue, null);
     }
     /**
      * Edit configuration for Schema Registry subject
      * @param body ServiceSchemaRegistrySubjectConfigPutRequestBody
      * @return a CompletableFuture of ServiceSchemaRegistrySubjectConfigPutResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigPutResponse> put(@javax.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body) {
-        try {
-            final RequestInformation requestInfo = toPutRequestInformation(body, null);
-            return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectConfigPutResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigPutResponse> executionException = new java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigPutResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigPutResponse> put(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body) {
+        return put(body, null);
     }
     /**
      * Edit configuration for Schema Registry subject
@@ -93,24 +69,18 @@ public class WithSubjectNameItemRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a CompletableFuture of ServiceSchemaRegistrySubjectConfigPutResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigPutResponse> put(@javax.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body, @javax.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigPutResponse> put(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        try {
-            final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-            return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectConfigPutResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigPutResponse> executionException = new java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigPutResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+        final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
+        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectConfigPutResponse::createFromDiscriminatorValue, null);
     }
     /**
      * Get configuration for Schema Registry subject
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toGetRequestInformation() throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation() {
         return toGetRequestInformation(null);
     }
     /**
@@ -118,19 +88,19 @@ public class WithSubjectNameItemRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toGetRequestInformation(@javax.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation();
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
-        requestInfo.headers.add("Accept", "application/json");
         if (requestConfiguration != null) {
             final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
             requestConfiguration.accept(requestConfig);
             requestInfo.headers.putAll(requestConfig.headers);
             requestInfo.addRequestOptions(requestConfig.options);
         }
+        requestInfo.httpMethod = HttpMethod.GET;
+        requestInfo.urlTemplate = urlTemplate;
+        requestInfo.pathParameters = pathParameters;
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
@@ -138,8 +108,8 @@ public class WithSubjectNameItemRequestBuilder extends BaseRequestBuilder {
      * @param body ServiceSchemaRegistrySubjectConfigPutRequestBody
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@javax.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body) {
         return toPutRequestInformation(body, null);
     }
     /**
@@ -148,31 +118,43 @@ public class WithSubjectNameItemRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@javax.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body, @javax.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation();
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
-        requestInfo.headers.add("Accept", "application/json");
-        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         if (requestConfiguration != null) {
             final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
             requestConfiguration.accept(requestConfig);
             requestInfo.headers.putAll(requestConfig.headers);
             requestInfo.addRequestOptions(requestConfig.options);
         }
+        requestInfo.httpMethod = HttpMethod.PUT;
+        requestInfo.urlTemplate = urlTemplate;
+        requestInfo.pathParameters = pathParameters;
+        requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
+    }
+    /**
+     * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @return a WithSubjectNameItemRequestBuilder
+     */
+    @jakarta.annotation.Nonnull
+    public WithSubjectNameItemRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+        Objects.requireNonNull(rawUrl);
+        return new WithSubjectNameItemRequestBuilder(rawUrl, requestAdapter);
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
     public class PutRequestConfiguration extends BaseRequestConfiguration {
     }
 }

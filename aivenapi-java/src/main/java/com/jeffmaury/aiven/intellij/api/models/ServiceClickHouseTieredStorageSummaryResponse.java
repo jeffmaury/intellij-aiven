@@ -10,26 +10,39 @@ import java.util.Objects;
 /**
  * ServiceClickHouseTieredStorageSummaryResponse
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceClickHouseTieredStorageSummaryResponse implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** The current cost in USD of tiered storage since the beginning of the billing period */
+    /**
+     * The current cost in USD of tiered storage since the beginning of the billing period
+     */
     private String currentCost;
-    /** List of errors occurred during request processing */
+    /**
+     * List of errors occurred during request processing
+     */
     private java.util.List<ServiceClickHouseTieredStorageSummaryResponseErrors> errors;
-    /** The forecasted cost in USD of tiered storage in the billing period */
+    /**
+     * The forecasted cost in USD of tiered storage in the billing period
+     */
     private String forecastedCost;
-    /** Printable result of the request */
+    /**
+     * Printable result of the request
+     */
     private String message;
-    /** History of usage and cumulative costs in the billing period */
+    /**
+     * History of usage and cumulative costs in the billing period
+     */
     private ServiceClickHouseTieredStorageSummaryResponseStorageUsageHistory storageUsageHistory;
-    /** Total storage usage by tiered storage, in bytes */
+    /**
+     * Total storage usage by tiered storage, in bytes
+     */
     private Integer totalStorageUsage;
     /**
      * Instantiates a new ServiceClickHouseTieredStorageSummaryResponse and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceClickHouseTieredStorageSummaryResponse() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -38,32 +51,32 @@ public class ServiceClickHouseTieredStorageSummaryResponse implements Additional
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceClickHouseTieredStorageSummaryResponse
      */
-    @javax.annotation.Nonnull
-    public static ServiceClickHouseTieredStorageSummaryResponse createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceClickHouseTieredStorageSummaryResponse createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceClickHouseTieredStorageSummaryResponse();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the current_cost property value. The current cost in USD of tiered storage since the beginning of the billing period
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCurrentCost() {
         return this.currentCost;
     }
     /**
      * Gets the errors property value. List of errors occurred during request processing
-     * @return a ServiceClickHouseTieredStorageSummaryResponseErrors
+     * @return a java.util.List<ServiceClickHouseTieredStorageSummaryResponseErrors>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceClickHouseTieredStorageSummaryResponseErrors> getErrors() {
         return this.errors;
     }
@@ -71,7 +84,7 @@ public class ServiceClickHouseTieredStorageSummaryResponse implements Additional
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("current_cost", (n) -> { this.setCurrentCost(n.getStringValue()); });
@@ -84,17 +97,17 @@ public class ServiceClickHouseTieredStorageSummaryResponse implements Additional
     }
     /**
      * Gets the forecasted_cost property value. The forecasted cost in USD of tiered storage in the billing period
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getForecastedCost() {
         return this.forecastedCost;
     }
     /**
      * Gets the message property value. Printable result of the request
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getMessage() {
         return this.message;
     }
@@ -102,25 +115,23 @@ public class ServiceClickHouseTieredStorageSummaryResponse implements Additional
      * Gets the storage_usage_history property value. History of usage and cumulative costs in the billing period
      * @return a ServiceClickHouseTieredStorageSummaryResponseStorageUsageHistory
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceClickHouseTieredStorageSummaryResponseStorageUsageHistory getStorageUsageHistory() {
         return this.storageUsageHistory;
     }
     /**
      * Gets the total_storage_usage property value. Total storage usage by tiered storage, in bytes
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getTotalStorageUsage() {
         return this.totalStorageUsage;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("current_cost", this.getCurrentCost());
         writer.writeCollectionOfObjectValues("errors", this.getErrors());
@@ -131,66 +142,52 @@ public class ServiceClickHouseTieredStorageSummaryResponse implements Additional
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the current_cost property value. The current cost in USD of tiered storage since the beginning of the billing period
-     * @param value Value to set for the currentCost property.
-     * @return a void
+     * @param value Value to set for the current_cost property.
      */
-    @javax.annotation.Nonnull
-    public void setCurrentCost(@javax.annotation.Nullable final String value) {
+    public void setCurrentCost(@jakarta.annotation.Nullable final String value) {
         this.currentCost = value;
     }
     /**
      * Sets the errors property value. List of errors occurred during request processing
      * @param value Value to set for the errors property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setErrors(@javax.annotation.Nullable final java.util.List<ServiceClickHouseTieredStorageSummaryResponseErrors> value) {
+    public void setErrors(@jakarta.annotation.Nullable final java.util.List<ServiceClickHouseTieredStorageSummaryResponseErrors> value) {
         this.errors = value;
     }
     /**
      * Sets the forecasted_cost property value. The forecasted cost in USD of tiered storage in the billing period
-     * @param value Value to set for the forecastedCost property.
-     * @return a void
+     * @param value Value to set for the forecasted_cost property.
      */
-    @javax.annotation.Nonnull
-    public void setForecastedCost(@javax.annotation.Nullable final String value) {
+    public void setForecastedCost(@jakarta.annotation.Nullable final String value) {
         this.forecastedCost = value;
     }
     /**
      * Sets the message property value. Printable result of the request
      * @param value Value to set for the message property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMessage(@javax.annotation.Nullable final String value) {
+    public void setMessage(@jakarta.annotation.Nullable final String value) {
         this.message = value;
     }
     /**
      * Sets the storage_usage_history property value. History of usage and cumulative costs in the billing period
-     * @param value Value to set for the storageUsageHistory property.
-     * @return a void
+     * @param value Value to set for the storage_usage_history property.
      */
-    @javax.annotation.Nonnull
-    public void setStorageUsageHistory(@javax.annotation.Nullable final ServiceClickHouseTieredStorageSummaryResponseStorageUsageHistory value) {
+    public void setStorageUsageHistory(@jakarta.annotation.Nullable final ServiceClickHouseTieredStorageSummaryResponseStorageUsageHistory value) {
         this.storageUsageHistory = value;
     }
     /**
      * Sets the total_storage_usage property value. Total storage usage by tiered storage, in bytes
-     * @param value Value to set for the totalStorageUsage property.
-     * @return a void
+     * @param value Value to set for the total_storage_usage property.
      */
-    @javax.annotation.Nonnull
-    public void setTotalStorageUsage(@javax.annotation.Nullable final Integer value) {
+    public void setTotalStorageUsage(@jakarta.annotation.Nullable final Integer value) {
         this.totalStorageUsage = value;
     }
 }

@@ -7,22 +7,31 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceIntegrationEndpointTypesResponseEndpointTypes implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Endpoint type name */
+    /**
+     * Endpoint type name
+     */
     private String endpointType;
-    /** Supported service types */
+    /**
+     * Supported service types
+     */
     private java.util.List<String> serviceTypes;
-    /** Endpoint type description */
+    /**
+     * Endpoint type description
+     */
     private String title;
-    /** JSON-Schema for the 'user_config' properties */
+    /**
+     * JSON-Schema for the 'user_config' properties
+     */
     private ServiceIntegrationEndpointTypesResponseEndpointTypesUserConfigSchema userConfigSchema;
     /**
      * Instantiates a new ServiceIntegrationEndpointTypesResponseEndpointTypes and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceIntegrationEndpointTypesResponseEndpointTypes() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -31,24 +40,24 @@ public class ServiceIntegrationEndpointTypesResponseEndpointTypes implements Add
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceIntegrationEndpointTypesResponseEndpointTypes
      */
-    @javax.annotation.Nonnull
-    public static ServiceIntegrationEndpointTypesResponseEndpointTypes createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceIntegrationEndpointTypesResponseEndpointTypes createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceIntegrationEndpointTypesResponseEndpointTypes();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the endpoint_type property value. Endpoint type name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getEndpointType() {
         return this.endpointType;
     }
@@ -56,7 +65,7 @@ public class ServiceIntegrationEndpointTypesResponseEndpointTypes implements Add
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("endpoint_type", (n) -> { this.setEndpointType(n.getStringValue()); });
@@ -67,17 +76,17 @@ public class ServiceIntegrationEndpointTypesResponseEndpointTypes implements Add
     }
     /**
      * Gets the service_types property value. Supported service types
-     * @return a string
+     * @return a java.util.List<String>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<String> getServiceTypes() {
         return this.serviceTypes;
     }
     /**
      * Gets the title property value. Endpoint type description
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTitle() {
         return this.title;
     }
@@ -85,17 +94,15 @@ public class ServiceIntegrationEndpointTypesResponseEndpointTypes implements Add
      * Gets the user_config_schema property value. JSON-Schema for the 'user_config' properties
      * @return a ServiceIntegrationEndpointTypesResponseEndpointTypesUserConfigSchema
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceIntegrationEndpointTypesResponseEndpointTypesUserConfigSchema getUserConfigSchema() {
         return this.userConfigSchema;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("endpoint_type", this.getEndpointType());
         writer.writeCollectionOfPrimitiveValues("service_types", this.getServiceTypes());
@@ -104,48 +111,38 @@ public class ServiceIntegrationEndpointTypesResponseEndpointTypes implements Add
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the endpoint_type property value. Endpoint type name
-     * @param value Value to set for the endpointType property.
-     * @return a void
+     * @param value Value to set for the endpoint_type property.
      */
-    @javax.annotation.Nonnull
-    public void setEndpointType(@javax.annotation.Nullable final String value) {
+    public void setEndpointType(@jakarta.annotation.Nullable final String value) {
         this.endpointType = value;
     }
     /**
      * Sets the service_types property value. Supported service types
-     * @param value Value to set for the serviceTypes property.
-     * @return a void
+     * @param value Value to set for the service_types property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceTypes(@javax.annotation.Nullable final java.util.List<String> value) {
+    public void setServiceTypes(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.serviceTypes = value;
     }
     /**
      * Sets the title property value. Endpoint type description
      * @param value Value to set for the title property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setTitle(@javax.annotation.Nullable final String value) {
+    public void setTitle(@jakarta.annotation.Nullable final String value) {
         this.title = value;
     }
     /**
      * Sets the user_config_schema property value. JSON-Schema for the 'user_config' properties
-     * @param value Value to set for the userConfigSchema property.
-     * @return a void
+     * @param value Value to set for the user_config_schema property.
      */
-    @javax.annotation.Nonnull
-    public void setUserConfigSchema(@javax.annotation.Nullable final ServiceIntegrationEndpointTypesResponseEndpointTypesUserConfigSchema value) {
+    public void setUserConfigSchema(@jakarta.annotation.Nullable final ServiceIntegrationEndpointTypesResponseEndpointTypesUserConfigSchema value) {
         this.userConfigSchema = value;
     }
 }

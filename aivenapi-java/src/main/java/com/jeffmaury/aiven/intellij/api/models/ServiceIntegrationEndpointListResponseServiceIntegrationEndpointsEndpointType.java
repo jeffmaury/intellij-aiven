@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Integration endpoint type */
+/**
+ * Integration endpoint type
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceIntegrationEndpointListResponseServiceIntegrationEndpointsEndpointType implements ValuedEnum {
     Autoscaler("autoscaler"),
     Datadog("datadog"),
@@ -23,10 +26,10 @@ public enum ServiceIntegrationEndpointListResponseServiceIntegrationEndpointsEnd
     ServiceIntegrationEndpointListResponseServiceIntegrationEndpointsEndpointType(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceIntegrationEndpointListResponseServiceIntegrationEndpointsEndpointType forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceIntegrationEndpointListResponseServiceIntegrationEndpointsEndpointType forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "autoscaler": return Autoscaler;

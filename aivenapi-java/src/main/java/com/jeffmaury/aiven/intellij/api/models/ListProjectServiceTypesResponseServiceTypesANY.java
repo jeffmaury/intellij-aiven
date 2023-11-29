@@ -10,24 +10,35 @@ import java.util.Objects;
 /**
  * Service type information
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ListProjectServiceTypesResponseServiceTypesANY implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Default version of the service if no explicit version is defined */
+    /**
+     * Default version of the service if no explicit version is defined
+     */
     private String defaultVersion;
-    /** Single line description of the service */
+    /**
+     * Single line description of the service
+     */
     private String description;
-    /** Latest available version of the service */
+    /**
+     * Latest available version of the service
+     */
     private String latestAvailableVersion;
-    /** List of plans available for this type of service */
+    /**
+     * List of plans available for this type of service
+     */
     private java.util.List<ListProjectServiceTypesResponseServiceTypesANYServicePlans> servicePlans;
-    /** JSON-Schema for the 'user_config' properties */
+    /**
+     * JSON-Schema for the 'user_config' properties
+     */
     private ListProjectServiceTypesResponseServiceTypesANYUserConfigSchema userConfigSchema;
     /**
      * Instantiates a new ListProjectServiceTypesResponseServiceTypesANY and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ListProjectServiceTypesResponseServiceTypesANY() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -36,32 +47,32 @@ public class ListProjectServiceTypesResponseServiceTypesANY implements Additiona
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ListProjectServiceTypesResponseServiceTypesANY
      */
-    @javax.annotation.Nonnull
-    public static ListProjectServiceTypesResponseServiceTypesANY createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ListProjectServiceTypesResponseServiceTypesANY createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ListProjectServiceTypesResponseServiceTypesANY();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the default_version property value. Default version of the service if no explicit version is defined
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDefaultVersion() {
         return this.defaultVersion;
     }
     /**
      * Gets the description property value. Single line description of the service
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDescription() {
         return this.description;
     }
@@ -69,7 +80,7 @@ public class ListProjectServiceTypesResponseServiceTypesANY implements Additiona
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("default_version", (n) -> { this.setDefaultVersion(n.getStringValue()); });
@@ -81,17 +92,17 @@ public class ListProjectServiceTypesResponseServiceTypesANY implements Additiona
     }
     /**
      * Gets the latest_available_version property value. Latest available version of the service
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLatestAvailableVersion() {
         return this.latestAvailableVersion;
     }
     /**
      * Gets the service_plans property value. List of plans available for this type of service
-     * @return a ListProjectServiceTypesResponseServiceTypesANYServicePlans
+     * @return a java.util.List<ListProjectServiceTypesResponseServiceTypesANYServicePlans>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ListProjectServiceTypesResponseServiceTypesANYServicePlans> getServicePlans() {
         return this.servicePlans;
     }
@@ -99,17 +110,15 @@ public class ListProjectServiceTypesResponseServiceTypesANY implements Additiona
      * Gets the user_config_schema property value. JSON-Schema for the 'user_config' properties
      * @return a ListProjectServiceTypesResponseServiceTypesANYUserConfigSchema
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ListProjectServiceTypesResponseServiceTypesANYUserConfigSchema getUserConfigSchema() {
         return this.userConfigSchema;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("default_version", this.getDefaultVersion());
         writer.writeStringValue("description", this.getDescription());
@@ -119,57 +128,45 @@ public class ListProjectServiceTypesResponseServiceTypesANY implements Additiona
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the default_version property value. Default version of the service if no explicit version is defined
-     * @param value Value to set for the defaultVersion property.
-     * @return a void
+     * @param value Value to set for the default_version property.
      */
-    @javax.annotation.Nonnull
-    public void setDefaultVersion(@javax.annotation.Nullable final String value) {
+    public void setDefaultVersion(@jakarta.annotation.Nullable final String value) {
         this.defaultVersion = value;
     }
     /**
      * Sets the description property value. Single line description of the service
      * @param value Value to set for the description property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDescription(@javax.annotation.Nullable final String value) {
+    public void setDescription(@jakarta.annotation.Nullable final String value) {
         this.description = value;
     }
     /**
      * Sets the latest_available_version property value. Latest available version of the service
-     * @param value Value to set for the latestAvailableVersion property.
-     * @return a void
+     * @param value Value to set for the latest_available_version property.
      */
-    @javax.annotation.Nonnull
-    public void setLatestAvailableVersion(@javax.annotation.Nullable final String value) {
+    public void setLatestAvailableVersion(@jakarta.annotation.Nullable final String value) {
         this.latestAvailableVersion = value;
     }
     /**
      * Sets the service_plans property value. List of plans available for this type of service
-     * @param value Value to set for the servicePlans property.
-     * @return a void
+     * @param value Value to set for the service_plans property.
      */
-    @javax.annotation.Nonnull
-    public void setServicePlans(@javax.annotation.Nullable final java.util.List<ListProjectServiceTypesResponseServiceTypesANYServicePlans> value) {
+    public void setServicePlans(@jakarta.annotation.Nullable final java.util.List<ListProjectServiceTypesResponseServiceTypesANYServicePlans> value) {
         this.servicePlans = value;
     }
     /**
      * Sets the user_config_schema property value. JSON-Schema for the 'user_config' properties
-     * @param value Value to set for the userConfigSchema property.
-     * @return a void
+     * @param value Value to set for the user_config_schema property.
      */
-    @javax.annotation.Nonnull
-    public void setUserConfigSchema(@javax.annotation.Nullable final ListProjectServiceTypesResponseServiceTypesANYUserConfigSchema value) {
+    public void setUserConfigSchema(@jakarta.annotation.Nullable final ListProjectServiceTypesResponseServiceTypesANYUserConfigSchema value) {
         this.userConfigSchema = value;
     }
 }

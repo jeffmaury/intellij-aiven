@@ -7,28 +7,43 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class OrganizationDomainsListResponseDomains implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Random string to be used for validation */
+    /**
+     * Random string to be used for validation
+     */
     private String challengeToken;
-    /** Time of creating the domain */
+    /**
+     * Time of creating the domain
+     */
     private String createTime;
-    /** ID of the domain */
+    /**
+     * ID of the domain
+     */
     private String domainId;
-    /** Name of the domain */
+    /**
+     * Name of the domain
+     */
     private String domainName;
-    /** ID of the organization owning this domain */
+    /**
+     * ID of the organization owning this domain
+     */
     private String organizationId;
-    /** State of the verification process */
+    /**
+     * State of the verification process
+     */
     private OrganizationDomainsListResponseDomainsState state;
-    /** Type of verification to be made */
+    /**
+     * Type of verification to be made
+     */
     private OrganizationDomainsListResponseDomainsVerificationType verificationType;
     /**
      * Instantiates a new OrganizationDomainsListResponseDomains and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public OrganizationDomainsListResponseDomains() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -37,48 +52,48 @@ public class OrganizationDomainsListResponseDomains implements AdditionalDataHol
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a OrganizationDomainsListResponseDomains
      */
-    @javax.annotation.Nonnull
-    public static OrganizationDomainsListResponseDomains createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static OrganizationDomainsListResponseDomains createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new OrganizationDomainsListResponseDomains();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the challenge_token property value. Random string to be used for validation
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getChallengeToken() {
         return this.challengeToken;
     }
     /**
      * Gets the create_time property value. Time of creating the domain
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCreateTime() {
         return this.createTime;
     }
     /**
      * Gets the domain_id property value. ID of the domain
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDomainId() {
         return this.domainId;
     }
     /**
      * Gets the domain_name property value. Name of the domain
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDomainName() {
         return this.domainName;
     }
@@ -86,7 +101,7 @@ public class OrganizationDomainsListResponseDomains implements AdditionalDataHol
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
         deserializerMap.put("challenge_token", (n) -> { this.setChallengeToken(n.getStringValue()); });
@@ -100,9 +115,9 @@ public class OrganizationDomainsListResponseDomains implements AdditionalDataHol
     }
     /**
      * Gets the organization_id property value. ID of the organization owning this domain
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getOrganizationId() {
         return this.organizationId;
     }
@@ -110,7 +125,7 @@ public class OrganizationDomainsListResponseDomains implements AdditionalDataHol
      * Gets the state property value. State of the verification process
      * @return a OrganizationDomainsListResponseDomainsState
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public OrganizationDomainsListResponseDomainsState getState() {
         return this.state;
     }
@@ -118,17 +133,15 @@ public class OrganizationDomainsListResponseDomains implements AdditionalDataHol
      * Gets the verification_type property value. Type of verification to be made
      * @return a OrganizationDomainsListResponseDomainsVerificationType
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public OrganizationDomainsListResponseDomainsVerificationType getVerificationType() {
         return this.verificationType;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("challenge_token", this.getChallengeToken());
         writer.writeStringValue("create_time", this.getCreateTime());
@@ -140,75 +153,59 @@ public class OrganizationDomainsListResponseDomains implements AdditionalDataHol
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the challenge_token property value. Random string to be used for validation
-     * @param value Value to set for the challengeToken property.
-     * @return a void
+     * @param value Value to set for the challenge_token property.
      */
-    @javax.annotation.Nonnull
-    public void setChallengeToken(@javax.annotation.Nullable final String value) {
+    public void setChallengeToken(@jakarta.annotation.Nullable final String value) {
         this.challengeToken = value;
     }
     /**
      * Sets the create_time property value. Time of creating the domain
-     * @param value Value to set for the createTime property.
-     * @return a void
+     * @param value Value to set for the create_time property.
      */
-    @javax.annotation.Nonnull
-    public void setCreateTime(@javax.annotation.Nullable final String value) {
+    public void setCreateTime(@jakarta.annotation.Nullable final String value) {
         this.createTime = value;
     }
     /**
      * Sets the domain_id property value. ID of the domain
-     * @param value Value to set for the domainId property.
-     * @return a void
+     * @param value Value to set for the domain_id property.
      */
-    @javax.annotation.Nonnull
-    public void setDomainId(@javax.annotation.Nullable final String value) {
+    public void setDomainId(@jakarta.annotation.Nullable final String value) {
         this.domainId = value;
     }
     /**
      * Sets the domain_name property value. Name of the domain
-     * @param value Value to set for the domainName property.
-     * @return a void
+     * @param value Value to set for the domain_name property.
      */
-    @javax.annotation.Nonnull
-    public void setDomainName(@javax.annotation.Nullable final String value) {
+    public void setDomainName(@jakarta.annotation.Nullable final String value) {
         this.domainName = value;
     }
     /**
      * Sets the organization_id property value. ID of the organization owning this domain
-     * @param value Value to set for the organizationId property.
-     * @return a void
+     * @param value Value to set for the organization_id property.
      */
-    @javax.annotation.Nonnull
-    public void setOrganizationId(@javax.annotation.Nullable final String value) {
+    public void setOrganizationId(@jakarta.annotation.Nullable final String value) {
         this.organizationId = value;
     }
     /**
      * Sets the state property value. State of the verification process
      * @param value Value to set for the state property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setState(@javax.annotation.Nullable final OrganizationDomainsListResponseDomainsState value) {
+    public void setState(@jakarta.annotation.Nullable final OrganizationDomainsListResponseDomainsState value) {
         this.state = value;
     }
     /**
      * Sets the verification_type property value. Type of verification to be made
-     * @param value Value to set for the verificationType property.
-     * @return a void
+     * @param value Value to set for the verification_type property.
      */
-    @javax.annotation.Nonnull
-    public void setVerificationType(@javax.annotation.Nullable final OrganizationDomainsListResponseDomainsVerificationType value) {
+    public void setVerificationType(@jakarta.annotation.Nullable final OrganizationDomainsListResponseDomainsVerificationType value) {
         this.verificationType = value;
     }
 }

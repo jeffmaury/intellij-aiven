@@ -10,26 +10,39 @@ import java.util.Objects;
 /**
  * Task info
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceTaskGetResponseTask implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Timestamp in ISO 8601 format, always in UTC */
+    /**
+     * Timestamp in ISO 8601 format, always in UTC
+     */
     private String createTime;
-    /** Task result */
+    /**
+     * Task result
+     */
     private String result;
-    /** List of result codes */
+    /**
+     * List of result codes
+     */
     private java.util.List<ServiceTaskGetResponseTaskResultCodes> resultCodes;
-    /** Task success */
+    /**
+     * Task success
+     */
     private Boolean success;
-    /** Unique identifier for the task */
+    /**
+     * Unique identifier for the task
+     */
     private String taskId;
-    /** Task type */
+    /**
+     * Task type
+     */
     private String taskType;
     /**
      * Instantiates a new ServiceTaskGetResponseTask and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceTaskGetResponseTask() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -38,24 +51,24 @@ public class ServiceTaskGetResponseTask implements AdditionalDataHolder, Parsabl
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceTaskGetResponseTask
      */
-    @javax.annotation.Nonnull
-    public static ServiceTaskGetResponseTask createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceTaskGetResponseTask createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceTaskGetResponseTask();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the create_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCreateTime() {
         return this.createTime;
     }
@@ -63,7 +76,7 @@ public class ServiceTaskGetResponseTask implements AdditionalDataHolder, Parsabl
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("create_time", (n) -> { this.setCreateTime(n.getStringValue()); });
@@ -76,51 +89,49 @@ public class ServiceTaskGetResponseTask implements AdditionalDataHolder, Parsabl
     }
     /**
      * Gets the result property value. Task result
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getResult() {
         return this.result;
     }
     /**
      * Gets the result_codes property value. List of result codes
-     * @return a ServiceTaskGetResponseTaskResultCodes
+     * @return a java.util.List<ServiceTaskGetResponseTaskResultCodes>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceTaskGetResponseTaskResultCodes> getResultCodes() {
         return this.resultCodes;
     }
     /**
      * Gets the success property value. Task success
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getSuccess() {
         return this.success;
     }
     /**
      * Gets the task_id property value. Unique identifier for the task
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTaskId() {
         return this.taskId;
     }
     /**
      * Gets the task_type property value. Task type
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTaskType() {
         return this.taskType;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("create_time", this.getCreateTime());
         writer.writeStringValue("result", this.getResult());
@@ -131,66 +142,52 @@ public class ServiceTaskGetResponseTask implements AdditionalDataHolder, Parsabl
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the create_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @param value Value to set for the createTime property.
-     * @return a void
+     * @param value Value to set for the create_time property.
      */
-    @javax.annotation.Nonnull
-    public void setCreateTime(@javax.annotation.Nullable final String value) {
+    public void setCreateTime(@jakarta.annotation.Nullable final String value) {
         this.createTime = value;
     }
     /**
      * Sets the result property value. Task result
      * @param value Value to set for the result property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setResult(@javax.annotation.Nullable final String value) {
+    public void setResult(@jakarta.annotation.Nullable final String value) {
         this.result = value;
     }
     /**
      * Sets the result_codes property value. List of result codes
-     * @param value Value to set for the resultCodes property.
-     * @return a void
+     * @param value Value to set for the result_codes property.
      */
-    @javax.annotation.Nonnull
-    public void setResultCodes(@javax.annotation.Nullable final java.util.List<ServiceTaskGetResponseTaskResultCodes> value) {
+    public void setResultCodes(@jakarta.annotation.Nullable final java.util.List<ServiceTaskGetResponseTaskResultCodes> value) {
         this.resultCodes = value;
     }
     /**
      * Sets the success property value. Task success
      * @param value Value to set for the success property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setSuccess(@javax.annotation.Nullable final Boolean value) {
+    public void setSuccess(@jakarta.annotation.Nullable final Boolean value) {
         this.success = value;
     }
     /**
      * Sets the task_id property value. Unique identifier for the task
-     * @param value Value to set for the taskId property.
-     * @return a void
+     * @param value Value to set for the task_id property.
      */
-    @javax.annotation.Nonnull
-    public void setTaskId(@javax.annotation.Nullable final String value) {
+    public void setTaskId(@jakarta.annotation.Nullable final String value) {
         this.taskId = value;
     }
     /**
      * Sets the task_type property value. Task type
-     * @param value Value to set for the taskType property.
-     * @return a void
+     * @param value Value to set for the task_type property.
      */
-    @javax.annotation.Nonnull
-    public void setTaskType(@javax.annotation.Nullable final String value) {
+    public void setTaskType(@jakarta.annotation.Nullable final String value) {
         this.taskType = value;
     }
 }

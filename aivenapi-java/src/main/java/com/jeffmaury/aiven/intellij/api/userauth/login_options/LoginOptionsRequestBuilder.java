@@ -10,7 +10,6 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,25 +17,22 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /userauth/login_options
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class LoginOptionsRequestBuilder extends BaseRequestBuilder {
     /**
      * Instantiates a new Login_optionsRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public LoginOptionsRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public LoginOptionsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/userauth/login_options", pathParameters);
     }
     /**
      * Instantiates a new Login_optionsRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public LoginOptionsRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public LoginOptionsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/userauth/login_options", rawUrl);
     }
     /**
@@ -44,16 +40,9 @@ public class LoginOptionsRequestBuilder extends BaseRequestBuilder {
      * @param body UserAuthLoginOptionsRequestBody
      * @return a CompletableFuture of UserAuthLoginOptionsResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserAuthLoginOptionsResponse> post(@javax.annotation.Nonnull final UserAuthLoginOptionsRequestBody body) {
-        try {
-            final RequestInformation requestInfo = toPostRequestInformation(body, null);
-            return this.requestAdapter.sendAsync(requestInfo, UserAuthLoginOptionsResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<UserAuthLoginOptionsResponse> executionException = new java.util.concurrent.CompletableFuture<UserAuthLoginOptionsResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<UserAuthLoginOptionsResponse> post(@jakarta.annotation.Nonnull final UserAuthLoginOptionsRequestBody body) {
+        return post(body, null);
     }
     /**
      * <p>Get available user login options</p>
@@ -61,25 +50,19 @@ public class LoginOptionsRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a CompletableFuture of UserAuthLoginOptionsResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserAuthLoginOptionsResponse> post(@javax.annotation.Nonnull final UserAuthLoginOptionsRequestBody body, @javax.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<UserAuthLoginOptionsResponse> post(@jakarta.annotation.Nonnull final UserAuthLoginOptionsRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        try {
-            final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-            return this.requestAdapter.sendAsync(requestInfo, UserAuthLoginOptionsResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<UserAuthLoginOptionsResponse> executionException = new java.util.concurrent.CompletableFuture<UserAuthLoginOptionsResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
+        return this.requestAdapter.sendAsync(requestInfo, UserAuthLoginOptionsResponse::createFromDiscriminatorValue, null);
     }
     /**
      * <p>Get available user login options</p>
      * @param body UserAuthLoginOptionsRequestBody
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@javax.annotation.Nonnull final UserAuthLoginOptionsRequestBody body) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UserAuthLoginOptionsRequestBody body) {
         return toPostRequestInformation(body, null);
     }
     /**
@@ -88,26 +71,37 @@ public class LoginOptionsRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@javax.annotation.Nonnull final UserAuthLoginOptionsRequestBody body, @javax.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UserAuthLoginOptionsRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation();
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
-        requestInfo.headers.add("Accept", "application/json");
-        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         if (requestConfiguration != null) {
             final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
             requestConfiguration.accept(requestConfig);
             requestInfo.headers.putAll(requestConfig.headers);
             requestInfo.addRequestOptions(requestConfig.options);
         }
+        requestInfo.httpMethod = HttpMethod.POST;
+        requestInfo.urlTemplate = urlTemplate;
+        requestInfo.pathParameters = pathParameters;
+        requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
+    }
+    /**
+     * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @return a LoginOptionsRequestBuilder
+     */
+    @jakarta.annotation.Nonnull
+    public LoginOptionsRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+        Objects.requireNonNull(rawUrl);
+        return new LoginOptionsRequestBuilder(rawUrl, requestAdapter);
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
     public class PostRequestConfiguration extends BaseRequestConfiguration {
     }
 }

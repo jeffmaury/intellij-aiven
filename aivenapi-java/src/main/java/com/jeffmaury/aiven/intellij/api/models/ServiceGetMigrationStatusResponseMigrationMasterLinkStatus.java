@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Redis only: replication master link status */
+/**
+ * Redis only: replication master link status
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceGetMigrationStatusResponseMigrationMasterLinkStatus implements ValuedEnum {
     Up("up"),
     Down("down");
@@ -11,10 +14,10 @@ public enum ServiceGetMigrationStatusResponseMigrationMasterLinkStatus implement
     ServiceGetMigrationStatusResponseMigrationMasterLinkStatus(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceGetMigrationStatusResponseMigrationMasterLinkStatus forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceGetMigrationStatusResponseMigrationMasterLinkStatus forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "up": return Up;

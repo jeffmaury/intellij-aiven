@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Severity level */
+/**
+ * Severity level
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ProjectTicketCreateResponseTicketSeverity implements ValuedEnum {
     Critical("critical"),
     High("high"),
@@ -12,10 +15,10 @@ public enum ProjectTicketCreateResponseTicketSeverity implements ValuedEnum {
     ProjectTicketCreateResponseTicketSeverity(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ProjectTicketCreateResponseTicketSeverity forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ProjectTicketCreateResponseTicketSeverity forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "critical": return Critical;

@@ -10,26 +10,39 @@ import java.util.Objects;
 /**
  * ServicePrivatelinkAWSCreateResponse
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServicePrivatelinkAWSCreateResponse implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** AWS VPC endpoint service ID */
+    /**
+     * AWS VPC endpoint service ID
+     */
     private String awsServiceId;
-    /** AWS VPC endpoint service name */
+    /**
+     * AWS VPC endpoint service name
+     */
     private String awsServiceName;
-    /** List of errors occurred during request processing */
+    /**
+     * List of errors occurred during request processing
+     */
     private java.util.List<ServicePrivatelinkAWSCreateResponseErrors> errors;
-    /** Printable result of the request */
+    /**
+     * Printable result of the request
+     */
     private String message;
-    /** ARN allowlist */
+    /**
+     * ARN allowlist
+     */
     private java.util.List<String> principals;
-    /** Privatelink resource state */
+    /**
+     * Privatelink resource state
+     */
     private ServicePrivatelinkAWSCreateResponseState state;
     /**
      * Instantiates a new ServicePrivatelinkAWSCreateResponse and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServicePrivatelinkAWSCreateResponse() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -38,40 +51,40 @@ public class ServicePrivatelinkAWSCreateResponse implements AdditionalDataHolder
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServicePrivatelinkAWSCreateResponse
      */
-    @javax.annotation.Nonnull
-    public static ServicePrivatelinkAWSCreateResponse createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServicePrivatelinkAWSCreateResponse createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServicePrivatelinkAWSCreateResponse();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the aws_service_id property value. AWS VPC endpoint service ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAwsServiceId() {
         return this.awsServiceId;
     }
     /**
      * Gets the aws_service_name property value. AWS VPC endpoint service name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAwsServiceName() {
         return this.awsServiceName;
     }
     /**
      * Gets the errors property value. List of errors occurred during request processing
-     * @return a ServicePrivatelinkAWSCreateResponseErrors
+     * @return a java.util.List<ServicePrivatelinkAWSCreateResponseErrors>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServicePrivatelinkAWSCreateResponseErrors> getErrors() {
         return this.errors;
     }
@@ -79,7 +92,7 @@ public class ServicePrivatelinkAWSCreateResponse implements AdditionalDataHolder
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("aws_service_id", (n) -> { this.setAwsServiceId(n.getStringValue()); });
@@ -92,17 +105,17 @@ public class ServicePrivatelinkAWSCreateResponse implements AdditionalDataHolder
     }
     /**
      * Gets the message property value. Printable result of the request
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getMessage() {
         return this.message;
     }
     /**
      * Gets the principals property value. ARN allowlist
-     * @return a string
+     * @return a java.util.List<String>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<String> getPrincipals() {
         return this.principals;
     }
@@ -110,17 +123,15 @@ public class ServicePrivatelinkAWSCreateResponse implements AdditionalDataHolder
      * Gets the state property value. Privatelink resource state
      * @return a ServicePrivatelinkAWSCreateResponseState
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServicePrivatelinkAWSCreateResponseState getState() {
         return this.state;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("aws_service_id", this.getAwsServiceId());
         writer.writeStringValue("aws_service_name", this.getAwsServiceName());
@@ -131,66 +142,52 @@ public class ServicePrivatelinkAWSCreateResponse implements AdditionalDataHolder
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the aws_service_id property value. AWS VPC endpoint service ID
-     * @param value Value to set for the awsServiceId property.
-     * @return a void
+     * @param value Value to set for the aws_service_id property.
      */
-    @javax.annotation.Nonnull
-    public void setAwsServiceId(@javax.annotation.Nullable final String value) {
+    public void setAwsServiceId(@jakarta.annotation.Nullable final String value) {
         this.awsServiceId = value;
     }
     /**
      * Sets the aws_service_name property value. AWS VPC endpoint service name
-     * @param value Value to set for the awsServiceName property.
-     * @return a void
+     * @param value Value to set for the aws_service_name property.
      */
-    @javax.annotation.Nonnull
-    public void setAwsServiceName(@javax.annotation.Nullable final String value) {
+    public void setAwsServiceName(@jakarta.annotation.Nullable final String value) {
         this.awsServiceName = value;
     }
     /**
      * Sets the errors property value. List of errors occurred during request processing
      * @param value Value to set for the errors property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setErrors(@javax.annotation.Nullable final java.util.List<ServicePrivatelinkAWSCreateResponseErrors> value) {
+    public void setErrors(@jakarta.annotation.Nullable final java.util.List<ServicePrivatelinkAWSCreateResponseErrors> value) {
         this.errors = value;
     }
     /**
      * Sets the message property value. Printable result of the request
      * @param value Value to set for the message property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMessage(@javax.annotation.Nullable final String value) {
+    public void setMessage(@jakarta.annotation.Nullable final String value) {
         this.message = value;
     }
     /**
      * Sets the principals property value. ARN allowlist
      * @param value Value to set for the principals property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setPrincipals(@javax.annotation.Nullable final java.util.List<String> value) {
+    public void setPrincipals(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.principals = value;
     }
     /**
      * Sets the state property value. Privatelink resource state
      * @param value Value to set for the state property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setState(@javax.annotation.Nullable final ServicePrivatelinkAWSCreateResponseState value) {
+    public void setState(@jakarta.annotation.Nullable final ServicePrivatelinkAWSCreateResponseState value) {
         this.state = value;
     }
 }

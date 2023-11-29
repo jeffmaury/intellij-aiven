@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Schema type */
+/**
+ * Schema type
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceSchemaRegistrySubjectVersionPostRequestBodySchemaType implements ValuedEnum {
     AVRO("AVRO"),
     JSON("JSON"),
@@ -12,10 +15,10 @@ public enum ServiceSchemaRegistrySubjectVersionPostRequestBodySchemaType impleme
     ServiceSchemaRegistrySubjectVersionPostRequestBodySchemaType(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceSchemaRegistrySubjectVersionPostRequestBodySchemaType forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceSchemaRegistrySubjectVersionPostRequestBodySchemaType forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "AVRO": return AVRO;

@@ -10,26 +10,39 @@ import java.util.Objects;
 /**
  * OrganizationUserUpdateRequestBody
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class OrganizationUserUpdateRequestBody implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** City */
+    /**
+     * City
+     */
     private String city;
-    /** Country */
+    /**
+     * Country
+     */
     private String country;
-    /** Department */
+    /**
+     * Department
+     */
     private String department;
-    /** Alters super admin state of the organization user */
+    /**
+     * Alters super admin state of the organization user
+     */
     private Boolean isSuperAdmin;
-    /** Job Title */
+    /**
+     * Job Title
+     */
     private String jobTitle;
-    /** Real Name */
+    /**
+     * Real Name
+     */
     private String realName;
     /**
      * Instantiates a new OrganizationUserUpdateRequestBody and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public OrganizationUserUpdateRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -38,40 +51,40 @@ public class OrganizationUserUpdateRequestBody implements AdditionalDataHolder, 
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a OrganizationUserUpdateRequestBody
      */
-    @javax.annotation.Nonnull
-    public static OrganizationUserUpdateRequestBody createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static OrganizationUserUpdateRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new OrganizationUserUpdateRequestBody();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the city property value. City
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCity() {
         return this.city;
     }
     /**
      * Gets the country property value. Country
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCountry() {
         return this.country;
     }
     /**
      * Gets the department property value. Department
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDepartment() {
         return this.department;
     }
@@ -79,7 +92,7 @@ public class OrganizationUserUpdateRequestBody implements AdditionalDataHolder, 
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("city", (n) -> { this.setCity(n.getStringValue()); });
@@ -92,35 +105,33 @@ public class OrganizationUserUpdateRequestBody implements AdditionalDataHolder, 
     }
     /**
      * Gets the is_super_admin property value. Alters super admin state of the organization user
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getIsSuperAdmin() {
         return this.isSuperAdmin;
     }
     /**
      * Gets the job_title property value. Job Title
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getJobTitle() {
         return this.jobTitle;
     }
     /**
      * Gets the real_name property value. Real Name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getRealName() {
         return this.realName;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("city", this.getCity());
         writer.writeStringValue("country", this.getCountry());
@@ -131,66 +142,52 @@ public class OrganizationUserUpdateRequestBody implements AdditionalDataHolder, 
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the city property value. City
      * @param value Value to set for the city property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCity(@javax.annotation.Nullable final String value) {
+    public void setCity(@jakarta.annotation.Nullable final String value) {
         this.city = value;
     }
     /**
      * Sets the country property value. Country
      * @param value Value to set for the country property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCountry(@javax.annotation.Nullable final String value) {
+    public void setCountry(@jakarta.annotation.Nullable final String value) {
         this.country = value;
     }
     /**
      * Sets the department property value. Department
      * @param value Value to set for the department property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDepartment(@javax.annotation.Nullable final String value) {
+    public void setDepartment(@jakarta.annotation.Nullable final String value) {
         this.department = value;
     }
     /**
      * Sets the is_super_admin property value. Alters super admin state of the organization user
-     * @param value Value to set for the isSuperAdmin property.
-     * @return a void
+     * @param value Value to set for the is_super_admin property.
      */
-    @javax.annotation.Nonnull
-    public void setIsSuperAdmin(@javax.annotation.Nullable final Boolean value) {
+    public void setIsSuperAdmin(@jakarta.annotation.Nullable final Boolean value) {
         this.isSuperAdmin = value;
     }
     /**
      * Sets the job_title property value. Job Title
-     * @param value Value to set for the jobTitle property.
-     * @return a void
+     * @param value Value to set for the job_title property.
      */
-    @javax.annotation.Nonnull
-    public void setJobTitle(@javax.annotation.Nullable final String value) {
+    public void setJobTitle(@jakarta.annotation.Nullable final String value) {
         this.jobTitle = value;
     }
     /**
      * Sets the real_name property value. Real Name
-     * @param value Value to set for the realName property.
-     * @return a void
+     * @param value Value to set for the real_name property.
      */
-    @javax.annotation.Nonnull
-    public void setRealName(@javax.annotation.Nullable final String value) {
+    public void setRealName(@jakarta.annotation.Nullable final String value) {
         this.realName = value;
     }
 }

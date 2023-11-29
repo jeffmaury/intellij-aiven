@@ -9,14 +9,19 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}/service/{service_name}/kms
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class KmsRequestBuilder extends BaseRequestBuilder {
-    /** The ca property */
-    @javax.annotation.Nonnull
+    /**
+     * The ca property
+     */
+    @jakarta.annotation.Nonnull
     public CaRequestBuilder ca() {
         return new CaRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The keypairs property */
-    @javax.annotation.Nonnull
+    /**
+     * The keypairs property
+     */
+    @jakarta.annotation.Nonnull
     public KeypairsRequestBuilder keypairs() {
         return new KeypairsRequestBuilder(pathParameters, requestAdapter);
     }
@@ -24,20 +29,16 @@ public class KmsRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new KmsRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public KmsRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public KmsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/kms", pathParameters);
     }
     /**
      * Instantiates a new KmsRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public KmsRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public KmsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/kms", rawUrl);
     }
 }

@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Unit for current/min/max values. New units may be added. If null should be treated as generic unit */
+/**
+ * Unit for current/min/max values. New units may be added. If null should be treated as generic unit
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceGetResponseServiceNodeStatesProgressUpdatesUnit implements ValuedEnum {
     Binlogs("binlogs"),
     Bytes_compressed("bytes_compressed"),
@@ -13,10 +16,10 @@ public enum ServiceGetResponseServiceNodeStatesProgressUpdatesUnit implements Va
     ServiceGetResponseServiceNodeStatesProgressUpdatesUnit(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceGetResponseServiceNodeStatesProgressUpdatesUnit forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceGetResponseServiceNodeStatesProgressUpdatesUnit forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "binlogs": return Binlogs;

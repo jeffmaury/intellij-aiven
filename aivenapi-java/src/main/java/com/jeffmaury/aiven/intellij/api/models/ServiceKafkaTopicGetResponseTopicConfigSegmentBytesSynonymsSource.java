@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Source of the Kafka topic configuration entry */
+/**
+ * Source of the Kafka topic configuration entry
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceKafkaTopicGetResponseTopicConfigSegmentBytesSynonymsSource implements ValuedEnum {
     Unknown_config("unknown_config"),
     Topic_config("topic_config"),
@@ -16,10 +19,10 @@ public enum ServiceKafkaTopicGetResponseTopicConfigSegmentBytesSynonymsSource im
     ServiceKafkaTopicGetResponseTopicConfigSegmentBytesSynonymsSource(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceKafkaTopicGetResponseTopicConfigSegmentBytesSynonymsSource forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceKafkaTopicGetResponseTopicConfigSegmentBytesSynonymsSource forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "unknown_config": return Unknown_config;

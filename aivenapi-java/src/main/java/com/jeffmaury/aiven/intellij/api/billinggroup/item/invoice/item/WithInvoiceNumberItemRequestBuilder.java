@@ -11,7 +11,6 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,14 +18,19 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /billing-group/{billing_group_id}/invoice/{invoice_number}
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithInvoiceNumberItemRequestBuilder extends BaseRequestBuilder {
-    /** The csv property */
-    @javax.annotation.Nonnull
+    /**
+     * The csv property
+     */
+    @jakarta.annotation.Nonnull
     public CsvRequestBuilder csv() {
         return new CsvRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The lines property */
-    @javax.annotation.Nonnull
+    /**
+     * The lines property
+     */
+    @jakarta.annotation.Nonnull
     public LinesRequestBuilder lines() {
         return new LinesRequestBuilder(pathParameters, requestAdapter);
     }
@@ -34,27 +38,23 @@ public class WithInvoiceNumberItemRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new WithInvoice_numberItemRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public WithInvoiceNumberItemRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public WithInvoiceNumberItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/billing-group/{billing_group_id}/invoice/{invoice_number}", pathParameters);
     }
     /**
      * Instantiates a new WithInvoice_numberItemRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public WithInvoiceNumberItemRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public WithInvoiceNumberItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/billing-group/{billing_group_id}/invoice/{invoice_number}", rawUrl);
     }
     /**
      * Builds and executes requests for operations under /billing-group/{billing_group_id}/invoice/{invoice_number}/{download_cookie:.{6,}}
      * @return a DownloadCookie6RequestBuilder
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public DownloadCookie6RequestBuilder download_cookie6() {
         return new DownloadCookie6RequestBuilder(pathParameters, requestAdapter);
     }
@@ -62,39 +62,26 @@ public class WithInvoiceNumberItemRequestBuilder extends BaseRequestBuilder {
      * Get a single invoice
      * @return a CompletableFuture of BillingGroupInvoiceGetResponse
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public java.util.concurrent.CompletableFuture<BillingGroupInvoiceGetResponse> get() {
-        try {
-            final RequestInformation requestInfo = toGetRequestInformation(null);
-            return this.requestAdapter.sendAsync(requestInfo, BillingGroupInvoiceGetResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<BillingGroupInvoiceGetResponse> executionException = new java.util.concurrent.CompletableFuture<BillingGroupInvoiceGetResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+        return get(null);
     }
     /**
      * Get a single invoice
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a CompletableFuture of BillingGroupInvoiceGetResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<BillingGroupInvoiceGetResponse> get(@javax.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        try {
-            final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-            return this.requestAdapter.sendAsync(requestInfo, BillingGroupInvoiceGetResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<BillingGroupInvoiceGetResponse> executionException = new java.util.concurrent.CompletableFuture<BillingGroupInvoiceGetResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<BillingGroupInvoiceGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
+        return this.requestAdapter.sendAsync(requestInfo, BillingGroupInvoiceGetResponse::createFromDiscriminatorValue, null);
     }
     /**
      * Get a single invoice
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toGetRequestInformation() throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation() {
         return toGetRequestInformation(null);
     }
     /**
@@ -102,24 +89,35 @@ public class WithInvoiceNumberItemRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toGetRequestInformation(@javax.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation();
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
-        requestInfo.headers.add("Accept", "application/json");
         if (requestConfiguration != null) {
             final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
             requestConfiguration.accept(requestConfig);
             requestInfo.headers.putAll(requestConfig.headers);
             requestInfo.addRequestOptions(requestConfig.options);
         }
+        requestInfo.httpMethod = HttpMethod.GET;
+        requestInfo.urlTemplate = urlTemplate;
+        requestInfo.pathParameters = pathParameters;
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
+    }
+    /**
+     * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @return a WithInvoiceNumberItemRequestBuilder
+     */
+    @jakarta.annotation.Nonnull
+    public WithInvoiceNumberItemRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+        Objects.requireNonNull(rawUrl);
+        return new WithInvoiceNumberItemRequestBuilder(rawUrl, requestAdapter);
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
     }
 }

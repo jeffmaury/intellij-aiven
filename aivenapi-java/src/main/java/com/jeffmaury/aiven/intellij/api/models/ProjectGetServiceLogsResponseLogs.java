@@ -7,20 +7,27 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProjectGetServiceLogsResponseLogs implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Log message */
+    /**
+     * Log message
+     */
     private String msg;
-    /** Timestamp in ISO 8601 format, always in UTC */
+    /**
+     * Timestamp in ISO 8601 format, always in UTC
+     */
     private String time;
-    /** SystemD unit name */
+    /**
+     * SystemD unit name
+     */
     private String unit;
     /**
      * Instantiates a new ProjectGetServiceLogsResponseLogs and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ProjectGetServiceLogsResponseLogs() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -29,16 +36,16 @@ public class ProjectGetServiceLogsResponseLogs implements AdditionalDataHolder, 
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ProjectGetServiceLogsResponseLogs
      */
-    @javax.annotation.Nonnull
-    public static ProjectGetServiceLogsResponseLogs createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ProjectGetServiceLogsResponseLogs createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ProjectGetServiceLogsResponseLogs();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
@@ -46,7 +53,7 @@ public class ProjectGetServiceLogsResponseLogs implements AdditionalDataHolder, 
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("msg", (n) -> { this.setMsg(n.getStringValue()); });
@@ -56,35 +63,33 @@ public class ProjectGetServiceLogsResponseLogs implements AdditionalDataHolder, 
     }
     /**
      * Gets the msg property value. Log message
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getMsg() {
         return this.msg;
     }
     /**
      * Gets the time property value. Timestamp in ISO 8601 format, always in UTC
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTime() {
         return this.time;
     }
     /**
      * Gets the unit property value. SystemD unit name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUnit() {
         return this.unit;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("msg", this.getMsg());
         writer.writeStringValue("time", this.getTime());
@@ -92,39 +97,31 @@ public class ProjectGetServiceLogsResponseLogs implements AdditionalDataHolder, 
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the msg property value. Log message
      * @param value Value to set for the msg property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMsg(@javax.annotation.Nullable final String value) {
+    public void setMsg(@jakarta.annotation.Nullable final String value) {
         this.msg = value;
     }
     /**
      * Sets the time property value. Timestamp in ISO 8601 format, always in UTC
      * @param value Value to set for the time property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setTime(@javax.annotation.Nullable final String value) {
+    public void setTime(@jakarta.annotation.Nullable final String value) {
         this.time = value;
     }
     /**
      * Sets the unit property value. SystemD unit name
      * @param value Value to set for the unit property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setUnit(@javax.annotation.Nullable final String value) {
+    public void setUnit(@jakarta.annotation.Nullable final String value) {
         this.unit = value;
     }
 }

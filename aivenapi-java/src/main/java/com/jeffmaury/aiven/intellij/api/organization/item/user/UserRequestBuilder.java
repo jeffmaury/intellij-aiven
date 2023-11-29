@@ -10,7 +10,6 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,14 +17,15 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /organization/{organization_id}/user
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class UserRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.organization.item.user.item collection
-     * @param member_user_id Unique identifier of the item
+     * @param member_user_id ID of the organization's user
      * @return a WithMemberUserItemRequestBuilder
      */
-    @javax.annotation.Nonnull
-    public WithMemberUserItemRequestBuilder byMember_user_id(@javax.annotation.Nonnull final String member_user_id) {
+    @jakarta.annotation.Nonnull
+    public WithMemberUserItemRequestBuilder byMember_user_id(@jakarta.annotation.Nonnull final String member_user_id) {
         Objects.requireNonNull(member_user_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
         urlTplParams.put("member_user_id", member_user_id);
@@ -35,59 +35,42 @@ public class UserRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new UserRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public UserRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public UserRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/organization/{organization_id}/user", pathParameters);
     }
     /**
      * Instantiates a new UserRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public UserRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public UserRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/organization/{organization_id}/user", rawUrl);
     }
     /**
      * List users of the organization
      * @return a CompletableFuture of OrganizationUserListResponse
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public java.util.concurrent.CompletableFuture<OrganizationUserListResponse> get() {
-        try {
-            final RequestInformation requestInfo = toGetRequestInformation(null);
-            return this.requestAdapter.sendAsync(requestInfo, OrganizationUserListResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<OrganizationUserListResponse> executionException = new java.util.concurrent.CompletableFuture<OrganizationUserListResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+        return get(null);
     }
     /**
      * List users of the organization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a CompletableFuture of OrganizationUserListResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<OrganizationUserListResponse> get(@javax.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        try {
-            final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-            return this.requestAdapter.sendAsync(requestInfo, OrganizationUserListResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<OrganizationUserListResponse> executionException = new java.util.concurrent.CompletableFuture<OrganizationUserListResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<OrganizationUserListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
+        return this.requestAdapter.sendAsync(requestInfo, OrganizationUserListResponse::createFromDiscriminatorValue, null);
     }
     /**
      * List users of the organization
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toGetRequestInformation() throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation() {
         return toGetRequestInformation(null);
     }
     /**
@@ -95,24 +78,35 @@ public class UserRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toGetRequestInformation(@javax.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation();
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
-        requestInfo.headers.add("Accept", "application/json");
         if (requestConfiguration != null) {
             final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
             requestConfiguration.accept(requestConfig);
             requestInfo.headers.putAll(requestConfig.headers);
             requestInfo.addRequestOptions(requestConfig.options);
         }
+        requestInfo.httpMethod = HttpMethod.GET;
+        requestInfo.urlTemplate = urlTemplate;
+        requestInfo.pathParameters = pathParameters;
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
+    }
+    /**
+     * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @return a UserRequestBuilder
+     */
+    @jakarta.annotation.Nonnull
+    public UserRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+        Objects.requireNonNull(rawUrl);
+        return new UserRequestBuilder(rawUrl, requestAdapter);
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
     }
 }

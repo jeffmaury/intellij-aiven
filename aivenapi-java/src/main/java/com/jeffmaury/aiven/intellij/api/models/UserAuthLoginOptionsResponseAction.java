@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Action */
+/**
+ * Action
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum UserAuthLoginOptionsResponseAction implements ValuedEnum {
     Azure_oauth("azure_oauth"),
     Github_oauth("github_oauth"),
@@ -16,10 +19,10 @@ public enum UserAuthLoginOptionsResponseAction implements ValuedEnum {
     UserAuthLoginOptionsResponseAction(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static UserAuthLoginOptionsResponseAction forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static UserAuthLoginOptionsResponseAction forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "azure_oauth": return Azure_oauth;

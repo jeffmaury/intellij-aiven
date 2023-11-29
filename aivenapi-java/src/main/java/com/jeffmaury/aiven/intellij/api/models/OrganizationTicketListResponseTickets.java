@@ -7,46 +7,79 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class OrganizationTicketListResponseTickets implements AdditionalDataHolder, Parsable {
-    /** Account ID */
+    /**
+     * Account ID
+     */
     private String accountId;
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Created timestamp, ISO 8601 format */
+    /**
+     * Created timestamp, ISO 8601 format
+     */
     private String createTime;
-    /** Longer description */
+    /**
+     * Longer description
+     */
     private String description;
-    /** Ticket followers */
+    /**
+     * Ticket followers
+     */
     private java.util.List<OrganizationTicketListResponseTicketsFollowers> followers;
-    /** Whether the current user is following this ticket */
+    /**
+     * Whether the current user is following this ticket
+     */
     private Boolean following;
-    /** Organization ID */
+    /**
+     * Organization ID
+     */
     private String organizationId;
-    /** Project name */
+    /**
+     * Project name
+     */
     private String projectName;
-    /** Service name */
+    /**
+     * Service name
+     */
     private String serviceName;
-    /** Severity level */
+    /**
+     * Severity level
+     */
     private OrganizationTicketListResponseTicketsSeverity severity;
-    /** Is ticket open or closed */
+    /**
+     * Is ticket open or closed
+     */
     private OrganizationTicketListResponseTicketsState state;
-    /** User information */
+    /**
+     * User information
+     */
     private OrganizationTicketListResponseTicketsSubmitter submitter;
-    /** Ticket ID */
+    /**
+     * Ticket ID
+     */
     private String ticketId;
-    /** Short description */
+    /**
+     * Short description
+     */
     private String title;
-    /** Update timestamp, ISO 8601 format */
+    /**
+     * Update timestamp, ISO 8601 format
+     */
     private String updateTime;
-    /** User email address */
+    /**
+     * User email address
+     */
     private String userEmail;
-    /** User real name */
+    /**
+     * User real name
+     */
     private String userRealName;
     /**
      * Instantiates a new OrganizationTicketListResponseTickets and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public OrganizationTicketListResponseTickets() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -55,40 +88,40 @@ public class OrganizationTicketListResponseTickets implements AdditionalDataHold
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a OrganizationTicketListResponseTickets
      */
-    @javax.annotation.Nonnull
-    public static OrganizationTicketListResponseTickets createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static OrganizationTicketListResponseTickets createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new OrganizationTicketListResponseTickets();
     }
     /**
      * Gets the account_id property value. Account ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccountId() {
         return this.accountId;
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the create_time property value. Created timestamp, ISO 8601 format
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCreateTime() {
         return this.createTime;
     }
     /**
      * Gets the description property value. Longer description
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDescription() {
         return this.description;
     }
@@ -96,7 +129,7 @@ public class OrganizationTicketListResponseTickets implements AdditionalDataHold
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(16);
         deserializerMap.put("account_id", (n) -> { this.setAccountId(n.getStringValue()); });
@@ -119,41 +152,41 @@ public class OrganizationTicketListResponseTickets implements AdditionalDataHold
     }
     /**
      * Gets the followers property value. Ticket followers
-     * @return a OrganizationTicketListResponseTicketsFollowers
+     * @return a java.util.List<OrganizationTicketListResponseTicketsFollowers>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<OrganizationTicketListResponseTicketsFollowers> getFollowers() {
         return this.followers;
     }
     /**
      * Gets the following property value. Whether the current user is following this ticket
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getFollowing() {
         return this.following;
     }
     /**
      * Gets the organization_id property value. Organization ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getOrganizationId() {
         return this.organizationId;
     }
     /**
      * Gets the project_name property value. Project name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getProjectName() {
         return this.projectName;
     }
     /**
      * Gets the service_name property value. Service name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getServiceName() {
         return this.serviceName;
     }
@@ -161,7 +194,7 @@ public class OrganizationTicketListResponseTickets implements AdditionalDataHold
      * Gets the severity property value. Severity level
      * @return a OrganizationTicketListResponseTicketsSeverity
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public OrganizationTicketListResponseTicketsSeverity getSeverity() {
         return this.severity;
     }
@@ -169,7 +202,7 @@ public class OrganizationTicketListResponseTickets implements AdditionalDataHold
      * Gets the state property value. Is ticket open or closed
      * @return a OrganizationTicketListResponseTicketsState
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public OrganizationTicketListResponseTicketsState getState() {
         return this.state;
     }
@@ -177,57 +210,55 @@ public class OrganizationTicketListResponseTickets implements AdditionalDataHold
      * Gets the submitter property value. User information
      * @return a OrganizationTicketListResponseTicketsSubmitter
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public OrganizationTicketListResponseTicketsSubmitter getSubmitter() {
         return this.submitter;
     }
     /**
      * Gets the ticket_id property value. Ticket ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTicketId() {
         return this.ticketId;
     }
     /**
      * Gets the title property value. Short description
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTitle() {
         return this.title;
     }
     /**
      * Gets the update_time property value. Update timestamp, ISO 8601 format
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUpdateTime() {
         return this.updateTime;
     }
     /**
      * Gets the user_email property value. User email address
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUserEmail() {
         return this.userEmail;
     }
     /**
      * Gets the user_real_name property value. User real name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUserRealName() {
         return this.userRealName;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("account_id", this.getAccountId());
         writer.writeStringValue("create_time", this.getCreateTime());
@@ -249,155 +280,121 @@ public class OrganizationTicketListResponseTickets implements AdditionalDataHold
     }
     /**
      * Sets the account_id property value. Account ID
-     * @param value Value to set for the accountId property.
-     * @return a void
+     * @param value Value to set for the account_id property.
      */
-    @javax.annotation.Nonnull
-    public void setAccountId(@javax.annotation.Nullable final String value) {
+    public void setAccountId(@jakarta.annotation.Nullable final String value) {
         this.accountId = value;
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the create_time property value. Created timestamp, ISO 8601 format
-     * @param value Value to set for the createTime property.
-     * @return a void
+     * @param value Value to set for the create_time property.
      */
-    @javax.annotation.Nonnull
-    public void setCreateTime(@javax.annotation.Nullable final String value) {
+    public void setCreateTime(@jakarta.annotation.Nullable final String value) {
         this.createTime = value;
     }
     /**
      * Sets the description property value. Longer description
      * @param value Value to set for the description property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDescription(@javax.annotation.Nullable final String value) {
+    public void setDescription(@jakarta.annotation.Nullable final String value) {
         this.description = value;
     }
     /**
      * Sets the followers property value. Ticket followers
      * @param value Value to set for the followers property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setFollowers(@javax.annotation.Nullable final java.util.List<OrganizationTicketListResponseTicketsFollowers> value) {
+    public void setFollowers(@jakarta.annotation.Nullable final java.util.List<OrganizationTicketListResponseTicketsFollowers> value) {
         this.followers = value;
     }
     /**
      * Sets the following property value. Whether the current user is following this ticket
      * @param value Value to set for the following property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setFollowing(@javax.annotation.Nullable final Boolean value) {
+    public void setFollowing(@jakarta.annotation.Nullable final Boolean value) {
         this.following = value;
     }
     /**
      * Sets the organization_id property value. Organization ID
-     * @param value Value to set for the organizationId property.
-     * @return a void
+     * @param value Value to set for the organization_id property.
      */
-    @javax.annotation.Nonnull
-    public void setOrganizationId(@javax.annotation.Nullable final String value) {
+    public void setOrganizationId(@jakarta.annotation.Nullable final String value) {
         this.organizationId = value;
     }
     /**
      * Sets the project_name property value. Project name
-     * @param value Value to set for the projectName property.
-     * @return a void
+     * @param value Value to set for the project_name property.
      */
-    @javax.annotation.Nonnull
-    public void setProjectName(@javax.annotation.Nullable final String value) {
+    public void setProjectName(@jakarta.annotation.Nullable final String value) {
         this.projectName = value;
     }
     /**
      * Sets the service_name property value. Service name
-     * @param value Value to set for the serviceName property.
-     * @return a void
+     * @param value Value to set for the service_name property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceName(@javax.annotation.Nullable final String value) {
+    public void setServiceName(@jakarta.annotation.Nullable final String value) {
         this.serviceName = value;
     }
     /**
      * Sets the severity property value. Severity level
      * @param value Value to set for the severity property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setSeverity(@javax.annotation.Nullable final OrganizationTicketListResponseTicketsSeverity value) {
+    public void setSeverity(@jakarta.annotation.Nullable final OrganizationTicketListResponseTicketsSeverity value) {
         this.severity = value;
     }
     /**
      * Sets the state property value. Is ticket open or closed
      * @param value Value to set for the state property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setState(@javax.annotation.Nullable final OrganizationTicketListResponseTicketsState value) {
+    public void setState(@jakarta.annotation.Nullable final OrganizationTicketListResponseTicketsState value) {
         this.state = value;
     }
     /**
      * Sets the submitter property value. User information
      * @param value Value to set for the submitter property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setSubmitter(@javax.annotation.Nullable final OrganizationTicketListResponseTicketsSubmitter value) {
+    public void setSubmitter(@jakarta.annotation.Nullable final OrganizationTicketListResponseTicketsSubmitter value) {
         this.submitter = value;
     }
     /**
      * Sets the ticket_id property value. Ticket ID
-     * @param value Value to set for the ticketId property.
-     * @return a void
+     * @param value Value to set for the ticket_id property.
      */
-    @javax.annotation.Nonnull
-    public void setTicketId(@javax.annotation.Nullable final String value) {
+    public void setTicketId(@jakarta.annotation.Nullable final String value) {
         this.ticketId = value;
     }
     /**
      * Sets the title property value. Short description
      * @param value Value to set for the title property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setTitle(@javax.annotation.Nullable final String value) {
+    public void setTitle(@jakarta.annotation.Nullable final String value) {
         this.title = value;
     }
     /**
      * Sets the update_time property value. Update timestamp, ISO 8601 format
-     * @param value Value to set for the updateTime property.
-     * @return a void
+     * @param value Value to set for the update_time property.
      */
-    @javax.annotation.Nonnull
-    public void setUpdateTime(@javax.annotation.Nullable final String value) {
+    public void setUpdateTime(@jakarta.annotation.Nullable final String value) {
         this.updateTime = value;
     }
     /**
      * Sets the user_email property value. User email address
-     * @param value Value to set for the userEmail property.
-     * @return a void
+     * @param value Value to set for the user_email property.
      */
-    @javax.annotation.Nonnull
-    public void setUserEmail(@javax.annotation.Nullable final String value) {
+    public void setUserEmail(@jakarta.annotation.Nullable final String value) {
         this.userEmail = value;
     }
     /**
      * Sets the user_real_name property value. User real name
-     * @param value Value to set for the userRealName property.
-     * @return a void
+     * @param value Value to set for the user_real_name property.
      */
-    @javax.annotation.Nonnull
-    public void setUserRealName(@javax.annotation.Nullable final String value) {
+    public void setUserRealName(@jakarta.annotation.Nullable final String value) {
         this.userRealName = value;
     }
 }

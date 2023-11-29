@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Project member type */
+/**
+ * Project member type
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum AccountUserProjectsListResponseUserProjectsMemberType implements ValuedEnum {
     Admin("admin"),
     Developer("developer"),
@@ -13,10 +16,10 @@ public enum AccountUserProjectsListResponseUserProjectsMemberType implements Val
     AccountUserProjectsListResponseUserProjectsMemberType(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static AccountUserProjectsListResponseUserProjectsMemberType forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static AccountUserProjectsListResponseUserProjectsMemberType forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "admin": return Admin;

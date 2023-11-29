@@ -8,9 +8,12 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}/service/{service_name}/clickhouse/tiered-storage
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class TieredStorageRequestBuilder extends BaseRequestBuilder {
-    /** The summary property */
-    @javax.annotation.Nonnull
+    /**
+     * The summary property
+     */
+    @jakarta.annotation.Nonnull
     public SummaryRequestBuilder summary() {
         return new SummaryRequestBuilder(pathParameters, requestAdapter);
     }
@@ -18,20 +21,16 @@ public class TieredStorageRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new TieredStorageRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public TieredStorageRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public TieredStorageRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/clickhouse/tiered-storage", pathParameters);
     }
     /**
      * Instantiates a new TieredStorageRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public TieredStorageRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public TieredStorageRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/clickhouse/tiered-storage", rawUrl);
     }
 }

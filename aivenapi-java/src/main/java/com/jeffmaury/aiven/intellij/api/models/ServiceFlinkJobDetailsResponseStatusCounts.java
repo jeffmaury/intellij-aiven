@@ -10,34 +10,55 @@ import java.util.Objects;
 /**
  * Status counts
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceFlinkJobDetailsResponseStatusCounts implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** CANCELED */
+    /**
+     * CANCELED
+     */
     private Integer cANCELED;
-    /** CANCELING */
+    /**
+     * CANCELING
+     */
     private Integer cANCELING;
-    /** CREATED */
+    /**
+     * CREATED
+     */
     private Integer cREATED;
-    /** DEPLOYING */
+    /**
+     * DEPLOYING
+     */
     private Integer dEPLOYING;
-    /** FAILED */
+    /**
+     * FAILED
+     */
     private Integer fAILED;
-    /** FINISHED */
+    /**
+     * FINISHED
+     */
     private Integer fINISHED;
-    /** INITIALIZING */
+    /**
+     * INITIALIZING
+     */
     private Integer iNITIALIZING;
-    /** RECONCILING */
+    /**
+     * RECONCILING
+     */
     private Integer rECONCILING;
-    /** RUNNING */
+    /**
+     * RUNNING
+     */
     private Integer rUNNING;
-    /** SCHEDULED */
+    /**
+     * SCHEDULED
+     */
     private Integer sCHEDULED;
     /**
      * Instantiates a new ServiceFlinkJobDetailsResponseStatusCounts and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceFlinkJobDetailsResponseStatusCounts() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -46,56 +67,56 @@ public class ServiceFlinkJobDetailsResponseStatusCounts implements AdditionalDat
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceFlinkJobDetailsResponseStatusCounts
      */
-    @javax.annotation.Nonnull
-    public static ServiceFlinkJobDetailsResponseStatusCounts createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceFlinkJobDetailsResponseStatusCounts createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceFlinkJobDetailsResponseStatusCounts();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
-     * Gets the cANCELED property value. CANCELED
-     * @return a integer
+     * Gets the CANCELED property value. CANCELED
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getCANCELED() {
         return this.cANCELED;
     }
     /**
-     * Gets the cANCELING property value. CANCELING
-     * @return a integer
+     * Gets the CANCELING property value. CANCELING
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getCANCELING() {
         return this.cANCELING;
     }
     /**
-     * Gets the cREATED property value. CREATED
-     * @return a integer
+     * Gets the CREATED property value. CREATED
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getCREATED() {
         return this.cREATED;
     }
     /**
-     * Gets the dEPLOYING property value. DEPLOYING
-     * @return a integer
+     * Gets the DEPLOYING property value. DEPLOYING
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getDEPLOYING() {
         return this.dEPLOYING;
     }
     /**
-     * Gets the fAILED property value. FAILED
-     * @return a integer
+     * Gets the FAILED property value. FAILED
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getFAILED() {
         return this.fAILED;
     }
@@ -103,7 +124,7 @@ public class ServiceFlinkJobDetailsResponseStatusCounts implements AdditionalDat
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
         deserializerMap.put("CANCELED", (n) -> { this.setCANCELED(n.getIntegerValue()); });
@@ -119,52 +140,50 @@ public class ServiceFlinkJobDetailsResponseStatusCounts implements AdditionalDat
         return deserializerMap;
     }
     /**
-     * Gets the fINISHED property value. FINISHED
-     * @return a integer
+     * Gets the FINISHED property value. FINISHED
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getFINISHED() {
         return this.fINISHED;
     }
     /**
-     * Gets the iNITIALIZING property value. INITIALIZING
-     * @return a integer
+     * Gets the INITIALIZING property value. INITIALIZING
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getINITIALIZING() {
         return this.iNITIALIZING;
     }
     /**
-     * Gets the rECONCILING property value. RECONCILING
-     * @return a integer
+     * Gets the RECONCILING property value. RECONCILING
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getRECONCILING() {
         return this.rECONCILING;
     }
     /**
-     * Gets the rUNNING property value. RUNNING
-     * @return a integer
+     * Gets the RUNNING property value. RUNNING
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getRUNNING() {
         return this.rUNNING;
     }
     /**
-     * Gets the sCHEDULED property value. SCHEDULED
-     * @return a integer
+     * Gets the SCHEDULED property value. SCHEDULED
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getSCHEDULED() {
         return this.sCHEDULED;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeIntegerValue("CANCELED", this.getCANCELED());
         writer.writeIntegerValue("CANCELING", this.getCANCELING());
@@ -179,102 +198,80 @@ public class ServiceFlinkJobDetailsResponseStatusCounts implements AdditionalDat
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
-     * Sets the cANCELED property value. CANCELED
+     * Sets the CANCELED property value. CANCELED
      * @param value Value to set for the CANCELED property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCANCELED(@javax.annotation.Nullable final Integer value) {
+    public void setCANCELED(@jakarta.annotation.Nullable final Integer value) {
         this.cANCELED = value;
     }
     /**
-     * Sets the cANCELING property value. CANCELING
+     * Sets the CANCELING property value. CANCELING
      * @param value Value to set for the CANCELING property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCANCELING(@javax.annotation.Nullable final Integer value) {
+    public void setCANCELING(@jakarta.annotation.Nullable final Integer value) {
         this.cANCELING = value;
     }
     /**
-     * Sets the cREATED property value. CREATED
+     * Sets the CREATED property value. CREATED
      * @param value Value to set for the CREATED property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCREATED(@javax.annotation.Nullable final Integer value) {
+    public void setCREATED(@jakarta.annotation.Nullable final Integer value) {
         this.cREATED = value;
     }
     /**
-     * Sets the dEPLOYING property value. DEPLOYING
+     * Sets the DEPLOYING property value. DEPLOYING
      * @param value Value to set for the DEPLOYING property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDEPLOYING(@javax.annotation.Nullable final Integer value) {
+    public void setDEPLOYING(@jakarta.annotation.Nullable final Integer value) {
         this.dEPLOYING = value;
     }
     /**
-     * Sets the fAILED property value. FAILED
+     * Sets the FAILED property value. FAILED
      * @param value Value to set for the FAILED property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setFAILED(@javax.annotation.Nullable final Integer value) {
+    public void setFAILED(@jakarta.annotation.Nullable final Integer value) {
         this.fAILED = value;
     }
     /**
-     * Sets the fINISHED property value. FINISHED
+     * Sets the FINISHED property value. FINISHED
      * @param value Value to set for the FINISHED property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setFINISHED(@javax.annotation.Nullable final Integer value) {
+    public void setFINISHED(@jakarta.annotation.Nullable final Integer value) {
         this.fINISHED = value;
     }
     /**
-     * Sets the iNITIALIZING property value. INITIALIZING
+     * Sets the INITIALIZING property value. INITIALIZING
      * @param value Value to set for the INITIALIZING property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setINITIALIZING(@javax.annotation.Nullable final Integer value) {
+    public void setINITIALIZING(@jakarta.annotation.Nullable final Integer value) {
         this.iNITIALIZING = value;
     }
     /**
-     * Sets the rECONCILING property value. RECONCILING
+     * Sets the RECONCILING property value. RECONCILING
      * @param value Value to set for the RECONCILING property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setRECONCILING(@javax.annotation.Nullable final Integer value) {
+    public void setRECONCILING(@jakarta.annotation.Nullable final Integer value) {
         this.rECONCILING = value;
     }
     /**
-     * Sets the rUNNING property value. RUNNING
+     * Sets the RUNNING property value. RUNNING
      * @param value Value to set for the RUNNING property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setRUNNING(@javax.annotation.Nullable final Integer value) {
+    public void setRUNNING(@jakarta.annotation.Nullable final Integer value) {
         this.rUNNING = value;
     }
     /**
-     * Sets the sCHEDULED property value. SCHEDULED
+     * Sets the SCHEDULED property value. SCHEDULED
      * @param value Value to set for the SCHEDULED property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setSCHEDULED(@javax.annotation.Nullable final Integer value) {
+    public void setSCHEDULED(@jakarta.annotation.Nullable final Integer value) {
         this.sCHEDULED = value;
     }
 }

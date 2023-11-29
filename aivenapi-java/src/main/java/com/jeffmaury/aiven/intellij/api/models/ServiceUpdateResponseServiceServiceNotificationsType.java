@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Notification type */
+/**
+ * Notification type
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceUpdateResponseServiceServiceNotificationsType implements ValuedEnum {
     Service_end_of_life("service_end_of_life"),
     Service_powered_off_removal("service_powered_off_removal");
@@ -11,10 +14,10 @@ public enum ServiceUpdateResponseServiceServiceNotificationsType implements Valu
     ServiceUpdateResponseServiceServiceNotificationsType(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceUpdateResponseServiceServiceNotificationsType forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceUpdateResponseServiceServiceNotificationsType forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "service_end_of_life": return Service_end_of_life;

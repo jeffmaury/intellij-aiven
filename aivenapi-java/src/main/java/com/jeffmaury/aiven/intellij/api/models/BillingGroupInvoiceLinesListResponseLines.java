@@ -7,44 +7,75 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class BillingGroupInvoiceLinesListResponseLines implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Name of the cloud, if billed resource is associated with a cloud resource */
+    /**
+     * Name of the cloud, if billed resource is associated with a cloud resource
+     */
     private String cloudName;
-    /** Name of the commitment which is referred to this invoice line */
+    /**
+     * Name of the commitment which is referred to this invoice line
+     */
     private String commitmentName;
-    /** Human-readable short description of the invoice line */
+    /**
+     * Human-readable short description of the invoice line
+     */
     private String description;
-    /** Pre-tax sum of invoice line, in local currency, before any discounts */
+    /**
+     * Pre-tax sum of invoice line, in local currency, before any discounts
+     */
     private String linePreDiscountLocal;
-    /** Pre-tax sum of invoice line, in the local currency configured for the invoice */
+    /**
+     * Pre-tax sum of invoice line, in the local currency configured for the invoice
+     */
     private String lineTotalLocal;
-    /** Pre-tax sum of invoice line, in USD */
+    /**
+     * Pre-tax sum of invoice line, in USD
+     */
     private String lineTotalUsd;
-    /** Type of the invoice line */
+    /**
+     * Type of the invoice line
+     */
     private BillingGroupInvoiceLinesListResponseLinesLineType lineType;
-    /** Currency used for line_local_total */
+    /**
+     * Currency used for line_local_total
+     */
     private String localCurrency;
-    /** Name of the project this line is associated with, if any */
+    /**
+     * Name of the project this line is associated with, if any
+     */
     private String projectName;
-    /** Name of the service, if invoice line is for service use */
+    /**
+     * Name of the service, if invoice line is for service use
+     */
     private String serviceName;
-    /** Service plan name, if invoice line is for service use */
+    /**
+     * Service plan name, if invoice line is for service use
+     */
     private String servicePlan;
-    /** Service type, if invoice line is for service use */
+    /**
+     * Service type, if invoice line is for service use
+     */
     private BillingGroupInvoiceLinesListResponseLinesServiceType serviceType;
-    /** Billing tags */
+    /**
+     * Billing tags
+     */
     private BillingGroupInvoiceLinesListResponseLinesTags tags;
-    /** Begin timestamp of the billed time period, for resources billed by time */
+    /**
+     * Begin timestamp of the billed time period, for resources billed by time
+     */
     private String timestampBegin;
-    /** End timestamp of the billed time period, for resources billed by time */
+    /**
+     * End timestamp of the billed time period, for resources billed by time
+     */
     private String timestampEnd;
     /**
      * Instantiates a new BillingGroupInvoiceLinesListResponseLines and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public BillingGroupInvoiceLinesListResponseLines() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -53,40 +84,40 @@ public class BillingGroupInvoiceLinesListResponseLines implements AdditionalData
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a BillingGroupInvoiceLinesListResponseLines
      */
-    @javax.annotation.Nonnull
-    public static BillingGroupInvoiceLinesListResponseLines createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static BillingGroupInvoiceLinesListResponseLines createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new BillingGroupInvoiceLinesListResponseLines();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the cloud_name property value. Name of the cloud, if billed resource is associated with a cloud resource
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCloudName() {
         return this.cloudName;
     }
     /**
      * Gets the commitment_name property value. Name of the commitment which is referred to this invoice line
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCommitmentName() {
         return this.commitmentName;
     }
     /**
      * Gets the description property value. Human-readable short description of the invoice line
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDescription() {
         return this.description;
     }
@@ -94,7 +125,7 @@ public class BillingGroupInvoiceLinesListResponseLines implements AdditionalData
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(15);
         deserializerMap.put("cloud_name", (n) -> { this.setCloudName(n.getStringValue()); });
@@ -116,25 +147,25 @@ public class BillingGroupInvoiceLinesListResponseLines implements AdditionalData
     }
     /**
      * Gets the line_pre_discount_local property value. Pre-tax sum of invoice line, in local currency, before any discounts
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLinePreDiscountLocal() {
         return this.linePreDiscountLocal;
     }
     /**
      * Gets the line_total_local property value. Pre-tax sum of invoice line, in the local currency configured for the invoice
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLineTotalLocal() {
         return this.lineTotalLocal;
     }
     /**
      * Gets the line_total_usd property value. Pre-tax sum of invoice line, in USD
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLineTotalUsd() {
         return this.lineTotalUsd;
     }
@@ -142,39 +173,39 @@ public class BillingGroupInvoiceLinesListResponseLines implements AdditionalData
      * Gets the line_type property value. Type of the invoice line
      * @return a BillingGroupInvoiceLinesListResponseLinesLineType
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public BillingGroupInvoiceLinesListResponseLinesLineType getLineType() {
         return this.lineType;
     }
     /**
      * Gets the local_currency property value. Currency used for line_local_total
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLocalCurrency() {
         return this.localCurrency;
     }
     /**
      * Gets the project_name property value. Name of the project this line is associated with, if any
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getProjectName() {
         return this.projectName;
     }
     /**
      * Gets the service_name property value. Name of the service, if invoice line is for service use
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getServiceName() {
         return this.serviceName;
     }
     /**
      * Gets the service_plan property value. Service plan name, if invoice line is for service use
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getServicePlan() {
         return this.servicePlan;
     }
@@ -182,7 +213,7 @@ public class BillingGroupInvoiceLinesListResponseLines implements AdditionalData
      * Gets the service_type property value. Service type, if invoice line is for service use
      * @return a BillingGroupInvoiceLinesListResponseLinesServiceType
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public BillingGroupInvoiceLinesListResponseLinesServiceType getServiceType() {
         return this.serviceType;
     }
@@ -190,33 +221,31 @@ public class BillingGroupInvoiceLinesListResponseLines implements AdditionalData
      * Gets the tags property value. Billing tags
      * @return a BillingGroupInvoiceLinesListResponseLinesTags
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public BillingGroupInvoiceLinesListResponseLinesTags getTags() {
         return this.tags;
     }
     /**
      * Gets the timestamp_begin property value. Begin timestamp of the billed time period, for resources billed by time
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTimestampBegin() {
         return this.timestampBegin;
     }
     /**
      * Gets the timestamp_end property value. End timestamp of the billed time period, for resources billed by time
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTimestampEnd() {
         return this.timestampEnd;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("cloud_name", this.getCloudName());
         writer.writeStringValue("commitment_name", this.getCommitmentName());
@@ -236,147 +265,115 @@ public class BillingGroupInvoiceLinesListResponseLines implements AdditionalData
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the cloud_name property value. Name of the cloud, if billed resource is associated with a cloud resource
-     * @param value Value to set for the cloudName property.
-     * @return a void
+     * @param value Value to set for the cloud_name property.
      */
-    @javax.annotation.Nonnull
-    public void setCloudName(@javax.annotation.Nullable final String value) {
+    public void setCloudName(@jakarta.annotation.Nullable final String value) {
         this.cloudName = value;
     }
     /**
      * Sets the commitment_name property value. Name of the commitment which is referred to this invoice line
-     * @param value Value to set for the commitmentName property.
-     * @return a void
+     * @param value Value to set for the commitment_name property.
      */
-    @javax.annotation.Nonnull
-    public void setCommitmentName(@javax.annotation.Nullable final String value) {
+    public void setCommitmentName(@jakarta.annotation.Nullable final String value) {
         this.commitmentName = value;
     }
     /**
      * Sets the description property value. Human-readable short description of the invoice line
      * @param value Value to set for the description property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDescription(@javax.annotation.Nullable final String value) {
+    public void setDescription(@jakarta.annotation.Nullable final String value) {
         this.description = value;
     }
     /**
      * Sets the line_pre_discount_local property value. Pre-tax sum of invoice line, in local currency, before any discounts
-     * @param value Value to set for the linePreDiscountLocal property.
-     * @return a void
+     * @param value Value to set for the line_pre_discount_local property.
      */
-    @javax.annotation.Nonnull
-    public void setLinePreDiscountLocal(@javax.annotation.Nullable final String value) {
+    public void setLinePreDiscountLocal(@jakarta.annotation.Nullable final String value) {
         this.linePreDiscountLocal = value;
     }
     /**
      * Sets the line_total_local property value. Pre-tax sum of invoice line, in the local currency configured for the invoice
-     * @param value Value to set for the lineTotalLocal property.
-     * @return a void
+     * @param value Value to set for the line_total_local property.
      */
-    @javax.annotation.Nonnull
-    public void setLineTotalLocal(@javax.annotation.Nullable final String value) {
+    public void setLineTotalLocal(@jakarta.annotation.Nullable final String value) {
         this.lineTotalLocal = value;
     }
     /**
      * Sets the line_total_usd property value. Pre-tax sum of invoice line, in USD
-     * @param value Value to set for the lineTotalUsd property.
-     * @return a void
+     * @param value Value to set for the line_total_usd property.
      */
-    @javax.annotation.Nonnull
-    public void setLineTotalUsd(@javax.annotation.Nullable final String value) {
+    public void setLineTotalUsd(@jakarta.annotation.Nullable final String value) {
         this.lineTotalUsd = value;
     }
     /**
      * Sets the line_type property value. Type of the invoice line
-     * @param value Value to set for the lineType property.
-     * @return a void
+     * @param value Value to set for the line_type property.
      */
-    @javax.annotation.Nonnull
-    public void setLineType(@javax.annotation.Nullable final BillingGroupInvoiceLinesListResponseLinesLineType value) {
+    public void setLineType(@jakarta.annotation.Nullable final BillingGroupInvoiceLinesListResponseLinesLineType value) {
         this.lineType = value;
     }
     /**
      * Sets the local_currency property value. Currency used for line_local_total
-     * @param value Value to set for the localCurrency property.
-     * @return a void
+     * @param value Value to set for the local_currency property.
      */
-    @javax.annotation.Nonnull
-    public void setLocalCurrency(@javax.annotation.Nullable final String value) {
+    public void setLocalCurrency(@jakarta.annotation.Nullable final String value) {
         this.localCurrency = value;
     }
     /**
      * Sets the project_name property value. Name of the project this line is associated with, if any
-     * @param value Value to set for the projectName property.
-     * @return a void
+     * @param value Value to set for the project_name property.
      */
-    @javax.annotation.Nonnull
-    public void setProjectName(@javax.annotation.Nullable final String value) {
+    public void setProjectName(@jakarta.annotation.Nullable final String value) {
         this.projectName = value;
     }
     /**
      * Sets the service_name property value. Name of the service, if invoice line is for service use
-     * @param value Value to set for the serviceName property.
-     * @return a void
+     * @param value Value to set for the service_name property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceName(@javax.annotation.Nullable final String value) {
+    public void setServiceName(@jakarta.annotation.Nullable final String value) {
         this.serviceName = value;
     }
     /**
      * Sets the service_plan property value. Service plan name, if invoice line is for service use
-     * @param value Value to set for the servicePlan property.
-     * @return a void
+     * @param value Value to set for the service_plan property.
      */
-    @javax.annotation.Nonnull
-    public void setServicePlan(@javax.annotation.Nullable final String value) {
+    public void setServicePlan(@jakarta.annotation.Nullable final String value) {
         this.servicePlan = value;
     }
     /**
      * Sets the service_type property value. Service type, if invoice line is for service use
-     * @param value Value to set for the serviceType property.
-     * @return a void
+     * @param value Value to set for the service_type property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceType(@javax.annotation.Nullable final BillingGroupInvoiceLinesListResponseLinesServiceType value) {
+    public void setServiceType(@jakarta.annotation.Nullable final BillingGroupInvoiceLinesListResponseLinesServiceType value) {
         this.serviceType = value;
     }
     /**
      * Sets the tags property value. Billing tags
      * @param value Value to set for the tags property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setTags(@javax.annotation.Nullable final BillingGroupInvoiceLinesListResponseLinesTags value) {
+    public void setTags(@jakarta.annotation.Nullable final BillingGroupInvoiceLinesListResponseLinesTags value) {
         this.tags = value;
     }
     /**
      * Sets the timestamp_begin property value. Begin timestamp of the billed time period, for resources billed by time
-     * @param value Value to set for the timestampBegin property.
-     * @return a void
+     * @param value Value to set for the timestamp_begin property.
      */
-    @javax.annotation.Nonnull
-    public void setTimestampBegin(@javax.annotation.Nullable final String value) {
+    public void setTimestampBegin(@jakarta.annotation.Nullable final String value) {
         this.timestampBegin = value;
     }
     /**
      * Sets the timestamp_end property value. End timestamp of the billed time period, for resources billed by time
-     * @param value Value to set for the timestampEnd property.
-     * @return a void
+     * @param value Value to set for the timestamp_end property.
      */
-    @javax.annotation.Nonnull
-    public void setTimestampEnd(@javax.annotation.Nullable final String value) {
+    public void setTimestampEnd(@jakarta.annotation.Nullable final String value) {
         this.timestampEnd = value;
     }
 }

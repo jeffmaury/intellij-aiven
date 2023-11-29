@@ -10,24 +10,35 @@ import java.util.Objects;
 /**
  * TwoFactorAuthConfigureResponse
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class TwoFactorAuthConfigureResponse implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** List of errors occurred during request processing */
+    /**
+     * List of errors occurred during request processing
+     */
     private java.util.List<TwoFactorAuthConfigureResponseErrors> errors;
-    /** Printable result of the request */
+    /**
+     * Printable result of the request
+     */
     private String message;
-    /** Two-factor authentication method being used, if any */
+    /**
+     * Two-factor authentication method being used, if any
+     */
     private String method;
-    /** QR code describing the TOTP as a base64-encoded PNG */
+    /**
+     * QR code describing the TOTP as a base64-encoded PNG
+     */
     private String qrcode;
-    /** URI describing the TOTP */
+    /**
+     * URI describing the TOTP
+     */
     private String uri;
     /**
      * Instantiates a new TwoFactorAuthConfigureResponse and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public TwoFactorAuthConfigureResponse() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -36,24 +47,24 @@ public class TwoFactorAuthConfigureResponse implements AdditionalDataHolder, Par
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a TwoFactorAuthConfigureResponse
      */
-    @javax.annotation.Nonnull
-    public static TwoFactorAuthConfigureResponse createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static TwoFactorAuthConfigureResponse createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new TwoFactorAuthConfigureResponse();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the errors property value. List of errors occurred during request processing
-     * @return a TwoFactorAuthConfigureResponseErrors
+     * @return a java.util.List<TwoFactorAuthConfigureResponseErrors>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<TwoFactorAuthConfigureResponseErrors> getErrors() {
         return this.errors;
     }
@@ -61,7 +72,7 @@ public class TwoFactorAuthConfigureResponse implements AdditionalDataHolder, Par
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("errors", (n) -> { this.setErrors(n.getCollectionOfObjectValues(TwoFactorAuthConfigureResponseErrors::createFromDiscriminatorValue)); });
@@ -73,43 +84,41 @@ public class TwoFactorAuthConfigureResponse implements AdditionalDataHolder, Par
     }
     /**
      * Gets the message property value. Printable result of the request
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getMessage() {
         return this.message;
     }
     /**
      * Gets the method property value. Two-factor authentication method being used, if any
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getMethod() {
         return this.method;
     }
     /**
      * Gets the qrcode property value. QR code describing the TOTP as a base64-encoded PNG
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getQrcode() {
         return this.qrcode;
     }
     /**
      * Gets the uri property value. URI describing the TOTP
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUri() {
         return this.uri;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfObjectValues("errors", this.getErrors());
         writer.writeStringValue("message", this.getMessage());
@@ -119,57 +128,45 @@ public class TwoFactorAuthConfigureResponse implements AdditionalDataHolder, Par
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the errors property value. List of errors occurred during request processing
      * @param value Value to set for the errors property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setErrors(@javax.annotation.Nullable final java.util.List<TwoFactorAuthConfigureResponseErrors> value) {
+    public void setErrors(@jakarta.annotation.Nullable final java.util.List<TwoFactorAuthConfigureResponseErrors> value) {
         this.errors = value;
     }
     /**
      * Sets the message property value. Printable result of the request
      * @param value Value to set for the message property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMessage(@javax.annotation.Nullable final String value) {
+    public void setMessage(@jakarta.annotation.Nullable final String value) {
         this.message = value;
     }
     /**
      * Sets the method property value. Two-factor authentication method being used, if any
      * @param value Value to set for the method property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMethod(@javax.annotation.Nullable final String value) {
+    public void setMethod(@jakarta.annotation.Nullable final String value) {
         this.method = value;
     }
     /**
      * Sets the qrcode property value. QR code describing the TOTP as a base64-encoded PNG
      * @param value Value to set for the qrcode property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setQrcode(@javax.annotation.Nullable final String value) {
+    public void setQrcode(@jakarta.annotation.Nullable final String value) {
         this.qrcode = value;
     }
     /**
      * Sets the uri property value. URI describing the TOTP
      * @param value Value to set for the uri property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setUri(@javax.annotation.Nullable final String value) {
+    public void setUri(@jakarta.annotation.Nullable final String value) {
         this.uri = value;
     }
 }

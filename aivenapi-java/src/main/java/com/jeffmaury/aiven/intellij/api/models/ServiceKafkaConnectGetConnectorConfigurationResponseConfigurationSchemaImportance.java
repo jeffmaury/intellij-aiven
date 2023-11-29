@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** How important is the field */
+/**
+ * How important is the field
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSchemaImportance implements ValuedEnum {
     LOW("LOW"),
     MEDIUM("MEDIUM"),
@@ -12,10 +15,10 @@ public enum ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSch
     ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSchemaImportance(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSchemaImportance forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSchemaImportance forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "LOW": return LOW;

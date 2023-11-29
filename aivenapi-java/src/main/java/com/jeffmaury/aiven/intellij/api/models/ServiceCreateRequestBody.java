@@ -10,42 +10,71 @@ import java.util.Objects;
 /**
  * ServiceCreateRequestBody
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceCreateRequestBody implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Target cloud */
+    /**
+     * Target cloud
+     */
     private String cloud;
-    /** If this is a forked service, copy tags from the source service. If request contains additional tags, the tags copied from source are updated with them. */
+    /**
+     * If this is a forked service, copy tags from the source service. If request contains additional tags, the tags copied from source are updated with them.
+     */
     private Boolean copyTags;
-    /** Megabytes of disk space for data storage */
+    /**
+     * Megabytes of disk space for data storage
+     */
     private Double diskSpaceMb;
-    /** Service group name (DEPRECATED: do not use) */
+    /**
+     * Service group name (DEPRECATED: do not use)
+     */
     private String groupName;
-    /** Automatic maintenance settings */
+    /**
+     * Automatic maintenance settings
+     */
     private ServiceCreateRequestBodyMaintenance maintenance;
-    /** Subscription plan */
+    /**
+     * Subscription plan
+     */
     private String plan;
-    /** Project VPC ID */
+    /**
+     * Project VPC ID
+     */
     private String projectVpcId;
-    /** Service integrations to enable for the service. Some integration types affect how a service is created and they must be provided as part of the creation call instead of being defined later. */
+    /**
+     * Service integrations to enable for the service. Some integration types affect how a service is created and they must be provided as part of the creation call instead of being defined later.
+     */
     private java.util.List<ServiceCreateRequestBodyServiceIntegrations> serviceIntegrations;
-    /** Service name */
+    /**
+     * Service name
+     */
     private String serviceName;
-    /** Service type code */
+    /**
+     * Service type code
+     */
     private String serviceType;
-    /** Static IP addresses to associate with the service */
+    /**
+     * Static IP addresses to associate with the service
+     */
     private java.util.List<String> staticIps;
-    /** Set of resource tags */
+    /**
+     * Set of resource tags
+     */
     private ServiceCreateRequestBodyTags tags;
-    /** Service is protected against termination and powering off */
+    /**
+     * Service is protected against termination and powering off
+     */
     private Boolean terminationProtection;
-    /** Service type-specific settings */
+    /**
+     * Service type-specific settings
+     */
     private ServiceCreateRequestBodyUserConfig userConfig;
     /**
      * Instantiates a new ServiceCreateRequestBody and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceCreateRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -54,40 +83,40 @@ public class ServiceCreateRequestBody implements AdditionalDataHolder, Parsable 
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceCreateRequestBody
      */
-    @javax.annotation.Nonnull
-    public static ServiceCreateRequestBody createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceCreateRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceCreateRequestBody();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the cloud property value. Target cloud
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCloud() {
         return this.cloud;
     }
     /**
      * Gets the copy_tags property value. If this is a forked service, copy tags from the source service. If request contains additional tags, the tags copied from source are updated with them.
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getCopyTags() {
         return this.copyTags;
     }
     /**
      * Gets the disk_space_mb property value. Megabytes of disk space for data storage
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getDiskSpaceMb() {
         return this.diskSpaceMb;
     }
@@ -95,7 +124,7 @@ public class ServiceCreateRequestBody implements AdditionalDataHolder, Parsable 
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(14);
         deserializerMap.put("cloud", (n) -> { this.setCloud(n.getStringValue()); });
@@ -116,9 +145,9 @@ public class ServiceCreateRequestBody implements AdditionalDataHolder, Parsable 
     }
     /**
      * Gets the group_name property value. Service group name (DEPRECATED: do not use)
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getGroupName() {
         return this.groupName;
     }
@@ -126,55 +155,55 @@ public class ServiceCreateRequestBody implements AdditionalDataHolder, Parsable 
      * Gets the maintenance property value. Automatic maintenance settings
      * @return a ServiceCreateRequestBodyMaintenance
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceCreateRequestBodyMaintenance getMaintenance() {
         return this.maintenance;
     }
     /**
      * Gets the plan property value. Subscription plan
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getPlan() {
         return this.plan;
     }
     /**
      * Gets the project_vpc_id property value. Project VPC ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getProjectVpcId() {
         return this.projectVpcId;
     }
     /**
      * Gets the service_integrations property value. Service integrations to enable for the service. Some integration types affect how a service is created and they must be provided as part of the creation call instead of being defined later.
-     * @return a ServiceCreateRequestBodyServiceIntegrations
+     * @return a java.util.List<ServiceCreateRequestBodyServiceIntegrations>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceCreateRequestBodyServiceIntegrations> getServiceIntegrations() {
         return this.serviceIntegrations;
     }
     /**
      * Gets the service_name property value. Service name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getServiceName() {
         return this.serviceName;
     }
     /**
      * Gets the service_type property value. Service type code
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getServiceType() {
         return this.serviceType;
     }
     /**
      * Gets the static_ips property value. Static IP addresses to associate with the service
-     * @return a string
+     * @return a java.util.List<String>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<String> getStaticIps() {
         return this.staticIps;
     }
@@ -182,15 +211,15 @@ public class ServiceCreateRequestBody implements AdditionalDataHolder, Parsable 
      * Gets the tags property value. Set of resource tags
      * @return a ServiceCreateRequestBodyTags
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceCreateRequestBodyTags getTags() {
         return this.tags;
     }
     /**
      * Gets the termination_protection property value. Service is protected against termination and powering off
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getTerminationProtection() {
         return this.terminationProtection;
     }
@@ -198,17 +227,15 @@ public class ServiceCreateRequestBody implements AdditionalDataHolder, Parsable 
      * Gets the user_config property value. Service type-specific settings
      * @return a ServiceCreateRequestBodyUserConfig
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceCreateRequestBodyUserConfig getUserConfig() {
         return this.userConfig;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("cloud", this.getCloud());
         writer.writeBooleanValue("copy_tags", this.getCopyTags());
@@ -227,138 +254,108 @@ public class ServiceCreateRequestBody implements AdditionalDataHolder, Parsable 
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the cloud property value. Target cloud
      * @param value Value to set for the cloud property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCloud(@javax.annotation.Nullable final String value) {
+    public void setCloud(@jakarta.annotation.Nullable final String value) {
         this.cloud = value;
     }
     /**
      * Sets the copy_tags property value. If this is a forked service, copy tags from the source service. If request contains additional tags, the tags copied from source are updated with them.
-     * @param value Value to set for the copyTags property.
-     * @return a void
+     * @param value Value to set for the copy_tags property.
      */
-    @javax.annotation.Nonnull
-    public void setCopyTags(@javax.annotation.Nullable final Boolean value) {
+    public void setCopyTags(@jakarta.annotation.Nullable final Boolean value) {
         this.copyTags = value;
     }
     /**
      * Sets the disk_space_mb property value. Megabytes of disk space for data storage
-     * @param value Value to set for the diskSpaceMb property.
-     * @return a void
+     * @param value Value to set for the disk_space_mb property.
      */
-    @javax.annotation.Nonnull
-    public void setDiskSpaceMb(@javax.annotation.Nullable final Double value) {
+    public void setDiskSpaceMb(@jakarta.annotation.Nullable final Double value) {
         this.diskSpaceMb = value;
     }
     /**
      * Sets the group_name property value. Service group name (DEPRECATED: do not use)
-     * @param value Value to set for the groupName property.
-     * @return a void
+     * @param value Value to set for the group_name property.
      */
-    @javax.annotation.Nonnull
-    public void setGroupName(@javax.annotation.Nullable final String value) {
+    public void setGroupName(@jakarta.annotation.Nullable final String value) {
         this.groupName = value;
     }
     /**
      * Sets the maintenance property value. Automatic maintenance settings
      * @param value Value to set for the maintenance property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMaintenance(@javax.annotation.Nullable final ServiceCreateRequestBodyMaintenance value) {
+    public void setMaintenance(@jakarta.annotation.Nullable final ServiceCreateRequestBodyMaintenance value) {
         this.maintenance = value;
     }
     /**
      * Sets the plan property value. Subscription plan
      * @param value Value to set for the plan property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setPlan(@javax.annotation.Nullable final String value) {
+    public void setPlan(@jakarta.annotation.Nullable final String value) {
         this.plan = value;
     }
     /**
      * Sets the project_vpc_id property value. Project VPC ID
-     * @param value Value to set for the projectVpcId property.
-     * @return a void
+     * @param value Value to set for the project_vpc_id property.
      */
-    @javax.annotation.Nonnull
-    public void setProjectVpcId(@javax.annotation.Nullable final String value) {
+    public void setProjectVpcId(@jakarta.annotation.Nullable final String value) {
         this.projectVpcId = value;
     }
     /**
      * Sets the service_integrations property value. Service integrations to enable for the service. Some integration types affect how a service is created and they must be provided as part of the creation call instead of being defined later.
-     * @param value Value to set for the serviceIntegrations property.
-     * @return a void
+     * @param value Value to set for the service_integrations property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceIntegrations(@javax.annotation.Nullable final java.util.List<ServiceCreateRequestBodyServiceIntegrations> value) {
+    public void setServiceIntegrations(@jakarta.annotation.Nullable final java.util.List<ServiceCreateRequestBodyServiceIntegrations> value) {
         this.serviceIntegrations = value;
     }
     /**
      * Sets the service_name property value. Service name
-     * @param value Value to set for the serviceName property.
-     * @return a void
+     * @param value Value to set for the service_name property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceName(@javax.annotation.Nullable final String value) {
+    public void setServiceName(@jakarta.annotation.Nullable final String value) {
         this.serviceName = value;
     }
     /**
      * Sets the service_type property value. Service type code
-     * @param value Value to set for the serviceType property.
-     * @return a void
+     * @param value Value to set for the service_type property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceType(@javax.annotation.Nullable final String value) {
+    public void setServiceType(@jakarta.annotation.Nullable final String value) {
         this.serviceType = value;
     }
     /**
      * Sets the static_ips property value. Static IP addresses to associate with the service
-     * @param value Value to set for the staticIps property.
-     * @return a void
+     * @param value Value to set for the static_ips property.
      */
-    @javax.annotation.Nonnull
-    public void setStaticIps(@javax.annotation.Nullable final java.util.List<String> value) {
+    public void setStaticIps(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.staticIps = value;
     }
     /**
      * Sets the tags property value. Set of resource tags
      * @param value Value to set for the tags property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setTags(@javax.annotation.Nullable final ServiceCreateRequestBodyTags value) {
+    public void setTags(@jakarta.annotation.Nullable final ServiceCreateRequestBodyTags value) {
         this.tags = value;
     }
     /**
      * Sets the termination_protection property value. Service is protected against termination and powering off
-     * @param value Value to set for the terminationProtection property.
-     * @return a void
+     * @param value Value to set for the termination_protection property.
      */
-    @javax.annotation.Nonnull
-    public void setTerminationProtection(@javax.annotation.Nullable final Boolean value) {
+    public void setTerminationProtection(@jakarta.annotation.Nullable final Boolean value) {
         this.terminationProtection = value;
     }
     /**
      * Sets the user_config property value. Service type-specific settings
-     * @param value Value to set for the userConfig property.
-     * @return a void
+     * @param value Value to set for the user_config property.
      */
-    @javax.annotation.Nonnull
-    public void setUserConfig(@javax.annotation.Nullable final ServiceCreateRequestBodyUserConfig value) {
+    public void setUserConfig(@jakarta.annotation.Nullable final ServiceCreateRequestBodyUserConfig value) {
         this.userConfig = value;
     }
 }

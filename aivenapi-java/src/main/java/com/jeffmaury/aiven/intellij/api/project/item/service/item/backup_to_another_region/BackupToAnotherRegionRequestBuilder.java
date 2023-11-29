@@ -8,9 +8,12 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}/service/{service_name}/backup_to_another_region
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class BackupToAnotherRegionRequestBuilder extends BaseRequestBuilder {
-    /** The report property */
-    @javax.annotation.Nonnull
+    /**
+     * The report property
+     */
+    @jakarta.annotation.Nonnull
     public ReportRequestBuilder report() {
         return new ReportRequestBuilder(pathParameters, requestAdapter);
     }
@@ -18,20 +21,16 @@ public class BackupToAnotherRegionRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new Backup_to_another_regionRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public BackupToAnotherRegionRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public BackupToAnotherRegionRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/backup_to_another_region", pathParameters);
     }
     /**
      * Instantiates a new Backup_to_another_regionRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public BackupToAnotherRegionRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public BackupToAnotherRegionRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/backup_to_another_region", rawUrl);
     }
 }

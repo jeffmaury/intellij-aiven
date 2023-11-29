@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Service state */
+/**
+ * Service state
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ListServiceVersionsResponseServiceVersionsState implements ValuedEnum {
     Available("available"),
     Eol("eol"),
@@ -14,10 +17,10 @@ public enum ListServiceVersionsResponseServiceVersionsState implements ValuedEnu
     ListServiceVersionsResponseServiceVersionsState(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ListServiceVersionsResponseServiceVersionsState forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ListServiceVersionsResponseServiceVersionsState forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "available": return Available;

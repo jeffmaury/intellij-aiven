@@ -10,20 +10,27 @@ import java.util.Objects;
 /**
  * ServiceUserCreateRequestBody
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceUserCreateRequestBody implements AdditionalDataHolder, Parsable {
-    /** Service specific access controls for user */
+    /**
+     * Service specific access controls for user
+     */
     private ServiceUserCreateRequestBodyAccessControl accessControl;
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Authentication details */
+    /**
+     * Authentication details
+     */
     private ServiceUserCreateRequestBodyAuthentication authentication;
-    /** Service username */
+    /**
+     * Service username
+     */
     private String username;
     /**
      * Instantiates a new ServiceUserCreateRequestBody and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceUserCreateRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -32,8 +39,8 @@ public class ServiceUserCreateRequestBody implements AdditionalDataHolder, Parsa
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceUserCreateRequestBody
      */
-    @javax.annotation.Nonnull
-    public static ServiceUserCreateRequestBody createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceUserCreateRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceUserCreateRequestBody();
     }
@@ -41,15 +48,15 @@ public class ServiceUserCreateRequestBody implements AdditionalDataHolder, Parsa
      * Gets the access_control property value. Service specific access controls for user
      * @return a ServiceUserCreateRequestBodyAccessControl
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceUserCreateRequestBodyAccessControl getAccessControl() {
         return this.accessControl;
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
@@ -57,7 +64,7 @@ public class ServiceUserCreateRequestBody implements AdditionalDataHolder, Parsa
      * Gets the authentication property value. Authentication details
      * @return a ServiceUserCreateRequestBodyAuthentication
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceUserCreateRequestBodyAuthentication getAuthentication() {
         return this.authentication;
     }
@@ -65,7 +72,7 @@ public class ServiceUserCreateRequestBody implements AdditionalDataHolder, Parsa
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("access_control", (n) -> { this.setAccessControl(n.getObjectValue(ServiceUserCreateRequestBodyAccessControl::createFromDiscriminatorValue)); });
@@ -75,19 +82,17 @@ public class ServiceUserCreateRequestBody implements AdditionalDataHolder, Parsa
     }
     /**
      * Gets the username property value. Service username
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUsername() {
         return this.username;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeObjectValue("access_control", this.getAccessControl());
         writer.writeEnumValue("authentication", this.getAuthentication());
@@ -96,38 +101,30 @@ public class ServiceUserCreateRequestBody implements AdditionalDataHolder, Parsa
     }
     /**
      * Sets the access_control property value. Service specific access controls for user
-     * @param value Value to set for the accessControl property.
-     * @return a void
+     * @param value Value to set for the access_control property.
      */
-    @javax.annotation.Nonnull
-    public void setAccessControl(@javax.annotation.Nullable final ServiceUserCreateRequestBodyAccessControl value) {
+    public void setAccessControl(@jakarta.annotation.Nullable final ServiceUserCreateRequestBodyAccessControl value) {
         this.accessControl = value;
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the authentication property value. Authentication details
      * @param value Value to set for the authentication property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAuthentication(@javax.annotation.Nullable final ServiceUserCreateRequestBodyAuthentication value) {
+    public void setAuthentication(@jakarta.annotation.Nullable final ServiceUserCreateRequestBodyAuthentication value) {
         this.authentication = value;
     }
     /**
      * Sets the username property value. Service username
      * @param value Value to set for the username property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setUsername(@javax.annotation.Nullable final String value) {
+    public void setUsername(@jakarta.annotation.Nullable final String value) {
         this.username = value;
     }
 }

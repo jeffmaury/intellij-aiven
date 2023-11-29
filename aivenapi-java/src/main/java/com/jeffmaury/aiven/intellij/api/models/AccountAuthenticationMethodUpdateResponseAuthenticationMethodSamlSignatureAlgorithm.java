@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** SAMLSignatureAlgorithm */
+/**
+ * SAMLSignatureAlgorithm
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum AccountAuthenticationMethodUpdateResponseAuthenticationMethodSamlSignatureAlgorithm implements ValuedEnum {
     RsaSha1("rsa-sha1"),
     DsaSha1("dsa-sha1"),
@@ -14,10 +17,10 @@ public enum AccountAuthenticationMethodUpdateResponseAuthenticationMethodSamlSig
     AccountAuthenticationMethodUpdateResponseAuthenticationMethodSamlSignatureAlgorithm(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static AccountAuthenticationMethodUpdateResponseAuthenticationMethodSamlSignatureAlgorithm forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static AccountAuthenticationMethodUpdateResponseAuthenticationMethodSamlSignatureAlgorithm forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "rsa-sha1": return RsaSha1;

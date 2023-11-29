@@ -8,9 +8,12 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}/service/{service_name}/maintenance
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class MaintenanceRequestBuilder extends BaseRequestBuilder {
-    /** The start property */
-    @javax.annotation.Nonnull
+    /**
+     * The start property
+     */
+    @jakarta.annotation.Nonnull
     public StartRequestBuilder start() {
         return new StartRequestBuilder(pathParameters, requestAdapter);
     }
@@ -18,20 +21,16 @@ public class MaintenanceRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new MaintenanceRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public MaintenanceRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public MaintenanceRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/maintenance", pathParameters);
     }
     /**
      * Instantiates a new MaintenanceRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public MaintenanceRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public MaintenanceRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/maintenance", rawUrl);
     }
 }

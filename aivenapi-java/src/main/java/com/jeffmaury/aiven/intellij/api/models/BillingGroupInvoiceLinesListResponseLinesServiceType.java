@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Service type, if invoice line is for service use */
+/**
+ * Service type, if invoice line is for service use
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum BillingGroupInvoiceLinesListResponseLinesServiceType implements ValuedEnum {
     Cassandra("cassandra"),
     Clickhouse("clickhouse"),
@@ -24,10 +27,10 @@ public enum BillingGroupInvoiceLinesListResponseLinesServiceType implements Valu
     BillingGroupInvoiceLinesListResponseLinesServiceType(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static BillingGroupInvoiceLinesListResponseLinesServiceType forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static BillingGroupInvoiceLinesListResponseLinesServiceType forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "cassandra": return Cassandra;

@@ -8,14 +8,15 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /organization
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class OrganizationRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.organization.item collection
-     * @param organization_id Unique identifier of the item
+     * @param organization_id ID of an organization
      * @return a WithOrganizationItemRequestBuilder
      */
-    @javax.annotation.Nonnull
-    public WithOrganizationItemRequestBuilder byOrganization_id(@javax.annotation.Nonnull final String organization_id) {
+    @jakarta.annotation.Nonnull
+    public WithOrganizationItemRequestBuilder byOrganization_id(@jakarta.annotation.Nonnull final String organization_id) {
         Objects.requireNonNull(organization_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
         urlTplParams.put("organization_id", organization_id);
@@ -25,20 +26,16 @@ public class OrganizationRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new OrganizationRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public OrganizationRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public OrganizationRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/organization", pathParameters);
     }
     /**
      * Instantiates a new OrganizationRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public OrganizationRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public OrganizationRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/organization", rawUrl);
     }
 }

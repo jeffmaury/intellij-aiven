@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** State of the verification process */
+/**
+ * State of the verification process
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum OrganizationDomainUpdateResponseState implements ValuedEnum {
     Deleted("deleted"),
     Unverified("unverified"),
@@ -12,10 +15,10 @@ public enum OrganizationDomainUpdateResponseState implements ValuedEnum {
     OrganizationDomainUpdateResponseState(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static OrganizationDomainUpdateResponseState forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static OrganizationDomainUpdateResponseState forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "deleted": return Deleted;

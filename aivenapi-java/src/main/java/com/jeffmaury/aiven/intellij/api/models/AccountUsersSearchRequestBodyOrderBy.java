@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Sorting criteria; desc is descending order and asc ascending */
+/**
+ * Sorting criteria; desc is descending order and asc ascending
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum AccountUsersSearchRequestBodyOrderBy implements ValuedEnum {
     User_emailAsc("user_email:asc"),
     User_emailDesc("user_email:desc"),
@@ -15,10 +18,10 @@ public enum AccountUsersSearchRequestBodyOrderBy implements ValuedEnum {
     AccountUsersSearchRequestBodyOrderBy(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static AccountUsersSearchRequestBodyOrderBy forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static AccountUsersSearchRequestBodyOrderBy forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "user_email:asc": return User_emailAsc;

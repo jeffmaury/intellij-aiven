@@ -10,19 +10,26 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}/service/{service_name}/flink
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class FlinkRequestBuilder extends BaseRequestBuilder {
-    /** The application property */
-    @javax.annotation.Nonnull
+    /**
+     * The application property
+     */
+    @jakarta.annotation.Nonnull
     public ApplicationRequestBuilder application() {
         return new ApplicationRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The job property */
-    @javax.annotation.Nonnull
+    /**
+     * The job property
+     */
+    @jakarta.annotation.Nonnull
     public JobRequestBuilder job() {
         return new JobRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The overview property */
-    @javax.annotation.Nonnull
+    /**
+     * The overview property
+     */
+    @jakarta.annotation.Nonnull
     public OverviewRequestBuilder overview() {
         return new OverviewRequestBuilder(pathParameters, requestAdapter);
     }
@@ -30,20 +37,16 @@ public class FlinkRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new FlinkRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public FlinkRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public FlinkRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/flink", pathParameters);
     }
     /**
      * Instantiates a new FlinkRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public FlinkRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public FlinkRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/flink", rawUrl);
     }
 }

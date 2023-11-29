@@ -7,24 +7,35 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class OrganizationUserTokensListResponseTokens implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Description */
+    /**
+     * Description
+     */
     private String description;
-    /** Last-used IP */
+    /**
+     * Last-used IP
+     */
     private String lastIp;
-    /** Last-used time */
+    /**
+     * Last-used time
+     */
     private String lastUsedTime;
-    /** Last-used user agent */
+    /**
+     * Last-used user agent
+     */
     private String lastUserAgent;
-    /** Token prefix */
+    /**
+     * Token prefix
+     */
     private String tokenPrefix;
     /**
      * Instantiates a new OrganizationUserTokensListResponseTokens and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public OrganizationUserTokensListResponseTokens() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -33,24 +44,24 @@ public class OrganizationUserTokensListResponseTokens implements AdditionalDataH
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a OrganizationUserTokensListResponseTokens
      */
-    @javax.annotation.Nonnull
-    public static OrganizationUserTokensListResponseTokens createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static OrganizationUserTokensListResponseTokens createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new OrganizationUserTokensListResponseTokens();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the description property value. Description
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDescription() {
         return this.description;
     }
@@ -58,7 +69,7 @@ public class OrganizationUserTokensListResponseTokens implements AdditionalDataH
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("description", (n) -> { this.setDescription(n.getStringValue()); });
@@ -70,43 +81,41 @@ public class OrganizationUserTokensListResponseTokens implements AdditionalDataH
     }
     /**
      * Gets the last_ip property value. Last-used IP
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLastIp() {
         return this.lastIp;
     }
     /**
      * Gets the last_used_time property value. Last-used time
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLastUsedTime() {
         return this.lastUsedTime;
     }
     /**
      * Gets the last_user_agent property value. Last-used user agent
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLastUserAgent() {
         return this.lastUserAgent;
     }
     /**
      * Gets the token_prefix property value. Token prefix
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTokenPrefix() {
         return this.tokenPrefix;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("description", this.getDescription());
         writer.writeStringValue("last_ip", this.getLastIp());
@@ -116,57 +125,45 @@ public class OrganizationUserTokensListResponseTokens implements AdditionalDataH
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the description property value. Description
      * @param value Value to set for the description property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDescription(@javax.annotation.Nullable final String value) {
+    public void setDescription(@jakarta.annotation.Nullable final String value) {
         this.description = value;
     }
     /**
      * Sets the last_ip property value. Last-used IP
-     * @param value Value to set for the lastIp property.
-     * @return a void
+     * @param value Value to set for the last_ip property.
      */
-    @javax.annotation.Nonnull
-    public void setLastIp(@javax.annotation.Nullable final String value) {
+    public void setLastIp(@jakarta.annotation.Nullable final String value) {
         this.lastIp = value;
     }
     /**
      * Sets the last_used_time property value. Last-used time
-     * @param value Value to set for the lastUsedTime property.
-     * @return a void
+     * @param value Value to set for the last_used_time property.
      */
-    @javax.annotation.Nonnull
-    public void setLastUsedTime(@javax.annotation.Nullable final String value) {
+    public void setLastUsedTime(@jakarta.annotation.Nullable final String value) {
         this.lastUsedTime = value;
     }
     /**
      * Sets the last_user_agent property value. Last-used user agent
-     * @param value Value to set for the lastUserAgent property.
-     * @return a void
+     * @param value Value to set for the last_user_agent property.
      */
-    @javax.annotation.Nonnull
-    public void setLastUserAgent(@javax.annotation.Nullable final String value) {
+    public void setLastUserAgent(@jakarta.annotation.Nullable final String value) {
         this.lastUserAgent = value;
     }
     /**
      * Sets the token_prefix property value. Token prefix
-     * @param value Value to set for the tokenPrefix property.
-     * @return a void
+     * @param value Value to set for the token_prefix property.
      */
-    @javax.annotation.Nonnull
-    public void setTokenPrefix(@javax.annotation.Nullable final String value) {
+    public void setTokenPrefix(@jakarta.annotation.Nullable final String value) {
         this.tokenPrefix = value;
     }
 }

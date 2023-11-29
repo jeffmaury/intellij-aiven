@@ -7,30 +7,47 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceListResponseServicesTopics implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** cleanup.policy */
+    /**
+     * cleanup.policy
+     */
     private String cleanupPolicy;
-    /** min.insync.replicas */
+    /**
+     * min.insync.replicas
+     */
     private Integer minInsyncReplicas;
-    /** Number of partitions */
+    /**
+     * Number of partitions
+     */
     private Integer partitions;
-    /** Number of replicas */
+    /**
+     * Number of replicas
+     */
     private Integer replication;
-    /** retention.bytes */
+    /**
+     * retention.bytes
+     */
     private Integer retentionBytes;
-    /** Retention period (hours) */
+    /**
+     * Retention period (hours)
+     */
     private Integer retentionHours;
-    /** Topic state */
+    /**
+     * Topic state
+     */
     private ServiceListResponseServicesTopicsState state;
-    /** Topic name */
+    /**
+     * Topic name
+     */
     private String topicName;
     /**
      * Instantiates a new ServiceListResponseServicesTopics and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceListResponseServicesTopics() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -39,24 +56,24 @@ public class ServiceListResponseServicesTopics implements AdditionalDataHolder, 
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceListResponseServicesTopics
      */
-    @javax.annotation.Nonnull
-    public static ServiceListResponseServicesTopics createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceListResponseServicesTopics createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceListResponseServicesTopics();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the cleanup_policy property value. cleanup.policy
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCleanupPolicy() {
         return this.cleanupPolicy;
     }
@@ -64,7 +81,7 @@ public class ServiceListResponseServicesTopics implements AdditionalDataHolder, 
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(8);
         deserializerMap.put("cleanup_policy", (n) -> { this.setCleanupPolicy(n.getStringValue()); });
@@ -79,41 +96,41 @@ public class ServiceListResponseServicesTopics implements AdditionalDataHolder, 
     }
     /**
      * Gets the min_insync_replicas property value. min.insync.replicas
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getMinInsyncReplicas() {
         return this.minInsyncReplicas;
     }
     /**
      * Gets the partitions property value. Number of partitions
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getPartitions() {
         return this.partitions;
     }
     /**
      * Gets the replication property value. Number of replicas
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getReplication() {
         return this.replication;
     }
     /**
      * Gets the retention_bytes property value. retention.bytes
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getRetentionBytes() {
         return this.retentionBytes;
     }
     /**
      * Gets the retention_hours property value. Retention period (hours)
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getRetentionHours() {
         return this.retentionHours;
     }
@@ -121,25 +138,23 @@ public class ServiceListResponseServicesTopics implements AdditionalDataHolder, 
      * Gets the state property value. Topic state
      * @return a ServiceListResponseServicesTopicsState
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceListResponseServicesTopicsState getState() {
         return this.state;
     }
     /**
      * Gets the topic_name property value. Topic name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTopicName() {
         return this.topicName;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("cleanup_policy", this.getCleanupPolicy());
         writer.writeIntegerValue("min_insync_replicas", this.getMinInsyncReplicas());
@@ -152,84 +167,66 @@ public class ServiceListResponseServicesTopics implements AdditionalDataHolder, 
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the cleanup_policy property value. cleanup.policy
-     * @param value Value to set for the cleanupPolicy property.
-     * @return a void
+     * @param value Value to set for the cleanup_policy property.
      */
-    @javax.annotation.Nonnull
-    public void setCleanupPolicy(@javax.annotation.Nullable final String value) {
+    public void setCleanupPolicy(@jakarta.annotation.Nullable final String value) {
         this.cleanupPolicy = value;
     }
     /**
      * Sets the min_insync_replicas property value. min.insync.replicas
-     * @param value Value to set for the minInsyncReplicas property.
-     * @return a void
+     * @param value Value to set for the min_insync_replicas property.
      */
-    @javax.annotation.Nonnull
-    public void setMinInsyncReplicas(@javax.annotation.Nullable final Integer value) {
+    public void setMinInsyncReplicas(@jakarta.annotation.Nullable final Integer value) {
         this.minInsyncReplicas = value;
     }
     /**
      * Sets the partitions property value. Number of partitions
      * @param value Value to set for the partitions property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setPartitions(@javax.annotation.Nullable final Integer value) {
+    public void setPartitions(@jakarta.annotation.Nullable final Integer value) {
         this.partitions = value;
     }
     /**
      * Sets the replication property value. Number of replicas
      * @param value Value to set for the replication property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setReplication(@javax.annotation.Nullable final Integer value) {
+    public void setReplication(@jakarta.annotation.Nullable final Integer value) {
         this.replication = value;
     }
     /**
      * Sets the retention_bytes property value. retention.bytes
-     * @param value Value to set for the retentionBytes property.
-     * @return a void
+     * @param value Value to set for the retention_bytes property.
      */
-    @javax.annotation.Nonnull
-    public void setRetentionBytes(@javax.annotation.Nullable final Integer value) {
+    public void setRetentionBytes(@jakarta.annotation.Nullable final Integer value) {
         this.retentionBytes = value;
     }
     /**
      * Sets the retention_hours property value. Retention period (hours)
-     * @param value Value to set for the retentionHours property.
-     * @return a void
+     * @param value Value to set for the retention_hours property.
      */
-    @javax.annotation.Nonnull
-    public void setRetentionHours(@javax.annotation.Nullable final Integer value) {
+    public void setRetentionHours(@jakarta.annotation.Nullable final Integer value) {
         this.retentionHours = value;
     }
     /**
      * Sets the state property value. Topic state
      * @param value Value to set for the state property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setState(@javax.annotation.Nullable final ServiceListResponseServicesTopicsState value) {
+    public void setState(@jakarta.annotation.Nullable final ServiceListResponseServicesTopicsState value) {
         this.state = value;
     }
     /**
      * Sets the topic_name property value. Topic name
-     * @param value Value to set for the topicName property.
-     * @return a void
+     * @param value Value to set for the topic_name property.
      */
-    @javax.annotation.Nonnull
-    public void setTopicName(@javax.annotation.Nullable final String value) {
+    public void setTopicName(@jakarta.annotation.Nullable final String value) {
         this.topicName = value;
     }
 }

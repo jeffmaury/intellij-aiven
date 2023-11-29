@@ -7,22 +7,31 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** ID */
+    /**
+     * ID
+     */
     private String id;
-    /** ACL entry for Schema Registry */
+    /**
+     * ACL entry for Schema Registry
+     */
     private ServiceUserCredentialsResetResponseServiceSchemaRegistryAclPermission permission;
-    /** Schema Registry ACL entry resource name pattern */
+    /**
+     * Schema Registry ACL entry resource name pattern
+     */
     private String resource;
-    /** Username */
+    /**
+     * Username
+     */
     private String username;
     /**
      * Instantiates a new ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -31,16 +40,16 @@ public class ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl impleme
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl
      */
-    @javax.annotation.Nonnull
-    public static ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
@@ -48,7 +57,7 @@ public class ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl impleme
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
@@ -59,9 +68,9 @@ public class ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl impleme
     }
     /**
      * Gets the id property value. ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getId() {
         return this.id;
     }
@@ -69,33 +78,31 @@ public class ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl impleme
      * Gets the permission property value. ACL entry for Schema Registry
      * @return a ServiceUserCredentialsResetResponseServiceSchemaRegistryAclPermission
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceUserCredentialsResetResponseServiceSchemaRegistryAclPermission getPermission() {
         return this.permission;
     }
     /**
      * Gets the resource property value. Schema Registry ACL entry resource name pattern
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getResource() {
         return this.resource;
     }
     /**
      * Gets the username property value. Username
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUsername() {
         return this.username;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("id", this.getId());
         writer.writeEnumValue("permission", this.getPermission());
@@ -104,48 +111,38 @@ public class ServiceUserCredentialsResetResponseServiceSchemaRegistryAcl impleme
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the id property value. ID
      * @param value Value to set for the id property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setId(@javax.annotation.Nullable final String value) {
+    public void setId(@jakarta.annotation.Nullable final String value) {
         this.id = value;
     }
     /**
      * Sets the permission property value. ACL entry for Schema Registry
      * @param value Value to set for the permission property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setPermission(@javax.annotation.Nullable final ServiceUserCredentialsResetResponseServiceSchemaRegistryAclPermission value) {
+    public void setPermission(@jakarta.annotation.Nullable final ServiceUserCredentialsResetResponseServiceSchemaRegistryAclPermission value) {
         this.permission = value;
     }
     /**
      * Sets the resource property value. Schema Registry ACL entry resource name pattern
      * @param value Value to set for the resource property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setResource(@javax.annotation.Nullable final String value) {
+    public void setResource(@jakarta.annotation.Nullable final String value) {
         this.resource = value;
     }
     /**
      * Sets the username property value. Username
      * @param value Value to set for the username property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setUsername(@javax.annotation.Nullable final String value) {
+    public void setUsername(@jakarta.annotation.Nullable final String value) {
         this.username = value;
     }
 }

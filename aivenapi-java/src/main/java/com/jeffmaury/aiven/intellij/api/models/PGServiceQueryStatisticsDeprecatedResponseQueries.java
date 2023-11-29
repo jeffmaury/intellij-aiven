@@ -7,86 +7,159 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class PGServiceQueryStatisticsDeprecatedResponseQueries implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double blkReadTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double blkWriteTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double calls;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private String databaseName;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double localBlksDirtied;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double localBlksHit;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double localBlksRead;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double localBlksWritten;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double maxExecTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double maxPlanTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double maxTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double meanExecTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double meanPlanTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double meanTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double minExecTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double minPlanTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double minTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private String query;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double queryid;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double rows;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double sharedBlksDirtied;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double sharedBlksHit;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double sharedBlksRead;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double sharedBlksWritten;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double stddevExecTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double stddevPlanTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double stddevTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double tempBlksRead;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double tempBlksWritten;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double totalExecTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double totalPlanTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double totalTime;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private String userName;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private String walBytes;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double walFpi;
-    /** Query statistic */
+    /**
+     * Query statistic
+     */
     private Double walRecords;
     /**
      * Instantiates a new PGServiceQueryStatisticsDeprecatedResponseQueries and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public PGServiceQueryStatisticsDeprecatedResponseQueries() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -95,48 +168,48 @@ public class PGServiceQueryStatisticsDeprecatedResponseQueries implements Additi
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a PGServiceQueryStatisticsDeprecatedResponseQueries
      */
-    @javax.annotation.Nonnull
-    public static PGServiceQueryStatisticsDeprecatedResponseQueries createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static PGServiceQueryStatisticsDeprecatedResponseQueries createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new PGServiceQueryStatisticsDeprecatedResponseQueries();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the blk_read_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getBlkReadTime() {
         return this.blkReadTime;
     }
     /**
      * Gets the blk_write_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getBlkWriteTime() {
         return this.blkWriteTime;
     }
     /**
      * Gets the calls property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getCalls() {
         return this.calls;
     }
     /**
      * Gets the database_name property value. Query statistic
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDatabaseName() {
         return this.databaseName;
     }
@@ -144,7 +217,7 @@ public class PGServiceQueryStatisticsDeprecatedResponseQueries implements Additi
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(36);
         deserializerMap.put("blk_read_time", (n) -> { this.setBlkReadTime(n.getDoubleValue()); });
@@ -187,267 +260,265 @@ public class PGServiceQueryStatisticsDeprecatedResponseQueries implements Additi
     }
     /**
      * Gets the local_blks_dirtied property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getLocalBlksDirtied() {
         return this.localBlksDirtied;
     }
     /**
      * Gets the local_blks_hit property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getLocalBlksHit() {
         return this.localBlksHit;
     }
     /**
      * Gets the local_blks_read property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getLocalBlksRead() {
         return this.localBlksRead;
     }
     /**
      * Gets the local_blks_written property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getLocalBlksWritten() {
         return this.localBlksWritten;
     }
     /**
      * Gets the max_exec_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getMaxExecTime() {
         return this.maxExecTime;
     }
     /**
      * Gets the max_plan_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getMaxPlanTime() {
         return this.maxPlanTime;
     }
     /**
      * Gets the max_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getMaxTime() {
         return this.maxTime;
     }
     /**
      * Gets the mean_exec_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getMeanExecTime() {
         return this.meanExecTime;
     }
     /**
      * Gets the mean_plan_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getMeanPlanTime() {
         return this.meanPlanTime;
     }
     /**
      * Gets the mean_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getMeanTime() {
         return this.meanTime;
     }
     /**
      * Gets the min_exec_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getMinExecTime() {
         return this.minExecTime;
     }
     /**
      * Gets the min_plan_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getMinPlanTime() {
         return this.minPlanTime;
     }
     /**
      * Gets the min_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getMinTime() {
         return this.minTime;
     }
     /**
      * Gets the query property value. Query statistic
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getQuery() {
         return this.query;
     }
     /**
      * Gets the queryid property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getQueryid() {
         return this.queryid;
     }
     /**
      * Gets the rows property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getRows() {
         return this.rows;
     }
     /**
      * Gets the shared_blks_dirtied property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getSharedBlksDirtied() {
         return this.sharedBlksDirtied;
     }
     /**
      * Gets the shared_blks_hit property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getSharedBlksHit() {
         return this.sharedBlksHit;
     }
     /**
      * Gets the shared_blks_read property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getSharedBlksRead() {
         return this.sharedBlksRead;
     }
     /**
      * Gets the shared_blks_written property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getSharedBlksWritten() {
         return this.sharedBlksWritten;
     }
     /**
      * Gets the stddev_exec_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getStddevExecTime() {
         return this.stddevExecTime;
     }
     /**
      * Gets the stddev_plan_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getStddevPlanTime() {
         return this.stddevPlanTime;
     }
     /**
      * Gets the stddev_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getStddevTime() {
         return this.stddevTime;
     }
     /**
      * Gets the temp_blks_read property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getTempBlksRead() {
         return this.tempBlksRead;
     }
     /**
      * Gets the temp_blks_written property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getTempBlksWritten() {
         return this.tempBlksWritten;
     }
     /**
      * Gets the total_exec_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getTotalExecTime() {
         return this.totalExecTime;
     }
     /**
      * Gets the total_plan_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getTotalPlanTime() {
         return this.totalPlanTime;
     }
     /**
      * Gets the total_time property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getTotalTime() {
         return this.totalTime;
     }
     /**
      * Gets the user_name property value. Query statistic
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUserName() {
         return this.userName;
     }
     /**
      * Gets the wal_bytes property value. Query statistic
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getWalBytes() {
         return this.walBytes;
     }
     /**
      * Gets the wal_fpi property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getWalFpi() {
         return this.walFpi;
     }
     /**
      * Gets the wal_records property value. Query statistic
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getWalRecords() {
         return this.walRecords;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeDoubleValue("blk_read_time", this.getBlkReadTime());
         writer.writeDoubleValue("blk_write_time", this.getBlkWriteTime());
@@ -488,336 +559,262 @@ public class PGServiceQueryStatisticsDeprecatedResponseQueries implements Additi
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the blk_read_time property value. Query statistic
-     * @param value Value to set for the blkReadTime property.
-     * @return a void
+     * @param value Value to set for the blk_read_time property.
      */
-    @javax.annotation.Nonnull
-    public void setBlkReadTime(@javax.annotation.Nullable final Double value) {
+    public void setBlkReadTime(@jakarta.annotation.Nullable final Double value) {
         this.blkReadTime = value;
     }
     /**
      * Sets the blk_write_time property value. Query statistic
-     * @param value Value to set for the blkWriteTime property.
-     * @return a void
+     * @param value Value to set for the blk_write_time property.
      */
-    @javax.annotation.Nonnull
-    public void setBlkWriteTime(@javax.annotation.Nullable final Double value) {
+    public void setBlkWriteTime(@jakarta.annotation.Nullable final Double value) {
         this.blkWriteTime = value;
     }
     /**
      * Sets the calls property value. Query statistic
      * @param value Value to set for the calls property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCalls(@javax.annotation.Nullable final Double value) {
+    public void setCalls(@jakarta.annotation.Nullable final Double value) {
         this.calls = value;
     }
     /**
      * Sets the database_name property value. Query statistic
-     * @param value Value to set for the databaseName property.
-     * @return a void
+     * @param value Value to set for the database_name property.
      */
-    @javax.annotation.Nonnull
-    public void setDatabaseName(@javax.annotation.Nullable final String value) {
+    public void setDatabaseName(@jakarta.annotation.Nullable final String value) {
         this.databaseName = value;
     }
     /**
      * Sets the local_blks_dirtied property value. Query statistic
-     * @param value Value to set for the localBlksDirtied property.
-     * @return a void
+     * @param value Value to set for the local_blks_dirtied property.
      */
-    @javax.annotation.Nonnull
-    public void setLocalBlksDirtied(@javax.annotation.Nullable final Double value) {
+    public void setLocalBlksDirtied(@jakarta.annotation.Nullable final Double value) {
         this.localBlksDirtied = value;
     }
     /**
      * Sets the local_blks_hit property value. Query statistic
-     * @param value Value to set for the localBlksHit property.
-     * @return a void
+     * @param value Value to set for the local_blks_hit property.
      */
-    @javax.annotation.Nonnull
-    public void setLocalBlksHit(@javax.annotation.Nullable final Double value) {
+    public void setLocalBlksHit(@jakarta.annotation.Nullable final Double value) {
         this.localBlksHit = value;
     }
     /**
      * Sets the local_blks_read property value. Query statistic
-     * @param value Value to set for the localBlksRead property.
-     * @return a void
+     * @param value Value to set for the local_blks_read property.
      */
-    @javax.annotation.Nonnull
-    public void setLocalBlksRead(@javax.annotation.Nullable final Double value) {
+    public void setLocalBlksRead(@jakarta.annotation.Nullable final Double value) {
         this.localBlksRead = value;
     }
     /**
      * Sets the local_blks_written property value. Query statistic
-     * @param value Value to set for the localBlksWritten property.
-     * @return a void
+     * @param value Value to set for the local_blks_written property.
      */
-    @javax.annotation.Nonnull
-    public void setLocalBlksWritten(@javax.annotation.Nullable final Double value) {
+    public void setLocalBlksWritten(@jakarta.annotation.Nullable final Double value) {
         this.localBlksWritten = value;
     }
     /**
      * Sets the max_exec_time property value. Query statistic
-     * @param value Value to set for the maxExecTime property.
-     * @return a void
+     * @param value Value to set for the max_exec_time property.
      */
-    @javax.annotation.Nonnull
-    public void setMaxExecTime(@javax.annotation.Nullable final Double value) {
+    public void setMaxExecTime(@jakarta.annotation.Nullable final Double value) {
         this.maxExecTime = value;
     }
     /**
      * Sets the max_plan_time property value. Query statistic
-     * @param value Value to set for the maxPlanTime property.
-     * @return a void
+     * @param value Value to set for the max_plan_time property.
      */
-    @javax.annotation.Nonnull
-    public void setMaxPlanTime(@javax.annotation.Nullable final Double value) {
+    public void setMaxPlanTime(@jakarta.annotation.Nullable final Double value) {
         this.maxPlanTime = value;
     }
     /**
      * Sets the max_time property value. Query statistic
-     * @param value Value to set for the maxTime property.
-     * @return a void
+     * @param value Value to set for the max_time property.
      */
-    @javax.annotation.Nonnull
-    public void setMaxTime(@javax.annotation.Nullable final Double value) {
+    public void setMaxTime(@jakarta.annotation.Nullable final Double value) {
         this.maxTime = value;
     }
     /**
      * Sets the mean_exec_time property value. Query statistic
-     * @param value Value to set for the meanExecTime property.
-     * @return a void
+     * @param value Value to set for the mean_exec_time property.
      */
-    @javax.annotation.Nonnull
-    public void setMeanExecTime(@javax.annotation.Nullable final Double value) {
+    public void setMeanExecTime(@jakarta.annotation.Nullable final Double value) {
         this.meanExecTime = value;
     }
     /**
      * Sets the mean_plan_time property value. Query statistic
-     * @param value Value to set for the meanPlanTime property.
-     * @return a void
+     * @param value Value to set for the mean_plan_time property.
      */
-    @javax.annotation.Nonnull
-    public void setMeanPlanTime(@javax.annotation.Nullable final Double value) {
+    public void setMeanPlanTime(@jakarta.annotation.Nullable final Double value) {
         this.meanPlanTime = value;
     }
     /**
      * Sets the mean_time property value. Query statistic
-     * @param value Value to set for the meanTime property.
-     * @return a void
+     * @param value Value to set for the mean_time property.
      */
-    @javax.annotation.Nonnull
-    public void setMeanTime(@javax.annotation.Nullable final Double value) {
+    public void setMeanTime(@jakarta.annotation.Nullable final Double value) {
         this.meanTime = value;
     }
     /**
      * Sets the min_exec_time property value. Query statistic
-     * @param value Value to set for the minExecTime property.
-     * @return a void
+     * @param value Value to set for the min_exec_time property.
      */
-    @javax.annotation.Nonnull
-    public void setMinExecTime(@javax.annotation.Nullable final Double value) {
+    public void setMinExecTime(@jakarta.annotation.Nullable final Double value) {
         this.minExecTime = value;
     }
     /**
      * Sets the min_plan_time property value. Query statistic
-     * @param value Value to set for the minPlanTime property.
-     * @return a void
+     * @param value Value to set for the min_plan_time property.
      */
-    @javax.annotation.Nonnull
-    public void setMinPlanTime(@javax.annotation.Nullable final Double value) {
+    public void setMinPlanTime(@jakarta.annotation.Nullable final Double value) {
         this.minPlanTime = value;
     }
     /**
      * Sets the min_time property value. Query statistic
-     * @param value Value to set for the minTime property.
-     * @return a void
+     * @param value Value to set for the min_time property.
      */
-    @javax.annotation.Nonnull
-    public void setMinTime(@javax.annotation.Nullable final Double value) {
+    public void setMinTime(@jakarta.annotation.Nullable final Double value) {
         this.minTime = value;
     }
     /**
      * Sets the query property value. Query statistic
      * @param value Value to set for the query property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setQuery(@javax.annotation.Nullable final String value) {
+    public void setQuery(@jakarta.annotation.Nullable final String value) {
         this.query = value;
     }
     /**
      * Sets the queryid property value. Query statistic
      * @param value Value to set for the queryid property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setQueryid(@javax.annotation.Nullable final Double value) {
+    public void setQueryid(@jakarta.annotation.Nullable final Double value) {
         this.queryid = value;
     }
     /**
      * Sets the rows property value. Query statistic
      * @param value Value to set for the rows property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setRows(@javax.annotation.Nullable final Double value) {
+    public void setRows(@jakarta.annotation.Nullable final Double value) {
         this.rows = value;
     }
     /**
      * Sets the shared_blks_dirtied property value. Query statistic
-     * @param value Value to set for the sharedBlksDirtied property.
-     * @return a void
+     * @param value Value to set for the shared_blks_dirtied property.
      */
-    @javax.annotation.Nonnull
-    public void setSharedBlksDirtied(@javax.annotation.Nullable final Double value) {
+    public void setSharedBlksDirtied(@jakarta.annotation.Nullable final Double value) {
         this.sharedBlksDirtied = value;
     }
     /**
      * Sets the shared_blks_hit property value. Query statistic
-     * @param value Value to set for the sharedBlksHit property.
-     * @return a void
+     * @param value Value to set for the shared_blks_hit property.
      */
-    @javax.annotation.Nonnull
-    public void setSharedBlksHit(@javax.annotation.Nullable final Double value) {
+    public void setSharedBlksHit(@jakarta.annotation.Nullable final Double value) {
         this.sharedBlksHit = value;
     }
     /**
      * Sets the shared_blks_read property value. Query statistic
-     * @param value Value to set for the sharedBlksRead property.
-     * @return a void
+     * @param value Value to set for the shared_blks_read property.
      */
-    @javax.annotation.Nonnull
-    public void setSharedBlksRead(@javax.annotation.Nullable final Double value) {
+    public void setSharedBlksRead(@jakarta.annotation.Nullable final Double value) {
         this.sharedBlksRead = value;
     }
     /**
      * Sets the shared_blks_written property value. Query statistic
-     * @param value Value to set for the sharedBlksWritten property.
-     * @return a void
+     * @param value Value to set for the shared_blks_written property.
      */
-    @javax.annotation.Nonnull
-    public void setSharedBlksWritten(@javax.annotation.Nullable final Double value) {
+    public void setSharedBlksWritten(@jakarta.annotation.Nullable final Double value) {
         this.sharedBlksWritten = value;
     }
     /**
      * Sets the stddev_exec_time property value. Query statistic
-     * @param value Value to set for the stddevExecTime property.
-     * @return a void
+     * @param value Value to set for the stddev_exec_time property.
      */
-    @javax.annotation.Nonnull
-    public void setStddevExecTime(@javax.annotation.Nullable final Double value) {
+    public void setStddevExecTime(@jakarta.annotation.Nullable final Double value) {
         this.stddevExecTime = value;
     }
     /**
      * Sets the stddev_plan_time property value. Query statistic
-     * @param value Value to set for the stddevPlanTime property.
-     * @return a void
+     * @param value Value to set for the stddev_plan_time property.
      */
-    @javax.annotation.Nonnull
-    public void setStddevPlanTime(@javax.annotation.Nullable final Double value) {
+    public void setStddevPlanTime(@jakarta.annotation.Nullable final Double value) {
         this.stddevPlanTime = value;
     }
     /**
      * Sets the stddev_time property value. Query statistic
-     * @param value Value to set for the stddevTime property.
-     * @return a void
+     * @param value Value to set for the stddev_time property.
      */
-    @javax.annotation.Nonnull
-    public void setStddevTime(@javax.annotation.Nullable final Double value) {
+    public void setStddevTime(@jakarta.annotation.Nullable final Double value) {
         this.stddevTime = value;
     }
     /**
      * Sets the temp_blks_read property value. Query statistic
-     * @param value Value to set for the tempBlksRead property.
-     * @return a void
+     * @param value Value to set for the temp_blks_read property.
      */
-    @javax.annotation.Nonnull
-    public void setTempBlksRead(@javax.annotation.Nullable final Double value) {
+    public void setTempBlksRead(@jakarta.annotation.Nullable final Double value) {
         this.tempBlksRead = value;
     }
     /**
      * Sets the temp_blks_written property value. Query statistic
-     * @param value Value to set for the tempBlksWritten property.
-     * @return a void
+     * @param value Value to set for the temp_blks_written property.
      */
-    @javax.annotation.Nonnull
-    public void setTempBlksWritten(@javax.annotation.Nullable final Double value) {
+    public void setTempBlksWritten(@jakarta.annotation.Nullable final Double value) {
         this.tempBlksWritten = value;
     }
     /**
      * Sets the total_exec_time property value. Query statistic
-     * @param value Value to set for the totalExecTime property.
-     * @return a void
+     * @param value Value to set for the total_exec_time property.
      */
-    @javax.annotation.Nonnull
-    public void setTotalExecTime(@javax.annotation.Nullable final Double value) {
+    public void setTotalExecTime(@jakarta.annotation.Nullable final Double value) {
         this.totalExecTime = value;
     }
     /**
      * Sets the total_plan_time property value. Query statistic
-     * @param value Value to set for the totalPlanTime property.
-     * @return a void
+     * @param value Value to set for the total_plan_time property.
      */
-    @javax.annotation.Nonnull
-    public void setTotalPlanTime(@javax.annotation.Nullable final Double value) {
+    public void setTotalPlanTime(@jakarta.annotation.Nullable final Double value) {
         this.totalPlanTime = value;
     }
     /**
      * Sets the total_time property value. Query statistic
-     * @param value Value to set for the totalTime property.
-     * @return a void
+     * @param value Value to set for the total_time property.
      */
-    @javax.annotation.Nonnull
-    public void setTotalTime(@javax.annotation.Nullable final Double value) {
+    public void setTotalTime(@jakarta.annotation.Nullable final Double value) {
         this.totalTime = value;
     }
     /**
      * Sets the user_name property value. Query statistic
-     * @param value Value to set for the userName property.
-     * @return a void
+     * @param value Value to set for the user_name property.
      */
-    @javax.annotation.Nonnull
-    public void setUserName(@javax.annotation.Nullable final String value) {
+    public void setUserName(@jakarta.annotation.Nullable final String value) {
         this.userName = value;
     }
     /**
      * Sets the wal_bytes property value. Query statistic
-     * @param value Value to set for the walBytes property.
-     * @return a void
+     * @param value Value to set for the wal_bytes property.
      */
-    @javax.annotation.Nonnull
-    public void setWalBytes(@javax.annotation.Nullable final String value) {
+    public void setWalBytes(@jakarta.annotation.Nullable final String value) {
         this.walBytes = value;
     }
     /**
      * Sets the wal_fpi property value. Query statistic
-     * @param value Value to set for the walFpi property.
-     * @return a void
+     * @param value Value to set for the wal_fpi property.
      */
-    @javax.annotation.Nonnull
-    public void setWalFpi(@javax.annotation.Nullable final Double value) {
+    public void setWalFpi(@jakarta.annotation.Nullable final Double value) {
         this.walFpi = value;
     }
     /**
      * Sets the wal_records property value. Query statistic
-     * @param value Value to set for the walRecords property.
-     * @return a void
+     * @param value Value to set for the wal_records property.
      */
-    @javax.annotation.Nonnull
-    public void setWalRecords(@javax.annotation.Nullable final Double value) {
+    public void setWalRecords(@jakarta.annotation.Nullable final Double value) {
         this.walRecords = value;
     }
 }

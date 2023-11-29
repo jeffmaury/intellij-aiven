@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Digest algorithm. This is an advanced option that typically does not need to be set. */
+/**
+ * Digest algorithm. This is an advanced option that typically does not need to be set.
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum AccountAuthenticationMethodCreateRequestBodySamlDigestAlgorithm implements ValuedEnum {
     Sha1("sha1"),
     Sha256("sha256"),
@@ -13,10 +16,10 @@ public enum AccountAuthenticationMethodCreateRequestBodySamlDigestAlgorithm impl
     AccountAuthenticationMethodCreateRequestBodySamlDigestAlgorithm(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static AccountAuthenticationMethodCreateRequestBodySamlDigestAlgorithm forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static AccountAuthenticationMethodCreateRequestBodySamlDigestAlgorithm forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "sha1": return Sha1;

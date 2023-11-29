@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Describes whether data flows from or to Kafka */
+/**
+ * Describes whether data flows from or to Kafka
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceKafkaConnectGetAvailableConnectorsResponsePluginsType implements ValuedEnum {
     Sink("sink"),
     Source("source"),
@@ -12,10 +15,10 @@ public enum ServiceKafkaConnectGetAvailableConnectorsResponsePluginsType impleme
     ServiceKafkaConnectGetAvailableConnectorsResponsePluginsType(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceKafkaConnectGetAvailableConnectorsResponsePluginsType forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceKafkaConnectGetAvailableConnectorsResponsePluginsType forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "sink": return Sink;

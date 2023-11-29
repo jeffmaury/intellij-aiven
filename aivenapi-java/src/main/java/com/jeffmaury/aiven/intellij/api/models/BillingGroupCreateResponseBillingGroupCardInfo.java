@@ -10,32 +10,51 @@ import java.util.Objects;
 /**
  * Credit card assigned to the project
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class BillingGroupCreateResponseBillingGroupCardInfo implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Brand */
+    /**
+     * Brand
+     */
     private String brand;
-    /** Credit card ID */
+    /**
+     * Credit card ID
+     */
     private String cardId;
-    /** Country */
+    /**
+     * Country
+     */
     private String country;
-    /** Two letter ISO country code */
+    /**
+     * Two letter ISO country code
+     */
     private String countryCode;
-    /** Expiration month */
+    /**
+     * Expiration month
+     */
     private Integer expMonth;
-    /** Expiration year */
+    /**
+     * Expiration year
+     */
     private Integer expYear;
-    /** Credit card last four digits */
+    /**
+     * Credit card last four digits
+     */
     private String last4;
-    /** Name on the credit card */
+    /**
+     * Name on the credit card
+     */
     private String name;
-    /** User email address */
+    /**
+     * User email address
+     */
     private String userEmail;
     /**
      * Instantiates a new BillingGroupCreateResponseBillingGroupCardInfo and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public BillingGroupCreateResponseBillingGroupCardInfo() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -44,64 +63,64 @@ public class BillingGroupCreateResponseBillingGroupCardInfo implements Additiona
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a BillingGroupCreateResponseBillingGroupCardInfo
      */
-    @javax.annotation.Nonnull
-    public static BillingGroupCreateResponseBillingGroupCardInfo createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static BillingGroupCreateResponseBillingGroupCardInfo createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new BillingGroupCreateResponseBillingGroupCardInfo();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the brand property value. Brand
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getBrand() {
         return this.brand;
     }
     /**
      * Gets the card_id property value. Credit card ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCardId() {
         return this.cardId;
     }
     /**
      * Gets the country property value. Country
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCountry() {
         return this.country;
     }
     /**
      * Gets the country_code property value. Two letter ISO country code
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCountryCode() {
         return this.countryCode;
     }
     /**
      * Gets the exp_month property value. Expiration month
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getExpMonth() {
         return this.expMonth;
     }
     /**
      * Gets the exp_year property value. Expiration year
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getExpYear() {
         return this.expYear;
     }
@@ -109,7 +128,7 @@ public class BillingGroupCreateResponseBillingGroupCardInfo implements Additiona
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
         deserializerMap.put("brand", (n) -> { this.setBrand(n.getStringValue()); });
@@ -125,35 +144,33 @@ public class BillingGroupCreateResponseBillingGroupCardInfo implements Additiona
     }
     /**
      * Gets the last4 property value. Credit card last four digits
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getLast4() {
         return this.last4;
     }
     /**
      * Gets the name property value. Name on the credit card
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getName() {
         return this.name;
     }
     /**
      * Gets the user_email property value. User email address
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUserEmail() {
         return this.userEmail;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("brand", this.getBrand());
         writer.writeStringValue("card_id", this.getCardId());
@@ -167,93 +184,73 @@ public class BillingGroupCreateResponseBillingGroupCardInfo implements Additiona
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the brand property value. Brand
      * @param value Value to set for the brand property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setBrand(@javax.annotation.Nullable final String value) {
+    public void setBrand(@jakarta.annotation.Nullable final String value) {
         this.brand = value;
     }
     /**
      * Sets the card_id property value. Credit card ID
-     * @param value Value to set for the cardId property.
-     * @return a void
+     * @param value Value to set for the card_id property.
      */
-    @javax.annotation.Nonnull
-    public void setCardId(@javax.annotation.Nullable final String value) {
+    public void setCardId(@jakarta.annotation.Nullable final String value) {
         this.cardId = value;
     }
     /**
      * Sets the country property value. Country
      * @param value Value to set for the country property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCountry(@javax.annotation.Nullable final String value) {
+    public void setCountry(@jakarta.annotation.Nullable final String value) {
         this.country = value;
     }
     /**
      * Sets the country_code property value. Two letter ISO country code
-     * @param value Value to set for the countryCode property.
-     * @return a void
+     * @param value Value to set for the country_code property.
      */
-    @javax.annotation.Nonnull
-    public void setCountryCode(@javax.annotation.Nullable final String value) {
+    public void setCountryCode(@jakarta.annotation.Nullable final String value) {
         this.countryCode = value;
     }
     /**
      * Sets the exp_month property value. Expiration month
-     * @param value Value to set for the expMonth property.
-     * @return a void
+     * @param value Value to set for the exp_month property.
      */
-    @javax.annotation.Nonnull
-    public void setExpMonth(@javax.annotation.Nullable final Integer value) {
+    public void setExpMonth(@jakarta.annotation.Nullable final Integer value) {
         this.expMonth = value;
     }
     /**
      * Sets the exp_year property value. Expiration year
-     * @param value Value to set for the expYear property.
-     * @return a void
+     * @param value Value to set for the exp_year property.
      */
-    @javax.annotation.Nonnull
-    public void setExpYear(@javax.annotation.Nullable final Integer value) {
+    public void setExpYear(@jakarta.annotation.Nullable final Integer value) {
         this.expYear = value;
     }
     /**
      * Sets the last4 property value. Credit card last four digits
      * @param value Value to set for the last4 property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setLast4(@javax.annotation.Nullable final String value) {
+    public void setLast4(@jakarta.annotation.Nullable final String value) {
         this.last4 = value;
     }
     /**
      * Sets the name property value. Name on the credit card
      * @param value Value to set for the name property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setName(@javax.annotation.Nullable final String value) {
+    public void setName(@jakarta.annotation.Nullable final String value) {
         this.name = value;
     }
     /**
      * Sets the user_email property value. User email address
-     * @param value Value to set for the userEmail property.
-     * @return a void
+     * @param value Value to set for the user_email property.
      */
-    @javax.annotation.Nonnull
-    public void setUserEmail(@javax.annotation.Nullable final String value) {
+    public void setUserEmail(@jakarta.annotation.Nullable final String value) {
         this.userEmail = value;
     }
 }

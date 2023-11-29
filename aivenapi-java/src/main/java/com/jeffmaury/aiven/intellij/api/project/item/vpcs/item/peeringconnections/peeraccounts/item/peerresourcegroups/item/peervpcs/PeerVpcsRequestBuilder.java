@@ -8,14 +8,15 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}/vpcs/{project_vpc_id}/peering-connections/peer-accounts/{peer_cloud_account}/peer-resource-groups/{peer_resource_group}/peer-vpcs
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class PeerVpcsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.vpcs.item.peeringConnections.peerAccounts.item.peerResourceGroups.item.peerVpcs.item collection
-     * @param peer_vpc Unique identifier of the item
+     * @param peer_vpc AWS VPC-ID, Google network name, Azure VNet name, or UpCloud VPC ID
      * @return a WithPeerVpcItemRequestBuilder
      */
-    @javax.annotation.Nonnull
-    public WithPeerVpcItemRequestBuilder byPeer_vpc(@javax.annotation.Nonnull final String peer_vpc) {
+    @jakarta.annotation.Nonnull
+    public WithPeerVpcItemRequestBuilder byPeer_vpc(@jakarta.annotation.Nonnull final String peer_vpc) {
         Objects.requireNonNull(peer_vpc);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
         urlTplParams.put("peer_vpc", peer_vpc);
@@ -25,20 +26,16 @@ public class PeerVpcsRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new PeerVpcsRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public PeerVpcsRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public PeerVpcsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/vpcs/{project_vpc_id}/peering-connections/peer-accounts/{peer_cloud_account}/peer-resource-groups/{peer_resource_group}/peer-vpcs", pathParameters);
     }
     /**
      * Instantiates a new PeerVpcsRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public PeerVpcsRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public PeerVpcsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/vpcs/{project_vpc_id}/peering-connections/peer-accounts/{peer_cloud_account}/peer-resource-groups/{peer_resource_group}/peer-vpcs", rawUrl);
     }
 }

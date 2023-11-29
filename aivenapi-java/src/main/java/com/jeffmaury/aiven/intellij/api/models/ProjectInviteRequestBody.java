@@ -10,18 +10,23 @@ import java.util.Objects;
 /**
  * ProjectInviteRequestBody
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProjectInviteRequestBody implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Project member type */
+    /**
+     * Project member type
+     */
     private ProjectInviteRequestBodyMemberType memberType;
-    /** User email address */
+    /**
+     * User email address
+     */
     private String userEmail;
     /**
      * Instantiates a new ProjectInviteRequestBody and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ProjectInviteRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -30,16 +35,16 @@ public class ProjectInviteRequestBody implements AdditionalDataHolder, Parsable 
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ProjectInviteRequestBody
      */
-    @javax.annotation.Nonnull
-    public static ProjectInviteRequestBody createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ProjectInviteRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ProjectInviteRequestBody();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
@@ -47,7 +52,7 @@ public class ProjectInviteRequestBody implements AdditionalDataHolder, Parsable 
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectInviteRequestBodyMemberType.class)); });
@@ -58,55 +63,47 @@ public class ProjectInviteRequestBody implements AdditionalDataHolder, Parsable 
      * Gets the member_type property value. Project member type
      * @return a ProjectInviteRequestBodyMemberType
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ProjectInviteRequestBodyMemberType getMemberType() {
         return this.memberType;
     }
     /**
      * Gets the user_email property value. User email address
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUserEmail() {
         return this.userEmail;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeEnumValue("member_type", this.getMemberType());
         writer.writeStringValue("user_email", this.getUserEmail());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the member_type property value. Project member type
-     * @param value Value to set for the memberType property.
-     * @return a void
+     * @param value Value to set for the member_type property.
      */
-    @javax.annotation.Nonnull
-    public void setMemberType(@javax.annotation.Nullable final ProjectInviteRequestBodyMemberType value) {
+    public void setMemberType(@jakarta.annotation.Nullable final ProjectInviteRequestBodyMemberType value) {
         this.memberType = value;
     }
     /**
      * Sets the user_email property value. User email address
-     * @param value Value to set for the userEmail property.
-     * @return a void
+     * @param value Value to set for the user_email property.
      */
-    @javax.annotation.Nonnull
-    public void setUserEmail(@javax.annotation.Nullable final String value) {
+    public void setUserEmail(@jakarta.annotation.Nullable final String value) {
         this.userEmail = value;
     }
 }

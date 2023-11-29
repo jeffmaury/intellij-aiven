@@ -10,20 +10,27 @@ import java.util.Objects;
 /**
  * ServiceDatabaseListResponse
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceDatabaseListResponse implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** List of databases */
+    /**
+     * List of databases
+     */
     private java.util.List<ServiceDatabaseListResponseDatabases> databases;
-    /** List of errors occurred during request processing */
+    /**
+     * List of errors occurred during request processing
+     */
     private java.util.List<ServiceDatabaseListResponseErrors> errors;
-    /** Printable result of the request */
+    /**
+     * Printable result of the request
+     */
     private String message;
     /**
      * Instantiates a new ServiceDatabaseListResponse and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceDatabaseListResponse() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -32,32 +39,32 @@ public class ServiceDatabaseListResponse implements AdditionalDataHolder, Parsab
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceDatabaseListResponse
      */
-    @javax.annotation.Nonnull
-    public static ServiceDatabaseListResponse createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceDatabaseListResponse createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceDatabaseListResponse();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the databases property value. List of databases
-     * @return a ServiceDatabaseListResponseDatabases
+     * @return a java.util.List<ServiceDatabaseListResponseDatabases>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceDatabaseListResponseDatabases> getDatabases() {
         return this.databases;
     }
     /**
      * Gets the errors property value. List of errors occurred during request processing
-     * @return a ServiceDatabaseListResponseErrors
+     * @return a java.util.List<ServiceDatabaseListResponseErrors>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceDatabaseListResponseErrors> getErrors() {
         return this.errors;
     }
@@ -65,7 +72,7 @@ public class ServiceDatabaseListResponse implements AdditionalDataHolder, Parsab
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("databases", (n) -> { this.setDatabases(n.getCollectionOfObjectValues(ServiceDatabaseListResponseDatabases::createFromDiscriminatorValue)); });
@@ -75,19 +82,17 @@ public class ServiceDatabaseListResponse implements AdditionalDataHolder, Parsab
     }
     /**
      * Gets the message property value. Printable result of the request
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getMessage() {
         return this.message;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfObjectValues("databases", this.getDatabases());
         writer.writeCollectionOfObjectValues("errors", this.getErrors());
@@ -95,39 +100,31 @@ public class ServiceDatabaseListResponse implements AdditionalDataHolder, Parsab
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the databases property value. List of databases
      * @param value Value to set for the databases property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDatabases(@javax.annotation.Nullable final java.util.List<ServiceDatabaseListResponseDatabases> value) {
+    public void setDatabases(@jakarta.annotation.Nullable final java.util.List<ServiceDatabaseListResponseDatabases> value) {
         this.databases = value;
     }
     /**
      * Sets the errors property value. List of errors occurred during request processing
      * @param value Value to set for the errors property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setErrors(@javax.annotation.Nullable final java.util.List<ServiceDatabaseListResponseErrors> value) {
+    public void setErrors(@jakarta.annotation.Nullable final java.util.List<ServiceDatabaseListResponseErrors> value) {
         this.errors = value;
     }
     /**
      * Sets the message property value. Printable result of the request
      * @param value Value to set for the message property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMessage(@javax.annotation.Nullable final String value) {
+    public void setMessage(@jakarta.annotation.Nullable final String value) {
         this.message = value;
     }
 }

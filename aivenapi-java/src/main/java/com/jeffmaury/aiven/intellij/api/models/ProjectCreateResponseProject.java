@@ -10,74 +10,135 @@ import java.util.Objects;
 /**
  * Project information
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProjectCreateResponseProject implements AdditionalDataHolder, Parsable {
-    /** Account ID */
+    /**
+     * Account ID
+     */
     private String accountId;
-    /** Account name */
+    /**
+     * Account name
+     */
     private String accountName;
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Address lines */
+    /**
+     * Address lines
+     */
     private java.util.List<String> addressLines;
-    /** Available credits, in USD */
+    /**
+     * Available credits, in USD
+     */
     private String availableCredits;
-    /** DEPRECATED: use split address fields like company, address_lines, zip_code, city and state instead */
+    /**
+     * DEPRECATED: use split address fields like company, address_lines, zip_code, city and state instead
+     */
     private String billingAddress;
-    /** Billing currency */
+    /**
+     * Billing currency
+     */
     private ProjectCreateResponseProjectBillingCurrency billingCurrency;
-    /** List of project billing email addresses */
+    /**
+     * List of project billing email addresses
+     */
     private java.util.List<ProjectCreateResponseProjectBillingEmails> billingEmails;
-    /** Extra text to be included in all project invoices, e.g. purchase order or cost center number */
+    /**
+     * Extra text to be included in all project invoices, e.g. purchase order or cost center number
+     */
     private String billingExtraText;
-    /** Billing group ID */
+    /**
+     * Billing group ID
+     */
     private String billingGroupId;
-    /** Billing group name */
+    /**
+     * Billing group name
+     */
     private String billingGroupName;
-    /** Credit card assigned to the project */
+    /**
+     * Credit card assigned to the project
+     */
     private ProjectCreateResponseProjectCardInfo cardInfo;
-    /** Address city */
+    /**
+     * Address city
+     */
     private String city;
-    /** Name of a company */
+    /**
+     * Name of a company
+     */
     private String company;
-    /** Billing country */
+    /**
+     * Billing country
+     */
     private String country;
-    /** Two letter ISO country code */
+    /**
+     * Two letter ISO country code
+     */
     private String countryCode;
-    /** Default cloud to use when launching services */
+    /**
+     * Default cloud to use when launching services
+     */
     private String defaultCloud;
-    /** End of life extension information */
+    /**
+     * End of life extension information
+     */
     private ProjectCreateResponseProjectEndOfLifeExtension endOfLifeExtension;
-    /** Estimated balance, in USD */
+    /**
+     * Estimated balance, in USD
+     */
     private String estimatedBalance;
-    /** Estimated balance, in billing currency */
+    /**
+     * Estimated balance, in billing currency
+     */
     private String estimatedBalanceLocal;
-    /** Feature flags */
+    /**
+     * Feature flags
+     */
     private ProjectCreateResponseProjectFeatures features;
-    /** Organization ID */
+    /**
+     * Organization ID
+     */
     private String organizationId;
-    /** Payment method */
+    /**
+     * Payment method
+     */
     private String paymentMethod;
-    /** Project name */
+    /**
+     * Project name
+     */
     private String projectName;
-    /** Address state */
+    /**
+     * Address state
+     */
     private String state;
-    /** Set of resource tags */
+    /**
+     * Set of resource tags
+     */
     private ProjectCreateResponseProjectTags tags;
-    /** List of project tech email addresses */
+    /**
+     * List of project tech email addresses
+     */
     private java.util.List<ProjectCreateResponseProjectTechEmails> techEmails;
-    /** Tenant ID */
+    /**
+     * Tenant ID
+     */
     private String tenantId;
-    /** Trial expiration time (ISO 8601) */
+    /**
+     * Trial expiration time (ISO 8601)
+     */
     private String trialExpirationTime;
-    /** EU VAT Identification Number */
+    /**
+     * EU VAT Identification Number
+     */
     private String vatId;
-    /** Address zip code */
+    /**
+     * Address zip code
+     */
     private String zipCode;
     /**
      * Instantiates a new ProjectCreateResponseProject and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ProjectCreateResponseProject() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -86,56 +147,56 @@ public class ProjectCreateResponseProject implements AdditionalDataHolder, Parsa
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ProjectCreateResponseProject
      */
-    @javax.annotation.Nonnull
-    public static ProjectCreateResponseProject createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ProjectCreateResponseProject createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ProjectCreateResponseProject();
     }
     /**
      * Gets the account_id property value. Account ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccountId() {
         return this.accountId;
     }
     /**
      * Gets the account_name property value. Account name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccountName() {
         return this.accountName;
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the address_lines property value. Address lines
-     * @return a string
+     * @return a java.util.List<String>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<String> getAddressLines() {
         return this.addressLines;
     }
     /**
      * Gets the available_credits property value. Available credits, in USD
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAvailableCredits() {
         return this.availableCredits;
     }
     /**
      * Gets the billing_address property value. DEPRECATED: use split address fields like company, address_lines, zip_code, city and state instead
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getBillingAddress() {
         return this.billingAddress;
     }
@@ -143,39 +204,39 @@ public class ProjectCreateResponseProject implements AdditionalDataHolder, Parsa
      * Gets the billing_currency property value. Billing currency
      * @return a ProjectCreateResponseProjectBillingCurrency
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ProjectCreateResponseProjectBillingCurrency getBillingCurrency() {
         return this.billingCurrency;
     }
     /**
      * Gets the billing_emails property value. List of project billing email addresses
-     * @return a ProjectCreateResponseProjectBillingEmails
+     * @return a java.util.List<ProjectCreateResponseProjectBillingEmails>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ProjectCreateResponseProjectBillingEmails> getBillingEmails() {
         return this.billingEmails;
     }
     /**
      * Gets the billing_extra_text property value. Extra text to be included in all project invoices, e.g. purchase order or cost center number
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getBillingExtraText() {
         return this.billingExtraText;
     }
     /**
      * Gets the billing_group_id property value. Billing group ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getBillingGroupId() {
         return this.billingGroupId;
     }
     /**
      * Gets the billing_group_name property value. Billing group name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getBillingGroupName() {
         return this.billingGroupName;
     }
@@ -183,47 +244,47 @@ public class ProjectCreateResponseProject implements AdditionalDataHolder, Parsa
      * Gets the card_info property value. Credit card assigned to the project
      * @return a ProjectCreateResponseProjectCardInfo
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ProjectCreateResponseProjectCardInfo getCardInfo() {
         return this.cardInfo;
     }
     /**
      * Gets the city property value. Address city
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCity() {
         return this.city;
     }
     /**
      * Gets the company property value. Name of a company
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCompany() {
         return this.company;
     }
     /**
      * Gets the country property value. Billing country
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCountry() {
         return this.country;
     }
     /**
      * Gets the country_code property value. Two letter ISO country code
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCountryCode() {
         return this.countryCode;
     }
     /**
      * Gets the default_cloud property value. Default cloud to use when launching services
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDefaultCloud() {
         return this.defaultCloud;
     }
@@ -231,23 +292,23 @@ public class ProjectCreateResponseProject implements AdditionalDataHolder, Parsa
      * Gets the end_of_life_extension property value. End of life extension information
      * @return a ProjectCreateResponseProjectEndOfLifeExtension
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ProjectCreateResponseProjectEndOfLifeExtension getEndOfLifeExtension() {
         return this.endOfLifeExtension;
     }
     /**
      * Gets the estimated_balance property value. Estimated balance, in USD
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getEstimatedBalance() {
         return this.estimatedBalance;
     }
     /**
      * Gets the estimated_balance_local property value. Estimated balance, in billing currency
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getEstimatedBalanceLocal() {
         return this.estimatedBalanceLocal;
     }
@@ -255,7 +316,7 @@ public class ProjectCreateResponseProject implements AdditionalDataHolder, Parsa
      * Gets the features property value. Feature flags
      * @return a ProjectCreateResponseProjectFeatures
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ProjectCreateResponseProjectFeatures getFeatures() {
         return this.features;
     }
@@ -263,7 +324,7 @@ public class ProjectCreateResponseProject implements AdditionalDataHolder, Parsa
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(30);
         deserializerMap.put("account_id", (n) -> { this.setAccountId(n.getStringValue()); });
@@ -300,33 +361,33 @@ public class ProjectCreateResponseProject implements AdditionalDataHolder, Parsa
     }
     /**
      * Gets the organization_id property value. Organization ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getOrganizationId() {
         return this.organizationId;
     }
     /**
      * Gets the payment_method property value. Payment method
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getPaymentMethod() {
         return this.paymentMethod;
     }
     /**
      * Gets the project_name property value. Project name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getProjectName() {
         return this.projectName;
     }
     /**
      * Gets the state property value. Address state
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getState() {
         return this.state;
     }
@@ -334,57 +395,55 @@ public class ProjectCreateResponseProject implements AdditionalDataHolder, Parsa
      * Gets the tags property value. Set of resource tags
      * @return a ProjectCreateResponseProjectTags
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ProjectCreateResponseProjectTags getTags() {
         return this.tags;
     }
     /**
      * Gets the tech_emails property value. List of project tech email addresses
-     * @return a ProjectCreateResponseProjectTechEmails
+     * @return a java.util.List<ProjectCreateResponseProjectTechEmails>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ProjectCreateResponseProjectTechEmails> getTechEmails() {
         return this.techEmails;
     }
     /**
      * Gets the tenant_id property value. Tenant ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTenantId() {
         return this.tenantId;
     }
     /**
      * Gets the trial_expiration_time property value. Trial expiration time (ISO 8601)
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTrialExpirationTime() {
         return this.trialExpirationTime;
     }
     /**
      * Gets the vat_id property value. EU VAT Identification Number
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getVatId() {
         return this.vatId;
     }
     /**
      * Gets the zip_code property value. Address zip code
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getZipCode() {
         return this.zipCode;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("account_id", this.getAccountId());
         writer.writeStringValue("account_name", this.getAccountName());
@@ -420,281 +479,219 @@ public class ProjectCreateResponseProject implements AdditionalDataHolder, Parsa
     }
     /**
      * Sets the account_id property value. Account ID
-     * @param value Value to set for the accountId property.
-     * @return a void
+     * @param value Value to set for the account_id property.
      */
-    @javax.annotation.Nonnull
-    public void setAccountId(@javax.annotation.Nullable final String value) {
+    public void setAccountId(@jakarta.annotation.Nullable final String value) {
         this.accountId = value;
     }
     /**
      * Sets the account_name property value. Account name
-     * @param value Value to set for the accountName property.
-     * @return a void
+     * @param value Value to set for the account_name property.
      */
-    @javax.annotation.Nonnull
-    public void setAccountName(@javax.annotation.Nullable final String value) {
+    public void setAccountName(@jakarta.annotation.Nullable final String value) {
         this.accountName = value;
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the address_lines property value. Address lines
-     * @param value Value to set for the addressLines property.
-     * @return a void
+     * @param value Value to set for the address_lines property.
      */
-    @javax.annotation.Nonnull
-    public void setAddressLines(@javax.annotation.Nullable final java.util.List<String> value) {
+    public void setAddressLines(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.addressLines = value;
     }
     /**
      * Sets the available_credits property value. Available credits, in USD
-     * @param value Value to set for the availableCredits property.
-     * @return a void
+     * @param value Value to set for the available_credits property.
      */
-    @javax.annotation.Nonnull
-    public void setAvailableCredits(@javax.annotation.Nullable final String value) {
+    public void setAvailableCredits(@jakarta.annotation.Nullable final String value) {
         this.availableCredits = value;
     }
     /**
      * Sets the billing_address property value. DEPRECATED: use split address fields like company, address_lines, zip_code, city and state instead
-     * @param value Value to set for the billingAddress property.
-     * @return a void
+     * @param value Value to set for the billing_address property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingAddress(@javax.annotation.Nullable final String value) {
+    public void setBillingAddress(@jakarta.annotation.Nullable final String value) {
         this.billingAddress = value;
     }
     /**
      * Sets the billing_currency property value. Billing currency
-     * @param value Value to set for the billingCurrency property.
-     * @return a void
+     * @param value Value to set for the billing_currency property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingCurrency(@javax.annotation.Nullable final ProjectCreateResponseProjectBillingCurrency value) {
+    public void setBillingCurrency(@jakarta.annotation.Nullable final ProjectCreateResponseProjectBillingCurrency value) {
         this.billingCurrency = value;
     }
     /**
      * Sets the billing_emails property value. List of project billing email addresses
-     * @param value Value to set for the billingEmails property.
-     * @return a void
+     * @param value Value to set for the billing_emails property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingEmails(@javax.annotation.Nullable final java.util.List<ProjectCreateResponseProjectBillingEmails> value) {
+    public void setBillingEmails(@jakarta.annotation.Nullable final java.util.List<ProjectCreateResponseProjectBillingEmails> value) {
         this.billingEmails = value;
     }
     /**
      * Sets the billing_extra_text property value. Extra text to be included in all project invoices, e.g. purchase order or cost center number
-     * @param value Value to set for the billingExtraText property.
-     * @return a void
+     * @param value Value to set for the billing_extra_text property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingExtraText(@javax.annotation.Nullable final String value) {
+    public void setBillingExtraText(@jakarta.annotation.Nullable final String value) {
         this.billingExtraText = value;
     }
     /**
      * Sets the billing_group_id property value. Billing group ID
-     * @param value Value to set for the billingGroupId property.
-     * @return a void
+     * @param value Value to set for the billing_group_id property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingGroupId(@javax.annotation.Nullable final String value) {
+    public void setBillingGroupId(@jakarta.annotation.Nullable final String value) {
         this.billingGroupId = value;
     }
     /**
      * Sets the billing_group_name property value. Billing group name
-     * @param value Value to set for the billingGroupName property.
-     * @return a void
+     * @param value Value to set for the billing_group_name property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingGroupName(@javax.annotation.Nullable final String value) {
+    public void setBillingGroupName(@jakarta.annotation.Nullable final String value) {
         this.billingGroupName = value;
     }
     /**
      * Sets the card_info property value. Credit card assigned to the project
-     * @param value Value to set for the cardInfo property.
-     * @return a void
+     * @param value Value to set for the card_info property.
      */
-    @javax.annotation.Nonnull
-    public void setCardInfo(@javax.annotation.Nullable final ProjectCreateResponseProjectCardInfo value) {
+    public void setCardInfo(@jakarta.annotation.Nullable final ProjectCreateResponseProjectCardInfo value) {
         this.cardInfo = value;
     }
     /**
      * Sets the city property value. Address city
      * @param value Value to set for the city property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCity(@javax.annotation.Nullable final String value) {
+    public void setCity(@jakarta.annotation.Nullable final String value) {
         this.city = value;
     }
     /**
      * Sets the company property value. Name of a company
      * @param value Value to set for the company property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCompany(@javax.annotation.Nullable final String value) {
+    public void setCompany(@jakarta.annotation.Nullable final String value) {
         this.company = value;
     }
     /**
      * Sets the country property value. Billing country
      * @param value Value to set for the country property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCountry(@javax.annotation.Nullable final String value) {
+    public void setCountry(@jakarta.annotation.Nullable final String value) {
         this.country = value;
     }
     /**
      * Sets the country_code property value. Two letter ISO country code
-     * @param value Value to set for the countryCode property.
-     * @return a void
+     * @param value Value to set for the country_code property.
      */
-    @javax.annotation.Nonnull
-    public void setCountryCode(@javax.annotation.Nullable final String value) {
+    public void setCountryCode(@jakarta.annotation.Nullable final String value) {
         this.countryCode = value;
     }
     /**
      * Sets the default_cloud property value. Default cloud to use when launching services
-     * @param value Value to set for the defaultCloud property.
-     * @return a void
+     * @param value Value to set for the default_cloud property.
      */
-    @javax.annotation.Nonnull
-    public void setDefaultCloud(@javax.annotation.Nullable final String value) {
+    public void setDefaultCloud(@jakarta.annotation.Nullable final String value) {
         this.defaultCloud = value;
     }
     /**
      * Sets the end_of_life_extension property value. End of life extension information
-     * @param value Value to set for the endOfLifeExtension property.
-     * @return a void
+     * @param value Value to set for the end_of_life_extension property.
      */
-    @javax.annotation.Nonnull
-    public void setEndOfLifeExtension(@javax.annotation.Nullable final ProjectCreateResponseProjectEndOfLifeExtension value) {
+    public void setEndOfLifeExtension(@jakarta.annotation.Nullable final ProjectCreateResponseProjectEndOfLifeExtension value) {
         this.endOfLifeExtension = value;
     }
     /**
      * Sets the estimated_balance property value. Estimated balance, in USD
-     * @param value Value to set for the estimatedBalance property.
-     * @return a void
+     * @param value Value to set for the estimated_balance property.
      */
-    @javax.annotation.Nonnull
-    public void setEstimatedBalance(@javax.annotation.Nullable final String value) {
+    public void setEstimatedBalance(@jakarta.annotation.Nullable final String value) {
         this.estimatedBalance = value;
     }
     /**
      * Sets the estimated_balance_local property value. Estimated balance, in billing currency
-     * @param value Value to set for the estimatedBalanceLocal property.
-     * @return a void
+     * @param value Value to set for the estimated_balance_local property.
      */
-    @javax.annotation.Nonnull
-    public void setEstimatedBalanceLocal(@javax.annotation.Nullable final String value) {
+    public void setEstimatedBalanceLocal(@jakarta.annotation.Nullable final String value) {
         this.estimatedBalanceLocal = value;
     }
     /**
      * Sets the features property value. Feature flags
      * @param value Value to set for the features property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setFeatures(@javax.annotation.Nullable final ProjectCreateResponseProjectFeatures value) {
+    public void setFeatures(@jakarta.annotation.Nullable final ProjectCreateResponseProjectFeatures value) {
         this.features = value;
     }
     /**
      * Sets the organization_id property value. Organization ID
-     * @param value Value to set for the organizationId property.
-     * @return a void
+     * @param value Value to set for the organization_id property.
      */
-    @javax.annotation.Nonnull
-    public void setOrganizationId(@javax.annotation.Nullable final String value) {
+    public void setOrganizationId(@jakarta.annotation.Nullable final String value) {
         this.organizationId = value;
     }
     /**
      * Sets the payment_method property value. Payment method
-     * @param value Value to set for the paymentMethod property.
-     * @return a void
+     * @param value Value to set for the payment_method property.
      */
-    @javax.annotation.Nonnull
-    public void setPaymentMethod(@javax.annotation.Nullable final String value) {
+    public void setPaymentMethod(@jakarta.annotation.Nullable final String value) {
         this.paymentMethod = value;
     }
     /**
      * Sets the project_name property value. Project name
-     * @param value Value to set for the projectName property.
-     * @return a void
+     * @param value Value to set for the project_name property.
      */
-    @javax.annotation.Nonnull
-    public void setProjectName(@javax.annotation.Nullable final String value) {
+    public void setProjectName(@jakarta.annotation.Nullable final String value) {
         this.projectName = value;
     }
     /**
      * Sets the state property value. Address state
      * @param value Value to set for the state property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setState(@javax.annotation.Nullable final String value) {
+    public void setState(@jakarta.annotation.Nullable final String value) {
         this.state = value;
     }
     /**
      * Sets the tags property value. Set of resource tags
      * @param value Value to set for the tags property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setTags(@javax.annotation.Nullable final ProjectCreateResponseProjectTags value) {
+    public void setTags(@jakarta.annotation.Nullable final ProjectCreateResponseProjectTags value) {
         this.tags = value;
     }
     /**
      * Sets the tech_emails property value. List of project tech email addresses
-     * @param value Value to set for the techEmails property.
-     * @return a void
+     * @param value Value to set for the tech_emails property.
      */
-    @javax.annotation.Nonnull
-    public void setTechEmails(@javax.annotation.Nullable final java.util.List<ProjectCreateResponseProjectTechEmails> value) {
+    public void setTechEmails(@jakarta.annotation.Nullable final java.util.List<ProjectCreateResponseProjectTechEmails> value) {
         this.techEmails = value;
     }
     /**
      * Sets the tenant_id property value. Tenant ID
-     * @param value Value to set for the tenantId property.
-     * @return a void
+     * @param value Value to set for the tenant_id property.
      */
-    @javax.annotation.Nonnull
-    public void setTenantId(@javax.annotation.Nullable final String value) {
+    public void setTenantId(@jakarta.annotation.Nullable final String value) {
         this.tenantId = value;
     }
     /**
      * Sets the trial_expiration_time property value. Trial expiration time (ISO 8601)
-     * @param value Value to set for the trialExpirationTime property.
-     * @return a void
+     * @param value Value to set for the trial_expiration_time property.
      */
-    @javax.annotation.Nonnull
-    public void setTrialExpirationTime(@javax.annotation.Nullable final String value) {
+    public void setTrialExpirationTime(@jakarta.annotation.Nullable final String value) {
         this.trialExpirationTime = value;
     }
     /**
      * Sets the vat_id property value. EU VAT Identification Number
-     * @param value Value to set for the vatId property.
-     * @return a void
+     * @param value Value to set for the vat_id property.
      */
-    @javax.annotation.Nonnull
-    public void setVatId(@javax.annotation.Nullable final String value) {
+    public void setVatId(@jakarta.annotation.Nullable final String value) {
         this.vatId = value;
     }
     /**
      * Sets the zip_code property value. Address zip code
-     * @param value Value to set for the zipCode property.
-     * @return a void
+     * @param value Value to set for the zip_code property.
      */
-    @javax.annotation.Nonnull
-    public void setZipCode(@javax.annotation.Nullable final String value) {
+    public void setZipCode(@jakarta.annotation.Nullable final String value) {
         this.zipCode = value;
     }
 }

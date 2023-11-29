@@ -10,36 +10,59 @@ import java.util.Objects;
 /**
  * ServiceUpdateRequestBody
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceUpdateRequestBody implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Target cloud */
+    /**
+     * Target cloud
+     */
     private String cloud;
-    /** Megabytes of disk space for data storage */
+    /**
+     * Megabytes of disk space for data storage
+     */
     private Double diskSpaceMb;
-    /** Service group name (DEPRECATED: do not use) */
+    /**
+     * Service group name (DEPRECATED: do not use)
+     */
     private String groupName;
-    /** Switch the service to use Karapace for schema registry and REST proxy */
+    /**
+     * Switch the service to use Karapace for schema registry and REST proxy
+     */
     private Boolean karapace;
-    /** Automatic maintenance settings */
+    /**
+     * Automatic maintenance settings
+     */
     private ServiceUpdateRequestBodyMaintenance maintenance;
-    /** Subscription plan */
+    /**
+     * Subscription plan
+     */
     private String plan;
-    /** Power-on the service (true) or power-off (false) */
+    /**
+     * Power-on the service (true) or power-off (false)
+     */
     private Boolean powered;
-    /** Project VPC ID */
+    /**
+     * Project VPC ID
+     */
     private String projectVpcId;
-    /** Enable or disable Schema Registry authorization */
+    /**
+     * Enable or disable Schema Registry authorization
+     */
     private Boolean schemaRegistryAuthz;
-    /** Service is protected against termination and powering off */
+    /**
+     * Service is protected against termination and powering off
+     */
     private Boolean terminationProtection;
-    /** Service type-specific settings */
+    /**
+     * Service type-specific settings
+     */
     private ServiceUpdateRequestBodyUserConfig userConfig;
     /**
      * Instantiates a new ServiceUpdateRequestBody and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceUpdateRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -48,32 +71,32 @@ public class ServiceUpdateRequestBody implements AdditionalDataHolder, Parsable 
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceUpdateRequestBody
      */
-    @javax.annotation.Nonnull
-    public static ServiceUpdateRequestBody createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceUpdateRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceUpdateRequestBody();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the cloud property value. Target cloud
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCloud() {
         return this.cloud;
     }
     /**
      * Gets the disk_space_mb property value. Megabytes of disk space for data storage
-     * @return a double
+     * @return a Double
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Double getDiskSpaceMb() {
         return this.diskSpaceMb;
     }
@@ -81,7 +104,7 @@ public class ServiceUpdateRequestBody implements AdditionalDataHolder, Parsable 
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(11);
         deserializerMap.put("cloud", (n) -> { this.setCloud(n.getStringValue()); });
@@ -99,17 +122,17 @@ public class ServiceUpdateRequestBody implements AdditionalDataHolder, Parsable 
     }
     /**
      * Gets the group_name property value. Service group name (DEPRECATED: do not use)
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getGroupName() {
         return this.groupName;
     }
     /**
      * Gets the karapace property value. Switch the service to use Karapace for schema registry and REST proxy
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getKarapace() {
         return this.karapace;
     }
@@ -117,47 +140,47 @@ public class ServiceUpdateRequestBody implements AdditionalDataHolder, Parsable 
      * Gets the maintenance property value. Automatic maintenance settings
      * @return a ServiceUpdateRequestBodyMaintenance
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceUpdateRequestBodyMaintenance getMaintenance() {
         return this.maintenance;
     }
     /**
      * Gets the plan property value. Subscription plan
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getPlan() {
         return this.plan;
     }
     /**
      * Gets the powered property value. Power-on the service (true) or power-off (false)
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getPowered() {
         return this.powered;
     }
     /**
      * Gets the project_vpc_id property value. Project VPC ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getProjectVpcId() {
         return this.projectVpcId;
     }
     /**
      * Gets the schema_registry_authz property value. Enable or disable Schema Registry authorization
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getSchemaRegistryAuthz() {
         return this.schemaRegistryAuthz;
     }
     /**
      * Gets the termination_protection property value. Service is protected against termination and powering off
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getTerminationProtection() {
         return this.terminationProtection;
     }
@@ -165,17 +188,15 @@ public class ServiceUpdateRequestBody implements AdditionalDataHolder, Parsable 
      * Gets the user_config property value. Service type-specific settings
      * @return a ServiceUpdateRequestBodyUserConfig
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceUpdateRequestBodyUserConfig getUserConfig() {
         return this.userConfig;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("cloud", this.getCloud());
         writer.writeDoubleValue("disk_space_mb", this.getDiskSpaceMb());
@@ -191,111 +212,87 @@ public class ServiceUpdateRequestBody implements AdditionalDataHolder, Parsable 
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the cloud property value. Target cloud
      * @param value Value to set for the cloud property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCloud(@javax.annotation.Nullable final String value) {
+    public void setCloud(@jakarta.annotation.Nullable final String value) {
         this.cloud = value;
     }
     /**
      * Sets the disk_space_mb property value. Megabytes of disk space for data storage
-     * @param value Value to set for the diskSpaceMb property.
-     * @return a void
+     * @param value Value to set for the disk_space_mb property.
      */
-    @javax.annotation.Nonnull
-    public void setDiskSpaceMb(@javax.annotation.Nullable final Double value) {
+    public void setDiskSpaceMb(@jakarta.annotation.Nullable final Double value) {
         this.diskSpaceMb = value;
     }
     /**
      * Sets the group_name property value. Service group name (DEPRECATED: do not use)
-     * @param value Value to set for the groupName property.
-     * @return a void
+     * @param value Value to set for the group_name property.
      */
-    @javax.annotation.Nonnull
-    public void setGroupName(@javax.annotation.Nullable final String value) {
+    public void setGroupName(@jakarta.annotation.Nullable final String value) {
         this.groupName = value;
     }
     /**
      * Sets the karapace property value. Switch the service to use Karapace for schema registry and REST proxy
      * @param value Value to set for the karapace property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setKarapace(@javax.annotation.Nullable final Boolean value) {
+    public void setKarapace(@jakarta.annotation.Nullable final Boolean value) {
         this.karapace = value;
     }
     /**
      * Sets the maintenance property value. Automatic maintenance settings
      * @param value Value to set for the maintenance property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMaintenance(@javax.annotation.Nullable final ServiceUpdateRequestBodyMaintenance value) {
+    public void setMaintenance(@jakarta.annotation.Nullable final ServiceUpdateRequestBodyMaintenance value) {
         this.maintenance = value;
     }
     /**
      * Sets the plan property value. Subscription plan
      * @param value Value to set for the plan property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setPlan(@javax.annotation.Nullable final String value) {
+    public void setPlan(@jakarta.annotation.Nullable final String value) {
         this.plan = value;
     }
     /**
      * Sets the powered property value. Power-on the service (true) or power-off (false)
      * @param value Value to set for the powered property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setPowered(@javax.annotation.Nullable final Boolean value) {
+    public void setPowered(@jakarta.annotation.Nullable final Boolean value) {
         this.powered = value;
     }
     /**
      * Sets the project_vpc_id property value. Project VPC ID
-     * @param value Value to set for the projectVpcId property.
-     * @return a void
+     * @param value Value to set for the project_vpc_id property.
      */
-    @javax.annotation.Nonnull
-    public void setProjectVpcId(@javax.annotation.Nullable final String value) {
+    public void setProjectVpcId(@jakarta.annotation.Nullable final String value) {
         this.projectVpcId = value;
     }
     /**
      * Sets the schema_registry_authz property value. Enable or disable Schema Registry authorization
-     * @param value Value to set for the schemaRegistryAuthz property.
-     * @return a void
+     * @param value Value to set for the schema_registry_authz property.
      */
-    @javax.annotation.Nonnull
-    public void setSchemaRegistryAuthz(@javax.annotation.Nullable final Boolean value) {
+    public void setSchemaRegistryAuthz(@jakarta.annotation.Nullable final Boolean value) {
         this.schemaRegistryAuthz = value;
     }
     /**
      * Sets the termination_protection property value. Service is protected against termination and powering off
-     * @param value Value to set for the terminationProtection property.
-     * @return a void
+     * @param value Value to set for the termination_protection property.
      */
-    @javax.annotation.Nonnull
-    public void setTerminationProtection(@javax.annotation.Nullable final Boolean value) {
+    public void setTerminationProtection(@jakarta.annotation.Nullable final Boolean value) {
         this.terminationProtection = value;
     }
     /**
      * Sets the user_config property value. Service type-specific settings
-     * @param value Value to set for the userConfig property.
-     * @return a void
+     * @param value Value to set for the user_config property.
      */
-    @javax.annotation.Nonnull
-    public void setUserConfig(@javax.annotation.Nullable final ServiceUpdateRequestBodyUserConfig value) {
+    public void setUserConfig(@jakarta.annotation.Nullable final ServiceUpdateRequestBodyUserConfig value) {
         this.userConfig = value;
     }
 }

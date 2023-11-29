@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Billing currency */
+/**
+ * Billing currency
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum BillingGroupCreateRequestBodyBillingCurrency implements ValuedEnum {
     AUD("AUD"),
     CAD("CAD"),
@@ -21,10 +24,10 @@ public enum BillingGroupCreateRequestBodyBillingCurrency implements ValuedEnum {
     BillingGroupCreateRequestBodyBillingCurrency(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static BillingGroupCreateRequestBodyBillingCurrency forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static BillingGroupCreateRequestBodyBillingCurrency forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "AUD": return AUD;

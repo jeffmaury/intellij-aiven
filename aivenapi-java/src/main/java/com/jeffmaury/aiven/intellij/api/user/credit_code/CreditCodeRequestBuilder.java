@@ -8,14 +8,15 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /user/credit_code
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class CreditCodeRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.user.credit_code.item collection
-     * @param credit_code Unique identifier of the item
+     * @param credit_code Credit Code
      * @return a WithCreditCodeItemRequestBuilder
      */
-    @javax.annotation.Nonnull
-    public WithCreditCodeItemRequestBuilder byCredit_code(@javax.annotation.Nonnull final String credit_code) {
+    @jakarta.annotation.Nonnull
+    public WithCreditCodeItemRequestBuilder byCredit_code(@jakarta.annotation.Nonnull final String credit_code) {
         Objects.requireNonNull(credit_code);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
         urlTplParams.put("credit_code", credit_code);
@@ -25,20 +26,16 @@ public class CreditCodeRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new Credit_codeRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public CreditCodeRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public CreditCodeRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/user/credit_code", pathParameters);
     }
     /**
      * Instantiates a new Credit_codeRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public CreditCodeRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public CreditCodeRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/user/credit_code", rawUrl);
     }
 }

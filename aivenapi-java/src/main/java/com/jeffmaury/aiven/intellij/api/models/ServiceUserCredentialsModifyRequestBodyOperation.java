@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Operation type */
+/**
+ * Operation type
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceUserCredentialsModifyRequestBodyOperation implements ValuedEnum {
     AcknowledgeRenewal("acknowledge-renewal"),
     ResetCredentials("reset-credentials"),
@@ -12,10 +15,10 @@ public enum ServiceUserCredentialsModifyRequestBodyOperation implements ValuedEn
     ServiceUserCredentialsModifyRequestBodyOperation(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceUserCredentialsModifyRequestBodyOperation forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceUserCredentialsModifyRequestBodyOperation forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "acknowledge-renewal": return AcknowledgeRenewal;

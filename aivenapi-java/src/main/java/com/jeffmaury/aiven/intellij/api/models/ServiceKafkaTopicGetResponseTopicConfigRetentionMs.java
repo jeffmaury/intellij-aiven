@@ -10,20 +10,27 @@ import java.util.Objects;
 /**
  * retention.ms value, source and synonyms
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceKafkaTopicGetResponseTopicConfigRetentionMs implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Source of the Kafka topic configuration entry */
+    /**
+     * Source of the Kafka topic configuration entry
+     */
     private ServiceKafkaTopicGetResponseTopicConfigRetentionMsSource source;
-    /** Configuration synonyms */
+    /**
+     * Configuration synonyms
+     */
     private java.util.List<ServiceKafkaTopicGetResponseTopicConfigRetentionMsSynonyms> synonyms;
-    /** retention.ms */
+    /**
+     * retention.ms
+     */
     private Integer value;
     /**
      * Instantiates a new ServiceKafkaTopicGetResponseTopicConfigRetentionMs and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceKafkaTopicGetResponseTopicConfigRetentionMs() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -32,16 +39,16 @@ public class ServiceKafkaTopicGetResponseTopicConfigRetentionMs implements Addit
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceKafkaTopicGetResponseTopicConfigRetentionMs
      */
-    @javax.annotation.Nonnull
-    public static ServiceKafkaTopicGetResponseTopicConfigRetentionMs createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceKafkaTopicGetResponseTopicConfigRetentionMs createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceKafkaTopicGetResponseTopicConfigRetentionMs();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
@@ -49,7 +56,7 @@ public class ServiceKafkaTopicGetResponseTopicConfigRetentionMs implements Addit
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("source", (n) -> { this.setSource(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigRetentionMsSource.class)); });
@@ -61,33 +68,31 @@ public class ServiceKafkaTopicGetResponseTopicConfigRetentionMs implements Addit
      * Gets the source property value. Source of the Kafka topic configuration entry
      * @return a ServiceKafkaTopicGetResponseTopicConfigRetentionMsSource
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceKafkaTopicGetResponseTopicConfigRetentionMsSource getSource() {
         return this.source;
     }
     /**
      * Gets the synonyms property value. Configuration synonyms
-     * @return a ServiceKafkaTopicGetResponseTopicConfigRetentionMsSynonyms
+     * @return a java.util.List<ServiceKafkaTopicGetResponseTopicConfigRetentionMsSynonyms>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceKafkaTopicGetResponseTopicConfigRetentionMsSynonyms> getSynonyms() {
         return this.synonyms;
     }
     /**
      * Gets the value property value. retention.ms
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getValue() {
         return this.value;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeEnumValue("source", this.getSource());
         writer.writeCollectionOfObjectValues("synonyms", this.getSynonyms());
@@ -95,39 +100,31 @@ public class ServiceKafkaTopicGetResponseTopicConfigRetentionMs implements Addit
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the source property value. Source of the Kafka topic configuration entry
      * @param value Value to set for the source property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setSource(@javax.annotation.Nullable final ServiceKafkaTopicGetResponseTopicConfigRetentionMsSource value) {
+    public void setSource(@jakarta.annotation.Nullable final ServiceKafkaTopicGetResponseTopicConfigRetentionMsSource value) {
         this.source = value;
     }
     /**
      * Sets the synonyms property value. Configuration synonyms
      * @param value Value to set for the synonyms property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setSynonyms(@javax.annotation.Nullable final java.util.List<ServiceKafkaTopicGetResponseTopicConfigRetentionMsSynonyms> value) {
+    public void setSynonyms(@jakarta.annotation.Nullable final java.util.List<ServiceKafkaTopicGetResponseTopicConfigRetentionMsSynonyms> value) {
         this.synonyms = value;
     }
     /**
      * Sets the value property value. retention.ms
      * @param value Value to set for the value property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setValue(@javax.annotation.Nullable final Integer value) {
+    public void setValue(@jakarta.annotation.Nullable final Integer value) {
         this.value = value;
     }
 }

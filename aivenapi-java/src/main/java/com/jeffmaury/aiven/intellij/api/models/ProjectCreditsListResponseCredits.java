@@ -7,26 +7,39 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProjectCreditsListResponseCredits implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Credit code */
+    /**
+     * Credit code
+     */
     private String code;
-    /** Timestamp in ISO 8601 format, always in UTC */
+    /**
+     * Timestamp in ISO 8601 format, always in UTC
+     */
     private String expireTime;
-    /** Remaining credit value */
+    /**
+     * Remaining credit value
+     */
     private String remainingValue;
-    /** Timestamp in ISO 8601 format, always in UTC */
+    /**
+     * Timestamp in ISO 8601 format, always in UTC
+     */
     private String startTime;
-    /** Credit type */
+    /**
+     * Credit type
+     */
     private ProjectCreditsListResponseCreditsType type;
-    /** Original credit value, or for expired credits, the consumed credit value */
+    /**
+     * Original credit value, or for expired credits, the consumed credit value
+     */
     private String value;
     /**
      * Instantiates a new ProjectCreditsListResponseCredits and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ProjectCreditsListResponseCredits() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -35,32 +48,32 @@ public class ProjectCreditsListResponseCredits implements AdditionalDataHolder, 
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ProjectCreditsListResponseCredits
      */
-    @javax.annotation.Nonnull
-    public static ProjectCreditsListResponseCredits createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ProjectCreditsListResponseCredits createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ProjectCreditsListResponseCredits();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the code property value. Credit code
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCode() {
         return this.code;
     }
     /**
      * Gets the expire_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getExpireTime() {
         return this.expireTime;
     }
@@ -68,7 +81,7 @@ public class ProjectCreditsListResponseCredits implements AdditionalDataHolder, 
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("code", (n) -> { this.setCode(n.getStringValue()); });
@@ -81,17 +94,17 @@ public class ProjectCreditsListResponseCredits implements AdditionalDataHolder, 
     }
     /**
      * Gets the remaining_value property value. Remaining credit value
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getRemainingValue() {
         return this.remainingValue;
     }
     /**
      * Gets the start_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getStartTime() {
         return this.startTime;
     }
@@ -99,25 +112,23 @@ public class ProjectCreditsListResponseCredits implements AdditionalDataHolder, 
      * Gets the type property value. Credit type
      * @return a ProjectCreditsListResponseCreditsType
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ProjectCreditsListResponseCreditsType getType() {
         return this.type;
     }
     /**
      * Gets the value property value. Original credit value, or for expired credits, the consumed credit value
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getValue() {
         return this.value;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("code", this.getCode());
         writer.writeStringValue("expire_time", this.getExpireTime());
@@ -128,66 +139,52 @@ public class ProjectCreditsListResponseCredits implements AdditionalDataHolder, 
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the code property value. Credit code
      * @param value Value to set for the code property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCode(@javax.annotation.Nullable final String value) {
+    public void setCode(@jakarta.annotation.Nullable final String value) {
         this.code = value;
     }
     /**
      * Sets the expire_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @param value Value to set for the expireTime property.
-     * @return a void
+     * @param value Value to set for the expire_time property.
      */
-    @javax.annotation.Nonnull
-    public void setExpireTime(@javax.annotation.Nullable final String value) {
+    public void setExpireTime(@jakarta.annotation.Nullable final String value) {
         this.expireTime = value;
     }
     /**
      * Sets the remaining_value property value. Remaining credit value
-     * @param value Value to set for the remainingValue property.
-     * @return a void
+     * @param value Value to set for the remaining_value property.
      */
-    @javax.annotation.Nonnull
-    public void setRemainingValue(@javax.annotation.Nullable final String value) {
+    public void setRemainingValue(@jakarta.annotation.Nullable final String value) {
         this.remainingValue = value;
     }
     /**
      * Sets the start_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @param value Value to set for the startTime property.
-     * @return a void
+     * @param value Value to set for the start_time property.
      */
-    @javax.annotation.Nonnull
-    public void setStartTime(@javax.annotation.Nullable final String value) {
+    public void setStartTime(@jakarta.annotation.Nullable final String value) {
         this.startTime = value;
     }
     /**
      * Sets the type property value. Credit type
      * @param value Value to set for the type property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setType(@javax.annotation.Nullable final ProjectCreditsListResponseCreditsType value) {
+    public void setType(@jakarta.annotation.Nullable final ProjectCreditsListResponseCreditsType value) {
         this.type = value;
     }
     /**
      * Sets the value property value. Original credit value, or for expired credits, the consumed credit value
      * @param value Value to set for the value property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setValue(@javax.annotation.Nullable final String value) {
+    public void setValue(@jakarta.annotation.Nullable final String value) {
         this.value = value;
     }
 }

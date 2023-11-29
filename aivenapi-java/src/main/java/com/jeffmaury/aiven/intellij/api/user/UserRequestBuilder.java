@@ -15,7 +15,6 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,50 +22,57 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /user
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class UserRequestBuilder extends BaseRequestBuilder {
-    /** The credit_code property */
-    @javax.annotation.Nonnull
-    public CreditCodeRequestBuilder credit_code() {
+    /**
+     * The credit_code property
+     */
+    @jakarta.annotation.Nonnull
+    public CreditCodeRequestBuilder creditCode() {
         return new CreditCodeRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The password_reset property */
-    @javax.annotation.Nonnull
-    public PasswordResetRequestBuilder password_reset() {
+    /**
+     * The password_reset property
+     */
+    @jakarta.annotation.Nonnull
+    public PasswordResetRequestBuilder passwordReset() {
         return new PasswordResetRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The password_reset_request property */
-    @javax.annotation.Nonnull
-    public PasswordResetRequestRequestBuilder password_reset_request() {
+    /**
+     * The password_reset_request property
+     */
+    @jakarta.annotation.Nonnull
+    public PasswordResetRequestRequestBuilder passwordResetRequest() {
         return new PasswordResetRequestRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The password_strength property */
-    @javax.annotation.Nonnull
-    public PasswordStrengthRequestBuilder password_strength() {
+    /**
+     * The password_strength property
+     */
+    @jakarta.annotation.Nonnull
+    public PasswordStrengthRequestBuilder passwordStrength() {
         return new PasswordStrengthRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The verify_email property */
-    @javax.annotation.Nonnull
-    public VerifyEmailRequestBuilder verify_email() {
+    /**
+     * The verify_email property
+     */
+    @jakarta.annotation.Nonnull
+    public VerifyEmailRequestBuilder verifyEmail() {
         return new VerifyEmailRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new UserRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public UserRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public UserRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/user", pathParameters);
     }
     /**
      * Instantiates a new UserRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public UserRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public UserRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/user", rawUrl);
     }
     /**
@@ -74,16 +80,9 @@ public class UserRequestBuilder extends BaseRequestBuilder {
      * @param body UserCreateRequestBody
      * @return a CompletableFuture of UserCreateResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserCreateResponse> post(@javax.annotation.Nonnull final UserCreateRequestBody body) {
-        try {
-            final RequestInformation requestInfo = toPostRequestInformation(body, null);
-            return this.requestAdapter.sendAsync(requestInfo, UserCreateResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<UserCreateResponse> executionException = new java.util.concurrent.CompletableFuture<UserCreateResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<UserCreateResponse> post(@jakarta.annotation.Nonnull final UserCreateRequestBody body) {
+        return post(body, null);
     }
     /**
      * Create a user
@@ -91,25 +90,19 @@ public class UserRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a CompletableFuture of UserCreateResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserCreateResponse> post(@javax.annotation.Nonnull final UserCreateRequestBody body, @javax.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<UserCreateResponse> post(@jakarta.annotation.Nonnull final UserCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        try {
-            final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-            return this.requestAdapter.sendAsync(requestInfo, UserCreateResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<UserCreateResponse> executionException = new java.util.concurrent.CompletableFuture<UserCreateResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
+        return this.requestAdapter.sendAsync(requestInfo, UserCreateResponse::createFromDiscriminatorValue, null);
     }
     /**
      * Create a user
      * @param body UserCreateRequestBody
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@javax.annotation.Nonnull final UserCreateRequestBody body) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UserCreateRequestBody body) {
         return toPostRequestInformation(body, null);
     }
     /**
@@ -118,26 +111,37 @@ public class UserRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@javax.annotation.Nonnull final UserCreateRequestBody body, @javax.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UserCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation();
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
-        requestInfo.headers.add("Accept", "application/json");
-        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         if (requestConfiguration != null) {
             final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
             requestConfiguration.accept(requestConfig);
             requestInfo.headers.putAll(requestConfig.headers);
             requestInfo.addRequestOptions(requestConfig.options);
         }
+        requestInfo.httpMethod = HttpMethod.POST;
+        requestInfo.urlTemplate = urlTemplate;
+        requestInfo.pathParameters = pathParameters;
+        requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
+    }
+    /**
+     * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @return a UserRequestBuilder
+     */
+    @jakarta.annotation.Nonnull
+    public UserRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+        Objects.requireNonNull(rawUrl);
+        return new UserRequestBuilder(rawUrl, requestAdapter);
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
     public class PostRequestConfiguration extends BaseRequestConfiguration {
     }
 }

@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Topic state */
+/**
+ * Topic state
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceGetResponseServiceTopicsState implements ValuedEnum {
     ACTIVE("ACTIVE"),
     CONFIGURING("CONFIGURING"),
@@ -12,10 +15,10 @@ public enum ServiceGetResponseServiceTopicsState implements ValuedEnum {
     ServiceGetResponseServiceTopicsState(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceGetResponseServiceTopicsState forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceGetResponseServiceTopicsState forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "ACTIVE": return ACTIVE;

@@ -10,18 +10,23 @@ import java.util.Objects;
 /**
  * ServiceSchemaRegistryCompatibilityRequestBody
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceSchemaRegistryCompatibilityRequestBody implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Schema */
+    /**
+     * Schema
+     */
     private String schema;
-    /** Schema type */
+    /**
+     * Schema type
+     */
     private ServiceSchemaRegistryCompatibilityRequestBodySchemaType schemaType;
     /**
      * Instantiates a new ServiceSchemaRegistryCompatibilityRequestBody and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceSchemaRegistryCompatibilityRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -30,16 +35,16 @@ public class ServiceSchemaRegistryCompatibilityRequestBody implements Additional
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceSchemaRegistryCompatibilityRequestBody
      */
-    @javax.annotation.Nonnull
-    public static ServiceSchemaRegistryCompatibilityRequestBody createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceSchemaRegistryCompatibilityRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceSchemaRegistryCompatibilityRequestBody();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
@@ -47,7 +52,7 @@ public class ServiceSchemaRegistryCompatibilityRequestBody implements Additional
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("schema", (n) -> { this.setSchema(n.getStringValue()); });
@@ -56,9 +61,9 @@ public class ServiceSchemaRegistryCompatibilityRequestBody implements Additional
     }
     /**
      * Gets the schema property value. Schema
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSchema() {
         return this.schema;
     }
@@ -66,47 +71,39 @@ public class ServiceSchemaRegistryCompatibilityRequestBody implements Additional
      * Gets the schemaType property value. Schema type
      * @return a ServiceSchemaRegistryCompatibilityRequestBodySchemaType
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceSchemaRegistryCompatibilityRequestBodySchemaType getSchemaType() {
         return this.schemaType;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("schema", this.getSchema());
         writer.writeEnumValue("schemaType", this.getSchemaType());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the schema property value. Schema
      * @param value Value to set for the schema property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setSchema(@javax.annotation.Nullable final String value) {
+    public void setSchema(@jakarta.annotation.Nullable final String value) {
         this.schema = value;
     }
     /**
      * Sets the schemaType property value. Schema type
      * @param value Value to set for the schemaType property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setSchemaType(@javax.annotation.Nullable final ServiceSchemaRegistryCompatibilityRequestBodySchemaType value) {
+    public void setSchemaType(@jakarta.annotation.Nullable final ServiceSchemaRegistryCompatibilityRequestBodySchemaType value) {
         this.schemaType = value;
     }
 }

@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Service integration type */
+/**
+ * Service integration type
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceIntegrationCreateRequestBodyIntegrationType implements ValuedEnum {
     Alertmanager("alertmanager"),
     Autoscaler("autoscaler"),
@@ -46,10 +49,10 @@ public enum ServiceIntegrationCreateRequestBodyIntegrationType implements Valued
     ServiceIntegrationCreateRequestBodyIntegrationType(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceIntegrationCreateRequestBodyIntegrationType forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceIntegrationCreateRequestBodyIntegrationType forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "alertmanager": return Alertmanager;

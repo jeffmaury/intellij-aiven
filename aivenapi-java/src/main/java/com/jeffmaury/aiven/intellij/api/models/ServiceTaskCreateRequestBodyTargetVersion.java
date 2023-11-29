@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Target version used with upgrade_check */
+/**
+ * Target version used with upgrade_check
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceTaskCreateRequestBodyTargetVersion implements ValuedEnum {
     OneTwo("12"),
     OneThree("13"),
@@ -13,10 +16,10 @@ public enum ServiceTaskCreateRequestBodyTargetVersion implements ValuedEnum {
     ServiceTaskCreateRequestBodyTargetVersion(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceTaskCreateRequestBodyTargetVersion forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceTaskCreateRequestBodyTargetVersion forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "12": return OneTwo;

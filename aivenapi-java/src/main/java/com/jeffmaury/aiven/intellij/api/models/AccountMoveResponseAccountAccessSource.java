@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Describe the source of the account */
+/**
+ * Describe the source of the account
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum AccountMoveResponseAccountAccessSource implements ValuedEnum {
     Descendant_membership("descendant_membership"),
     Organization_membership("organization_membership"),
@@ -13,10 +16,10 @@ public enum AccountMoveResponseAccountAccessSource implements ValuedEnum {
     AccountMoveResponseAccountAccessSource(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static AccountMoveResponseAccountAccessSource forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static AccountMoveResponseAccountAccessSource forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "descendant_membership": return Descendant_membership;

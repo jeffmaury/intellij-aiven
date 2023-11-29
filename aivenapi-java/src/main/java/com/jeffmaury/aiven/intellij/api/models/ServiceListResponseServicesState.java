@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** State of the service */
+/**
+ * State of the service
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceListResponseServicesState implements ValuedEnum {
     POWEROFF("POWEROFF"),
     REBALANCING("REBALANCING"),
@@ -13,10 +16,10 @@ public enum ServiceListResponseServicesState implements ValuedEnum {
     ServiceListResponseServicesState(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceListResponseServicesState forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceListResponseServicesState forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "POWEROFF": return POWEROFF;

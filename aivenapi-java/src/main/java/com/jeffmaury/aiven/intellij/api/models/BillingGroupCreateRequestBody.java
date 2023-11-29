@@ -10,42 +10,71 @@ import java.util.Objects;
 /**
  * BillingGroupCreateRequestBody
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class BillingGroupCreateRequestBody implements AdditionalDataHolder, Parsable {
-    /** Account ID */
+    /**
+     * Account ID
+     */
     private String accountId;
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Address lines */
+    /**
+     * Address lines
+     */
     private java.util.List<String> addressLines;
-    /** Billing currency */
+    /**
+     * Billing currency
+     */
     private BillingGroupCreateRequestBodyBillingCurrency billingCurrency;
-    /** List of project billing email addresses */
+    /**
+     * List of project billing email addresses
+     */
     private java.util.List<BillingGroupCreateRequestBodyBillingEmails> billingEmails;
-    /** Extra text to be included in all project invoices, e.g. purchase order or cost center number */
+    /**
+     * Extra text to be included in all project invoices, e.g. purchase order or cost center number
+     */
     private String billingExtraText;
-    /** Billing group name */
+    /**
+     * Billing group name
+     */
     private String billingGroupName;
-    /** Credit card ID */
+    /**
+     * Credit card ID
+     */
     private String cardId;
-    /** Address city */
+    /**
+     * Address city
+     */
     private String city;
-    /** Name of a company */
+    /**
+     * Name of a company
+     */
     private String company;
-    /** Billing group ID */
+    /**
+     * Billing group ID
+     */
     private String copyFromBillingGroup;
-    /** Two letter country code for billing country */
+    /**
+     * Two letter country code for billing country
+     */
     private String countryCode;
-    /** Address state */
+    /**
+     * Address state
+     */
     private String state;
-    /** EU VAT Identification Number */
+    /**
+     * EU VAT Identification Number
+     */
     private String vatId;
-    /** Address zip code */
+    /**
+     * Address zip code
+     */
     private String zipCode;
     /**
      * Instantiates a new BillingGroupCreateRequestBody and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public BillingGroupCreateRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -54,32 +83,32 @@ public class BillingGroupCreateRequestBody implements AdditionalDataHolder, Pars
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a BillingGroupCreateRequestBody
      */
-    @javax.annotation.Nonnull
-    public static BillingGroupCreateRequestBody createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static BillingGroupCreateRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new BillingGroupCreateRequestBody();
     }
     /**
      * Gets the account_id property value. Account ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccountId() {
         return this.accountId;
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the address_lines property value. Address lines
-     * @return a string
+     * @return a java.util.List<String>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<String> getAddressLines() {
         return this.addressLines;
     }
@@ -87,71 +116,71 @@ public class BillingGroupCreateRequestBody implements AdditionalDataHolder, Pars
      * Gets the billing_currency property value. Billing currency
      * @return a BillingGroupCreateRequestBodyBillingCurrency
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public BillingGroupCreateRequestBodyBillingCurrency getBillingCurrency() {
         return this.billingCurrency;
     }
     /**
      * Gets the billing_emails property value. List of project billing email addresses
-     * @return a BillingGroupCreateRequestBodyBillingEmails
+     * @return a java.util.List<BillingGroupCreateRequestBodyBillingEmails>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<BillingGroupCreateRequestBodyBillingEmails> getBillingEmails() {
         return this.billingEmails;
     }
     /**
      * Gets the billing_extra_text property value. Extra text to be included in all project invoices, e.g. purchase order or cost center number
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getBillingExtraText() {
         return this.billingExtraText;
     }
     /**
      * Gets the billing_group_name property value. Billing group name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getBillingGroupName() {
         return this.billingGroupName;
     }
     /**
      * Gets the card_id property value. Credit card ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCardId() {
         return this.cardId;
     }
     /**
      * Gets the city property value. Address city
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCity() {
         return this.city;
     }
     /**
      * Gets the company property value. Name of a company
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCompany() {
         return this.company;
     }
     /**
      * Gets the copy_from_billing_group property value. Billing group ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCopyFromBillingGroup() {
         return this.copyFromBillingGroup;
     }
     /**
      * Gets the country_code property value. Two letter country code for billing country
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCountryCode() {
         return this.countryCode;
     }
@@ -159,7 +188,7 @@ public class BillingGroupCreateRequestBody implements AdditionalDataHolder, Pars
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(14);
         deserializerMap.put("account_id", (n) -> { this.setAccountId(n.getStringValue()); });
@@ -180,35 +209,33 @@ public class BillingGroupCreateRequestBody implements AdditionalDataHolder, Pars
     }
     /**
      * Gets the state property value. Address state
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getState() {
         return this.state;
     }
     /**
      * Gets the vat_id property value. EU VAT Identification Number
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getVatId() {
         return this.vatId;
     }
     /**
      * Gets the zip_code property value. Address zip code
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getZipCode() {
         return this.zipCode;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("account_id", this.getAccountId());
         writer.writeCollectionOfPrimitiveValues("address_lines", this.getAddressLines());
@@ -228,137 +255,107 @@ public class BillingGroupCreateRequestBody implements AdditionalDataHolder, Pars
     }
     /**
      * Sets the account_id property value. Account ID
-     * @param value Value to set for the accountId property.
-     * @return a void
+     * @param value Value to set for the account_id property.
      */
-    @javax.annotation.Nonnull
-    public void setAccountId(@javax.annotation.Nullable final String value) {
+    public void setAccountId(@jakarta.annotation.Nullable final String value) {
         this.accountId = value;
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the address_lines property value. Address lines
-     * @param value Value to set for the addressLines property.
-     * @return a void
+     * @param value Value to set for the address_lines property.
      */
-    @javax.annotation.Nonnull
-    public void setAddressLines(@javax.annotation.Nullable final java.util.List<String> value) {
+    public void setAddressLines(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.addressLines = value;
     }
     /**
      * Sets the billing_currency property value. Billing currency
-     * @param value Value to set for the billingCurrency property.
-     * @return a void
+     * @param value Value to set for the billing_currency property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingCurrency(@javax.annotation.Nullable final BillingGroupCreateRequestBodyBillingCurrency value) {
+    public void setBillingCurrency(@jakarta.annotation.Nullable final BillingGroupCreateRequestBodyBillingCurrency value) {
         this.billingCurrency = value;
     }
     /**
      * Sets the billing_emails property value. List of project billing email addresses
-     * @param value Value to set for the billingEmails property.
-     * @return a void
+     * @param value Value to set for the billing_emails property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingEmails(@javax.annotation.Nullable final java.util.List<BillingGroupCreateRequestBodyBillingEmails> value) {
+    public void setBillingEmails(@jakarta.annotation.Nullable final java.util.List<BillingGroupCreateRequestBodyBillingEmails> value) {
         this.billingEmails = value;
     }
     /**
      * Sets the billing_extra_text property value. Extra text to be included in all project invoices, e.g. purchase order or cost center number
-     * @param value Value to set for the billingExtraText property.
-     * @return a void
+     * @param value Value to set for the billing_extra_text property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingExtraText(@javax.annotation.Nullable final String value) {
+    public void setBillingExtraText(@jakarta.annotation.Nullable final String value) {
         this.billingExtraText = value;
     }
     /**
      * Sets the billing_group_name property value. Billing group name
-     * @param value Value to set for the billingGroupName property.
-     * @return a void
+     * @param value Value to set for the billing_group_name property.
      */
-    @javax.annotation.Nonnull
-    public void setBillingGroupName(@javax.annotation.Nullable final String value) {
+    public void setBillingGroupName(@jakarta.annotation.Nullable final String value) {
         this.billingGroupName = value;
     }
     /**
      * Sets the card_id property value. Credit card ID
-     * @param value Value to set for the cardId property.
-     * @return a void
+     * @param value Value to set for the card_id property.
      */
-    @javax.annotation.Nonnull
-    public void setCardId(@javax.annotation.Nullable final String value) {
+    public void setCardId(@jakarta.annotation.Nullable final String value) {
         this.cardId = value;
     }
     /**
      * Sets the city property value. Address city
      * @param value Value to set for the city property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCity(@javax.annotation.Nullable final String value) {
+    public void setCity(@jakarta.annotation.Nullable final String value) {
         this.city = value;
     }
     /**
      * Sets the company property value. Name of a company
      * @param value Value to set for the company property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCompany(@javax.annotation.Nullable final String value) {
+    public void setCompany(@jakarta.annotation.Nullable final String value) {
         this.company = value;
     }
     /**
      * Sets the copy_from_billing_group property value. Billing group ID
-     * @param value Value to set for the copyFromBillingGroup property.
-     * @return a void
+     * @param value Value to set for the copy_from_billing_group property.
      */
-    @javax.annotation.Nonnull
-    public void setCopyFromBillingGroup(@javax.annotation.Nullable final String value) {
+    public void setCopyFromBillingGroup(@jakarta.annotation.Nullable final String value) {
         this.copyFromBillingGroup = value;
     }
     /**
      * Sets the country_code property value. Two letter country code for billing country
-     * @param value Value to set for the countryCode property.
-     * @return a void
+     * @param value Value to set for the country_code property.
      */
-    @javax.annotation.Nonnull
-    public void setCountryCode(@javax.annotation.Nullable final String value) {
+    public void setCountryCode(@jakarta.annotation.Nullable final String value) {
         this.countryCode = value;
     }
     /**
      * Sets the state property value. Address state
      * @param value Value to set for the state property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setState(@javax.annotation.Nullable final String value) {
+    public void setState(@jakarta.annotation.Nullable final String value) {
         this.state = value;
     }
     /**
      * Sets the vat_id property value. EU VAT Identification Number
-     * @param value Value to set for the vatId property.
-     * @return a void
+     * @param value Value to set for the vat_id property.
      */
-    @javax.annotation.Nonnull
-    public void setVatId(@javax.annotation.Nullable final String value) {
+    public void setVatId(@jakarta.annotation.Nullable final String value) {
         this.vatId = value;
     }
     /**
      * Sets the zip_code property value. Address zip code
-     * @param value Value to set for the zipCode property.
-     * @return a void
+     * @param value Value to set for the zip_code property.
      */
-    @javax.annotation.Nonnull
-    public void setZipCode(@javax.annotation.Nullable final String value) {
+    public void setZipCode(@jakarta.annotation.Nullable final String value) {
         this.zipCode = value;
     }
 }

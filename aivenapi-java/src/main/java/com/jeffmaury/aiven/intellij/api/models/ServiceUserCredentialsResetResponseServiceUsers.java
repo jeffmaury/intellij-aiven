@@ -7,32 +7,51 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceUserCredentialsResetResponseServiceUsers implements AdditionalDataHolder, Parsable {
-    /** Access certificate for TLS client authentication */
+    /**
+     * Access certificate for TLS client authentication
+     */
     private String accessCert;
-    /** Validity end time (ISO8601) for the current access certificate */
+    /**
+     * Validity end time (ISO8601) for the current access certificate
+     */
     private String accessCertNotValidAfterTime;
-    /** Service specific access controls for user */
+    /**
+     * Service specific access controls for user
+     */
     private ServiceUserCredentialsResetResponseServiceUsersAccessControl accessControl;
-    /** Access key for TLS client authentication */
+    /**
+     * Access key for TLS client authentication
+     */
     private String accessKey;
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Authentication details */
+    /**
+     * Authentication details
+     */
     private ServiceUserCredentialsResetResponseServiceUsersAuthentication authentication;
-    /** Validity end time (ISO8601) for the expiring access certificate */
+    /**
+     * Validity end time (ISO8601) for the expiring access certificate
+     */
     private String expiringCertNotValidAfterTime;
-    /** Account password. A null value indicates a user overridden password. */
+    /**
+     * Account password. A null value indicates a user overridden password.
+     */
     private String password;
-    /** Account type */
+    /**
+     * Account type
+     */
     private String type;
-    /** Account username */
+    /**
+     * Account username
+     */
     private String username;
     /**
      * Instantiates a new ServiceUserCredentialsResetResponseServiceUsers and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceUserCredentialsResetResponseServiceUsers() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -41,24 +60,24 @@ public class ServiceUserCredentialsResetResponseServiceUsers implements Addition
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceUserCredentialsResetResponseServiceUsers
      */
-    @javax.annotation.Nonnull
-    public static ServiceUserCredentialsResetResponseServiceUsers createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceUserCredentialsResetResponseServiceUsers createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceUserCredentialsResetResponseServiceUsers();
     }
     /**
      * Gets the access_cert property value. Access certificate for TLS client authentication
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccessCert() {
         return this.accessCert;
     }
     /**
      * Gets the access_cert_not_valid_after_time property value. Validity end time (ISO8601) for the current access certificate
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccessCertNotValidAfterTime() {
         return this.accessCertNotValidAfterTime;
     }
@@ -66,23 +85,23 @@ public class ServiceUserCredentialsResetResponseServiceUsers implements Addition
      * Gets the access_control property value. Service specific access controls for user
      * @return a ServiceUserCredentialsResetResponseServiceUsersAccessControl
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceUserCredentialsResetResponseServiceUsersAccessControl getAccessControl() {
         return this.accessControl;
     }
     /**
      * Gets the access_key property value. Access key for TLS client authentication
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccessKey() {
         return this.accessKey;
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
@@ -90,15 +109,15 @@ public class ServiceUserCredentialsResetResponseServiceUsers implements Addition
      * Gets the authentication property value. Authentication details
      * @return a ServiceUserCredentialsResetResponseServiceUsersAuthentication
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceUserCredentialsResetResponseServiceUsersAuthentication getAuthentication() {
         return this.authentication;
     }
     /**
      * Gets the expiring_cert_not_valid_after_time property value. Validity end time (ISO8601) for the expiring access certificate
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getExpiringCertNotValidAfterTime() {
         return this.expiringCertNotValidAfterTime;
     }
@@ -106,7 +125,7 @@ public class ServiceUserCredentialsResetResponseServiceUsers implements Addition
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
         deserializerMap.put("access_cert", (n) -> { this.setAccessCert(n.getStringValue()); });
@@ -122,35 +141,33 @@ public class ServiceUserCredentialsResetResponseServiceUsers implements Addition
     }
     /**
      * Gets the password property value. Account password. A null value indicates a user overridden password.
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getPassword() {
         return this.password;
     }
     /**
      * Gets the type property value. Account type
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getType() {
         return this.type;
     }
     /**
      * Gets the username property value. Account username
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUsername() {
         return this.username;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("access_cert", this.getAccessCert());
         writer.writeStringValue("access_cert_not_valid_after_time", this.getAccessCertNotValidAfterTime());
@@ -165,92 +182,72 @@ public class ServiceUserCredentialsResetResponseServiceUsers implements Addition
     }
     /**
      * Sets the access_cert property value. Access certificate for TLS client authentication
-     * @param value Value to set for the accessCert property.
-     * @return a void
+     * @param value Value to set for the access_cert property.
      */
-    @javax.annotation.Nonnull
-    public void setAccessCert(@javax.annotation.Nullable final String value) {
+    public void setAccessCert(@jakarta.annotation.Nullable final String value) {
         this.accessCert = value;
     }
     /**
      * Sets the access_cert_not_valid_after_time property value. Validity end time (ISO8601) for the current access certificate
-     * @param value Value to set for the accessCertNotValidAfterTime property.
-     * @return a void
+     * @param value Value to set for the access_cert_not_valid_after_time property.
      */
-    @javax.annotation.Nonnull
-    public void setAccessCertNotValidAfterTime(@javax.annotation.Nullable final String value) {
+    public void setAccessCertNotValidAfterTime(@jakarta.annotation.Nullable final String value) {
         this.accessCertNotValidAfterTime = value;
     }
     /**
      * Sets the access_control property value. Service specific access controls for user
-     * @param value Value to set for the accessControl property.
-     * @return a void
+     * @param value Value to set for the access_control property.
      */
-    @javax.annotation.Nonnull
-    public void setAccessControl(@javax.annotation.Nullable final ServiceUserCredentialsResetResponseServiceUsersAccessControl value) {
+    public void setAccessControl(@jakarta.annotation.Nullable final ServiceUserCredentialsResetResponseServiceUsersAccessControl value) {
         this.accessControl = value;
     }
     /**
      * Sets the access_key property value. Access key for TLS client authentication
-     * @param value Value to set for the accessKey property.
-     * @return a void
+     * @param value Value to set for the access_key property.
      */
-    @javax.annotation.Nonnull
-    public void setAccessKey(@javax.annotation.Nullable final String value) {
+    public void setAccessKey(@jakarta.annotation.Nullable final String value) {
         this.accessKey = value;
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the authentication property value. Authentication details
      * @param value Value to set for the authentication property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAuthentication(@javax.annotation.Nullable final ServiceUserCredentialsResetResponseServiceUsersAuthentication value) {
+    public void setAuthentication(@jakarta.annotation.Nullable final ServiceUserCredentialsResetResponseServiceUsersAuthentication value) {
         this.authentication = value;
     }
     /**
      * Sets the expiring_cert_not_valid_after_time property value. Validity end time (ISO8601) for the expiring access certificate
-     * @param value Value to set for the expiringCertNotValidAfterTime property.
-     * @return a void
+     * @param value Value to set for the expiring_cert_not_valid_after_time property.
      */
-    @javax.annotation.Nonnull
-    public void setExpiringCertNotValidAfterTime(@javax.annotation.Nullable final String value) {
+    public void setExpiringCertNotValidAfterTime(@jakarta.annotation.Nullable final String value) {
         this.expiringCertNotValidAfterTime = value;
     }
     /**
      * Sets the password property value. Account password. A null value indicates a user overridden password.
      * @param value Value to set for the password property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setPassword(@javax.annotation.Nullable final String value) {
+    public void setPassword(@jakarta.annotation.Nullable final String value) {
         this.password = value;
     }
     /**
      * Sets the type property value. Account type
      * @param value Value to set for the type property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setType(@javax.annotation.Nullable final String value) {
+    public void setType(@jakarta.annotation.Nullable final String value) {
         this.type = value;
     }
     /**
      * Sets the username property value. Account username
      * @param value Value to set for the username property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setUsername(@javax.annotation.Nullable final String value) {
+    public void setUsername(@jakarta.annotation.Nullable final String value) {
         this.username = value;
     }
 }

@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Metrics time period */
+/**
+ * Metrics time period
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceBackupToAnotherRegionReportRequestBodyPeriod implements ValuedEnum {
     Hour("hour"),
     Day("day"),
@@ -14,10 +17,10 @@ public enum ServiceBackupToAnotherRegionReportRequestBodyPeriod implements Value
     ServiceBackupToAnotherRegionReportRequestBodyPeriod(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceBackupToAnotherRegionReportRequestBodyPeriod forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceBackupToAnotherRegionReportRequestBodyPeriod forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "hour": return Hour;

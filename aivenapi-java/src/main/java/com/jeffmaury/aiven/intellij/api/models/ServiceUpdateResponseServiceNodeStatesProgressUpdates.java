@@ -7,26 +7,39 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceUpdateResponseServiceNodeStatesProgressUpdates implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Indicates whether this phase has been completed or not */
+    /**
+     * Indicates whether this phase has been completed or not
+     */
     private Boolean completed;
-    /** Current progress for this phase. May be missing or null. */
+    /**
+     * Current progress for this phase. May be missing or null.
+     */
     private Integer current;
-    /** Maximum progress value for this phase. May be missing or null. May change. */
+    /**
+     * Maximum progress value for this phase. May be missing or null. May change.
+     */
     private Integer max;
-    /** Minimum progress value for this phase. May be missing or null. */
+    /**
+     * Minimum progress value for this phase. May be missing or null.
+     */
     private Integer min;
-    /** Key identifying this phase */
+    /**
+     * Key identifying this phase
+     */
     private ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase phase;
-    /** Unit for current/min/max values. New units may be added. If null should be treated as generic unit */
+    /**
+     * Unit for current/min/max values. New units may be added. If null should be treated as generic unit
+     */
     private ServiceUpdateResponseServiceNodeStatesProgressUpdatesUnit unit;
     /**
      * Instantiates a new ServiceUpdateResponseServiceNodeStatesProgressUpdates and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceUpdateResponseServiceNodeStatesProgressUpdates() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -35,32 +48,32 @@ public class ServiceUpdateResponseServiceNodeStatesProgressUpdates implements Ad
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceUpdateResponseServiceNodeStatesProgressUpdates
      */
-    @javax.annotation.Nonnull
-    public static ServiceUpdateResponseServiceNodeStatesProgressUpdates createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceUpdateResponseServiceNodeStatesProgressUpdates createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceUpdateResponseServiceNodeStatesProgressUpdates();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the completed property value. Indicates whether this phase has been completed or not
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getCompleted() {
         return this.completed;
     }
     /**
      * Gets the current property value. Current progress for this phase. May be missing or null.
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getCurrent() {
         return this.current;
     }
@@ -68,7 +81,7 @@ public class ServiceUpdateResponseServiceNodeStatesProgressUpdates implements Ad
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("completed", (n) -> { this.setCompleted(n.getBooleanValue()); });
@@ -81,17 +94,17 @@ public class ServiceUpdateResponseServiceNodeStatesProgressUpdates implements Ad
     }
     /**
      * Gets the max property value. Maximum progress value for this phase. May be missing or null. May change.
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getMax() {
         return this.max;
     }
     /**
      * Gets the min property value. Minimum progress value for this phase. May be missing or null.
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getMin() {
         return this.min;
     }
@@ -99,7 +112,7 @@ public class ServiceUpdateResponseServiceNodeStatesProgressUpdates implements Ad
      * Gets the phase property value. Key identifying this phase
      * @return a ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase getPhase() {
         return this.phase;
     }
@@ -107,17 +120,15 @@ public class ServiceUpdateResponseServiceNodeStatesProgressUpdates implements Ad
      * Gets the unit property value. Unit for current/min/max values. New units may be added. If null should be treated as generic unit
      * @return a ServiceUpdateResponseServiceNodeStatesProgressUpdatesUnit
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceUpdateResponseServiceNodeStatesProgressUpdatesUnit getUnit() {
         return this.unit;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeBooleanValue("completed", this.getCompleted());
         writer.writeIntegerValue("current", this.getCurrent());
@@ -128,66 +139,52 @@ public class ServiceUpdateResponseServiceNodeStatesProgressUpdates implements Ad
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the completed property value. Indicates whether this phase has been completed or not
      * @param value Value to set for the completed property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCompleted(@javax.annotation.Nullable final Boolean value) {
+    public void setCompleted(@jakarta.annotation.Nullable final Boolean value) {
         this.completed = value;
     }
     /**
      * Sets the current property value. Current progress for this phase. May be missing or null.
      * @param value Value to set for the current property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setCurrent(@javax.annotation.Nullable final Integer value) {
+    public void setCurrent(@jakarta.annotation.Nullable final Integer value) {
         this.current = value;
     }
     /**
      * Sets the max property value. Maximum progress value for this phase. May be missing or null. May change.
      * @param value Value to set for the max property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMax(@javax.annotation.Nullable final Integer value) {
+    public void setMax(@jakarta.annotation.Nullable final Integer value) {
         this.max = value;
     }
     /**
      * Sets the min property value. Minimum progress value for this phase. May be missing or null.
      * @param value Value to set for the min property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMin(@javax.annotation.Nullable final Integer value) {
+    public void setMin(@jakarta.annotation.Nullable final Integer value) {
         this.min = value;
     }
     /**
      * Sets the phase property value. Key identifying this phase
      * @param value Value to set for the phase property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setPhase(@javax.annotation.Nullable final ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase value) {
+    public void setPhase(@jakarta.annotation.Nullable final ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase value) {
         this.phase = value;
     }
     /**
      * Sets the unit property value. Unit for current/min/max values. New units may be added. If null should be treated as generic unit
      * @param value Value to set for the unit property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setUnit(@javax.annotation.Nullable final ServiceUpdateResponseServiceNodeStatesProgressUpdatesUnit value) {
+    public void setUnit(@jakarta.annotation.Nullable final ServiceUpdateResponseServiceNodeStatesProgressUpdatesUnit value) {
         this.unit = value;
     }
 }

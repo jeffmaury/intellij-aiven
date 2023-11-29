@@ -10,19 +10,26 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}/service/{service_name}/clickhouse
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ClickhouseRequestBuilder extends BaseRequestBuilder {
-    /** The db property */
-    @javax.annotation.Nonnull
+    /**
+     * The db property
+     */
+    @jakarta.annotation.Nonnull
     public DbRequestBuilder db() {
         return new DbRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The query property */
-    @javax.annotation.Nonnull
+    /**
+     * The query property
+     */
+    @jakarta.annotation.Nonnull
     public QueryRequestBuilder query() {
         return new QueryRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The tieredStorage property */
-    @javax.annotation.Nonnull
+    /**
+     * The tieredStorage property
+     */
+    @jakarta.annotation.Nonnull
     public TieredStorageRequestBuilder tieredStorage() {
         return new TieredStorageRequestBuilder(pathParameters, requestAdapter);
     }
@@ -30,20 +37,16 @@ public class ClickhouseRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new ClickhouseRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public ClickhouseRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public ClickhouseRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/clickhouse", pathParameters);
     }
     /**
      * Instantiates a new ClickhouseRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public ClickhouseRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public ClickhouseRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/clickhouse", rawUrl);
     }
 }

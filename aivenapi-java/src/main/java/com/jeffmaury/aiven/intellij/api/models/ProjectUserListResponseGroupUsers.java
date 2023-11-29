@@ -7,22 +7,31 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProjectUserListResponseGroupUsers implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Project member type */
+    /**
+     * Project member type
+     */
     private ProjectUserListResponseGroupUsersMemberType memberType;
-    /** User real name */
+    /**
+     * User real name
+     */
     private String realName;
-    /** User email address */
+    /**
+     * User email address
+     */
     private String userEmail;
-    /** User group ID */
+    /**
+     * User group ID
+     */
     private String userGroupId;
     /**
      * Instantiates a new ProjectUserListResponseGroupUsers and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ProjectUserListResponseGroupUsers() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -31,16 +40,16 @@ public class ProjectUserListResponseGroupUsers implements AdditionalDataHolder, 
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ProjectUserListResponseGroupUsers
      */
-    @javax.annotation.Nonnull
-    public static ProjectUserListResponseGroupUsers createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ProjectUserListResponseGroupUsers createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ProjectUserListResponseGroupUsers();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
@@ -48,7 +57,7 @@ public class ProjectUserListResponseGroupUsers implements AdditionalDataHolder, 
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectUserListResponseGroupUsersMemberType.class)); });
@@ -61,41 +70,39 @@ public class ProjectUserListResponseGroupUsers implements AdditionalDataHolder, 
      * Gets the member_type property value. Project member type
      * @return a ProjectUserListResponseGroupUsersMemberType
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ProjectUserListResponseGroupUsersMemberType getMemberType() {
         return this.memberType;
     }
     /**
      * Gets the real_name property value. User real name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getRealName() {
         return this.realName;
     }
     /**
      * Gets the user_email property value. User email address
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUserEmail() {
         return this.userEmail;
     }
     /**
      * Gets the user_group_id property value. User group ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUserGroupId() {
         return this.userGroupId;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeEnumValue("member_type", this.getMemberType());
         writer.writeStringValue("real_name", this.getRealName());
@@ -104,48 +111,38 @@ public class ProjectUserListResponseGroupUsers implements AdditionalDataHolder, 
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the member_type property value. Project member type
-     * @param value Value to set for the memberType property.
-     * @return a void
+     * @param value Value to set for the member_type property.
      */
-    @javax.annotation.Nonnull
-    public void setMemberType(@javax.annotation.Nullable final ProjectUserListResponseGroupUsersMemberType value) {
+    public void setMemberType(@jakarta.annotation.Nullable final ProjectUserListResponseGroupUsersMemberType value) {
         this.memberType = value;
     }
     /**
      * Sets the real_name property value. User real name
-     * @param value Value to set for the realName property.
-     * @return a void
+     * @param value Value to set for the real_name property.
      */
-    @javax.annotation.Nonnull
-    public void setRealName(@javax.annotation.Nullable final String value) {
+    public void setRealName(@jakarta.annotation.Nullable final String value) {
         this.realName = value;
     }
     /**
      * Sets the user_email property value. User email address
-     * @param value Value to set for the userEmail property.
-     * @return a void
+     * @param value Value to set for the user_email property.
      */
-    @javax.annotation.Nonnull
-    public void setUserEmail(@javax.annotation.Nullable final String value) {
+    public void setUserEmail(@jakarta.annotation.Nullable final String value) {
         this.userEmail = value;
     }
     /**
      * Sets the user_group_id property value. User group ID
-     * @param value Value to set for the userGroupId property.
-     * @return a void
+     * @param value Value to set for the user_group_id property.
      */
-    @javax.annotation.Nonnull
-    public void setUserGroupId(@javax.annotation.Nullable final String value) {
+    public void setUserGroupId(@jakarta.annotation.Nullable final String value) {
         this.userGroupId = value;
     }
 }

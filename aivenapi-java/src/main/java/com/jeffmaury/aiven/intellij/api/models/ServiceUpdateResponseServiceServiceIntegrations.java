@@ -7,48 +7,83 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceUpdateResponseServiceServiceIntegrations implements AdditionalDataHolder, Parsable {
-    /** True when integration is active */
+    /**
+     * True when integration is active
+     */
     private Boolean active;
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Description of the integration */
+    /**
+     * Description of the integration
+     */
     private String description;
-    /** Destination endpoint name */
+    /**
+     * Destination endpoint name
+     */
     private String destEndpoint;
-    /** Destination endpoint id */
+    /**
+     * Destination endpoint id
+     */
     private String destEndpointId;
-    /** Project name */
+    /**
+     * Project name
+     */
     private String destProject;
-    /** Destination service name */
+    /**
+     * Destination service name
+     */
     private String destService;
-    /** Service type code */
+    /**
+     * Service type code
+     */
     private String destServiceType;
-    /** True when integration is enabled */
+    /**
+     * True when integration is enabled
+     */
     private Boolean enabled;
-    /** Integration status */
+    /**
+     * Integration status
+     */
     private ServiceUpdateResponseServiceServiceIntegrationsIntegrationStatus integrationStatus;
-    /** Type of the integration */
+    /**
+     * Type of the integration
+     */
     private String integrationType;
-    /** Integration ID */
+    /**
+     * Integration ID
+     */
     private String serviceIntegrationId;
-    /** Source endpoint name */
+    /**
+     * Source endpoint name
+     */
     private String sourceEndpoint;
-    /** Source endpoint ID */
+    /**
+     * Source endpoint ID
+     */
     private String sourceEndpointId;
-    /** Project name */
+    /**
+     * Project name
+     */
     private String sourceProject;
-    /** Source service name */
+    /**
+     * Source service name
+     */
     private String sourceService;
-    /** Service type code */
+    /**
+     * Service type code
+     */
     private String sourceServiceType;
-    /** Service integration settings */
+    /**
+     * Service integration settings
+     */
     private ServiceUpdateResponseServiceServiceIntegrationsUserConfig userConfig;
     /**
      * Instantiates a new ServiceUpdateResponseServiceServiceIntegrations and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceUpdateResponseServiceServiceIntegrations() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -57,80 +92,80 @@ public class ServiceUpdateResponseServiceServiceIntegrations implements Addition
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceUpdateResponseServiceServiceIntegrations
      */
-    @javax.annotation.Nonnull
-    public static ServiceUpdateResponseServiceServiceIntegrations createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceUpdateResponseServiceServiceIntegrations createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceUpdateResponseServiceServiceIntegrations();
     }
     /**
      * Gets the active property value. True when integration is active
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getActive() {
         return this.active;
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the description property value. Description of the integration
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDescription() {
         return this.description;
     }
     /**
      * Gets the dest_endpoint property value. Destination endpoint name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDestEndpoint() {
         return this.destEndpoint;
     }
     /**
      * Gets the dest_endpoint_id property value. Destination endpoint id
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDestEndpointId() {
         return this.destEndpointId;
     }
     /**
      * Gets the dest_project property value. Project name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDestProject() {
         return this.destProject;
     }
     /**
      * Gets the dest_service property value. Destination service name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDestService() {
         return this.destService;
     }
     /**
      * Gets the dest_service_type property value. Service type code
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDestServiceType() {
         return this.destServiceType;
     }
     /**
      * Gets the enabled property value. True when integration is enabled
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -138,7 +173,7 @@ public class ServiceUpdateResponseServiceServiceIntegrations implements Addition
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(17);
         deserializerMap.put("active", (n) -> { this.setActive(n.getBooleanValue()); });
@@ -164,63 +199,63 @@ public class ServiceUpdateResponseServiceServiceIntegrations implements Addition
      * Gets the integration_status property value. Integration status
      * @return a ServiceUpdateResponseServiceServiceIntegrationsIntegrationStatus
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceUpdateResponseServiceServiceIntegrationsIntegrationStatus getIntegrationStatus() {
         return this.integrationStatus;
     }
     /**
      * Gets the integration_type property value. Type of the integration
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getIntegrationType() {
         return this.integrationType;
     }
     /**
      * Gets the service_integration_id property value. Integration ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getServiceIntegrationId() {
         return this.serviceIntegrationId;
     }
     /**
      * Gets the source_endpoint property value. Source endpoint name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSourceEndpoint() {
         return this.sourceEndpoint;
     }
     /**
      * Gets the source_endpoint_id property value. Source endpoint ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSourceEndpointId() {
         return this.sourceEndpointId;
     }
     /**
      * Gets the source_project property value. Project name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSourceProject() {
         return this.sourceProject;
     }
     /**
      * Gets the source_service property value. Source service name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSourceService() {
         return this.sourceService;
     }
     /**
      * Gets the source_service_type property value. Service type code
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSourceServiceType() {
         return this.sourceServiceType;
     }
@@ -228,17 +263,15 @@ public class ServiceUpdateResponseServiceServiceIntegrations implements Addition
      * Gets the user_config property value. Service integration settings
      * @return a ServiceUpdateResponseServiceServiceIntegrationsUserConfig
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceUpdateResponseServiceServiceIntegrationsUserConfig getUserConfig() {
         return this.userConfig;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeBooleanValue("active", this.getActive());
         writer.writeStringValue("description", this.getDescription());
@@ -262,163 +295,127 @@ public class ServiceUpdateResponseServiceServiceIntegrations implements Addition
     /**
      * Sets the active property value. True when integration is active
      * @param value Value to set for the active property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setActive(@javax.annotation.Nullable final Boolean value) {
+    public void setActive(@jakarta.annotation.Nullable final Boolean value) {
         this.active = value;
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the description property value. Description of the integration
      * @param value Value to set for the description property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDescription(@javax.annotation.Nullable final String value) {
+    public void setDescription(@jakarta.annotation.Nullable final String value) {
         this.description = value;
     }
     /**
      * Sets the dest_endpoint property value. Destination endpoint name
-     * @param value Value to set for the destEndpoint property.
-     * @return a void
+     * @param value Value to set for the dest_endpoint property.
      */
-    @javax.annotation.Nonnull
-    public void setDestEndpoint(@javax.annotation.Nullable final String value) {
+    public void setDestEndpoint(@jakarta.annotation.Nullable final String value) {
         this.destEndpoint = value;
     }
     /**
      * Sets the dest_endpoint_id property value. Destination endpoint id
-     * @param value Value to set for the destEndpointId property.
-     * @return a void
+     * @param value Value to set for the dest_endpoint_id property.
      */
-    @javax.annotation.Nonnull
-    public void setDestEndpointId(@javax.annotation.Nullable final String value) {
+    public void setDestEndpointId(@jakarta.annotation.Nullable final String value) {
         this.destEndpointId = value;
     }
     /**
      * Sets the dest_project property value. Project name
-     * @param value Value to set for the destProject property.
-     * @return a void
+     * @param value Value to set for the dest_project property.
      */
-    @javax.annotation.Nonnull
-    public void setDestProject(@javax.annotation.Nullable final String value) {
+    public void setDestProject(@jakarta.annotation.Nullable final String value) {
         this.destProject = value;
     }
     /**
      * Sets the dest_service property value. Destination service name
-     * @param value Value to set for the destService property.
-     * @return a void
+     * @param value Value to set for the dest_service property.
      */
-    @javax.annotation.Nonnull
-    public void setDestService(@javax.annotation.Nullable final String value) {
+    public void setDestService(@jakarta.annotation.Nullable final String value) {
         this.destService = value;
     }
     /**
      * Sets the dest_service_type property value. Service type code
-     * @param value Value to set for the destServiceType property.
-     * @return a void
+     * @param value Value to set for the dest_service_type property.
      */
-    @javax.annotation.Nonnull
-    public void setDestServiceType(@javax.annotation.Nullable final String value) {
+    public void setDestServiceType(@jakarta.annotation.Nullable final String value) {
         this.destServiceType = value;
     }
     /**
      * Sets the enabled property value. True when integration is enabled
      * @param value Value to set for the enabled property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setEnabled(@javax.annotation.Nullable final Boolean value) {
+    public void setEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.enabled = value;
     }
     /**
      * Sets the integration_status property value. Integration status
-     * @param value Value to set for the integrationStatus property.
-     * @return a void
+     * @param value Value to set for the integration_status property.
      */
-    @javax.annotation.Nonnull
-    public void setIntegrationStatus(@javax.annotation.Nullable final ServiceUpdateResponseServiceServiceIntegrationsIntegrationStatus value) {
+    public void setIntegrationStatus(@jakarta.annotation.Nullable final ServiceUpdateResponseServiceServiceIntegrationsIntegrationStatus value) {
         this.integrationStatus = value;
     }
     /**
      * Sets the integration_type property value. Type of the integration
-     * @param value Value to set for the integrationType property.
-     * @return a void
+     * @param value Value to set for the integration_type property.
      */
-    @javax.annotation.Nonnull
-    public void setIntegrationType(@javax.annotation.Nullable final String value) {
+    public void setIntegrationType(@jakarta.annotation.Nullable final String value) {
         this.integrationType = value;
     }
     /**
      * Sets the service_integration_id property value. Integration ID
-     * @param value Value to set for the serviceIntegrationId property.
-     * @return a void
+     * @param value Value to set for the service_integration_id property.
      */
-    @javax.annotation.Nonnull
-    public void setServiceIntegrationId(@javax.annotation.Nullable final String value) {
+    public void setServiceIntegrationId(@jakarta.annotation.Nullable final String value) {
         this.serviceIntegrationId = value;
     }
     /**
      * Sets the source_endpoint property value. Source endpoint name
-     * @param value Value to set for the sourceEndpoint property.
-     * @return a void
+     * @param value Value to set for the source_endpoint property.
      */
-    @javax.annotation.Nonnull
-    public void setSourceEndpoint(@javax.annotation.Nullable final String value) {
+    public void setSourceEndpoint(@jakarta.annotation.Nullable final String value) {
         this.sourceEndpoint = value;
     }
     /**
      * Sets the source_endpoint_id property value. Source endpoint ID
-     * @param value Value to set for the sourceEndpointId property.
-     * @return a void
+     * @param value Value to set for the source_endpoint_id property.
      */
-    @javax.annotation.Nonnull
-    public void setSourceEndpointId(@javax.annotation.Nullable final String value) {
+    public void setSourceEndpointId(@jakarta.annotation.Nullable final String value) {
         this.sourceEndpointId = value;
     }
     /**
      * Sets the source_project property value. Project name
-     * @param value Value to set for the sourceProject property.
-     * @return a void
+     * @param value Value to set for the source_project property.
      */
-    @javax.annotation.Nonnull
-    public void setSourceProject(@javax.annotation.Nullable final String value) {
+    public void setSourceProject(@jakarta.annotation.Nullable final String value) {
         this.sourceProject = value;
     }
     /**
      * Sets the source_service property value. Source service name
-     * @param value Value to set for the sourceService property.
-     * @return a void
+     * @param value Value to set for the source_service property.
      */
-    @javax.annotation.Nonnull
-    public void setSourceService(@javax.annotation.Nullable final String value) {
+    public void setSourceService(@jakarta.annotation.Nullable final String value) {
         this.sourceService = value;
     }
     /**
      * Sets the source_service_type property value. Service type code
-     * @param value Value to set for the sourceServiceType property.
-     * @return a void
+     * @param value Value to set for the source_service_type property.
      */
-    @javax.annotation.Nonnull
-    public void setSourceServiceType(@javax.annotation.Nullable final String value) {
+    public void setSourceServiceType(@jakarta.annotation.Nullable final String value) {
         this.sourceServiceType = value;
     }
     /**
      * Sets the user_config property value. Service integration settings
-     * @param value Value to set for the userConfig property.
-     * @return a void
+     * @param value Value to set for the user_config property.
      */
-    @javax.annotation.Nonnull
-    public void setUserConfig(@javax.annotation.Nullable final ServiceUpdateResponseServiceServiceIntegrationsUserConfig value) {
+    public void setUserConfig(@jakarta.annotation.Nullable final ServiceUpdateResponseServiceServiceIntegrationsUserConfig value) {
         this.userConfig = value;
     }
 }

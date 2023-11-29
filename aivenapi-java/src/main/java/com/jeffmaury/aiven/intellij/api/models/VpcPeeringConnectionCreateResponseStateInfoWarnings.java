@@ -7,24 +7,35 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class VpcPeeringConnectionCreateResponseStateInfoWarnings implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** AWS account id of conflicting VPC */
+    /**
+     * AWS account id of conflicting VPC
+     */
     private String conflictingAwsAccountId;
-    /** VPC id which is conflicting with the current one */
+    /**
+     * VPC id which is conflicting with the current one
+     */
     private String conflictingAwsVpcId;
-    /** AWS VPC connection id which is conflicting with current VPC */
+    /**
+     * AWS VPC connection id which is conflicting with current VPC
+     */
     private String conflictingAwsVpcPeeringConnectionId;
-    /** Warning message to be shown to the user */
+    /**
+     * Warning message to be shown to the user
+     */
     private String message;
-    /** Type of warning */
+    /**
+     * Type of warning
+     */
     private VpcPeeringConnectionCreateResponseStateInfoWarningsType type;
     /**
      * Instantiates a new VpcPeeringConnectionCreateResponseStateInfoWarnings and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public VpcPeeringConnectionCreateResponseStateInfoWarnings() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -33,40 +44,40 @@ public class VpcPeeringConnectionCreateResponseStateInfoWarnings implements Addi
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a VpcPeeringConnectionCreateResponseStateInfoWarnings
      */
-    @javax.annotation.Nonnull
-    public static VpcPeeringConnectionCreateResponseStateInfoWarnings createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static VpcPeeringConnectionCreateResponseStateInfoWarnings createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new VpcPeeringConnectionCreateResponseStateInfoWarnings();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the conflicting_aws_account_id property value. AWS account id of conflicting VPC
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getConflictingAwsAccountId() {
         return this.conflictingAwsAccountId;
     }
     /**
      * Gets the conflicting_aws_vpc_id property value. VPC id which is conflicting with the current one
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getConflictingAwsVpcId() {
         return this.conflictingAwsVpcId;
     }
     /**
      * Gets the conflicting_aws_vpc_peering_connection_id property value. AWS VPC connection id which is conflicting with current VPC
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getConflictingAwsVpcPeeringConnectionId() {
         return this.conflictingAwsVpcPeeringConnectionId;
     }
@@ -74,7 +85,7 @@ public class VpcPeeringConnectionCreateResponseStateInfoWarnings implements Addi
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("conflicting_aws_account_id", (n) -> { this.setConflictingAwsAccountId(n.getStringValue()); });
@@ -86,9 +97,9 @@ public class VpcPeeringConnectionCreateResponseStateInfoWarnings implements Addi
     }
     /**
      * Gets the message property value. Warning message to be shown to the user
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getMessage() {
         return this.message;
     }
@@ -96,17 +107,15 @@ public class VpcPeeringConnectionCreateResponseStateInfoWarnings implements Addi
      * Gets the type property value. Type of warning
      * @return a VpcPeeringConnectionCreateResponseStateInfoWarningsType
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public VpcPeeringConnectionCreateResponseStateInfoWarningsType getType() {
         return this.type;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("conflicting_aws_account_id", this.getConflictingAwsAccountId());
         writer.writeStringValue("conflicting_aws_vpc_id", this.getConflictingAwsVpcId());
@@ -116,57 +125,45 @@ public class VpcPeeringConnectionCreateResponseStateInfoWarnings implements Addi
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the conflicting_aws_account_id property value. AWS account id of conflicting VPC
-     * @param value Value to set for the conflictingAwsAccountId property.
-     * @return a void
+     * @param value Value to set for the conflicting_aws_account_id property.
      */
-    @javax.annotation.Nonnull
-    public void setConflictingAwsAccountId(@javax.annotation.Nullable final String value) {
+    public void setConflictingAwsAccountId(@jakarta.annotation.Nullable final String value) {
         this.conflictingAwsAccountId = value;
     }
     /**
      * Sets the conflicting_aws_vpc_id property value. VPC id which is conflicting with the current one
-     * @param value Value to set for the conflictingAwsVpcId property.
-     * @return a void
+     * @param value Value to set for the conflicting_aws_vpc_id property.
      */
-    @javax.annotation.Nonnull
-    public void setConflictingAwsVpcId(@javax.annotation.Nullable final String value) {
+    public void setConflictingAwsVpcId(@jakarta.annotation.Nullable final String value) {
         this.conflictingAwsVpcId = value;
     }
     /**
      * Sets the conflicting_aws_vpc_peering_connection_id property value. AWS VPC connection id which is conflicting with current VPC
-     * @param value Value to set for the conflictingAwsVpcPeeringConnectionId property.
-     * @return a void
+     * @param value Value to set for the conflicting_aws_vpc_peering_connection_id property.
      */
-    @javax.annotation.Nonnull
-    public void setConflictingAwsVpcPeeringConnectionId(@javax.annotation.Nullable final String value) {
+    public void setConflictingAwsVpcPeeringConnectionId(@jakarta.annotation.Nullable final String value) {
         this.conflictingAwsVpcPeeringConnectionId = value;
     }
     /**
      * Sets the message property value. Warning message to be shown to the user
      * @param value Value to set for the message property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setMessage(@javax.annotation.Nullable final String value) {
+    public void setMessage(@jakarta.annotation.Nullable final String value) {
         this.message = value;
     }
     /**
      * Sets the type property value. Type of warning
      * @param value Value to set for the type property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setType(@javax.annotation.Nullable final VpcPeeringConnectionCreateResponseStateInfoWarningsType value) {
+    public void setType(@jakarta.annotation.Nullable final VpcPeeringConnectionCreateResponseStateInfoWarningsType value) {
         this.type = value;
     }
 }

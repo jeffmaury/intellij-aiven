@@ -10,76 +10,139 @@ import java.util.Objects;
 /**
  * AuthenticationMethod
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class AccountAuthenticationMethodCreateResponseAuthenticationMethod implements AdditionalDataHolder, Parsable {
-    /** Account ID */
+    /**
+     * Account ID
+     */
     private String accountId;
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** If true, authentication method can be used to access account/projects in account. If false, authentication method can still be used to sign in */
+    /**
+     * If true, authentication method can be used to access account/projects in account. If false, authentication method can still be used to sign in
+     */
     private Boolean authenticationMethodEnabled;
-    /** Authentication Method ID */
+    /**
+     * Authentication Method ID
+     */
     private String authenticationMethodId;
-    /** Authentication Method Name */
+    /**
+     * Authentication Method Name
+     */
     private String authenticationMethodName;
-    /** Authentication method type */
+    /**
+     * Authentication method type
+     */
     private AccountAuthenticationMethodCreateResponseAuthenticationMethodAuthenticationMethodType authenticationMethodType;
-    /** Automatically add users to a team, when user signs up using this authentication method */
+    /**
+     * Automatically add users to a team, when user signs up using this authentication method
+     */
     private String autoJoinTeamId;
-    /** Automatically add users to a group, when user signs up using this authentication method */
+    /**
+     * Automatically add users to a group, when user signs up using this authentication method
+     */
     private String autoJoinUserGroupId;
-    /** Create Time */
+    /**
+     * Create Time
+     */
     private String createTime;
-    /** Delete Time */
+    /**
+     * Delete Time
+     */
     private String deleteTime;
-    /** Organization ID */
+    /**
+     * Organization ID
+     */
     private String organizationId;
-    /** Saml Acs Url */
+    /**
+     * Saml Acs Url
+     */
     private String samlAcsUrl;
-    /** Set to 'true' to enable WantAssertionsSigned */
+    /**
+     * Set to 'true' to enable WantAssertionsSigned
+     */
     private Boolean samlAssertionSignedEnabled;
-    /** Set to 'true' to enable AuthnRequestsSigned */
+    /**
+     * Set to 'true' to enable AuthnRequestsSigned
+     */
     private Boolean samlAuthnRequestsSignedEnabled;
-    /** SAMLVariant */
+    /**
+     * SAMLVariant
+     */
     private AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlCert samlCert;
-    /** Identity provider's certificate */
+    /**
+     * Identity provider's certificate
+     */
     private String samlCertificate;
-    /** Saml Certificate Issuer */
+    /**
+     * Saml Certificate Issuer
+     */
     private String samlCertificateIssuer;
-    /** Saml Certificate Not Valid After */
+    /**
+     * Saml Certificate Not Valid After
+     */
     private String samlCertificateNotValidAfter;
-    /** Saml Certificate Not Valid Before */
+    /**
+     * Saml Certificate Not Valid Before
+     */
     private String samlCertificateNotValidBefore;
-    /** Saml Certificate Subject */
+    /**
+     * Saml Certificate Subject
+     */
     private String samlCertificateSubject;
-    /** Digest algorithm. This is an advanced option that typically does not need to be set. */
+    /**
+     * Digest algorithm. This is an advanced option that typically does not need to be set.
+     */
     private AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlDigestAlgorithm samlDigestAlgorithm;
-    /** Saml Entity ID */
+    /**
+     * Saml Entity ID
+     */
     private String samlEntityId;
-    /** SAMLFieldMapping */
+    /**
+     * SAMLFieldMapping
+     */
     private AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlFieldMapping samlFieldMapping;
-    /** Set to 'true' to enable IdP initiated login */
+    /**
+     * Set to 'true' to enable IdP initiated login
+     */
     private Boolean samlIdpLoginAllowed;
-    /** Saml Idp Url */
+    /**
+     * Saml Idp Url
+     */
     private String samlIdpUrl;
-    /** Saml Metadata Url */
+    /**
+     * Saml Metadata Url
+     */
     private String samlMetadataUrl;
-    /** Set to 'false' to disable RequestedAuthnContext */
+    /**
+     * Set to 'false' to disable RequestedAuthnContext
+     */
     private Boolean samlRequestedAuthnContextEnabled;
-    /** SAMLSignatureAlgorithm */
+    /**
+     * SAMLSignatureAlgorithm
+     */
     private AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlSignatureAlgorithm samlSignatureAlgorithm;
-    /** Saml Sp Certificate */
+    /**
+     * Saml Sp Certificate
+     */
     private String samlSpCertificate;
-    /** SAMLVariant */
+    /**
+     * SAMLVariant
+     */
     private AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlVariant samlVariant;
-    /** AuthenticationMethodState */
+    /**
+     * AuthenticationMethodState
+     */
     private AccountAuthenticationMethodCreateResponseAuthenticationMethodState state;
-    /** Update Time */
+    /**
+     * Update Time
+     */
     private String updateTime;
     /**
      * Instantiates a new AccountAuthenticationMethodCreateResponseAuthenticationMethod and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public AccountAuthenticationMethodCreateResponseAuthenticationMethod() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -88,48 +151,48 @@ public class AccountAuthenticationMethodCreateResponseAuthenticationMethod imple
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a AccountAuthenticationMethodCreateResponseAuthenticationMethod
      */
-    @javax.annotation.Nonnull
-    public static AccountAuthenticationMethodCreateResponseAuthenticationMethod createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static AccountAuthenticationMethodCreateResponseAuthenticationMethod createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new AccountAuthenticationMethodCreateResponseAuthenticationMethod();
     }
     /**
      * Gets the account_id property value. Account ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccountId() {
         return this.accountId;
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the authentication_method_enabled property value. If true, authentication method can be used to access account/projects in account. If false, authentication method can still be used to sign in
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getAuthenticationMethodEnabled() {
         return this.authenticationMethodEnabled;
     }
     /**
      * Gets the authentication_method_id property value. Authentication Method ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAuthenticationMethodId() {
         return this.authenticationMethodId;
     }
     /**
      * Gets the authentication_method_name property value. Authentication Method Name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAuthenticationMethodName() {
         return this.authenticationMethodName;
     }
@@ -137,39 +200,39 @@ public class AccountAuthenticationMethodCreateResponseAuthenticationMethod imple
      * Gets the authentication_method_type property value. Authentication method type
      * @return a AccountAuthenticationMethodCreateResponseAuthenticationMethodAuthenticationMethodType
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public AccountAuthenticationMethodCreateResponseAuthenticationMethodAuthenticationMethodType getAuthenticationMethodType() {
         return this.authenticationMethodType;
     }
     /**
      * Gets the auto_join_team_id property value. Automatically add users to a team, when user signs up using this authentication method
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAutoJoinTeamId() {
         return this.autoJoinTeamId;
     }
     /**
      * Gets the auto_join_user_group_id property value. Automatically add users to a group, when user signs up using this authentication method
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAutoJoinUserGroupId() {
         return this.autoJoinUserGroupId;
     }
     /**
      * Gets the create_time property value. Create Time
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCreateTime() {
         return this.createTime;
     }
     /**
      * Gets the delete_time property value. Delete Time
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getDeleteTime() {
         return this.deleteTime;
     }
@@ -177,7 +240,7 @@ public class AccountAuthenticationMethodCreateResponseAuthenticationMethod imple
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(31);
         deserializerMap.put("account_id", (n) -> { this.setAccountId(n.getStringValue()); });
@@ -215,33 +278,33 @@ public class AccountAuthenticationMethodCreateResponseAuthenticationMethod imple
     }
     /**
      * Gets the organization_id property value. Organization ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getOrganizationId() {
         return this.organizationId;
     }
     /**
      * Gets the saml_acs_url property value. Saml Acs Url
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSamlAcsUrl() {
         return this.samlAcsUrl;
     }
     /**
      * Gets the saml_assertion_signed_enabled property value. Set to 'true' to enable WantAssertionsSigned
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getSamlAssertionSignedEnabled() {
         return this.samlAssertionSignedEnabled;
     }
     /**
      * Gets the saml_authn_requests_signed_enabled property value. Set to 'true' to enable AuthnRequestsSigned
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getSamlAuthnRequestsSignedEnabled() {
         return this.samlAuthnRequestsSignedEnabled;
     }
@@ -249,47 +312,47 @@ public class AccountAuthenticationMethodCreateResponseAuthenticationMethod imple
      * Gets the saml_cert property value. SAMLVariant
      * @return a AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlCert
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlCert getSamlCert() {
         return this.samlCert;
     }
     /**
      * Gets the saml_certificate property value. Identity provider's certificate
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSamlCertificate() {
         return this.samlCertificate;
     }
     /**
      * Gets the saml_certificate_issuer property value. Saml Certificate Issuer
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSamlCertificateIssuer() {
         return this.samlCertificateIssuer;
     }
     /**
      * Gets the saml_certificate_not_valid_after property value. Saml Certificate Not Valid After
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSamlCertificateNotValidAfter() {
         return this.samlCertificateNotValidAfter;
     }
     /**
      * Gets the saml_certificate_not_valid_before property value. Saml Certificate Not Valid Before
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSamlCertificateNotValidBefore() {
         return this.samlCertificateNotValidBefore;
     }
     /**
      * Gets the saml_certificate_subject property value. Saml Certificate Subject
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSamlCertificateSubject() {
         return this.samlCertificateSubject;
     }
@@ -297,15 +360,15 @@ public class AccountAuthenticationMethodCreateResponseAuthenticationMethod imple
      * Gets the saml_digest_algorithm property value. Digest algorithm. This is an advanced option that typically does not need to be set.
      * @return a AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlDigestAlgorithm
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlDigestAlgorithm getSamlDigestAlgorithm() {
         return this.samlDigestAlgorithm;
     }
     /**
      * Gets the saml_entity_id property value. Saml Entity ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSamlEntityId() {
         return this.samlEntityId;
     }
@@ -313,39 +376,39 @@ public class AccountAuthenticationMethodCreateResponseAuthenticationMethod imple
      * Gets the saml_field_mapping property value. SAMLFieldMapping
      * @return a AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlFieldMapping
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlFieldMapping getSamlFieldMapping() {
         return this.samlFieldMapping;
     }
     /**
      * Gets the saml_idp_login_allowed property value. Set to 'true' to enable IdP initiated login
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getSamlIdpLoginAllowed() {
         return this.samlIdpLoginAllowed;
     }
     /**
      * Gets the saml_idp_url property value. Saml Idp Url
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSamlIdpUrl() {
         return this.samlIdpUrl;
     }
     /**
      * Gets the saml_metadata_url property value. Saml Metadata Url
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSamlMetadataUrl() {
         return this.samlMetadataUrl;
     }
     /**
      * Gets the saml_requested_authn_context_enabled property value. Set to 'false' to disable RequestedAuthnContext
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getSamlRequestedAuthnContextEnabled() {
         return this.samlRequestedAuthnContextEnabled;
     }
@@ -353,15 +416,15 @@ public class AccountAuthenticationMethodCreateResponseAuthenticationMethod imple
      * Gets the saml_signature_algorithm property value. SAMLSignatureAlgorithm
      * @return a AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlSignatureAlgorithm
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlSignatureAlgorithm getSamlSignatureAlgorithm() {
         return this.samlSignatureAlgorithm;
     }
     /**
      * Gets the saml_sp_certificate property value. Saml Sp Certificate
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getSamlSpCertificate() {
         return this.samlSpCertificate;
     }
@@ -369,7 +432,7 @@ public class AccountAuthenticationMethodCreateResponseAuthenticationMethod imple
      * Gets the saml_variant property value. SAMLVariant
      * @return a AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlVariant
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlVariant getSamlVariant() {
         return this.samlVariant;
     }
@@ -377,25 +440,23 @@ public class AccountAuthenticationMethodCreateResponseAuthenticationMethod imple
      * Gets the state property value. AuthenticationMethodState
      * @return a AccountAuthenticationMethodCreateResponseAuthenticationMethodState
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public AccountAuthenticationMethodCreateResponseAuthenticationMethodState getState() {
         return this.state;
     }
     /**
      * Gets the update_time property value. Update Time
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUpdateTime() {
         return this.updateTime;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("account_id", this.getAccountId());
         writer.writeBooleanValue("authentication_method_enabled", this.getAuthenticationMethodEnabled());
@@ -432,290 +493,226 @@ public class AccountAuthenticationMethodCreateResponseAuthenticationMethod imple
     }
     /**
      * Sets the account_id property value. Account ID
-     * @param value Value to set for the accountId property.
-     * @return a void
+     * @param value Value to set for the account_id property.
      */
-    @javax.annotation.Nonnull
-    public void setAccountId(@javax.annotation.Nullable final String value) {
+    public void setAccountId(@jakarta.annotation.Nullable final String value) {
         this.accountId = value;
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the authentication_method_enabled property value. If true, authentication method can be used to access account/projects in account. If false, authentication method can still be used to sign in
-     * @param value Value to set for the authenticationMethodEnabled property.
-     * @return a void
+     * @param value Value to set for the authentication_method_enabled property.
      */
-    @javax.annotation.Nonnull
-    public void setAuthenticationMethodEnabled(@javax.annotation.Nullable final Boolean value) {
+    public void setAuthenticationMethodEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.authenticationMethodEnabled = value;
     }
     /**
      * Sets the authentication_method_id property value. Authentication Method ID
-     * @param value Value to set for the authenticationMethodId property.
-     * @return a void
+     * @param value Value to set for the authentication_method_id property.
      */
-    @javax.annotation.Nonnull
-    public void setAuthenticationMethodId(@javax.annotation.Nullable final String value) {
+    public void setAuthenticationMethodId(@jakarta.annotation.Nullable final String value) {
         this.authenticationMethodId = value;
     }
     /**
      * Sets the authentication_method_name property value. Authentication Method Name
-     * @param value Value to set for the authenticationMethodName property.
-     * @return a void
+     * @param value Value to set for the authentication_method_name property.
      */
-    @javax.annotation.Nonnull
-    public void setAuthenticationMethodName(@javax.annotation.Nullable final String value) {
+    public void setAuthenticationMethodName(@jakarta.annotation.Nullable final String value) {
         this.authenticationMethodName = value;
     }
     /**
      * Sets the authentication_method_type property value. Authentication method type
-     * @param value Value to set for the authenticationMethodType property.
-     * @return a void
+     * @param value Value to set for the authentication_method_type property.
      */
-    @javax.annotation.Nonnull
-    public void setAuthenticationMethodType(@javax.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodAuthenticationMethodType value) {
+    public void setAuthenticationMethodType(@jakarta.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodAuthenticationMethodType value) {
         this.authenticationMethodType = value;
     }
     /**
      * Sets the auto_join_team_id property value. Automatically add users to a team, when user signs up using this authentication method
-     * @param value Value to set for the autoJoinTeamId property.
-     * @return a void
+     * @param value Value to set for the auto_join_team_id property.
      */
-    @javax.annotation.Nonnull
-    public void setAutoJoinTeamId(@javax.annotation.Nullable final String value) {
+    public void setAutoJoinTeamId(@jakarta.annotation.Nullable final String value) {
         this.autoJoinTeamId = value;
     }
     /**
      * Sets the auto_join_user_group_id property value. Automatically add users to a group, when user signs up using this authentication method
-     * @param value Value to set for the autoJoinUserGroupId property.
-     * @return a void
+     * @param value Value to set for the auto_join_user_group_id property.
      */
-    @javax.annotation.Nonnull
-    public void setAutoJoinUserGroupId(@javax.annotation.Nullable final String value) {
+    public void setAutoJoinUserGroupId(@jakarta.annotation.Nullable final String value) {
         this.autoJoinUserGroupId = value;
     }
     /**
      * Sets the create_time property value. Create Time
-     * @param value Value to set for the createTime property.
-     * @return a void
+     * @param value Value to set for the create_time property.
      */
-    @javax.annotation.Nonnull
-    public void setCreateTime(@javax.annotation.Nullable final String value) {
+    public void setCreateTime(@jakarta.annotation.Nullable final String value) {
         this.createTime = value;
     }
     /**
      * Sets the delete_time property value. Delete Time
-     * @param value Value to set for the deleteTime property.
-     * @return a void
+     * @param value Value to set for the delete_time property.
      */
-    @javax.annotation.Nonnull
-    public void setDeleteTime(@javax.annotation.Nullable final String value) {
+    public void setDeleteTime(@jakarta.annotation.Nullable final String value) {
         this.deleteTime = value;
     }
     /**
      * Sets the organization_id property value. Organization ID
-     * @param value Value to set for the organizationId property.
-     * @return a void
+     * @param value Value to set for the organization_id property.
      */
-    @javax.annotation.Nonnull
-    public void setOrganizationId(@javax.annotation.Nullable final String value) {
+    public void setOrganizationId(@jakarta.annotation.Nullable final String value) {
         this.organizationId = value;
     }
     /**
      * Sets the saml_acs_url property value. Saml Acs Url
-     * @param value Value to set for the samlAcsUrl property.
-     * @return a void
+     * @param value Value to set for the saml_acs_url property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlAcsUrl(@javax.annotation.Nullable final String value) {
+    public void setSamlAcsUrl(@jakarta.annotation.Nullable final String value) {
         this.samlAcsUrl = value;
     }
     /**
      * Sets the saml_assertion_signed_enabled property value. Set to 'true' to enable WantAssertionsSigned
-     * @param value Value to set for the samlAssertionSignedEnabled property.
-     * @return a void
+     * @param value Value to set for the saml_assertion_signed_enabled property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlAssertionSignedEnabled(@javax.annotation.Nullable final Boolean value) {
+    public void setSamlAssertionSignedEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.samlAssertionSignedEnabled = value;
     }
     /**
      * Sets the saml_authn_requests_signed_enabled property value. Set to 'true' to enable AuthnRequestsSigned
-     * @param value Value to set for the samlAuthnRequestsSignedEnabled property.
-     * @return a void
+     * @param value Value to set for the saml_authn_requests_signed_enabled property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlAuthnRequestsSignedEnabled(@javax.annotation.Nullable final Boolean value) {
+    public void setSamlAuthnRequestsSignedEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.samlAuthnRequestsSignedEnabled = value;
     }
     /**
      * Sets the saml_cert property value. SAMLVariant
-     * @param value Value to set for the samlCert property.
-     * @return a void
+     * @param value Value to set for the saml_cert property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlCert(@javax.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlCert value) {
+    public void setSamlCert(@jakarta.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlCert value) {
         this.samlCert = value;
     }
     /**
      * Sets the saml_certificate property value. Identity provider's certificate
-     * @param value Value to set for the samlCertificate property.
-     * @return a void
+     * @param value Value to set for the saml_certificate property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlCertificate(@javax.annotation.Nullable final String value) {
+    public void setSamlCertificate(@jakarta.annotation.Nullable final String value) {
         this.samlCertificate = value;
     }
     /**
      * Sets the saml_certificate_issuer property value. Saml Certificate Issuer
-     * @param value Value to set for the samlCertificateIssuer property.
-     * @return a void
+     * @param value Value to set for the saml_certificate_issuer property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlCertificateIssuer(@javax.annotation.Nullable final String value) {
+    public void setSamlCertificateIssuer(@jakarta.annotation.Nullable final String value) {
         this.samlCertificateIssuer = value;
     }
     /**
      * Sets the saml_certificate_not_valid_after property value. Saml Certificate Not Valid After
-     * @param value Value to set for the samlCertificateNotValidAfter property.
-     * @return a void
+     * @param value Value to set for the saml_certificate_not_valid_after property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlCertificateNotValidAfter(@javax.annotation.Nullable final String value) {
+    public void setSamlCertificateNotValidAfter(@jakarta.annotation.Nullable final String value) {
         this.samlCertificateNotValidAfter = value;
     }
     /**
      * Sets the saml_certificate_not_valid_before property value. Saml Certificate Not Valid Before
-     * @param value Value to set for the samlCertificateNotValidBefore property.
-     * @return a void
+     * @param value Value to set for the saml_certificate_not_valid_before property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlCertificateNotValidBefore(@javax.annotation.Nullable final String value) {
+    public void setSamlCertificateNotValidBefore(@jakarta.annotation.Nullable final String value) {
         this.samlCertificateNotValidBefore = value;
     }
     /**
      * Sets the saml_certificate_subject property value. Saml Certificate Subject
-     * @param value Value to set for the samlCertificateSubject property.
-     * @return a void
+     * @param value Value to set for the saml_certificate_subject property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlCertificateSubject(@javax.annotation.Nullable final String value) {
+    public void setSamlCertificateSubject(@jakarta.annotation.Nullable final String value) {
         this.samlCertificateSubject = value;
     }
     /**
      * Sets the saml_digest_algorithm property value. Digest algorithm. This is an advanced option that typically does not need to be set.
-     * @param value Value to set for the samlDigestAlgorithm property.
-     * @return a void
+     * @param value Value to set for the saml_digest_algorithm property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlDigestAlgorithm(@javax.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlDigestAlgorithm value) {
+    public void setSamlDigestAlgorithm(@jakarta.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlDigestAlgorithm value) {
         this.samlDigestAlgorithm = value;
     }
     /**
      * Sets the saml_entity_id property value. Saml Entity ID
-     * @param value Value to set for the samlEntityId property.
-     * @return a void
+     * @param value Value to set for the saml_entity_id property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlEntityId(@javax.annotation.Nullable final String value) {
+    public void setSamlEntityId(@jakarta.annotation.Nullable final String value) {
         this.samlEntityId = value;
     }
     /**
      * Sets the saml_field_mapping property value. SAMLFieldMapping
-     * @param value Value to set for the samlFieldMapping property.
-     * @return a void
+     * @param value Value to set for the saml_field_mapping property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlFieldMapping(@javax.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlFieldMapping value) {
+    public void setSamlFieldMapping(@jakarta.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlFieldMapping value) {
         this.samlFieldMapping = value;
     }
     /**
      * Sets the saml_idp_login_allowed property value. Set to 'true' to enable IdP initiated login
-     * @param value Value to set for the samlIdpLoginAllowed property.
-     * @return a void
+     * @param value Value to set for the saml_idp_login_allowed property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlIdpLoginAllowed(@javax.annotation.Nullable final Boolean value) {
+    public void setSamlIdpLoginAllowed(@jakarta.annotation.Nullable final Boolean value) {
         this.samlIdpLoginAllowed = value;
     }
     /**
      * Sets the saml_idp_url property value. Saml Idp Url
-     * @param value Value to set for the samlIdpUrl property.
-     * @return a void
+     * @param value Value to set for the saml_idp_url property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlIdpUrl(@javax.annotation.Nullable final String value) {
+    public void setSamlIdpUrl(@jakarta.annotation.Nullable final String value) {
         this.samlIdpUrl = value;
     }
     /**
      * Sets the saml_metadata_url property value. Saml Metadata Url
-     * @param value Value to set for the samlMetadataUrl property.
-     * @return a void
+     * @param value Value to set for the saml_metadata_url property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlMetadataUrl(@javax.annotation.Nullable final String value) {
+    public void setSamlMetadataUrl(@jakarta.annotation.Nullable final String value) {
         this.samlMetadataUrl = value;
     }
     /**
      * Sets the saml_requested_authn_context_enabled property value. Set to 'false' to disable RequestedAuthnContext
-     * @param value Value to set for the samlRequestedAuthnContextEnabled property.
-     * @return a void
+     * @param value Value to set for the saml_requested_authn_context_enabled property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlRequestedAuthnContextEnabled(@javax.annotation.Nullable final Boolean value) {
+    public void setSamlRequestedAuthnContextEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.samlRequestedAuthnContextEnabled = value;
     }
     /**
      * Sets the saml_signature_algorithm property value. SAMLSignatureAlgorithm
-     * @param value Value to set for the samlSignatureAlgorithm property.
-     * @return a void
+     * @param value Value to set for the saml_signature_algorithm property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlSignatureAlgorithm(@javax.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlSignatureAlgorithm value) {
+    public void setSamlSignatureAlgorithm(@jakarta.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlSignatureAlgorithm value) {
         this.samlSignatureAlgorithm = value;
     }
     /**
      * Sets the saml_sp_certificate property value. Saml Sp Certificate
-     * @param value Value to set for the samlSpCertificate property.
-     * @return a void
+     * @param value Value to set for the saml_sp_certificate property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlSpCertificate(@javax.annotation.Nullable final String value) {
+    public void setSamlSpCertificate(@jakarta.annotation.Nullable final String value) {
         this.samlSpCertificate = value;
     }
     /**
      * Sets the saml_variant property value. SAMLVariant
-     * @param value Value to set for the samlVariant property.
-     * @return a void
+     * @param value Value to set for the saml_variant property.
      */
-    @javax.annotation.Nonnull
-    public void setSamlVariant(@javax.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlVariant value) {
+    public void setSamlVariant(@jakarta.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodSamlVariant value) {
         this.samlVariant = value;
     }
     /**
      * Sets the state property value. AuthenticationMethodState
      * @param value Value to set for the state property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setState(@javax.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodState value) {
+    public void setState(@jakarta.annotation.Nullable final AccountAuthenticationMethodCreateResponseAuthenticationMethodState value) {
         this.state = value;
     }
     /**
      * Sets the update_time property value. Update Time
-     * @param value Value to set for the updateTime property.
-     * @return a void
+     * @param value Value to set for the update_time property.
      */
-    @javax.annotation.Nonnull
-    public void setUpdateTime(@javax.annotation.Nullable final String value) {
+    public void setUpdateTime(@jakarta.annotation.Nullable final String value) {
         this.updateTime = value;
     }
 }

@@ -21,6 +21,7 @@ import com.microsoft.kiota.serialization.FormParseNodeFactory;
 import com.microsoft.kiota.serialization.FormSerializationWriterFactory;
 import com.microsoft.kiota.serialization.JsonParseNodeFactory;
 import com.microsoft.kiota.serialization.JsonSerializationWriterFactory;
+import com.microsoft.kiota.serialization.MultipartSerializationWriterFactory;
 import com.microsoft.kiota.serialization.ParseNodeFactoryRegistry;
 import com.microsoft.kiota.serialization.SerializationWriterFactoryRegistry;
 import com.microsoft.kiota.serialization.TextParseNodeFactory;
@@ -30,89 +31,117 @@ import java.util.Objects;
 /**
  * The main entry point of the SDK, exposes the configuration and the fluent API.
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class AivenClient extends BaseRequestBuilder {
-    /** The access_token property */
-    @javax.annotation.Nonnull
-    public AccessTokenRequestBuilder access_token() {
+    /**
+     * The access_token property
+     */
+    @jakarta.annotation.Nonnull
+    public AccessTokenRequestBuilder accessToken() {
         return new AccessTokenRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The account property */
-    @javax.annotation.Nonnull
+    /**
+     * The account property
+     */
+    @jakarta.annotation.Nonnull
     public AccountRequestBuilder account() {
         return new AccountRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The billingGroup property */
-    @javax.annotation.Nonnull
+    /**
+     * The billingGroup property
+     */
+    @jakarta.annotation.Nonnull
     public BillingGroupRequestBuilder billingGroup() {
         return new BillingGroupRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The card property */
-    @javax.annotation.Nonnull
+    /**
+     * The card property
+     */
+    @jakarta.annotation.Nonnull
     public CardRequestBuilder card() {
         return new CardRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The clouds property */
-    @javax.annotation.Nonnull
+    /**
+     * The clouds property
+     */
+    @jakarta.annotation.Nonnull
     public CloudsRequestBuilder clouds() {
         return new CloudsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The me property */
-    @javax.annotation.Nonnull
+    /**
+     * The me property
+     */
+    @jakarta.annotation.Nonnull
     public MeRequestBuilder me() {
         return new MeRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The organization property */
-    @javax.annotation.Nonnull
+    /**
+     * The organization property
+     */
+    @jakarta.annotation.Nonnull
     public OrganizationRequestBuilder organization() {
         return new OrganizationRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The organizations property */
-    @javax.annotation.Nonnull
+    /**
+     * The organizations property
+     */
+    @jakarta.annotation.Nonnull
     public OrganizationsRequestBuilder organizations() {
         return new OrganizationsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The project property */
-    @javax.annotation.Nonnull
+    /**
+     * The project property
+     */
+    @jakarta.annotation.Nonnull
     public ProjectRequestBuilder project() {
         return new ProjectRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The service_types property */
-    @javax.annotation.Nonnull
-    public ServiceTypesRequestBuilder service_types() {
+    /**
+     * The service_types property
+     */
+    @jakarta.annotation.Nonnull
+    public ServiceTypesRequestBuilder serviceTypes() {
         return new ServiceTypesRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The service_versions property */
-    @javax.annotation.Nonnull
-    public ServiceVersionsRequestBuilder service_versions() {
+    /**
+     * The service_versions property
+     */
+    @jakarta.annotation.Nonnull
+    public ServiceVersionsRequestBuilder serviceVersions() {
         return new ServiceVersionsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The tenants property */
-    @javax.annotation.Nonnull
+    /**
+     * The tenants property
+     */
+    @jakarta.annotation.Nonnull
     public TenantsRequestBuilder tenants() {
         return new TenantsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The user property */
-    @javax.annotation.Nonnull
+    /**
+     * The user property
+     */
+    @jakarta.annotation.Nonnull
     public UserRequestBuilder user() {
         return new UserRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The userauth property */
-    @javax.annotation.Nonnull
+    /**
+     * The userauth property
+     */
+    @jakarta.annotation.Nonnull
     public UserauthRequestBuilder userauth() {
         return new UserauthRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new AivenClient and sets the default values.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public AivenClient(@javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public AivenClient(@jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}");
         this.pathParameters = new HashMap<>();
         ApiClientBuilder.registerDefaultSerializer(JsonSerializationWriterFactory.class);
         ApiClientBuilder.registerDefaultSerializer(TextSerializationWriterFactory.class);
         ApiClientBuilder.registerDefaultSerializer(FormSerializationWriterFactory.class);
+        ApiClientBuilder.registerDefaultSerializer(MultipartSerializationWriterFactory.class);
         ApiClientBuilder.registerDefaultDeserializer(JsonParseNodeFactory.class);
         ApiClientBuilder.registerDefaultDeserializer(FormParseNodeFactory.class);
         ApiClientBuilder.registerDefaultDeserializer(TextParseNodeFactory.class);

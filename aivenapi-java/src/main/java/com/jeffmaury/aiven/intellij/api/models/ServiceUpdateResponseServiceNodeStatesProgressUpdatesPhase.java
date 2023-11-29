@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Key identifying this phase */
+/**
+ * Key identifying this phase
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase implements ValuedEnum {
     Prepare("prepare"),
     Basebackup("basebackup"),
@@ -13,10 +16,10 @@ public enum ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase implement
     ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "prepare": return Prepare;

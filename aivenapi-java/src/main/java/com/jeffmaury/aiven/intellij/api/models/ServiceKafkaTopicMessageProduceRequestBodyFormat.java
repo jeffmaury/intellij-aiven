@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** The format of the content. */
+/**
+ * The format of the content.
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceKafkaTopicMessageProduceRequestBodyFormat implements ValuedEnum {
     Binary("binary"),
     Json("json"),
@@ -14,10 +17,10 @@ public enum ServiceKafkaTopicMessageProduceRequestBodyFormat implements ValuedEn
     ServiceKafkaTopicMessageProduceRequestBodyFormat(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceKafkaTopicMessageProduceRequestBodyFormat forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceKafkaTopicMessageProduceRequestBodyFormat forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "binary": return Binary;

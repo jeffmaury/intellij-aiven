@@ -10,42 +10,71 @@ import java.util.Objects;
 /**
  * Account details
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class AccountUpdateResponseAccount implements AdditionalDataHolder, Parsable {
-    /** Describe the source of the account */
+    /**
+     * Describe the source of the account
+     */
     private AccountUpdateResponseAccountAccessSource accessSource;
-    /** Account ID */
+    /**
+     * Account ID
+     */
     private String accountId;
-    /** Account name */
+    /**
+     * Account name
+     */
     private String accountName;
-    /** Team ID */
+    /**
+     * Team ID
+     */
     private String accountOwnerTeamId;
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Timestamp in ISO 8601 format, always in UTC */
+    /**
+     * Timestamp in ISO 8601 format, always in UTC
+     */
     private String createTime;
-    /** Feature flags */
+    /**
+     * Feature flags
+     */
     private AccountUpdateResponseAccountFeatures features;
-    /** If true, user is part of a team of this or a parent account */
+    /**
+     * If true, user is part of a team of this or a parent account
+     */
     private Boolean isAccountMember;
-    /** If true, user is part of the owners team for this account */
+    /**
+     * If true, user is part of the owners team for this account
+     */
     private Boolean isAccountOwner;
-    /** Organization ID */
+    /**
+     * Organization ID
+     */
     private String organizationId;
-    /** Account ID */
+    /**
+     * Account ID
+     */
     private String parentAccountId;
-    /** Billing group ID */
+    /**
+     * Billing group ID
+     */
     private String primaryBillingGroupId;
-    /** Account ID */
+    /**
+     * Account ID
+     */
     private String rootAccountId;
-    /** Tenant identifier */
+    /**
+     * Tenant identifier
+     */
     private String tenantId;
-    /** Timestamp in ISO 8601 format, always in UTC */
+    /**
+     * Timestamp in ISO 8601 format, always in UTC
+     */
     private String updateTime;
     /**
      * Instantiates a new AccountUpdateResponseAccount and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public AccountUpdateResponseAccount() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -54,8 +83,8 @@ public class AccountUpdateResponseAccount implements AdditionalDataHolder, Parsa
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a AccountUpdateResponseAccount
      */
-    @javax.annotation.Nonnull
-    public static AccountUpdateResponseAccount createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static AccountUpdateResponseAccount createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new AccountUpdateResponseAccount();
     }
@@ -63,47 +92,47 @@ public class AccountUpdateResponseAccount implements AdditionalDataHolder, Parsa
      * Gets the access_source property value. Describe the source of the account
      * @return a AccountUpdateResponseAccountAccessSource
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public AccountUpdateResponseAccountAccessSource getAccessSource() {
         return this.accessSource;
     }
     /**
      * Gets the account_id property value. Account ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccountId() {
         return this.accountId;
     }
     /**
      * Gets the account_name property value. Account name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccountName() {
         return this.accountName;
     }
     /**
      * Gets the account_owner_team_id property value. Team ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccountOwnerTeamId() {
         return this.accountOwnerTeamId;
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the create_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCreateTime() {
         return this.createTime;
     }
@@ -111,7 +140,7 @@ public class AccountUpdateResponseAccount implements AdditionalDataHolder, Parsa
      * Gets the features property value. Feature flags
      * @return a AccountUpdateResponseAccountFeatures
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public AccountUpdateResponseAccountFeatures getFeatures() {
         return this.features;
     }
@@ -119,7 +148,7 @@ public class AccountUpdateResponseAccount implements AdditionalDataHolder, Parsa
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(14);
         deserializerMap.put("access_source", (n) -> { this.setAccessSource(n.getEnumValue(AccountUpdateResponseAccountAccessSource.class)); });
@@ -140,75 +169,73 @@ public class AccountUpdateResponseAccount implements AdditionalDataHolder, Parsa
     }
     /**
      * Gets the is_account_member property value. If true, user is part of a team of this or a parent account
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getIsAccountMember() {
         return this.isAccountMember;
     }
     /**
      * Gets the is_account_owner property value. If true, user is part of the owners team for this account
-     * @return a boolean
+     * @return a Boolean
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Boolean getIsAccountOwner() {
         return this.isAccountOwner;
     }
     /**
      * Gets the organization_id property value. Organization ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getOrganizationId() {
         return this.organizationId;
     }
     /**
      * Gets the parent_account_id property value. Account ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getParentAccountId() {
         return this.parentAccountId;
     }
     /**
      * Gets the primary_billing_group_id property value. Billing group ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getPrimaryBillingGroupId() {
         return this.primaryBillingGroupId;
     }
     /**
      * Gets the root_account_id property value. Account ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getRootAccountId() {
         return this.rootAccountId;
     }
     /**
      * Gets the tenant_id property value. Tenant identifier
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTenantId() {
         return this.tenantId;
     }
     /**
      * Gets the update_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getUpdateTime() {
         return this.updateTime;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeEnumValue("access_source", this.getAccessSource());
         writer.writeStringValue("account_id", this.getAccountId());
@@ -228,137 +255,107 @@ public class AccountUpdateResponseAccount implements AdditionalDataHolder, Parsa
     }
     /**
      * Sets the access_source property value. Describe the source of the account
-     * @param value Value to set for the accessSource property.
-     * @return a void
+     * @param value Value to set for the access_source property.
      */
-    @javax.annotation.Nonnull
-    public void setAccessSource(@javax.annotation.Nullable final AccountUpdateResponseAccountAccessSource value) {
+    public void setAccessSource(@jakarta.annotation.Nullable final AccountUpdateResponseAccountAccessSource value) {
         this.accessSource = value;
     }
     /**
      * Sets the account_id property value. Account ID
-     * @param value Value to set for the accountId property.
-     * @return a void
+     * @param value Value to set for the account_id property.
      */
-    @javax.annotation.Nonnull
-    public void setAccountId(@javax.annotation.Nullable final String value) {
+    public void setAccountId(@jakarta.annotation.Nullable final String value) {
         this.accountId = value;
     }
     /**
      * Sets the account_name property value. Account name
-     * @param value Value to set for the accountName property.
-     * @return a void
+     * @param value Value to set for the account_name property.
      */
-    @javax.annotation.Nonnull
-    public void setAccountName(@javax.annotation.Nullable final String value) {
+    public void setAccountName(@jakarta.annotation.Nullable final String value) {
         this.accountName = value;
     }
     /**
      * Sets the account_owner_team_id property value. Team ID
-     * @param value Value to set for the accountOwnerTeamId property.
-     * @return a void
+     * @param value Value to set for the account_owner_team_id property.
      */
-    @javax.annotation.Nonnull
-    public void setAccountOwnerTeamId(@javax.annotation.Nullable final String value) {
+    public void setAccountOwnerTeamId(@jakarta.annotation.Nullable final String value) {
         this.accountOwnerTeamId = value;
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the create_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @param value Value to set for the createTime property.
-     * @return a void
+     * @param value Value to set for the create_time property.
      */
-    @javax.annotation.Nonnull
-    public void setCreateTime(@javax.annotation.Nullable final String value) {
+    public void setCreateTime(@jakarta.annotation.Nullable final String value) {
         this.createTime = value;
     }
     /**
      * Sets the features property value. Feature flags
      * @param value Value to set for the features property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setFeatures(@javax.annotation.Nullable final AccountUpdateResponseAccountFeatures value) {
+    public void setFeatures(@jakarta.annotation.Nullable final AccountUpdateResponseAccountFeatures value) {
         this.features = value;
     }
     /**
      * Sets the is_account_member property value. If true, user is part of a team of this or a parent account
-     * @param value Value to set for the isAccountMember property.
-     * @return a void
+     * @param value Value to set for the is_account_member property.
      */
-    @javax.annotation.Nonnull
-    public void setIsAccountMember(@javax.annotation.Nullable final Boolean value) {
+    public void setIsAccountMember(@jakarta.annotation.Nullable final Boolean value) {
         this.isAccountMember = value;
     }
     /**
      * Sets the is_account_owner property value. If true, user is part of the owners team for this account
-     * @param value Value to set for the isAccountOwner property.
-     * @return a void
+     * @param value Value to set for the is_account_owner property.
      */
-    @javax.annotation.Nonnull
-    public void setIsAccountOwner(@javax.annotation.Nullable final Boolean value) {
+    public void setIsAccountOwner(@jakarta.annotation.Nullable final Boolean value) {
         this.isAccountOwner = value;
     }
     /**
      * Sets the organization_id property value. Organization ID
-     * @param value Value to set for the organizationId property.
-     * @return a void
+     * @param value Value to set for the organization_id property.
      */
-    @javax.annotation.Nonnull
-    public void setOrganizationId(@javax.annotation.Nullable final String value) {
+    public void setOrganizationId(@jakarta.annotation.Nullable final String value) {
         this.organizationId = value;
     }
     /**
      * Sets the parent_account_id property value. Account ID
-     * @param value Value to set for the parentAccountId property.
-     * @return a void
+     * @param value Value to set for the parent_account_id property.
      */
-    @javax.annotation.Nonnull
-    public void setParentAccountId(@javax.annotation.Nullable final String value) {
+    public void setParentAccountId(@jakarta.annotation.Nullable final String value) {
         this.parentAccountId = value;
     }
     /**
      * Sets the primary_billing_group_id property value. Billing group ID
-     * @param value Value to set for the primaryBillingGroupId property.
-     * @return a void
+     * @param value Value to set for the primary_billing_group_id property.
      */
-    @javax.annotation.Nonnull
-    public void setPrimaryBillingGroupId(@javax.annotation.Nullable final String value) {
+    public void setPrimaryBillingGroupId(@jakarta.annotation.Nullable final String value) {
         this.primaryBillingGroupId = value;
     }
     /**
      * Sets the root_account_id property value. Account ID
-     * @param value Value to set for the rootAccountId property.
-     * @return a void
+     * @param value Value to set for the root_account_id property.
      */
-    @javax.annotation.Nonnull
-    public void setRootAccountId(@javax.annotation.Nullable final String value) {
+    public void setRootAccountId(@jakarta.annotation.Nullable final String value) {
         this.rootAccountId = value;
     }
     /**
      * Sets the tenant_id property value. Tenant identifier
-     * @param value Value to set for the tenantId property.
-     * @return a void
+     * @param value Value to set for the tenant_id property.
      */
-    @javax.annotation.Nonnull
-    public void setTenantId(@javax.annotation.Nullable final String value) {
+    public void setTenantId(@jakarta.annotation.Nullable final String value) {
         this.tenantId = value;
     }
     /**
      * Sets the update_time property value. Timestamp in ISO 8601 format, always in UTC
-     * @param value Value to set for the updateTime property.
-     * @return a void
+     * @param value Value to set for the update_time property.
      */
-    @javax.annotation.Nonnull
-    public void setUpdateTime(@javax.annotation.Nullable final String value) {
+    public void setUpdateTime(@jakarta.annotation.Nullable final String value) {
         this.updateTime = value;
     }
 }

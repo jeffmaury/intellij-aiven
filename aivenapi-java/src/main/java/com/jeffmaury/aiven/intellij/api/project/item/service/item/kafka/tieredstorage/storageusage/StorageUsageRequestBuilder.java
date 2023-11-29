@@ -9,14 +9,19 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}/service/{service_name}/kafka/tiered-storage/storage-usage
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class StorageUsageRequestBuilder extends BaseRequestBuilder {
-    /** The byTopic property */
-    @javax.annotation.Nonnull
+    /**
+     * The byTopic property
+     */
+    @jakarta.annotation.Nonnull
     public ByTopicRequestBuilder byTopic() {
         return new ByTopicRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The total property */
-    @javax.annotation.Nonnull
+    /**
+     * The total property
+     */
+    @jakarta.annotation.Nonnull
     public TotalRequestBuilder total() {
         return new TotalRequestBuilder(pathParameters, requestAdapter);
     }
@@ -24,20 +29,16 @@ public class StorageUsageRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new StorageUsageRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public StorageUsageRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public StorageUsageRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/kafka/tiered-storage/storage-usage", pathParameters);
     }
     /**
      * Instantiates a new StorageUsageRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public StorageUsageRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public StorageUsageRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/kafka/tiered-storage/storage-usage", rawUrl);
     }
 }

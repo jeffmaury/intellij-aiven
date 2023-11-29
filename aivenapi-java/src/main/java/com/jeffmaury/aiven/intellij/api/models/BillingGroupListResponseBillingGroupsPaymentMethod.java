@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Payment method */
+/**
+ * Payment method
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum BillingGroupListResponseBillingGroupsPaymentMethod implements ValuedEnum {
     Accrual("accrual"),
     Card("card"),
@@ -15,10 +18,10 @@ public enum BillingGroupListResponseBillingGroupsPaymentMethod implements Valued
     BillingGroupListResponseBillingGroupsPaymentMethod(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static BillingGroupListResponseBillingGroupsPaymentMethod forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static BillingGroupListResponseBillingGroupsPaymentMethod forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "accrual": return Accrual;

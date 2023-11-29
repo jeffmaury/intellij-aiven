@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Type of the invoice line */
+/**
+ * Type of the invoice line
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum BillingGroupInvoiceLinesListResponseLinesLineType implements ValuedEnum {
     Commitment_fee("commitment_fee"),
     Credit_consumption("credit_consumption"),
@@ -17,10 +20,10 @@ public enum BillingGroupInvoiceLinesListResponseLinesLineType implements ValuedE
     BillingGroupInvoiceLinesListResponseLinesLineType(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static BillingGroupInvoiceLinesListResponseLinesLineType forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static BillingGroupInvoiceLinesListResponseLinesLineType forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "commitment_fee": return Commitment_fee;

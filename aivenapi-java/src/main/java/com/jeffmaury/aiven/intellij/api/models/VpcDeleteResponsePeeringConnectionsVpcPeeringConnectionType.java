@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Type of network connection from the VPC */
+/**
+ * Type of network connection from the VPC
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum VpcDeleteResponsePeeringConnectionsVpcPeeringConnectionType implements ValuedEnum {
     AwsTgwVpcAttachment("aws-tgw-vpc-attachment"),
     AwsVpcPeeringConnection("aws-vpc-peering-connection"),
@@ -14,10 +17,10 @@ public enum VpcDeleteResponsePeeringConnectionsVpcPeeringConnectionType implemen
     VpcDeleteResponsePeeringConnectionsVpcPeeringConnectionType(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static VpcDeleteResponsePeeringConnectionsVpcPeeringConnectionType forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static VpcDeleteResponsePeeringConnectionsVpcPeeringConnectionType forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "aws-tgw-vpc-attachment": return AwsTgwVpcAttachment;

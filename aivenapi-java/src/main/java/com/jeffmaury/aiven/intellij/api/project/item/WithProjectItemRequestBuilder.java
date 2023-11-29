@@ -36,7 +36,6 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,124 +43,173 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithProjectItemRequestBuilder extends BaseRequestBuilder {
-    /** The alerts property */
-    @javax.annotation.Nonnull
+    /**
+     * The alerts property
+     */
+    @jakarta.annotation.Nonnull
     public AlertsRequestBuilder alerts() {
         return new AlertsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The clouds property */
-    @javax.annotation.Nonnull
+    /**
+     * The clouds property
+     */
+    @jakarta.annotation.Nonnull
     public CloudsRequestBuilder clouds() {
         return new CloudsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The credits property */
-    @javax.annotation.Nonnull
+    /**
+     * The credits property
+     */
+    @jakarta.annotation.Nonnull
     public CreditsRequestBuilder credits() {
         return new CreditsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The downloadSbom property */
-    @javax.annotation.Nonnull
+    /**
+     * The downloadSbom property
+     */
+    @jakarta.annotation.Nonnull
     public DownloadSbomRequestBuilder downloadSbom() {
         return new DownloadSbomRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The events property */
-    @javax.annotation.Nonnull
+    /**
+     * The events property
+     */
+    @jakarta.annotation.Nonnull
     public EventsRequestBuilder events() {
         return new EventsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The generateSbomDownloadUrl property */
-    @javax.annotation.Nonnull
+    /**
+     * The generateSbomDownloadUrl property
+     */
+    @jakarta.annotation.Nonnull
     public GenerateSbomDownloadUrlRequestBuilder generateSbomDownloadUrl() {
         return new GenerateSbomDownloadUrlRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The integration property */
-    @javax.annotation.Nonnull
+    /**
+     * The integration property
+     */
+    @jakarta.annotation.Nonnull
     public IntegrationRequestBuilder integration() {
         return new IntegrationRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The integration_endpoint property */
-    @javax.annotation.Nonnull
-    public IntegrationEndpointRequestBuilder integration_endpoint() {
+    /**
+     * The integration_endpoint property
+     */
+    @jakarta.annotation.Nonnull
+    public IntegrationEndpointRequestBuilder integrationEndpoint() {
         return new IntegrationEndpointRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The integration_endpoint_types property */
-    @javax.annotation.Nonnull
-    public IntegrationEndpointTypesRequestBuilder integration_endpoint_types() {
+    /**
+     * The integration_endpoint_types property
+     */
+    @jakarta.annotation.Nonnull
+    public IntegrationEndpointTypesRequestBuilder integrationEndpointTypes() {
         return new IntegrationEndpointTypesRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The integration_types property */
-    @javax.annotation.Nonnull
-    public IntegrationTypesRequestBuilder integration_types() {
+    /**
+     * The integration_types property
+     */
+    @jakarta.annotation.Nonnull
+    public IntegrationTypesRequestBuilder integrationTypes() {
         return new IntegrationTypesRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The invite property */
-    @javax.annotation.Nonnull
+    /**
+     * The invite property
+     */
+    @jakarta.annotation.Nonnull
     public InviteRequestBuilder invite() {
         return new InviteRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The invoice property */
-    @javax.annotation.Nonnull
+    /**
+     * The invoice property
+     */
+    @jakarta.annotation.Nonnull
     public InvoiceRequestBuilder invoice() {
         return new InvoiceRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The kms property */
-    @javax.annotation.Nonnull
+    /**
+     * The kms property
+     */
+    @jakarta.annotation.Nonnull
     public KmsRequestBuilder kms() {
         return new KmsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The privatelinkAvailability property */
-    @javax.annotation.Nonnull
+    /**
+     * The privatelinkAvailability property
+     */
+    @jakarta.annotation.Nonnull
     public PrivatelinkAvailabilityRequestBuilder privatelinkAvailability() {
         return new PrivatelinkAvailabilityRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The service property */
-    @javax.annotation.Nonnull
+    /**
+     * The service property
+     */
+    @jakarta.annotation.Nonnull
     public ServiceRequestBuilder service() {
         return new ServiceRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The service_types property */
-    @javax.annotation.Nonnull
-    public ServiceTypesRequestBuilder service_types() {
+    /**
+     * The service_types property
+     */
+    @jakarta.annotation.Nonnull
+    public ServiceTypesRequestBuilder serviceTypes() {
         return new ServiceTypesRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The staticIpAvailability property */
-    @javax.annotation.Nonnull
+    /**
+     * The staticIpAvailability property
+     */
+    @jakarta.annotation.Nonnull
     public StaticIpAvailabilityRequestBuilder staticIpAvailability() {
         return new StaticIpAvailabilityRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The staticIps property */
-    @javax.annotation.Nonnull
+    /**
+     * The staticIps property
+     */
+    @jakarta.annotation.Nonnull
     public StaticIpsRequestBuilder staticIps() {
         return new StaticIpsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The tags property */
-    @javax.annotation.Nonnull
+    /**
+     * The tags property
+     */
+    @jakarta.annotation.Nonnull
     public TagsRequestBuilder tags() {
         return new TagsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The tickets property */
-    @javax.annotation.Nonnull
+    /**
+     * The tickets property
+     */
+    @jakarta.annotation.Nonnull
     public TicketsRequestBuilder tickets() {
         return new TicketsRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The user property */
-    @javax.annotation.Nonnull
+    /**
+     * The user property
+     */
+    @jakarta.annotation.Nonnull
     public UserRequestBuilder user() {
         return new UserRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The users property */
-    @javax.annotation.Nonnull
+    /**
+     * The users property
+     */
+    @jakarta.annotation.Nonnull
     public UsersRequestBuilder users() {
         return new UsersRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The vpcPeeringConnectionTypes property */
-    @javax.annotation.Nonnull
+    /**
+     * The vpcPeeringConnectionTypes property
+     */
+    @jakarta.annotation.Nonnull
     public VpcPeeringConnectionTypesRequestBuilder vpcPeeringConnectionTypes() {
         return new VpcPeeringConnectionTypesRequestBuilder(pathParameters, requestAdapter);
     }
-    /** The vpcs property */
-    @javax.annotation.Nonnull
+    /**
+     * The vpcs property
+     */
+    @jakarta.annotation.Nonnull
     public VpcsRequestBuilder vpcs() {
         return new VpcsRequestBuilder(pathParameters, requestAdapter);
     }
@@ -169,99 +217,62 @@ public class WithProjectItemRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new WithProjectItemRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public WithProjectItemRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public WithProjectItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}", pathParameters);
     }
     /**
      * Instantiates a new WithProjectItemRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public WithProjectItemRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public WithProjectItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}", rawUrl);
     }
     /**
      * Delete project
      * @return a CompletableFuture of ProjectDeleteResponse
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public java.util.concurrent.CompletableFuture<ProjectDeleteResponse> delete() {
-        try {
-            final RequestInformation requestInfo = toDeleteRequestInformation(null);
-            return this.requestAdapter.sendAsync(requestInfo, ProjectDeleteResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ProjectDeleteResponse> executionException = new java.util.concurrent.CompletableFuture<ProjectDeleteResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+        return delete(null);
     }
     /**
      * Delete project
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a CompletableFuture of ProjectDeleteResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectDeleteResponse> delete(@javax.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        try {
-            final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-            return this.requestAdapter.sendAsync(requestInfo, ProjectDeleteResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ProjectDeleteResponse> executionException = new java.util.concurrent.CompletableFuture<ProjectDeleteResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<ProjectDeleteResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
+        return this.requestAdapter.sendAsync(requestInfo, ProjectDeleteResponse::createFromDiscriminatorValue, null);
     }
     /**
      * Get project details
      * @return a CompletableFuture of ProjectGetResponse
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public java.util.concurrent.CompletableFuture<ProjectGetResponse> get() {
-        try {
-            final RequestInformation requestInfo = toGetRequestInformation(null);
-            return this.requestAdapter.sendAsync(requestInfo, ProjectGetResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ProjectGetResponse> executionException = new java.util.concurrent.CompletableFuture<ProjectGetResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+        return get(null);
     }
     /**
      * Get project details
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a CompletableFuture of ProjectGetResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectGetResponse> get(@javax.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        try {
-            final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-            return this.requestAdapter.sendAsync(requestInfo, ProjectGetResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ProjectGetResponse> executionException = new java.util.concurrent.CompletableFuture<ProjectGetResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<ProjectGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
+        return this.requestAdapter.sendAsync(requestInfo, ProjectGetResponse::createFromDiscriminatorValue, null);
     }
     /**
      * Update project
      * @param body ProjectUpdateRequestBody
      * @return a CompletableFuture of ProjectUpdateResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectUpdateResponse> put(@javax.annotation.Nonnull final ProjectUpdateRequestBody body) {
-        try {
-            final RequestInformation requestInfo = toPutRequestInformation(body, null);
-            return this.requestAdapter.sendAsync(requestInfo, ProjectUpdateResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ProjectUpdateResponse> executionException = new java.util.concurrent.CompletableFuture<ProjectUpdateResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<ProjectUpdateResponse> put(@jakarta.annotation.Nonnull final ProjectUpdateRequestBody body) {
+        return put(body, null);
     }
     /**
      * Update project
@@ -269,24 +280,18 @@ public class WithProjectItemRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a CompletableFuture of ProjectUpdateResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectUpdateResponse> put(@javax.annotation.Nonnull final ProjectUpdateRequestBody body, @javax.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<ProjectUpdateResponse> put(@jakarta.annotation.Nonnull final ProjectUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        try {
-            final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-            return this.requestAdapter.sendAsync(requestInfo, ProjectUpdateResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ProjectUpdateResponse> executionException = new java.util.concurrent.CompletableFuture<ProjectUpdateResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+        final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
+        return this.requestAdapter.sendAsync(requestInfo, ProjectUpdateResponse::createFromDiscriminatorValue, null);
     }
     /**
      * Delete project
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toDeleteRequestInformation() throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toDeleteRequestInformation() {
         return toDeleteRequestInformation(null);
     }
     /**
@@ -294,27 +299,27 @@ public class WithProjectItemRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toDeleteRequestInformation(@javax.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation();
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
-        requestInfo.headers.add("Accept", "application/json");
         if (requestConfiguration != null) {
             final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
             requestConfiguration.accept(requestConfig);
             requestInfo.headers.putAll(requestConfig.headers);
             requestInfo.addRequestOptions(requestConfig.options);
         }
+        requestInfo.httpMethod = HttpMethod.DELETE;
+        requestInfo.urlTemplate = urlTemplate;
+        requestInfo.pathParameters = pathParameters;
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
      * Get project details
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toGetRequestInformation() throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation() {
         return toGetRequestInformation(null);
     }
     /**
@@ -322,19 +327,19 @@ public class WithProjectItemRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toGetRequestInformation(@javax.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation();
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
-        requestInfo.headers.add("Accept", "application/json");
         if (requestConfiguration != null) {
             final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
             requestConfiguration.accept(requestConfig);
             requestInfo.headers.putAll(requestConfig.headers);
             requestInfo.addRequestOptions(requestConfig.options);
         }
+        requestInfo.httpMethod = HttpMethod.GET;
+        requestInfo.urlTemplate = urlTemplate;
+        requestInfo.pathParameters = pathParameters;
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
@@ -342,8 +347,8 @@ public class WithProjectItemRequestBuilder extends BaseRequestBuilder {
      * @param body ProjectUpdateRequestBody
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@javax.annotation.Nonnull final ProjectUpdateRequestBody body) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ProjectUpdateRequestBody body) {
         return toPutRequestInformation(body, null);
     }
     /**
@@ -352,36 +357,49 @@ public class WithProjectItemRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@javax.annotation.Nonnull final ProjectUpdateRequestBody body, @javax.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ProjectUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation();
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
-        requestInfo.headers.add("Accept", "application/json");
-        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         if (requestConfiguration != null) {
             final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
             requestConfiguration.accept(requestConfig);
             requestInfo.headers.putAll(requestConfig.headers);
             requestInfo.addRequestOptions(requestConfig.options);
         }
+        requestInfo.httpMethod = HttpMethod.PUT;
+        requestInfo.urlTemplate = urlTemplate;
+        requestInfo.pathParameters = pathParameters;
+        requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
+    }
+    /**
+     * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @return a WithProjectItemRequestBuilder
+     */
+    @jakarta.annotation.Nonnull
+    public WithProjectItemRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+        Objects.requireNonNull(rawUrl);
+        return new WithProjectItemRequestBuilder(rawUrl, requestAdapter);
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteRequestConfiguration extends BaseRequestConfiguration {
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
     public class PutRequestConfiguration extends BaseRequestConfiguration {
     }
 }

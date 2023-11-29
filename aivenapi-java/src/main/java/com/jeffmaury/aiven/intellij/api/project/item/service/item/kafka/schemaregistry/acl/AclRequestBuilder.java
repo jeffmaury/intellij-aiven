@@ -12,7 +12,6 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,14 +19,15 @@ import java.util.Objects;
 /**
  * Builds and executes requests for operations under /project/{project}/service/{service_name}/kafka/schema-registry/acl
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class AclRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.service.item.kafka.schemaRegistry.acl.item collection
-     * @param schema_registry_acl_id Unique identifier of the item
+     * @param schema_registry_acl_id Kafka Schema Registry ACL ID
      * @return a WithSchemaRegistryAclItemRequestBuilder
      */
-    @javax.annotation.Nonnull
-    public WithSchemaRegistryAclItemRequestBuilder bySchema_registry_acl_id(@javax.annotation.Nonnull final String schema_registry_acl_id) {
+    @jakarta.annotation.Nonnull
+    public WithSchemaRegistryAclItemRequestBuilder bySchema_registry_acl_id(@jakarta.annotation.Nonnull final String schema_registry_acl_id) {
         Objects.requireNonNull(schema_registry_acl_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
         urlTplParams.put("schema_registry_acl_id", schema_registry_acl_id);
@@ -37,68 +37,44 @@ public class AclRequestBuilder extends BaseRequestBuilder {
      * Instantiates a new AclRequestBuilder and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public AclRequestBuilder(@javax.annotation.Nonnull final HashMap<String, Object> pathParameters, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public AclRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/kafka/schema-registry/acl", pathParameters);
     }
     /**
      * Instantiates a new AclRequestBuilder and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
-     * @return a void
      */
-    @javax.annotation.Nullable
-    public AclRequestBuilder(@javax.annotation.Nonnull final String rawUrl, @javax.annotation.Nonnull final RequestAdapter requestAdapter) {
+    public AclRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
         super(requestAdapter, "{+baseurl}/project/{project}/service/{service_name}/kafka/schema-registry/acl", rawUrl);
     }
     /**
      * List Schema Registry ACL entries
      * @return a CompletableFuture of ServiceSchemaRegistryAclListResponse
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclListResponse> get() {
-        try {
-            final RequestInformation requestInfo = toGetRequestInformation(null);
-            return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistryAclListResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclListResponse> executionException = new java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclListResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+        return get(null);
     }
     /**
      * List Schema Registry ACL entries
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a CompletableFuture of ServiceSchemaRegistryAclListResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclListResponse> get(@javax.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        try {
-            final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-            return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistryAclListResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclListResponse> executionException = new java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclListResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
+        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistryAclListResponse::createFromDiscriminatorValue, null);
     }
     /**
      * Add a Schema Registry ACL entry
      * @param body ServiceSchemaRegistryAclAddRequestBody
      * @return a CompletableFuture of ServiceSchemaRegistryAclAddResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclAddResponse> post(@javax.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body) {
-        try {
-            final RequestInformation requestInfo = toPostRequestInformation(body, null);
-            return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistryAclAddResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclAddResponse> executionException = new java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclAddResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclAddResponse> post(@jakarta.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body) {
+        return post(body, null);
     }
     /**
      * Add a Schema Registry ACL entry
@@ -106,24 +82,18 @@ public class AclRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a CompletableFuture of ServiceSchemaRegistryAclAddResponse
      */
-    @javax.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclAddResponse> post(@javax.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body, @javax.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nonnull
+    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclAddResponse> post(@jakarta.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        try {
-            final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-            return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistryAclAddResponse::createFromDiscriminatorValue, null);
-        } catch (URISyntaxException ex) {
-            final java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclAddResponse> executionException = new java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclAddResponse>();
-            executionException.completeExceptionally(ex);
-            return executionException;
-        }
+        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
+        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistryAclAddResponse::createFromDiscriminatorValue, null);
     }
     /**
      * List Schema Registry ACL entries
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toGetRequestInformation() throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation() {
         return toGetRequestInformation(null);
     }
     /**
@@ -131,19 +101,19 @@ public class AclRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toGetRequestInformation(@javax.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation();
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
-        requestInfo.headers.add("Accept", "application/json");
         if (requestConfiguration != null) {
             final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
             requestConfiguration.accept(requestConfig);
             requestInfo.headers.putAll(requestConfig.headers);
             requestInfo.addRequestOptions(requestConfig.options);
         }
+        requestInfo.httpMethod = HttpMethod.GET;
+        requestInfo.urlTemplate = urlTemplate;
+        requestInfo.pathParameters = pathParameters;
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
@@ -151,8 +121,8 @@ public class AclRequestBuilder extends BaseRequestBuilder {
      * @param body ServiceSchemaRegistryAclAddRequestBody
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@javax.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body) {
         return toPostRequestInformation(body, null);
     }
     /**
@@ -161,31 +131,43 @@ public class AclRequestBuilder extends BaseRequestBuilder {
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a RequestInformation
      */
-    @javax.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@javax.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body, @javax.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) throws URISyntaxException {
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation();
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
-        requestInfo.headers.add("Accept", "application/json");
-        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         if (requestConfiguration != null) {
             final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
             requestConfiguration.accept(requestConfig);
             requestInfo.headers.putAll(requestConfig.headers);
             requestInfo.addRequestOptions(requestConfig.options);
         }
+        requestInfo.httpMethod = HttpMethod.POST;
+        requestInfo.urlTemplate = urlTemplate;
+        requestInfo.pathParameters = pathParameters;
+        requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
+    }
+    /**
+     * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @return a AclRequestBuilder
+     */
+    @jakarta.annotation.Nonnull
+    public AclRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+        Objects.requireNonNull(rawUrl);
+        return new AclRequestBuilder(rawUrl, requestAdapter);
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
     public class PostRequestConfiguration extends BaseRequestConfiguration {
     }
 }

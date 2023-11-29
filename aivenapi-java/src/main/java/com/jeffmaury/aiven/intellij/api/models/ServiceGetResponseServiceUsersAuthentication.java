@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Authentication details */
+/**
+ * Authentication details
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceGetResponseServiceUsersAuthentication implements ValuedEnum {
     Caching_sha2_password("caching_sha2_password"),
     Mysql_native_password("mysql_native_password");
@@ -11,10 +14,10 @@ public enum ServiceGetResponseServiceUsersAuthentication implements ValuedEnum {
     ServiceGetResponseServiceUsersAuthentication(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceGetResponseServiceUsersAuthentication forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceGetResponseServiceUsersAuthentication forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "caching_sha2_password": return Caching_sha2_password;

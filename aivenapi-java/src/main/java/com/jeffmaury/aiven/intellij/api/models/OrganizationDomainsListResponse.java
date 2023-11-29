@@ -10,16 +10,19 @@ import java.util.Objects;
 /**
  * OrganizationDomainsListResponse
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class OrganizationDomainsListResponse implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** List of domains for the organization */
+    /**
+     * List of domains for the organization
+     */
     private java.util.List<OrganizationDomainsListResponseDomains> domains;
     /**
      * Instantiates a new OrganizationDomainsListResponse and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public OrganizationDomainsListResponse() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -28,24 +31,24 @@ public class OrganizationDomainsListResponse implements AdditionalDataHolder, Pa
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a OrganizationDomainsListResponse
      */
-    @javax.annotation.Nonnull
-    public static OrganizationDomainsListResponse createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static OrganizationDomainsListResponse createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new OrganizationDomainsListResponse();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the domains property value. List of domains for the organization
-     * @return a OrganizationDomainsListResponseDomains
+     * @return a java.util.List<OrganizationDomainsListResponseDomains>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<OrganizationDomainsListResponseDomains> getDomains() {
         return this.domains;
     }
@@ -53,7 +56,7 @@ public class OrganizationDomainsListResponse implements AdditionalDataHolder, Pa
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
         deserializerMap.put("domains", (n) -> { this.setDomains(n.getCollectionOfObjectValues(OrganizationDomainsListResponseDomains::createFromDiscriminatorValue)); });
@@ -62,30 +65,24 @@ public class OrganizationDomainsListResponse implements AdditionalDataHolder, Pa
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfObjectValues("domains", this.getDomains());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the domains property value. List of domains for the organization
      * @param value Value to set for the domains property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setDomains(@javax.annotation.Nullable final java.util.List<OrganizationDomainsListResponseDomains> value) {
+    public void setDomains(@jakarta.annotation.Nullable final java.util.List<OrganizationDomainsListResponseDomains> value) {
         this.domains = value;
     }
 }

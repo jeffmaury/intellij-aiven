@@ -10,20 +10,27 @@ import java.util.Objects;
 /**
  * AccountCreateRequestBody
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class AccountCreateRequestBody implements AdditionalDataHolder, Parsable {
-    /** Account name */
+    /**
+     * Account name
+     */
     private String accountName;
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** Account ID */
+    /**
+     * Account ID
+     */
     private String parentAccountId;
-    /** Billing group ID */
+    /**
+     * Billing group ID
+     */
     private String primaryBillingGroupId;
     /**
      * Instantiates a new AccountCreateRequestBody and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public AccountCreateRequestBody() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -32,24 +39,24 @@ public class AccountCreateRequestBody implements AdditionalDataHolder, Parsable 
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a AccountCreateRequestBody
      */
-    @javax.annotation.Nonnull
-    public static AccountCreateRequestBody createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static AccountCreateRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new AccountCreateRequestBody();
     }
     /**
      * Gets the account_name property value. Account name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getAccountName() {
         return this.accountName;
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
@@ -57,7 +64,7 @@ public class AccountCreateRequestBody implements AdditionalDataHolder, Parsable 
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("account_name", (n) -> { this.setAccountName(n.getStringValue()); });
@@ -67,27 +74,25 @@ public class AccountCreateRequestBody implements AdditionalDataHolder, Parsable 
     }
     /**
      * Gets the parent_account_id property value. Account ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getParentAccountId() {
         return this.parentAccountId;
     }
     /**
      * Gets the primary_billing_group_id property value. Billing group ID
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getPrimaryBillingGroupId() {
         return this.primaryBillingGroupId;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("account_name", this.getAccountName());
         writer.writeStringValue("parent_account_id", this.getParentAccountId());
@@ -96,38 +101,30 @@ public class AccountCreateRequestBody implements AdditionalDataHolder, Parsable 
     }
     /**
      * Sets the account_name property value. Account name
-     * @param value Value to set for the accountName property.
-     * @return a void
+     * @param value Value to set for the account_name property.
      */
-    @javax.annotation.Nonnull
-    public void setAccountName(@javax.annotation.Nullable final String value) {
+    public void setAccountName(@jakarta.annotation.Nullable final String value) {
         this.accountName = value;
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the parent_account_id property value. Account ID
-     * @param value Value to set for the parentAccountId property.
-     * @return a void
+     * @param value Value to set for the parent_account_id property.
      */
-    @javax.annotation.Nonnull
-    public void setParentAccountId(@javax.annotation.Nullable final String value) {
+    public void setParentAccountId(@jakarta.annotation.Nullable final String value) {
         this.parentAccountId = value;
     }
     /**
      * Sets the primary_billing_group_id property value. Billing group ID
-     * @param value Value to set for the primaryBillingGroupId property.
-     * @return a void
+     * @param value Value to set for the primary_billing_group_id property.
      */
-    @javax.annotation.Nonnull
-    public void setPrimaryBillingGroupId(@javax.annotation.Nullable final String value) {
+    public void setPrimaryBillingGroupId(@jakarta.annotation.Nullable final String value) {
         this.primaryBillingGroupId = value;
     }
 }

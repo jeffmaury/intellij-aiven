@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** Offset syncs topic location */
+/**
+ * Offset syncs topic location
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServiceKafkaMirrorMakerPatchReplicationFlowResponseReplicationFlowOffsetSyncsTopicLocation implements ValuedEnum {
     Source("source"),
     Target("target");
@@ -11,10 +14,10 @@ public enum ServiceKafkaMirrorMakerPatchReplicationFlowResponseReplicationFlowOf
     ServiceKafkaMirrorMakerPatchReplicationFlowResponseReplicationFlowOffsetSyncsTopicLocation(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServiceKafkaMirrorMakerPatchReplicationFlowResponseReplicationFlowOffsetSyncsTopicLocation forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServiceKafkaMirrorMakerPatchReplicationFlowResponseReplicationFlowOffsetSyncsTopicLocation forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "source": return Source;

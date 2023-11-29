@@ -10,34 +10,55 @@ import java.util.Objects;
 /**
  * Kafka topic information
  */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public class ServiceKafkaTopicGetResponseTopic implements AdditionalDataHolder, Parsable {
-    /** Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well. */
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
     private Map<String, Object> additionalData;
-    /** DEPRECATED: use config.cleanup_policy */
+    /**
+     * DEPRECATED: use config.cleanup_policy
+     */
     private String cleanupPolicy;
-    /** Kafka topic configuration */
+    /**
+     * Kafka topic configuration
+     */
     private ServiceKafkaTopicGetResponseTopicConfig config;
-    /** DEPRECATED: use config.min_insync_replicas */
+    /**
+     * DEPRECATED: use config.min_insync_replicas
+     */
     private Integer minInsyncReplicas;
-    /** Topic partitions */
+    /**
+     * Topic partitions
+     */
     private java.util.List<ServiceKafkaTopicGetResponseTopicPartitions> partitions;
-    /** Number of replicas */
+    /**
+     * Number of replicas
+     */
     private Integer replication;
-    /** DEPRECATED: use config.retention_bytes */
+    /**
+     * DEPRECATED: use config.retention_bytes
+     */
     private Integer retentionBytes;
-    /** DEPRECATED: use config.retention_ms */
+    /**
+     * DEPRECATED: use config.retention_ms
+     */
     private Integer retentionHours;
-    /** Topic state */
+    /**
+     * Topic state
+     */
     private ServiceKafkaTopicGetResponseTopicState state;
-    /** Topic tags */
+    /**
+     * Topic tags
+     */
     private java.util.List<ServiceKafkaTopicGetResponseTopicTags> tags;
-    /** Topic name */
+    /**
+     * Topic name
+     */
     private String topicName;
     /**
      * Instantiates a new ServiceKafkaTopicGetResponseTopic and sets the default values.
-     * @return a void
      */
-    @javax.annotation.Nullable
     public ServiceKafkaTopicGetResponseTopic() {
         this.setAdditionalData(new HashMap<>());
     }
@@ -46,24 +67,24 @@ public class ServiceKafkaTopicGetResponseTopic implements AdditionalDataHolder, 
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a ServiceKafkaTopicGetResponseTopic
      */
-    @javax.annotation.Nonnull
-    public static ServiceKafkaTopicGetResponseTopic createFromDiscriminatorValue(@javax.annotation.Nonnull final ParseNode parseNode) {
+    @jakarta.annotation.Nonnull
+    public static ServiceKafkaTopicGetResponseTopic createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new ServiceKafkaTopicGetResponseTopic();
     }
     /**
-     * Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @return a Map<String, Object>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, Object> getAdditionalData() {
         return this.additionalData;
     }
     /**
      * Gets the cleanup_policy property value. DEPRECATED: use config.cleanup_policy
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getCleanupPolicy() {
         return this.cleanupPolicy;
     }
@@ -71,7 +92,7 @@ public class ServiceKafkaTopicGetResponseTopic implements AdditionalDataHolder, 
      * Gets the config property value. Kafka topic configuration
      * @return a ServiceKafkaTopicGetResponseTopicConfig
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceKafkaTopicGetResponseTopicConfig getConfig() {
         return this.config;
     }
@@ -79,7 +100,7 @@ public class ServiceKafkaTopicGetResponseTopic implements AdditionalDataHolder, 
      * The deserialization information for the current model
      * @return a Map<String, java.util.function.Consumer<ParseNode>>
      */
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
         deserializerMap.put("cleanup_policy", (n) -> { this.setCleanupPolicy(n.getStringValue()); });
@@ -96,41 +117,41 @@ public class ServiceKafkaTopicGetResponseTopic implements AdditionalDataHolder, 
     }
     /**
      * Gets the min_insync_replicas property value. DEPRECATED: use config.min_insync_replicas
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getMinInsyncReplicas() {
         return this.minInsyncReplicas;
     }
     /**
      * Gets the partitions property value. Topic partitions
-     * @return a ServiceKafkaTopicGetResponseTopicPartitions
+     * @return a java.util.List<ServiceKafkaTopicGetResponseTopicPartitions>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceKafkaTopicGetResponseTopicPartitions> getPartitions() {
         return this.partitions;
     }
     /**
      * Gets the replication property value. Number of replicas
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getReplication() {
         return this.replication;
     }
     /**
      * Gets the retention_bytes property value. DEPRECATED: use config.retention_bytes
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getRetentionBytes() {
         return this.retentionBytes;
     }
     /**
      * Gets the retention_hours property value. DEPRECATED: use config.retention_ms
-     * @return a integer
+     * @return a Integer
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public Integer getRetentionHours() {
         return this.retentionHours;
     }
@@ -138,33 +159,31 @@ public class ServiceKafkaTopicGetResponseTopic implements AdditionalDataHolder, 
      * Gets the state property value. Topic state
      * @return a ServiceKafkaTopicGetResponseTopicState
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public ServiceKafkaTopicGetResponseTopicState getState() {
         return this.state;
     }
     /**
      * Gets the tags property value. Topic tags
-     * @return a ServiceKafkaTopicGetResponseTopicTags
+     * @return a java.util.List<ServiceKafkaTopicGetResponseTopicTags>
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public java.util.List<ServiceKafkaTopicGetResponseTopicTags> getTags() {
         return this.tags;
     }
     /**
      * Gets the topic_name property value. Topic name
-     * @return a string
+     * @return a String
      */
-    @javax.annotation.Nullable
+    @jakarta.annotation.Nullable
     public String getTopicName() {
         return this.topicName;
     }
     /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void serialize(@javax.annotation.Nonnull final SerializationWriter writer) {
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("cleanup_policy", this.getCleanupPolicy());
         writer.writeObjectValue("config", this.getConfig());
@@ -179,102 +198,80 @@ public class ServiceKafkaTopicGetResponseTopic implements AdditionalDataHolder, 
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      * @param value Value to set for the AdditionalData property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setAdditionalData(@javax.annotation.Nullable final Map<String, Object> value) {
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
     }
     /**
      * Sets the cleanup_policy property value. DEPRECATED: use config.cleanup_policy
-     * @param value Value to set for the cleanupPolicy property.
-     * @return a void
+     * @param value Value to set for the cleanup_policy property.
      */
-    @javax.annotation.Nonnull
-    public void setCleanupPolicy(@javax.annotation.Nullable final String value) {
+    public void setCleanupPolicy(@jakarta.annotation.Nullable final String value) {
         this.cleanupPolicy = value;
     }
     /**
      * Sets the config property value. Kafka topic configuration
      * @param value Value to set for the config property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setConfig(@javax.annotation.Nullable final ServiceKafkaTopicGetResponseTopicConfig value) {
+    public void setConfig(@jakarta.annotation.Nullable final ServiceKafkaTopicGetResponseTopicConfig value) {
         this.config = value;
     }
     /**
      * Sets the min_insync_replicas property value. DEPRECATED: use config.min_insync_replicas
-     * @param value Value to set for the minInsyncReplicas property.
-     * @return a void
+     * @param value Value to set for the min_insync_replicas property.
      */
-    @javax.annotation.Nonnull
-    public void setMinInsyncReplicas(@javax.annotation.Nullable final Integer value) {
+    public void setMinInsyncReplicas(@jakarta.annotation.Nullable final Integer value) {
         this.minInsyncReplicas = value;
     }
     /**
      * Sets the partitions property value. Topic partitions
      * @param value Value to set for the partitions property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setPartitions(@javax.annotation.Nullable final java.util.List<ServiceKafkaTopicGetResponseTopicPartitions> value) {
+    public void setPartitions(@jakarta.annotation.Nullable final java.util.List<ServiceKafkaTopicGetResponseTopicPartitions> value) {
         this.partitions = value;
     }
     /**
      * Sets the replication property value. Number of replicas
      * @param value Value to set for the replication property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setReplication(@javax.annotation.Nullable final Integer value) {
+    public void setReplication(@jakarta.annotation.Nullable final Integer value) {
         this.replication = value;
     }
     /**
      * Sets the retention_bytes property value. DEPRECATED: use config.retention_bytes
-     * @param value Value to set for the retentionBytes property.
-     * @return a void
+     * @param value Value to set for the retention_bytes property.
      */
-    @javax.annotation.Nonnull
-    public void setRetentionBytes(@javax.annotation.Nullable final Integer value) {
+    public void setRetentionBytes(@jakarta.annotation.Nullable final Integer value) {
         this.retentionBytes = value;
     }
     /**
      * Sets the retention_hours property value. DEPRECATED: use config.retention_ms
-     * @param value Value to set for the retentionHours property.
-     * @return a void
+     * @param value Value to set for the retention_hours property.
      */
-    @javax.annotation.Nonnull
-    public void setRetentionHours(@javax.annotation.Nullable final Integer value) {
+    public void setRetentionHours(@jakarta.annotation.Nullable final Integer value) {
         this.retentionHours = value;
     }
     /**
      * Sets the state property value. Topic state
      * @param value Value to set for the state property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setState(@javax.annotation.Nullable final ServiceKafkaTopicGetResponseTopicState value) {
+    public void setState(@jakarta.annotation.Nullable final ServiceKafkaTopicGetResponseTopicState value) {
         this.state = value;
     }
     /**
      * Sets the tags property value. Topic tags
      * @param value Value to set for the tags property.
-     * @return a void
      */
-    @javax.annotation.Nonnull
-    public void setTags(@javax.annotation.Nullable final java.util.List<ServiceKafkaTopicGetResponseTopicTags> value) {
+    public void setTags(@jakarta.annotation.Nullable final java.util.List<ServiceKafkaTopicGetResponseTopicTags> value) {
         this.tags = value;
     }
     /**
      * Sets the topic_name property value. Topic name
-     * @param value Value to set for the topicName property.
-     * @return a void
+     * @param value Value to set for the topic_name property.
      */
-    @javax.annotation.Nonnull
-    public void setTopicName(@javax.annotation.Nullable final String value) {
+    public void setTopicName(@jakarta.annotation.Nullable final String value) {
         this.topicName = value;
     }
 }

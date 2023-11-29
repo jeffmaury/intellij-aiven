@@ -3,7 +3,10 @@ package com.jeffmaury.aiven.intellij.api.models;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
-/** PGBouncer pool mode */
+/**
+ * PGBouncer pool mode
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
 public enum ServicePGBouncerCreateRequestBodyPoolMode implements ValuedEnum {
     Session("session"),
     Transaction("transaction"),
@@ -12,10 +15,10 @@ public enum ServicePGBouncerCreateRequestBodyPoolMode implements ValuedEnum {
     ServicePGBouncerCreateRequestBodyPoolMode(final String value) {
         this.value = value;
     }
-    @javax.annotation.Nonnull
+    @jakarta.annotation.Nonnull
     public String getValue() { return this.value; }
-    @javax.annotation.Nullable
-    public static ServicePGBouncerCreateRequestBodyPoolMode forValue(@javax.annotation.Nonnull final String searchValue) {
+    @jakarta.annotation.Nullable
+    public static ServicePGBouncerCreateRequestBodyPoolMode forValue(@jakarta.annotation.Nonnull final String searchValue) {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "session": return Session;
