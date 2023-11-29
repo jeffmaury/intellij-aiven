@@ -89,7 +89,7 @@ dependencies {
     implementation(
             'com.microsoft.kiota:microsoft-kiota-abstractions:0.8.0',
 
-            'com.microsoft.kiota:microsoft-kiota-serialization-form:0.8.0',
+            'com.microsoft.kiota:microsoft-kiota-serialization-form:0.10.0',
             'com.microsoft.kiota:microsoft-kiota-serialization-json:0.8.0',
             'com.microsoft.kiota:microsoft-kiota-serialization-text:0.8.0',
             'com.microsoft.kiota:microsoft-kiota-serialization-multipart:0.8.0',
