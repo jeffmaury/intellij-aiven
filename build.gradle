@@ -33,7 +33,7 @@ buildSearchableOptions.enabled = false
 runPluginVerifier {
     ideVersions = [ideaVersion]
     subsystemsToCheck = 'without-android'
-    externalPrefixes = ['org.bouncycastle.jsse', 'org.openjsse', 'org.conscrypt']
+    externalPrefixes = ['org.bouncycastle.jsse', 'org.openjsse', 'org.conscrypt', 'org.jetbrains.yaml', 'io.fabric8', 'com.fasterxml.jackson.dataformat']
 }
 
 publishPlugin {
@@ -96,6 +96,9 @@ dependencies {
             'jakarta.annotation:jakarta.annotation-api:2.1.1')
     implementation('com.microsoft.kiota:microsoft-kiota-http-okHttp:0.8.0') {
         exclude group: 'org.jetbrains.kotlin'
+    }
+    implementation('com.redhat.devtools.intellij:intellij-common:1.9.1') {
+        exclude group: 'io.fabric8'
     }
     testImplementation(
             "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
