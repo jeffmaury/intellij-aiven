@@ -94,7 +94,7 @@ dependencies {
             'com.microsoft.kiota:microsoft-kiota-serialization-text:0.8.0',
             'com.microsoft.kiota:microsoft-kiota-serialization-multipart:0.8.0',
             'jakarta.annotation:jakarta.annotation-api:2.1.1')
-    implementation('com.microsoft.kiota:microsoft-kiota-http-okHttp:0.8.0') {
+    implementation('com.microsoft.kiota:microsoft-kiota-http-okHttp:1.0.1') {
         exclude group: 'org.jetbrains.kotlin'
     }
     implementation('com.redhat.devtools.intellij:intellij-common:1.9.3') {
