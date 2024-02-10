@@ -76,7 +76,7 @@ public class ServiceIntegrationEndpointCreateRequestBody implements AdditionalDa
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("endpoint_name", (n) -> { this.setEndpointName(n.getStringValue()); });
-        deserializerMap.put("endpoint_type", (n) -> { this.setEndpointType(n.getEnumValue(ServiceIntegrationEndpointCreateRequestBodyEndpointType.class)); });
+        deserializerMap.put("endpoint_type", (n) -> { this.setEndpointType(n.getEnumValue(ServiceIntegrationEndpointCreateRequestBodyEndpointType::forValue)); });
         deserializerMap.put("user_config", (n) -> { this.setUserConfig(n.getObjectValue(ServiceIntegrationEndpointCreateRequestBodyUserConfig::createFromDiscriminatorValue)); });
         return deserializerMap;
     }

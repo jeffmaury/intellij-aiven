@@ -119,7 +119,7 @@ public class VpcGetResponse implements AdditionalDataHolder, Parsable {
         deserializerMap.put("peering_connections", (n) -> { this.setPeeringConnections(n.getCollectionOfObjectValues(VpcGetResponsePeeringConnections::createFromDiscriminatorValue)); });
         deserializerMap.put("pending_build_only_peering_connections", (n) -> { this.setPendingBuildOnlyPeeringConnections(n.getStringValue()); });
         deserializerMap.put("project_vpc_id", (n) -> { this.setProjectVpcId(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(VpcGetResponseState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(VpcGetResponseState::forValue)); });
         deserializerMap.put("update_time", (n) -> { this.setUpdateTime(n.getStringValue()); });
         return deserializerMap;
     }

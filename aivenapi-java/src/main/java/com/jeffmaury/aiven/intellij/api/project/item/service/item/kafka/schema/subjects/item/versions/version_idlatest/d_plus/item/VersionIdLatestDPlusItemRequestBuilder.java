@@ -45,39 +45,39 @@ public class VersionIdLatestDPlusItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Delete Schema Registry subject version
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectVersionDeleteResponse
+     * @return a ServiceSchemaRegistrySubjectVersionDeleteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectVersionDeleteResponse> delete() {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectVersionDeleteResponse delete() {
         return delete(null);
     }
     /**
      * Delete Schema Registry subject version
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectVersionDeleteResponse
+     * @return a ServiceSchemaRegistrySubjectVersionDeleteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectVersionDeleteResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectVersionDeleteResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectVersionDeleteResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceSchemaRegistrySubjectVersionDeleteResponse::createFromDiscriminatorValue);
     }
     /**
      * Get Schema Registry Subject version
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectVersionGetResponse
+     * @return a ServiceSchemaRegistrySubjectVersionGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectVersionGetResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectVersionGetResponse get() {
         return get(null);
     }
     /**
      * Get Schema Registry Subject version
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectVersionGetResponse
+     * @return a ServiceSchemaRegistrySubjectVersionGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectVersionGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectVersionGetResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectVersionGetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceSchemaRegistrySubjectVersionGetResponse::createFromDiscriminatorValue);
     }
     /**
      * Delete Schema Registry subject version
@@ -94,16 +94,8 @@ public class VersionIdLatestDPlusItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -122,16 +114,8 @@ public class VersionIdLatestDPlusItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

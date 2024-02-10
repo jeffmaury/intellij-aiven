@@ -12,7 +12,7 @@ import java.util.Objects;
 public class ProjectRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.account.item.project.item collection
-     * @param project_name Unique identifier of the item
+     * @param project_name Project name
      * @return a WithProjectNameItemRequestBuilder
      */
     @jakarta.annotation.Nonnull

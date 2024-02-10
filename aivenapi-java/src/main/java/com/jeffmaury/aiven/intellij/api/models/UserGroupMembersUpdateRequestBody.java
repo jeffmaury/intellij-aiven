@@ -56,7 +56,7 @@ public class UserGroupMembersUpdateRequestBody implements AdditionalDataHolder, 
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("member_ids", (n) -> { this.setMemberIds(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("operation", (n) -> { this.setOperation(n.getEnumValue(UserGroupMembersUpdateRequestBodyOperation.class)); });
+        deserializerMap.put("operation", (n) -> { this.setOperation(n.getEnumValue(UserGroupMembersUpdateRequestBodyOperation::forValue)); });
         return deserializerMap;
     }
     /**

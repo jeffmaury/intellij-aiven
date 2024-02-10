@@ -46,23 +46,23 @@ public class WithStaticIpAddressItemRequestBuilder extends BaseRequestBuilder {
     /**
      * Update a static IP address configuration
      * @param body ProjectStaticIPPatchRequestBody
-     * @return a CompletableFuture of ProjectStaticIPPatchResponse
+     * @return a ProjectStaticIPPatchResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectStaticIPPatchResponse> patch(@jakarta.annotation.Nonnull final ProjectStaticIPPatchRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ProjectStaticIPPatchResponse patch(@jakarta.annotation.Nonnull final ProjectStaticIPPatchRequestBody body) {
         return patch(body, null);
     }
     /**
      * Update a static IP address configuration
      * @param body ProjectStaticIPPatchRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectStaticIPPatchResponse
+     * @return a ProjectStaticIPPatchResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectStaticIPPatchResponse> patch(@jakarta.annotation.Nonnull final ProjectStaticIPPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectStaticIPPatchResponse patch(@jakarta.annotation.Nonnull final ProjectStaticIPPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectStaticIPPatchResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectStaticIPPatchResponse::createFromDiscriminatorValue);
     }
     /**
      * Update a static IP address configuration
@@ -82,16 +82,8 @@ public class WithStaticIpAddressItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final ProjectStaticIPPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PatchRequestConfiguration requestConfig = new PatchRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PATCH;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

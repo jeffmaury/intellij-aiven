@@ -51,23 +51,23 @@ public class DbRequestBuilder extends BaseRequestBuilder {
     /**
      * Create a database
      * @param body ServiceClickHouseDatabaseCreateRequestBody
-     * @return a CompletableFuture of ServiceClickHouseDatabaseCreateResponse
+     * @return a ServiceClickHouseDatabaseCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceClickHouseDatabaseCreateResponse> post(@jakarta.annotation.Nonnull final ServiceClickHouseDatabaseCreateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceClickHouseDatabaseCreateResponse post(@jakarta.annotation.Nonnull final ServiceClickHouseDatabaseCreateRequestBody body) {
         return post(body, null);
     }
     /**
      * Create a database
      * @param body ServiceClickHouseDatabaseCreateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceClickHouseDatabaseCreateResponse
+     * @return a ServiceClickHouseDatabaseCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceClickHouseDatabaseCreateResponse> post(@jakarta.annotation.Nonnull final ServiceClickHouseDatabaseCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceClickHouseDatabaseCreateResponse post(@jakarta.annotation.Nonnull final ServiceClickHouseDatabaseCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceClickHouseDatabaseCreateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceClickHouseDatabaseCreateResponse::createFromDiscriminatorValue);
     }
     /**
      * Create a database
@@ -87,16 +87,8 @@ public class DbRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServiceClickHouseDatabaseCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

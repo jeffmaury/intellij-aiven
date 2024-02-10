@@ -51,7 +51,7 @@ public class ProjectUserUpdateRequestBody implements AdditionalDataHolder, Parsa
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectUserUpdateRequestBodyMemberType.class)); });
+        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectUserUpdateRequestBodyMemberType::forValue)); });
         return deserializerMap;
     }
     /**

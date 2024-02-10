@@ -36,21 +36,21 @@ public class EventsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Get project event log entries
-     * @return a CompletableFuture of ProjectGetEventLogsResponse
+     * @return a ProjectGetEventLogsResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectGetEventLogsResponse> get() {
+    @jakarta.annotation.Nullable
+    public ProjectGetEventLogsResponse get() {
         return get(null);
     }
     /**
      * Get project event log entries
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectGetEventLogsResponse
+     * @return a ProjectGetEventLogsResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectGetEventLogsResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectGetEventLogsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectGetEventLogsResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectGetEventLogsResponse::createFromDiscriminatorValue);
     }
     /**
      * Get project event log entries
@@ -67,16 +67,8 @@ public class EventsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

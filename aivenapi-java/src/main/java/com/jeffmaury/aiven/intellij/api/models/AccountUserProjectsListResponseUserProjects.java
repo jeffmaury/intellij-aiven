@@ -107,7 +107,7 @@ public class AccountUserProjectsListResponseUserProjects implements AdditionalDa
         deserializerMap.put("access_type", (n) -> { this.setAccessType(n.getStringValue()); });
         deserializerMap.put("account_id", (n) -> { this.setAccountId(n.getStringValue()); });
         deserializerMap.put("create_time", (n) -> { this.setCreateTime(n.getStringValue()); });
-        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(AccountUserProjectsListResponseUserProjectsMemberType.class)); });
+        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(AccountUserProjectsListResponseUserProjectsMemberType::forValue)); });
         deserializerMap.put("project_name", (n) -> { this.setProjectName(n.getStringValue()); });
         deserializerMap.put("real_name", (n) -> { this.setRealName(n.getStringValue()); });
         deserializerMap.put("team_id", (n) -> { this.setTeamId(n.getStringValue()); });

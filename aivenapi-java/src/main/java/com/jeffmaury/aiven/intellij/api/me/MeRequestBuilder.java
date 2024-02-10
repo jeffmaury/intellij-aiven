@@ -102,42 +102,42 @@ public class MeRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Get information for the current session's user
-     * @return a CompletableFuture of UserInfoResponse
+     * @return a UserInfoResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserInfoResponse> get() {
+    @jakarta.annotation.Nullable
+    public UserInfoResponse get() {
         return get(null);
     }
     /**
      * Get information for the current session's user
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of UserInfoResponse
+     * @return a UserInfoResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserInfoResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public UserInfoResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, UserInfoResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, UserInfoResponse::createFromDiscriminatorValue);
     }
     /**
      * <p>Updates details for the user. Returns user's updated information upon success.</p>
      * @param body UserUpdateRequestBody
-     * @return a CompletableFuture of UserUpdateResponse
+     * @return a UserUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserUpdateResponse> patch(@jakarta.annotation.Nonnull final UserUpdateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public UserUpdateResponse patch(@jakarta.annotation.Nonnull final UserUpdateRequestBody body) {
         return patch(body, null);
     }
     /**
      * <p>Updates details for the user. Returns user's updated information upon success.</p>
      * @param body UserUpdateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of UserUpdateResponse
+     * @return a UserUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserUpdateResponse> patch(@jakarta.annotation.Nonnull final UserUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public UserUpdateResponse patch(@jakarta.annotation.Nonnull final UserUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, UserUpdateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, UserUpdateResponse::createFromDiscriminatorValue);
     }
     /**
      * Get information for the current session's user
@@ -154,16 +154,8 @@ public class MeRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -185,16 +177,8 @@ public class MeRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final UserUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PatchRequestConfiguration requestConfig = new PatchRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PATCH;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

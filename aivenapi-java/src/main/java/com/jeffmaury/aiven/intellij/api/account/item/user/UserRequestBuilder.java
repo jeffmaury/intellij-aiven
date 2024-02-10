@@ -12,7 +12,7 @@ import java.util.Objects;
 public class UserRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.account.item.user.item collection
-     * @param user_id Unique identifier of the item
+     * @param user_id User ID
      * @return a WithUserItemRequestBuilder
      */
     @jakarta.annotation.Nonnull

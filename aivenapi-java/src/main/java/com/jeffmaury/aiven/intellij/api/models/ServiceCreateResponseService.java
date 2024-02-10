@@ -303,7 +303,7 @@ public class ServiceCreateResponseService implements AdditionalDataHolder, Parsa
         deserializerMap.put("service_type_description", (n) -> { this.setServiceTypeDescription(n.getStringValue()); });
         deserializerMap.put("service_uri", (n) -> { this.setServiceUri(n.getStringValue()); });
         deserializerMap.put("service_uri_params", (n) -> { this.setServiceUriParams(n.getObjectValue(ServiceCreateResponseServiceServiceUriParams::createFromDiscriminatorValue)); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceCreateResponseServiceState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceCreateResponseServiceState::forValue)); });
         deserializerMap.put("tags", (n) -> { this.setTags(n.getObjectValue(ServiceCreateResponseServiceTags::createFromDiscriminatorValue)); });
         deserializerMap.put("termination_protection", (n) -> { this.setTerminationProtection(n.getBooleanValue()); });
         deserializerMap.put("topics", (n) -> { this.setTopics(n.getCollectionOfObjectValues(ServiceCreateResponseServiceTopics::createFromDiscriminatorValue)); });

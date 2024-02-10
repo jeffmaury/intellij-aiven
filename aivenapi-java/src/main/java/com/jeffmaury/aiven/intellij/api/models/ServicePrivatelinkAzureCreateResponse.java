@@ -99,7 +99,7 @@ public class ServicePrivatelinkAzureCreateResponse implements AdditionalDataHold
         deserializerMap.put("azure_service_id", (n) -> { this.setAzureServiceId(n.getStringValue()); });
         deserializerMap.put("errors", (n) -> { this.setErrors(n.getCollectionOfObjectValues(ServicePrivatelinkAzureCreateResponseErrors::createFromDiscriminatorValue)); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServicePrivatelinkAzureCreateResponseState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServicePrivatelinkAzureCreateResponseState::forValue)); });
         deserializerMap.put("user_subscription_ids", (n) -> { this.setUserSubscriptionIds(n.getCollectionOfPrimitiveValues(String.class)); });
         return deserializerMap;
     }

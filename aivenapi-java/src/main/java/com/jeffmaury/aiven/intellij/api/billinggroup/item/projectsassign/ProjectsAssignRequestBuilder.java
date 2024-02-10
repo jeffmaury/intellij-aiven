@@ -38,23 +38,23 @@ public class ProjectsAssignRequestBuilder extends BaseRequestBuilder {
     /**
      * Assign projects to billing group
      * @param body BillingGroupProjectsAssignRequestBody
-     * @return a CompletableFuture of BillingGroupProjectsAssignResponse
+     * @return a BillingGroupProjectsAssignResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<BillingGroupProjectsAssignResponse> post(@jakarta.annotation.Nonnull final BillingGroupProjectsAssignRequestBody body) {
+    @jakarta.annotation.Nullable
+    public BillingGroupProjectsAssignResponse post(@jakarta.annotation.Nonnull final BillingGroupProjectsAssignRequestBody body) {
         return post(body, null);
     }
     /**
      * Assign projects to billing group
      * @param body BillingGroupProjectsAssignRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of BillingGroupProjectsAssignResponse
+     * @return a BillingGroupProjectsAssignResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<BillingGroupProjectsAssignResponse> post(@jakarta.annotation.Nonnull final BillingGroupProjectsAssignRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public BillingGroupProjectsAssignResponse post(@jakarta.annotation.Nonnull final BillingGroupProjectsAssignRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, BillingGroupProjectsAssignResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, BillingGroupProjectsAssignResponse::createFromDiscriminatorValue);
     }
     /**
      * Assign projects to billing group
@@ -74,16 +74,8 @@ public class ProjectsAssignRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final BillingGroupProjectsAssignRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

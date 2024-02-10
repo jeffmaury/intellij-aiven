@@ -46,39 +46,37 @@ public class WithDomainItemRequestBuilder extends BaseRequestBuilder {
     /**
      * <p>Deletes a domain from an organization.</p>
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<Void> delete() {
-        return delete(null);
+    public void delete() {
+        delete(null);
     }
     /**
      * <p>Deletes a domain from an organization.</p>
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<Void> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    public void delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendPrimitiveAsync(requestInfo, Void.class, null);
+        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
     }
     /**
      * <p>Updates a domain in an organization.</p>
      * @param body OrganizationDomainUpdateRequestBody
-     * @return a CompletableFuture of OrganizationDomainUpdateResponse
+     * @return a OrganizationDomainUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<OrganizationDomainUpdateResponse> patch(@jakarta.annotation.Nonnull final OrganizationDomainUpdateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public OrganizationDomainUpdateResponse patch(@jakarta.annotation.Nonnull final OrganizationDomainUpdateRequestBody body) {
         return patch(body, null);
     }
     /**
      * <p>Updates a domain in an organization.</p>
      * @param body OrganizationDomainUpdateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of OrganizationDomainUpdateResponse
+     * @return a OrganizationDomainUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<OrganizationDomainUpdateResponse> patch(@jakarta.annotation.Nonnull final OrganizationDomainUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public OrganizationDomainUpdateResponse patch(@jakarta.annotation.Nonnull final OrganizationDomainUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, OrganizationDomainUpdateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, OrganizationDomainUpdateResponse::createFromDiscriminatorValue);
     }
     /**
      * <p>Deletes a domain from an organization.</p>
@@ -95,16 +93,8 @@ public class WithDomainItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         return requestInfo;
     }
     /**
@@ -125,16 +115,8 @@ public class WithDomainItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final OrganizationDomainUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PatchRequestConfiguration requestConfig = new PatchRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PATCH;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

@@ -108,7 +108,7 @@ public class ServiceFlinkListApplicationDeploymentsResponseDeployments implement
         deserializerMap.put("parallelism", (n) -> { this.setParallelism(n.getIntegerValue()); });
         deserializerMap.put("restart_enabled", (n) -> { this.setRestartEnabled(n.getBooleanValue()); });
         deserializerMap.put("starting_savepoint", (n) -> { this.setStartingSavepoint(n.getStringValue()); });
-        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceFlinkListApplicationDeploymentsResponseDeploymentsStatus.class)); });
+        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceFlinkListApplicationDeploymentsResponseDeploymentsStatus::forValue)); });
         deserializerMap.put("version_id", (n) -> { this.setVersionId(n.getStringValue()); });
         return deserializerMap;
     }

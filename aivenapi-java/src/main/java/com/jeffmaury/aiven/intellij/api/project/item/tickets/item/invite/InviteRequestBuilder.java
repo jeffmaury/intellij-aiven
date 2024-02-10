@@ -38,23 +38,23 @@ public class InviteRequestBuilder extends BaseRequestBuilder {
     /**
      * Invite a user to a ticket
      * @param body ProjectTicketInviteRequestBody
-     * @return a CompletableFuture of ProjectTicketInviteResponse
+     * @return a ProjectTicketInviteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectTicketInviteResponse> post(@jakarta.annotation.Nonnull final ProjectTicketInviteRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ProjectTicketInviteResponse post(@jakarta.annotation.Nonnull final ProjectTicketInviteRequestBody body) {
         return post(body, null);
     }
     /**
      * Invite a user to a ticket
      * @param body ProjectTicketInviteRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectTicketInviteResponse
+     * @return a ProjectTicketInviteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectTicketInviteResponse> post(@jakarta.annotation.Nonnull final ProjectTicketInviteRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectTicketInviteResponse post(@jakarta.annotation.Nonnull final ProjectTicketInviteRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectTicketInviteResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectTicketInviteResponse::createFromDiscriminatorValue);
     }
     /**
      * Invite a user to a ticket
@@ -74,16 +74,8 @@ public class InviteRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ProjectTicketInviteRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

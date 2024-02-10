@@ -39,60 +39,60 @@ public class WithTopicNameItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Delete a Kafka topic
-     * @return a CompletableFuture of ServiceKafkaTopicDeleteResponse
+     * @return a ServiceKafkaTopicDeleteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaTopicDeleteResponse> delete() {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaTopicDeleteResponse delete() {
         return delete(null);
     }
     /**
      * Delete a Kafka topic
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceKafkaTopicDeleteResponse
+     * @return a ServiceKafkaTopicDeleteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaTopicDeleteResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaTopicDeleteResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceKafkaTopicDeleteResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceKafkaTopicDeleteResponse::createFromDiscriminatorValue);
     }
     /**
      * Get Kafka topic info
-     * @return a CompletableFuture of ServiceKafkaTopicGetResponse
+     * @return a ServiceKafkaTopicGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaTopicGetResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaTopicGetResponse get() {
         return get(null);
     }
     /**
      * Get Kafka topic info
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceKafkaTopicGetResponse
+     * @return a ServiceKafkaTopicGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaTopicGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaTopicGetResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceKafkaTopicGetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceKafkaTopicGetResponse::createFromDiscriminatorValue);
     }
     /**
      * Update a Kafka topic
      * @param body ServiceKafkaTopicUpdateRequestBody
-     * @return a CompletableFuture of ServiceKafkaTopicUpdateResponse
+     * @return a ServiceKafkaTopicUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaTopicUpdateResponse> put(@jakarta.annotation.Nonnull final ServiceKafkaTopicUpdateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaTopicUpdateResponse put(@jakarta.annotation.Nonnull final ServiceKafkaTopicUpdateRequestBody body) {
         return put(body, null);
     }
     /**
      * Update a Kafka topic
      * @param body ServiceKafkaTopicUpdateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceKafkaTopicUpdateResponse
+     * @return a ServiceKafkaTopicUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaTopicUpdateResponse> put(@jakarta.annotation.Nonnull final ServiceKafkaTopicUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaTopicUpdateResponse put(@jakarta.annotation.Nonnull final ServiceKafkaTopicUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceKafkaTopicUpdateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceKafkaTopicUpdateResponse::createFromDiscriminatorValue);
     }
     /**
      * Delete a Kafka topic
@@ -109,16 +109,8 @@ public class WithTopicNameItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -137,16 +129,8 @@ public class WithTopicNameItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -168,16 +152,8 @@ public class WithTopicNameItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ServiceKafkaTopicUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

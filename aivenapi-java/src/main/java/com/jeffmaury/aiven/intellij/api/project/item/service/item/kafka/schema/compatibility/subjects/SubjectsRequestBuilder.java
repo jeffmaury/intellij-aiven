@@ -12,7 +12,7 @@ import java.util.Objects;
 public class SubjectsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.service.item.kafka.schema.compatibility.subjects.item collection
-     * @param subject_name Unique identifier of the item
+     * @param subject_name Subject name
      * @return a WithSubjectNameItemRequestBuilder
      */
     @jakarta.annotation.Nonnull

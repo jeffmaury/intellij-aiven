@@ -4,7 +4,7 @@ import com.jeffmaury.aiven.intellij.api.models.ServiceClickHouseQueryStatsRespon
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
-import com.microsoft.kiota.QueryParameter;
+import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
@@ -37,21 +37,21 @@ public class StatsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Return statistics on recent queries
-     * @return a CompletableFuture of ServiceClickHouseQueryStatsResponse
+     * @return a ServiceClickHouseQueryStatsResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceClickHouseQueryStatsResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceClickHouseQueryStatsResponse get() {
         return get(null);
     }
     /**
      * Return statistics on recent queries
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceClickHouseQueryStatsResponse
+     * @return a ServiceClickHouseQueryStatsResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceClickHouseQueryStatsResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceClickHouseQueryStatsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceClickHouseQueryStatsResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceClickHouseQueryStatsResponse::createFromDiscriminatorValue);
     }
     /**
      * Return statistics on recent queries
@@ -68,17 +68,8 @@ public class StatsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.addQueryParameters(requestConfig.queryParameters);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -96,7 +87,7 @@ public class StatsRequestBuilder extends BaseRequestBuilder {
      * Return statistics on recent queries
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class GetQueryParameters {
+    public class GetQueryParameters implements QueryParameters {
         /**
          * Limit for number of results
          */
@@ -110,9 +101,20 @@ public class StatsRequestBuilder extends BaseRequestBuilder {
         /**
          * Order in which to sort retrieved results
          */
-        @QueryParameter(name = "order_by")
         @jakarta.annotation.Nullable
         public GetOrderByQueryParameterType orderBy;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a Map<String, Object>
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("order_by", orderBy);
+            allQueryParams.put("limit", limit);
+            allQueryParams.put("offset", offset);
+            return allQueryParams;
+        }
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.

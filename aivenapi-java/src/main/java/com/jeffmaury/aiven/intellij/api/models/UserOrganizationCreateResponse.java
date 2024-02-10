@@ -91,7 +91,7 @@ public class UserOrganizationCreateResponse implements AdditionalDataHolder, Par
         deserializerMap.put("create_time", (n) -> { this.setCreateTime(n.getStringValue()); });
         deserializerMap.put("organization_id", (n) -> { this.setOrganizationId(n.getStringValue()); });
         deserializerMap.put("organization_name", (n) -> { this.setOrganizationName(n.getStringValue()); });
-        deserializerMap.put("tier", (n) -> { this.setTier(n.getEnumValue(UserOrganizationCreateResponseTier.class)); });
+        deserializerMap.put("tier", (n) -> { this.setTier(n.getEnumValue(UserOrganizationCreateResponseTier::forValue)); });
         deserializerMap.put("update_time", (n) -> { this.setUpdateTime(n.getStringValue()); });
         return deserializerMap;
     }

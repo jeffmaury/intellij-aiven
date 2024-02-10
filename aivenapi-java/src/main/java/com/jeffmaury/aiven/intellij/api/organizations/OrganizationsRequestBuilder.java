@@ -38,42 +38,42 @@ public class OrganizationsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * List organizations the user belongs to
-     * @return a CompletableFuture of UserOrganizationsListResponse
+     * @return a UserOrganizationsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserOrganizationsListResponse> get() {
+    @jakarta.annotation.Nullable
+    public UserOrganizationsListResponse get() {
         return get(null);
     }
     /**
      * List organizations the user belongs to
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of UserOrganizationsListResponse
+     * @return a UserOrganizationsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserOrganizationsListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public UserOrganizationsListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, UserOrganizationsListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, UserOrganizationsListResponse::createFromDiscriminatorValue);
     }
     /**
      * Create an organization
      * @param body UserOrganizationCreateRequestBody
-     * @return a CompletableFuture of UserOrganizationCreateResponse
+     * @return a UserOrganizationCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserOrganizationCreateResponse> post(@jakarta.annotation.Nonnull final UserOrganizationCreateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public UserOrganizationCreateResponse post(@jakarta.annotation.Nonnull final UserOrganizationCreateRequestBody body) {
         return post(body, null);
     }
     /**
      * Create an organization
      * @param body UserOrganizationCreateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of UserOrganizationCreateResponse
+     * @return a UserOrganizationCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserOrganizationCreateResponse> post(@jakarta.annotation.Nonnull final UserOrganizationCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public UserOrganizationCreateResponse post(@jakarta.annotation.Nonnull final UserOrganizationCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, UserOrganizationCreateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, UserOrganizationCreateResponse::createFromDiscriminatorValue);
     }
     /**
      * List organizations the user belongs to
@@ -90,16 +90,8 @@ public class OrganizationsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -121,16 +113,8 @@ public class OrganizationsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UserOrganizationCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

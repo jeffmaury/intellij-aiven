@@ -90,7 +90,7 @@ public class ServiceUpdateResponseServiceTopics implements AdditionalDataHolder,
         deserializerMap.put("replication", (n) -> { this.setReplication(n.getIntegerValue()); });
         deserializerMap.put("retention_bytes", (n) -> { this.setRetentionBytes(n.getIntegerValue()); });
         deserializerMap.put("retention_hours", (n) -> { this.setRetentionHours(n.getIntegerValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceUpdateResponseServiceTopicsState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceUpdateResponseServiceTopicsState::forValue)); });
         deserializerMap.put("topic_name", (n) -> { this.setTopicName(n.getStringValue()); });
         return deserializerMap;
     }

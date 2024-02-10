@@ -88,8 +88,8 @@ public class ServiceGetResponseServiceNodeStatesProgressUpdates implements Addit
         deserializerMap.put("current", (n) -> { this.setCurrent(n.getIntegerValue()); });
         deserializerMap.put("max", (n) -> { this.setMax(n.getIntegerValue()); });
         deserializerMap.put("min", (n) -> { this.setMin(n.getIntegerValue()); });
-        deserializerMap.put("phase", (n) -> { this.setPhase(n.getEnumValue(ServiceGetResponseServiceNodeStatesProgressUpdatesPhase.class)); });
-        deserializerMap.put("unit", (n) -> { this.setUnit(n.getEnumValue(ServiceGetResponseServiceNodeStatesProgressUpdatesUnit.class)); });
+        deserializerMap.put("phase", (n) -> { this.setPhase(n.getEnumValue(ServiceGetResponseServiceNodeStatesProgressUpdatesPhase::forValue)); });
+        deserializerMap.put("unit", (n) -> { this.setUnit(n.getEnumValue(ServiceGetResponseServiceNodeStatesProgressUpdatesUnit::forValue)); });
         return deserializerMap;
     }
     /**

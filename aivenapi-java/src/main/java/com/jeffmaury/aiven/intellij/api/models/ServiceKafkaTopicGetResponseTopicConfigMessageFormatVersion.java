@@ -59,9 +59,9 @@ public class ServiceKafkaTopicGetResponseTopicConfigMessageFormatVersion impleme
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("source", (n) -> { this.setSource(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigMessageFormatVersionSource.class)); });
+        deserializerMap.put("source", (n) -> { this.setSource(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigMessageFormatVersionSource::forValue)); });
         deserializerMap.put("synonyms", (n) -> { this.setSynonyms(n.getCollectionOfObjectValues(ServiceKafkaTopicGetResponseTopicConfigMessageFormatVersionSynonyms::createFromDiscriminatorValue)); });
-        deserializerMap.put("value", (n) -> { this.setValue(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigMessageFormatVersionValue.class)); });
+        deserializerMap.put("value", (n) -> { this.setValue(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigMessageFormatVersionValue::forValue)); });
         return deserializerMap;
     }
     /**

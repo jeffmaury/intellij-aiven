@@ -51,7 +51,7 @@ public class ServiceBackupToAnotherRegionReportRequestBody implements Additional
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("period", (n) -> { this.setPeriod(n.getEnumValue(ServiceBackupToAnotherRegionReportRequestBodyPeriod.class)); });
+        deserializerMap.put("period", (n) -> { this.setPeriod(n.getEnumValue(ServiceBackupToAnotherRegionReportRequestBodyPeriod::forValue)); });
         return deserializerMap;
     }
     /**

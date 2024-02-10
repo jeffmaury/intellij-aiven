@@ -36,21 +36,21 @@ public class WithSchemaItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Get schema in Schema Registry
-     * @return a CompletableFuture of ServiceSchemaRegistrySchemaGetResponse
+     * @return a ServiceSchemaRegistrySchemaGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySchemaGetResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySchemaGetResponse get() {
         return get(null);
     }
     /**
      * Get schema in Schema Registry
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceSchemaRegistrySchemaGetResponse
+     * @return a ServiceSchemaRegistrySchemaGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySchemaGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySchemaGetResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySchemaGetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceSchemaRegistrySchemaGetResponse::createFromDiscriminatorValue);
     }
     /**
      * Get schema in Schema Registry
@@ -67,16 +67,8 @@ public class WithSchemaItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

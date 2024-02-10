@@ -126,7 +126,7 @@ public class ListServiceVersionsResponseServiceVersions implements AdditionalDat
         deserializerMap.put("end_of_life_help_article_url", (n) -> { this.setEndOfLifeHelpArticleUrl(n.getStringValue()); });
         deserializerMap.put("major_version", (n) -> { this.setMajorVersion(n.getStringValue()); });
         deserializerMap.put("service_type", (n) -> { this.setServiceType(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ListServiceVersionsResponseServiceVersionsState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ListServiceVersionsResponseServiceVersionsState::forValue)); });
         deserializerMap.put("termination_time", (n) -> { this.setTerminationTime(n.getStringValue()); });
         deserializerMap.put("upgrade_to_service_type", (n) -> { this.setUpgradeToServiceType(n.getStringValue()); });
         deserializerMap.put("upgrade_to_version", (n) -> { this.setUpgradeToVersion(n.getStringValue()); });

@@ -75,8 +75,8 @@ public class UserAuthLoginOptionsResponse implements AdditionalDataHolder, Parsa
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
-        deserializerMap.put("action", (n) -> { this.setAction(n.getEnumValue(UserAuthLoginOptionsResponseAction.class)); });
-        deserializerMap.put("method", (n) -> { this.setMethod(n.getEnumValue(UserAuthLoginOptionsResponseMethod.class)); });
+        deserializerMap.put("action", (n) -> { this.setAction(n.getEnumValue(UserAuthLoginOptionsResponseAction::forValue)); });
+        deserializerMap.put("method", (n) -> { this.setMethod(n.getEnumValue(UserAuthLoginOptionsResponseMethod::forValue)); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("None", (n) -> { this.setNone(n.getCollectionOfObjectValues(UserAuthLoginOptionsResponseNone::createFromDiscriminatorValue)); });
         deserializerMap.put("redirect_url", (n) -> { this.setRedirectUrl(n.getStringValue()); });

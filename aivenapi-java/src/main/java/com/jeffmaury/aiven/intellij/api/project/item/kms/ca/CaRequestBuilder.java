@@ -36,21 +36,21 @@ public class CaRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Retrieve project CA certificate
-     * @return a CompletableFuture of ProjectKmsGetCAResponse
+     * @return a ProjectKmsGetCAResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectKmsGetCAResponse> get() {
+    @jakarta.annotation.Nullable
+    public ProjectKmsGetCAResponse get() {
         return get(null);
     }
     /**
      * Retrieve project CA certificate
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectKmsGetCAResponse
+     * @return a ProjectKmsGetCAResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectKmsGetCAResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectKmsGetCAResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectKmsGetCAResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectKmsGetCAResponse::createFromDiscriminatorValue);
     }
     /**
      * Retrieve project CA certificate
@@ -67,16 +67,8 @@ public class CaRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

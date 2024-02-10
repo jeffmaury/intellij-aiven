@@ -76,7 +76,7 @@ public class ServicePGBouncerCreateRequestBody implements AdditionalDataHolder, 
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("database", (n) -> { this.setDatabase(n.getStringValue()); });
-        deserializerMap.put("pool_mode", (n) -> { this.setPoolMode(n.getEnumValue(ServicePGBouncerCreateRequestBodyPoolMode.class)); });
+        deserializerMap.put("pool_mode", (n) -> { this.setPoolMode(n.getEnumValue(ServicePGBouncerCreateRequestBodyPoolMode::forValue)); });
         deserializerMap.put("pool_name", (n) -> { this.setPoolName(n.getStringValue()); });
         deserializerMap.put("pool_size", (n) -> { this.setPoolSize(n.getIntegerValue()); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });

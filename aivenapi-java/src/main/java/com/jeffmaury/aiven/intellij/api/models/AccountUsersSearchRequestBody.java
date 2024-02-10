@@ -60,7 +60,7 @@ public class AccountUsersSearchRequestBody implements AdditionalDataHolder, Pars
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("limit", (n) -> { this.setLimit(n.getIntegerValue()); });
-        deserializerMap.put("order_by", (n) -> { this.setOrderBy(n.getEnumValue(AccountUsersSearchRequestBodyOrderBy.class)); });
+        deserializerMap.put("order_by", (n) -> { this.setOrderBy(n.getEnumValue(AccountUsersSearchRequestBodyOrderBy::forValue)); });
         deserializerMap.put("query", (n) -> { this.setQuery(n.getStringValue()); });
         return deserializerMap;
     }

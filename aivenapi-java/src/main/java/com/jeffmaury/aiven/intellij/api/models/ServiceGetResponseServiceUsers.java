@@ -132,7 +132,7 @@ public class ServiceGetResponseServiceUsers implements AdditionalDataHolder, Par
         deserializerMap.put("access_cert_not_valid_after_time", (n) -> { this.setAccessCertNotValidAfterTime(n.getStringValue()); });
         deserializerMap.put("access_control", (n) -> { this.setAccessControl(n.getObjectValue(ServiceGetResponseServiceUsersAccessControl::createFromDiscriminatorValue)); });
         deserializerMap.put("access_key", (n) -> { this.setAccessKey(n.getStringValue()); });
-        deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getEnumValue(ServiceGetResponseServiceUsersAuthentication.class)); });
+        deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getEnumValue(ServiceGetResponseServiceUsersAuthentication::forValue)); });
         deserializerMap.put("expiring_cert_not_valid_after_time", (n) -> { this.setExpiringCertNotValidAfterTime(n.getStringValue()); });
         deserializerMap.put("password", (n) -> { this.setPassword(n.getStringValue()); });
         deserializerMap.put("type", (n) -> { this.setType(n.getStringValue()); });

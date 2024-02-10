@@ -59,7 +59,7 @@ public class ServiceSchemaRegistryGlobalConfigPutRequestBody implements Addition
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("compatibility", (n) -> { this.setCompatibility(n.getEnumValue(ServiceSchemaRegistryGlobalConfigPutRequestBodyCompatibility.class)); });
+        deserializerMap.put("compatibility", (n) -> { this.setCompatibility(n.getEnumValue(ServiceSchemaRegistryGlobalConfigPutRequestBodyCompatibility::forValue)); });
         return deserializerMap;
     }
     /**

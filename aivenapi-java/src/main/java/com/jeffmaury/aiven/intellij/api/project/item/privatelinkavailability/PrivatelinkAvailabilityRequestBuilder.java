@@ -36,21 +36,21 @@ public class PrivatelinkAvailabilityRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * List Privatelink cloud availability and prices for a project
-     * @return a CompletableFuture of ProjectPrivatelinkAvailabilityListResponse
+     * @return a ProjectPrivatelinkAvailabilityListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectPrivatelinkAvailabilityListResponse> get() {
+    @jakarta.annotation.Nullable
+    public ProjectPrivatelinkAvailabilityListResponse get() {
         return get(null);
     }
     /**
      * List Privatelink cloud availability and prices for a project
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectPrivatelinkAvailabilityListResponse
+     * @return a ProjectPrivatelinkAvailabilityListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectPrivatelinkAvailabilityListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectPrivatelinkAvailabilityListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectPrivatelinkAvailabilityListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectPrivatelinkAvailabilityListResponse::createFromDiscriminatorValue);
     }
     /**
      * List Privatelink cloud availability and prices for a project
@@ -67,16 +67,8 @@ public class PrivatelinkAvailabilityRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

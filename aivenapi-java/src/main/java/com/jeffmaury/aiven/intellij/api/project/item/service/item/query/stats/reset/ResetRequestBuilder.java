@@ -36,21 +36,21 @@ public class ResetRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Reset service's query statistics
-     * @return a CompletableFuture of ServiceQueryStatisticsResetResponse
+     * @return a ServiceQueryStatisticsResetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceQueryStatisticsResetResponse> put() {
+    @jakarta.annotation.Nullable
+    public ServiceQueryStatisticsResetResponse put() {
         return put(null);
     }
     /**
      * Reset service's query statistics
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceQueryStatisticsResetResponse
+     * @return a ServiceQueryStatisticsResetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceQueryStatisticsResetResponse> put(@jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceQueryStatisticsResetResponse put(@jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toPutRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceQueryStatisticsResetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceQueryStatisticsResetResponse::createFromDiscriminatorValue);
     }
     /**
      * Reset service's query statistics
@@ -67,16 +67,8 @@ public class ResetRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

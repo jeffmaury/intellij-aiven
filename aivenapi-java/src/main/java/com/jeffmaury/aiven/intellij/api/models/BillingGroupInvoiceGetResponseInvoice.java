@@ -69,7 +69,7 @@ public class BillingGroupInvoiceGetResponseInvoice implements AdditionalDataHold
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("generated_at", (n) -> { this.setGeneratedAt(n.getStringValue()); });
         deserializerMap.put("invoice_number", (n) -> { this.setInvoiceNumber(n.getStringValue()); });
-        deserializerMap.put("invoice_state", (n) -> { this.setInvoiceState(n.getEnumValue(BillingGroupInvoiceGetResponseInvoiceInvoiceState.class)); });
+        deserializerMap.put("invoice_state", (n) -> { this.setInvoiceState(n.getEnumValue(BillingGroupInvoiceGetResponseInvoiceInvoiceState::forValue)); });
         deserializerMap.put("local_inc_vat", (n) -> { this.setLocalIncVat(n.getStringValue()); });
         deserializerMap.put("local_vat_zero", (n) -> { this.setLocalVatZero(n.getStringValue()); });
         return deserializerMap;

@@ -51,42 +51,42 @@ public class AccessTokenRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * List all valid access tokens
-     * @return a CompletableFuture of AccessTokenListResponse
+     * @return a AccessTokenListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccessTokenListResponse> get() {
+    @jakarta.annotation.Nullable
+    public AccessTokenListResponse get() {
         return get(null);
     }
     /**
      * List all valid access tokens
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccessTokenListResponse
+     * @return a AccessTokenListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccessTokenListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccessTokenListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccessTokenListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccessTokenListResponse::createFromDiscriminatorValue);
     }
     /**
      * Create new access token
      * @param body AccessTokenCreateRequestBody
-     * @return a CompletableFuture of AccessTokenCreateResponse
+     * @return a AccessTokenCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccessTokenCreateResponse> post(@jakarta.annotation.Nonnull final AccessTokenCreateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public AccessTokenCreateResponse post(@jakarta.annotation.Nonnull final AccessTokenCreateRequestBody body) {
         return post(body, null);
     }
     /**
      * Create new access token
      * @param body AccessTokenCreateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccessTokenCreateResponse
+     * @return a AccessTokenCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccessTokenCreateResponse> post(@jakarta.annotation.Nonnull final AccessTokenCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccessTokenCreateResponse post(@jakarta.annotation.Nonnull final AccessTokenCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccessTokenCreateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccessTokenCreateResponse::createFromDiscriminatorValue);
     }
     /**
      * List all valid access tokens
@@ -103,16 +103,8 @@ public class AccessTokenRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -134,16 +126,8 @@ public class AccessTokenRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final AccessTokenCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

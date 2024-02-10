@@ -12,7 +12,7 @@ import java.util.Objects;
 public class TopicsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.service.item.kafka.rest.topics.item collection
-     * @param topic_name Unique identifier of the item
+     * @param topic_name Kafka topic name
      * @return a WithTopicNameItemRequestBuilder
      */
     @jakarta.annotation.Nonnull

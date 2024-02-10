@@ -88,7 +88,7 @@ public class VpcListResponseVpcs implements AdditionalDataHolder, Parsable {
         deserializerMap.put("create_time", (n) -> { this.setCreateTime(n.getStringValue()); });
         deserializerMap.put("network_cidr", (n) -> { this.setNetworkCidr(n.getStringValue()); });
         deserializerMap.put("project_vpc_id", (n) -> { this.setProjectVpcId(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(VpcListResponseVpcsState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(VpcListResponseVpcsState::forValue)); });
         deserializerMap.put("update_time", (n) -> { this.setUpdateTime(n.getStringValue()); });
         return deserializerMap;
     }

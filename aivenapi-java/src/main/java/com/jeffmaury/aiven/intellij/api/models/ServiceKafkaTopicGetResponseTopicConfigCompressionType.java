@@ -59,9 +59,9 @@ public class ServiceKafkaTopicGetResponseTopicConfigCompressionType implements A
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("source", (n) -> { this.setSource(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigCompressionTypeSource.class)); });
+        deserializerMap.put("source", (n) -> { this.setSource(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigCompressionTypeSource::forValue)); });
         deserializerMap.put("synonyms", (n) -> { this.setSynonyms(n.getCollectionOfObjectValues(ServiceKafkaTopicGetResponseTopicConfigCompressionTypeSynonyms::createFromDiscriminatorValue)); });
-        deserializerMap.put("value", (n) -> { this.setValue(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigCompressionTypeValue.class)); });
+        deserializerMap.put("value", (n) -> { this.setValue(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigCompressionTypeValue::forValue)); });
         return deserializerMap;
     }
     /**

@@ -103,7 +103,7 @@ public class ServiceCreateRequestBodyServiceIntegrations implements AdditionalDa
         deserializerMap.put("dest_endpoint_id", (n) -> { this.setDestEndpointId(n.getStringValue()); });
         deserializerMap.put("dest_project", (n) -> { this.setDestProject(n.getStringValue()); });
         deserializerMap.put("dest_service", (n) -> { this.setDestService(n.getStringValue()); });
-        deserializerMap.put("integration_type", (n) -> { this.setIntegrationType(n.getEnumValue(ServiceCreateRequestBodyServiceIntegrationsIntegrationType.class)); });
+        deserializerMap.put("integration_type", (n) -> { this.setIntegrationType(n.getEnumValue(ServiceCreateRequestBodyServiceIntegrationsIntegrationType::forValue)); });
         deserializerMap.put("source_endpoint_id", (n) -> { this.setSourceEndpointId(n.getStringValue()); });
         deserializerMap.put("source_project", (n) -> { this.setSourceProject(n.getStringValue()); });
         deserializerMap.put("source_service", (n) -> { this.setSourceService(n.getStringValue()); });

@@ -46,23 +46,23 @@ public class WithPrivatelinkConnectionItemRequestBuilder extends BaseRequestBuil
     /**
      * Update a private endpoint connection for an Azure Privatelink Service
      * @param body ServicePrivatelinkAzureConnectionUpdateRequestBody
-     * @return a CompletableFuture of ServicePrivatelinkAzureConnectionUpdateResponse
+     * @return a ServicePrivatelinkAzureConnectionUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAzureConnectionUpdateResponse> put(@jakarta.annotation.Nonnull final ServicePrivatelinkAzureConnectionUpdateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAzureConnectionUpdateResponse put(@jakarta.annotation.Nonnull final ServicePrivatelinkAzureConnectionUpdateRequestBody body) {
         return put(body, null);
     }
     /**
      * Update a private endpoint connection for an Azure Privatelink Service
      * @param body ServicePrivatelinkAzureConnectionUpdateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServicePrivatelinkAzureConnectionUpdateResponse
+     * @return a ServicePrivatelinkAzureConnectionUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAzureConnectionUpdateResponse> put(@jakarta.annotation.Nonnull final ServicePrivatelinkAzureConnectionUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAzureConnectionUpdateResponse put(@jakarta.annotation.Nonnull final ServicePrivatelinkAzureConnectionUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServicePrivatelinkAzureConnectionUpdateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServicePrivatelinkAzureConnectionUpdateResponse::createFromDiscriminatorValue);
     }
     /**
      * Update a private endpoint connection for an Azure Privatelink Service
@@ -82,16 +82,8 @@ public class WithPrivatelinkConnectionItemRequestBuilder extends BaseRequestBuil
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ServicePrivatelinkAzureConnectionUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

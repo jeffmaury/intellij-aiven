@@ -12,7 +12,7 @@ import java.util.Objects;
 public class TasksRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.service.item.connectors.item.tasks.item collection
-     * @param task_id Unique identifier of the item
+     * @param task_id Service task
      * @return a WithTaskItemRequestBuilder
      */
     @jakarta.annotation.Nonnull

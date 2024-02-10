@@ -36,21 +36,21 @@ public class WithUserAuthenticationMethodItemRequestBuilder extends BaseRequestB
     }
     /**
      * Delete linked authentication method, and revoke all associated access tokens
-     * @return a CompletableFuture of UserAuthenticationMethodDeleteResponse
+     * @return a UserAuthenticationMethodDeleteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserAuthenticationMethodDeleteResponse> delete() {
+    @jakarta.annotation.Nullable
+    public UserAuthenticationMethodDeleteResponse delete() {
         return delete(null);
     }
     /**
      * Delete linked authentication method, and revoke all associated access tokens
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of UserAuthenticationMethodDeleteResponse
+     * @return a UserAuthenticationMethodDeleteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserAuthenticationMethodDeleteResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public UserAuthenticationMethodDeleteResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, UserAuthenticationMethodDeleteResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, UserAuthenticationMethodDeleteResponse::createFromDiscriminatorValue);
     }
     /**
      * Delete linked authentication method, and revoke all associated access tokens
@@ -67,16 +67,8 @@ public class WithUserAuthenticationMethodItemRequestBuilder extends BaseRequestB
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

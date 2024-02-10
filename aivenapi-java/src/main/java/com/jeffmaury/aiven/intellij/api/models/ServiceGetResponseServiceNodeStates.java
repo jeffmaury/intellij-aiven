@@ -66,9 +66,9 @@ public class ServiceGetResponseServiceNodeStates implements AdditionalDataHolder
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("progress_updates", (n) -> { this.setProgressUpdates(n.getCollectionOfObjectValues(ServiceGetResponseServiceNodeStatesProgressUpdates::createFromDiscriminatorValue)); });
-        deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(ServiceGetResponseServiceNodeStatesRole.class)); });
+        deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(ServiceGetResponseServiceNodeStatesRole::forValue)); });
         deserializerMap.put("shard", (n) -> { this.setShard(n.getObjectValue(ServiceGetResponseServiceNodeStatesShard::createFromDiscriminatorValue)); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceGetResponseServiceNodeStatesState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceGetResponseServiceNodeStatesState::forValue)); });
         return deserializerMap;
     }
     /**

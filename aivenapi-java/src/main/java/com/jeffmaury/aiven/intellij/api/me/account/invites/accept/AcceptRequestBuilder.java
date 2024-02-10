@@ -38,23 +38,23 @@ public class AcceptRequestBuilder extends BaseRequestBuilder {
     /**
      * Accept all invites for a single account
      * @param body UserAccountInvitesAcceptRequestBody
-     * @return a CompletableFuture of UserAccountInvitesAcceptResponse
+     * @return a UserAccountInvitesAcceptResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserAccountInvitesAcceptResponse> post(@jakarta.annotation.Nonnull final UserAccountInvitesAcceptRequestBody body) {
+    @jakarta.annotation.Nullable
+    public UserAccountInvitesAcceptResponse post(@jakarta.annotation.Nonnull final UserAccountInvitesAcceptRequestBody body) {
         return post(body, null);
     }
     /**
      * Accept all invites for a single account
      * @param body UserAccountInvitesAcceptRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of UserAccountInvitesAcceptResponse
+     * @return a UserAccountInvitesAcceptResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserAccountInvitesAcceptResponse> post(@jakarta.annotation.Nonnull final UserAccountInvitesAcceptRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public UserAccountInvitesAcceptResponse post(@jakarta.annotation.Nonnull final UserAccountInvitesAcceptRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, UserAccountInvitesAcceptResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, UserAccountInvitesAcceptResponse::createFromDiscriminatorValue);
     }
     /**
      * Accept all invites for a single account
@@ -74,16 +74,8 @@ public class AcceptRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UserAccountInvitesAcceptRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

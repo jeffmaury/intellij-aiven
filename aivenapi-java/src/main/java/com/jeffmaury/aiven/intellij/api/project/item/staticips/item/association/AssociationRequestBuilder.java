@@ -38,42 +38,42 @@ public class AssociationRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Dissociate a static IP address from a service
-     * @return a CompletableFuture of ProjectStaticIPDissociateResponse
+     * @return a ProjectStaticIPDissociateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectStaticIPDissociateResponse> delete() {
+    @jakarta.annotation.Nullable
+    public ProjectStaticIPDissociateResponse delete() {
         return delete(null);
     }
     /**
      * Dissociate a static IP address from a service
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectStaticIPDissociateResponse
+     * @return a ProjectStaticIPDissociateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectStaticIPDissociateResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectStaticIPDissociateResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectStaticIPDissociateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectStaticIPDissociateResponse::createFromDiscriminatorValue);
     }
     /**
      * Associate a static IP address with a service
      * @param body ProjectStaticIPAssociateRequestBody
-     * @return a CompletableFuture of ProjectStaticIPAssociateResponse
+     * @return a ProjectStaticIPAssociateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectStaticIPAssociateResponse> post(@jakarta.annotation.Nonnull final ProjectStaticIPAssociateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ProjectStaticIPAssociateResponse post(@jakarta.annotation.Nonnull final ProjectStaticIPAssociateRequestBody body) {
         return post(body, null);
     }
     /**
      * Associate a static IP address with a service
      * @param body ProjectStaticIPAssociateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectStaticIPAssociateResponse
+     * @return a ProjectStaticIPAssociateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectStaticIPAssociateResponse> post(@jakarta.annotation.Nonnull final ProjectStaticIPAssociateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectStaticIPAssociateResponse post(@jakarta.annotation.Nonnull final ProjectStaticIPAssociateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectStaticIPAssociateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectStaticIPAssociateResponse::createFromDiscriminatorValue);
     }
     /**
      * Dissociate a static IP address from a service
@@ -90,16 +90,8 @@ public class AssociationRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -121,16 +113,8 @@ public class AssociationRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ProjectStaticIPAssociateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

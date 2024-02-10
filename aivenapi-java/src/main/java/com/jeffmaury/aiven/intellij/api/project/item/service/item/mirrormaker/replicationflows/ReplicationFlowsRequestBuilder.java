@@ -23,7 +23,7 @@ import java.util.Objects;
 public class ReplicationFlowsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.service.item.mirrormaker.replicationFlows.item collection
-     * @param source_cluster Unique identifier of the item
+     * @param source_cluster Source cluster alias
      * @return a WithSourceClusterItemRequestBuilder
      */
     @jakarta.annotation.Nonnull
@@ -51,42 +51,42 @@ public class ReplicationFlowsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Get replication flows
-     * @return a CompletableFuture of ServiceKafkaMirrorMakerGetReplicationFlowsResponse
+     * @return a ServiceKafkaMirrorMakerGetReplicationFlowsResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaMirrorMakerGetReplicationFlowsResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaMirrorMakerGetReplicationFlowsResponse get() {
         return get(null);
     }
     /**
      * Get replication flows
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceKafkaMirrorMakerGetReplicationFlowsResponse
+     * @return a ServiceKafkaMirrorMakerGetReplicationFlowsResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaMirrorMakerGetReplicationFlowsResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaMirrorMakerGetReplicationFlowsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceKafkaMirrorMakerGetReplicationFlowsResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceKafkaMirrorMakerGetReplicationFlowsResponse::createFromDiscriminatorValue);
     }
     /**
      * Create a replication flow
      * @param body ServiceKafkaMirrorMakerCreateReplicationFlowRequestBody
-     * @return a CompletableFuture of ServiceKafkaMirrorMakerCreateReplicationFlowResponse
+     * @return a ServiceKafkaMirrorMakerCreateReplicationFlowResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaMirrorMakerCreateReplicationFlowResponse> post(@jakarta.annotation.Nonnull final ServiceKafkaMirrorMakerCreateReplicationFlowRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaMirrorMakerCreateReplicationFlowResponse post(@jakarta.annotation.Nonnull final ServiceKafkaMirrorMakerCreateReplicationFlowRequestBody body) {
         return post(body, null);
     }
     /**
      * Create a replication flow
      * @param body ServiceKafkaMirrorMakerCreateReplicationFlowRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceKafkaMirrorMakerCreateReplicationFlowResponse
+     * @return a ServiceKafkaMirrorMakerCreateReplicationFlowResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaMirrorMakerCreateReplicationFlowResponse> post(@jakarta.annotation.Nonnull final ServiceKafkaMirrorMakerCreateReplicationFlowRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaMirrorMakerCreateReplicationFlowResponse post(@jakarta.annotation.Nonnull final ServiceKafkaMirrorMakerCreateReplicationFlowRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceKafkaMirrorMakerCreateReplicationFlowResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceKafkaMirrorMakerCreateReplicationFlowResponse::createFromDiscriminatorValue);
     }
     /**
      * Get replication flows
@@ -103,16 +103,8 @@ public class ReplicationFlowsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -134,16 +126,8 @@ public class ReplicationFlowsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServiceKafkaMirrorMakerCreateReplicationFlowRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

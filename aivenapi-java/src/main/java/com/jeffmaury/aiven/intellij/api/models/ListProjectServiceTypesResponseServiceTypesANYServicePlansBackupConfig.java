@@ -81,7 +81,7 @@ public class ListProjectServiceTypesResponseServiceTypesANYServicePlansBackupCon
         deserializerMap.put("infrequent_oldest_age_minutes", (n) -> { this.setInfrequentOldestAgeMinutes(n.getIntegerValue()); });
         deserializerMap.put("interval", (n) -> { this.setInterval(n.getIntegerValue()); });
         deserializerMap.put("max_count", (n) -> { this.setMaxCount(n.getIntegerValue()); });
-        deserializerMap.put("recovery_mode", (n) -> { this.setRecoveryMode(n.getEnumValue(ListProjectServiceTypesResponseServiceTypesANYServicePlansBackupConfigRecoveryMode.class)); });
+        deserializerMap.put("recovery_mode", (n) -> { this.setRecoveryMode(n.getEnumValue(ListProjectServiceTypesResponseServiceTypesANYServicePlansBackupConfigRecoveryMode::forValue)); });
         return deserializerMap;
     }
     /**

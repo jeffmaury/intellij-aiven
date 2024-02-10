@@ -59,7 +59,7 @@ public class ServiceKafkaTopicGetResponseTopicConfigPreallocate implements Addit
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("source", (n) -> { this.setSource(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigPreallocateSource.class)); });
+        deserializerMap.put("source", (n) -> { this.setSource(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigPreallocateSource::forValue)); });
         deserializerMap.put("synonyms", (n) -> { this.setSynonyms(n.getCollectionOfObjectValues(ServiceKafkaTopicGetResponseTopicConfigPreallocateSynonyms::createFromDiscriminatorValue)); });
         deserializerMap.put("value", (n) -> { this.setValue(n.getBooleanValue()); });
         return deserializerMap;

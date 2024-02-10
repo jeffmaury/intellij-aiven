@@ -88,8 +88,8 @@ public class ServiceUpdateResponseServiceNodeStatesProgressUpdates implements Ad
         deserializerMap.put("current", (n) -> { this.setCurrent(n.getIntegerValue()); });
         deserializerMap.put("max", (n) -> { this.setMax(n.getIntegerValue()); });
         deserializerMap.put("min", (n) -> { this.setMin(n.getIntegerValue()); });
-        deserializerMap.put("phase", (n) -> { this.setPhase(n.getEnumValue(ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase.class)); });
-        deserializerMap.put("unit", (n) -> { this.setUnit(n.getEnumValue(ServiceUpdateResponseServiceNodeStatesProgressUpdatesUnit.class)); });
+        deserializerMap.put("phase", (n) -> { this.setPhase(n.getEnumValue(ServiceUpdateResponseServiceNodeStatesProgressUpdatesPhase::forValue)); });
+        deserializerMap.put("unit", (n) -> { this.setUnit(n.getEnumValue(ServiceUpdateResponseServiceNodeStatesProgressUpdatesUnit::forValue)); });
         return deserializerMap;
     }
     /**

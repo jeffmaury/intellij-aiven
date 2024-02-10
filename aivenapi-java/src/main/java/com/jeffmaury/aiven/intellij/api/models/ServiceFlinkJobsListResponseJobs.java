@@ -53,7 +53,7 @@ public class ServiceFlinkJobsListResponseJobs implements AdditionalDataHolder, P
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
-        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceFlinkJobsListResponseJobsStatus.class)); });
+        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceFlinkJobsListResponseJobsStatus::forValue)); });
         return deserializerMap;
     }
     /**

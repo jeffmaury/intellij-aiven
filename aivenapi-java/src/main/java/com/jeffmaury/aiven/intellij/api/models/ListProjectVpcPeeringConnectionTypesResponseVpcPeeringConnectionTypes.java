@@ -66,7 +66,7 @@ public class ListProjectVpcPeeringConnectionTypesResponseVpcPeeringConnectionTyp
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("cloud_name", (n) -> { this.setCloudName(n.getStringValue()); });
         deserializerMap.put("price_usd", (n) -> { this.setPriceUsd(n.getStringValue()); });
-        deserializerMap.put("vpc_peering_connection_type", (n) -> { this.setVpcPeeringConnectionType(n.getEnumValue(ListProjectVpcPeeringConnectionTypesResponseVpcPeeringConnectionTypesVpcPeeringConnectionType.class)); });
+        deserializerMap.put("vpc_peering_connection_type", (n) -> { this.setVpcPeeringConnectionType(n.getEnumValue(ListProjectVpcPeeringConnectionTypesResponseVpcPeeringConnectionTypesVpcPeeringConnectionType::forValue)); });
         return deserializerMap;
     }
     /**

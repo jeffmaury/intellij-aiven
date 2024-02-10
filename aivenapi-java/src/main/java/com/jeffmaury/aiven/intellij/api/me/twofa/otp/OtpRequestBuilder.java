@@ -38,23 +38,23 @@ public class OtpRequestBuilder extends BaseRequestBuilder {
     /**
      * Complete one-time password configuration
      * @param body TwoFactorAuthConfigureOTPRequestBody
-     * @return a CompletableFuture of TwoFactorAuthConfigureOTPResponse
+     * @return a TwoFactorAuthConfigureOTPResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<TwoFactorAuthConfigureOTPResponse> put(@jakarta.annotation.Nonnull final TwoFactorAuthConfigureOTPRequestBody body) {
+    @jakarta.annotation.Nullable
+    public TwoFactorAuthConfigureOTPResponse put(@jakarta.annotation.Nonnull final TwoFactorAuthConfigureOTPRequestBody body) {
         return put(body, null);
     }
     /**
      * Complete one-time password configuration
      * @param body TwoFactorAuthConfigureOTPRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of TwoFactorAuthConfigureOTPResponse
+     * @return a TwoFactorAuthConfigureOTPResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<TwoFactorAuthConfigureOTPResponse> put(@jakarta.annotation.Nonnull final TwoFactorAuthConfigureOTPRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public TwoFactorAuthConfigureOTPResponse put(@jakarta.annotation.Nonnull final TwoFactorAuthConfigureOTPRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, TwoFactorAuthConfigureOTPResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, TwoFactorAuthConfigureOTPResponse::createFromDiscriminatorValue);
     }
     /**
      * Complete one-time password configuration
@@ -74,16 +74,8 @@ public class OtpRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final TwoFactorAuthConfigureOTPRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

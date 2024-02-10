@@ -51,7 +51,7 @@ public class OrganizationDomainUpdateRequestBody implements AdditionalDataHolder
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("verification_type", (n) -> { this.setVerificationType(n.getEnumValue(OrganizationDomainUpdateRequestBodyVerificationType.class)); });
+        deserializerMap.put("verification_type", (n) -> { this.setVerificationType(n.getEnumValue(OrganizationDomainUpdateRequestBodyVerificationType::forValue)); });
         return deserializerMap;
     }
     /**

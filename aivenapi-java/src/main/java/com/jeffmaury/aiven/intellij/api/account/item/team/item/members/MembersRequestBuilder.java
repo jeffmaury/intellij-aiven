@@ -38,42 +38,42 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * List members of a single team
-     * @return a CompletableFuture of AccountTeamMembersListResponse
+     * @return a AccountTeamMembersListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountTeamMembersListResponse> get() {
+    @jakarta.annotation.Nullable
+    public AccountTeamMembersListResponse get() {
         return get(null);
     }
     /**
      * List members of a single team
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountTeamMembersListResponse
+     * @return a AccountTeamMembersListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountTeamMembersListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccountTeamMembersListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountTeamMembersListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountTeamMembersListResponse::createFromDiscriminatorValue);
     }
     /**
      * Invite a new member to join the team
      * @param body AccountTeamMembersInviteRequestBody
-     * @return a CompletableFuture of AccountTeamMembersInviteResponse
+     * @return a AccountTeamMembersInviteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountTeamMembersInviteResponse> post(@jakarta.annotation.Nonnull final AccountTeamMembersInviteRequestBody body) {
+    @jakarta.annotation.Nullable
+    public AccountTeamMembersInviteResponse post(@jakarta.annotation.Nonnull final AccountTeamMembersInviteRequestBody body) {
         return post(body, null);
     }
     /**
      * Invite a new member to join the team
      * @param body AccountTeamMembersInviteRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountTeamMembersInviteResponse
+     * @return a AccountTeamMembersInviteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountTeamMembersInviteResponse> post(@jakarta.annotation.Nonnull final AccountTeamMembersInviteRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccountTeamMembersInviteResponse post(@jakarta.annotation.Nonnull final AccountTeamMembersInviteRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountTeamMembersInviteResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountTeamMembersInviteResponse::createFromDiscriminatorValue);
     }
     /**
      * List members of a single team
@@ -90,16 +90,8 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -121,16 +113,8 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final AccountTeamMembersInviteRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

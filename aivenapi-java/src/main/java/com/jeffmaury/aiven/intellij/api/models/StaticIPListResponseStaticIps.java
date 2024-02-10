@@ -79,7 +79,7 @@ public class StaticIPListResponseStaticIps implements AdditionalDataHolder, Pars
         deserializerMap.put("cloud_name", (n) -> { this.setCloudName(n.getStringValue()); });
         deserializerMap.put("ip_address", (n) -> { this.setIpAddress(n.getStringValue()); });
         deserializerMap.put("service_name", (n) -> { this.setServiceName(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(StaticIPListResponseStaticIpsState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(StaticIPListResponseStaticIpsState::forValue)); });
         deserializerMap.put("static_ip_address_id", (n) -> { this.setStaticIpAddressId(n.getStringValue()); });
         deserializerMap.put("termination_protection", (n) -> { this.setTerminationProtection(n.getBooleanValue()); });
         return deserializerMap;

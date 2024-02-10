@@ -38,42 +38,42 @@ public class WithTokenPrefixItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Revoke an access token
-     * @return a CompletableFuture of AccessTokenRevokeResponse
+     * @return a AccessTokenRevokeResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccessTokenRevokeResponse> delete() {
+    @jakarta.annotation.Nullable
+    public AccessTokenRevokeResponse delete() {
         return delete(null);
     }
     /**
      * Revoke an access token
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccessTokenRevokeResponse
+     * @return a AccessTokenRevokeResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccessTokenRevokeResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccessTokenRevokeResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccessTokenRevokeResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccessTokenRevokeResponse::createFromDiscriminatorValue);
     }
     /**
      * Update an existing access token
      * @param body AccessTokenUpdateRequestBody
-     * @return a CompletableFuture of AccessTokenUpdateResponse
+     * @return a AccessTokenUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccessTokenUpdateResponse> put(@jakarta.annotation.Nonnull final AccessTokenUpdateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public AccessTokenUpdateResponse put(@jakarta.annotation.Nonnull final AccessTokenUpdateRequestBody body) {
         return put(body, null);
     }
     /**
      * Update an existing access token
      * @param body AccessTokenUpdateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccessTokenUpdateResponse
+     * @return a AccessTokenUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccessTokenUpdateResponse> put(@jakarta.annotation.Nonnull final AccessTokenUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccessTokenUpdateResponse put(@jakarta.annotation.Nonnull final AccessTokenUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccessTokenUpdateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccessTokenUpdateResponse::createFromDiscriminatorValue);
     }
     /**
      * Revoke an access token
@@ -90,16 +90,8 @@ public class WithTokenPrefixItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -121,16 +113,8 @@ public class WithTokenPrefixItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final AccessTokenUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

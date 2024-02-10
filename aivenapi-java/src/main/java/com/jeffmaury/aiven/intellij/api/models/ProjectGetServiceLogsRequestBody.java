@@ -61,7 +61,7 @@ public class ProjectGetServiceLogsRequestBody implements AdditionalDataHolder, P
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("limit", (n) -> { this.setLimit(n.getIntegerValue()); });
         deserializerMap.put("offset", (n) -> { this.setOffset(n.getStringValue()); });
-        deserializerMap.put("sort_order", (n) -> { this.setSortOrder(n.getEnumValue(ProjectGetServiceLogsRequestBodySortOrder.class)); });
+        deserializerMap.put("sort_order", (n) -> { this.setSortOrder(n.getEnumValue(ProjectGetServiceLogsRequestBodySortOrder::forValue)); });
         return deserializerMap;
     }
     /**

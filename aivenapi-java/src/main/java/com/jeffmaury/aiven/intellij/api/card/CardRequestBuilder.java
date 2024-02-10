@@ -54,54 +54,54 @@ public class CardRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * List user's credit cards
-     * @return a CompletableFuture of UserCreditCardsListResponse
+     * @return a UserCreditCardsListResponse
      * @deprecated
      * 
      */
-    @jakarta.annotation.Nonnull
+    @jakarta.annotation.Nullable
     @Deprecated
-    public java.util.concurrent.CompletableFuture<UserCreditCardsListResponse> get() {
+    public UserCreditCardsListResponse get() {
         return get(null);
     }
     /**
      * List user's credit cards
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of UserCreditCardsListResponse
+     * @return a UserCreditCardsListResponse
      * @deprecated
      * 
      */
-    @jakarta.annotation.Nonnull
+    @jakarta.annotation.Nullable
     @Deprecated
-    public java.util.concurrent.CompletableFuture<UserCreditCardsListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    public UserCreditCardsListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, UserCreditCardsListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, UserCreditCardsListResponse::createFromDiscriminatorValue);
     }
     /**
      * Add credit card for user
      * @param body UserCreditCardAddRequestBody
-     * @return a CompletableFuture of UserCreditCardAddResponse
+     * @return a UserCreditCardAddResponse
      * @deprecated
      * 
      */
-    @jakarta.annotation.Nonnull
+    @jakarta.annotation.Nullable
     @Deprecated
-    public java.util.concurrent.CompletableFuture<UserCreditCardAddResponse> post(@jakarta.annotation.Nonnull final UserCreditCardAddRequestBody body) {
+    public UserCreditCardAddResponse post(@jakarta.annotation.Nonnull final UserCreditCardAddRequestBody body) {
         return post(body, null);
     }
     /**
      * Add credit card for user
      * @param body UserCreditCardAddRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of UserCreditCardAddResponse
+     * @return a UserCreditCardAddResponse
      * @deprecated
      * 
      */
-    @jakarta.annotation.Nonnull
+    @jakarta.annotation.Nullable
     @Deprecated
-    public java.util.concurrent.CompletableFuture<UserCreditCardAddResponse> post(@jakarta.annotation.Nonnull final UserCreditCardAddRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public UserCreditCardAddResponse post(@jakarta.annotation.Nonnull final UserCreditCardAddRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, UserCreditCardAddResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, UserCreditCardAddResponse::createFromDiscriminatorValue);
     }
     /**
      * List user's credit cards
@@ -124,16 +124,8 @@ public class CardRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     @Deprecated
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -161,16 +153,8 @@ public class CardRequestBuilder extends BaseRequestBuilder {
     @Deprecated
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UserCreditCardAddRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

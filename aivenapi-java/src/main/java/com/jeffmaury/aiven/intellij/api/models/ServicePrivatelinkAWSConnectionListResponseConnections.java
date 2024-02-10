@@ -70,7 +70,7 @@ public class ServicePrivatelinkAWSConnectionListResponseConnections implements A
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("dns_name", (n) -> { this.setDnsName(n.getStringValue()); });
         deserializerMap.put("privatelink_connection_id", (n) -> { this.setPrivatelinkConnectionId(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServicePrivatelinkAWSConnectionListResponseConnectionsState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServicePrivatelinkAWSConnectionListResponseConnectionsState::forValue)); });
         deserializerMap.put("vpc_endpoint_id", (n) -> { this.setVpcEndpointId(n.getStringValue()); });
         return deserializerMap;
     }

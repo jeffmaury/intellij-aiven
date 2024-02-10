@@ -151,7 +151,7 @@ public class AccountUpdateResponseAccount implements AdditionalDataHolder, Parsa
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(14);
-        deserializerMap.put("access_source", (n) -> { this.setAccessSource(n.getEnumValue(AccountUpdateResponseAccountAccessSource.class)); });
+        deserializerMap.put("access_source", (n) -> { this.setAccessSource(n.getEnumValue(AccountUpdateResponseAccountAccessSource::forValue)); });
         deserializerMap.put("account_id", (n) -> { this.setAccountId(n.getStringValue()); });
         deserializerMap.put("account_name", (n) -> { this.setAccountName(n.getStringValue()); });
         deserializerMap.put("account_owner_team_id", (n) -> { this.setAccountOwnerTeamId(n.getStringValue()); });

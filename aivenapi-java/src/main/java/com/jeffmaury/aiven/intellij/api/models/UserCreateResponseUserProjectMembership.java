@@ -59,7 +59,7 @@ public class UserCreateResponseUserProjectMembership implements AdditionalDataHo
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("ANY", (n) -> { this.setANY(n.getEnumValue(UserCreateResponseUserProjectMembershipANY.class)); });
+        deserializerMap.put("ANY", (n) -> { this.setANY(n.getEnumValue(UserCreateResponseUserProjectMembershipANY::forValue)); });
         return deserializerMap;
     }
     /**

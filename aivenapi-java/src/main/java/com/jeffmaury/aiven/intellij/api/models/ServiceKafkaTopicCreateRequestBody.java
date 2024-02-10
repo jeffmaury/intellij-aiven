@@ -99,7 +99,7 @@ public class ServiceKafkaTopicCreateRequestBody implements AdditionalDataHolder,
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
-        deserializerMap.put("cleanup_policy", (n) -> { this.setCleanupPolicy(n.getEnumValue(ServiceKafkaTopicCreateRequestBodyCleanupPolicy.class)); });
+        deserializerMap.put("cleanup_policy", (n) -> { this.setCleanupPolicy(n.getEnumValue(ServiceKafkaTopicCreateRequestBodyCleanupPolicy::forValue)); });
         deserializerMap.put("config", (n) -> { this.setConfig(n.getObjectValue(ServiceKafkaTopicCreateRequestBodyConfig::createFromDiscriminatorValue)); });
         deserializerMap.put("min_insync_replicas", (n) -> { this.setMinInsyncReplicas(n.getIntegerValue()); });
         deserializerMap.put("partitions", (n) -> { this.setPartitions(n.getIntegerValue()); });

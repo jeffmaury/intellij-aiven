@@ -231,7 +231,7 @@ public class ProjectUpdateRequestBody implements AdditionalDataHolder, Parsable 
         deserializerMap.put("add_account_owners_admin_access", (n) -> { this.setAddAccountOwnersAdminAccess(n.getBooleanValue()); });
         deserializerMap.put("address_lines", (n) -> { this.setAddressLines(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("billing_address", (n) -> { this.setBillingAddress(n.getStringValue()); });
-        deserializerMap.put("billing_currency", (n) -> { this.setBillingCurrency(n.getEnumValue(ProjectUpdateRequestBodyBillingCurrency.class)); });
+        deserializerMap.put("billing_currency", (n) -> { this.setBillingCurrency(n.getEnumValue(ProjectUpdateRequestBodyBillingCurrency::forValue)); });
         deserializerMap.put("billing_emails", (n) -> { this.setBillingEmails(n.getCollectionOfObjectValues(ProjectUpdateRequestBodyBillingEmails::createFromDiscriminatorValue)); });
         deserializerMap.put("billing_extra_text", (n) -> { this.setBillingExtraText(n.getStringValue()); });
         deserializerMap.put("billing_group_id", (n) -> { this.setBillingGroupId(n.getStringValue()); });

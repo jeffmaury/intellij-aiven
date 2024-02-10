@@ -51,42 +51,42 @@ public class AclRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * List Schema Registry ACL entries
-     * @return a CompletableFuture of ServiceSchemaRegistryAclListResponse
+     * @return a ServiceSchemaRegistryAclListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclListResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistryAclListResponse get() {
         return get(null);
     }
     /**
      * List Schema Registry ACL entries
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceSchemaRegistryAclListResponse
+     * @return a ServiceSchemaRegistryAclListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistryAclListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistryAclListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceSchemaRegistryAclListResponse::createFromDiscriminatorValue);
     }
     /**
      * Add a Schema Registry ACL entry
      * @param body ServiceSchemaRegistryAclAddRequestBody
-     * @return a CompletableFuture of ServiceSchemaRegistryAclAddResponse
+     * @return a ServiceSchemaRegistryAclAddResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclAddResponse> post(@jakarta.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistryAclAddResponse post(@jakarta.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body) {
         return post(body, null);
     }
     /**
      * Add a Schema Registry ACL entry
      * @param body ServiceSchemaRegistryAclAddRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceSchemaRegistryAclAddResponse
+     * @return a ServiceSchemaRegistryAclAddResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistryAclAddResponse> post(@jakarta.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistryAclAddResponse post(@jakarta.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistryAclAddResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceSchemaRegistryAclAddResponse::createFromDiscriminatorValue);
     }
     /**
      * List Schema Registry ACL entries
@@ -103,16 +103,8 @@ public class AclRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -134,16 +126,8 @@ public class AclRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServiceSchemaRegistryAclAddRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

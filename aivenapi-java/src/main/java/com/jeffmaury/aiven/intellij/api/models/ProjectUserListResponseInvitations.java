@@ -63,7 +63,7 @@ public class ProjectUserListResponseInvitations implements AdditionalDataHolder,
         deserializerMap.put("invited_user_email", (n) -> { this.setInvitedUserEmail(n.getStringValue()); });
         deserializerMap.put("invite_time", (n) -> { this.setInviteTime(n.getStringValue()); });
         deserializerMap.put("inviting_user_email", (n) -> { this.setInvitingUserEmail(n.getStringValue()); });
-        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectUserListResponseInvitationsMemberType.class)); });
+        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectUserListResponseInvitationsMemberType::forValue)); });
         return deserializerMap;
     }
     /**

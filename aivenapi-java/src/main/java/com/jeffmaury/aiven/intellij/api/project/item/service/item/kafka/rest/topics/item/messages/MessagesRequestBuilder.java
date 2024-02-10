@@ -38,23 +38,23 @@ public class MessagesRequestBuilder extends BaseRequestBuilder {
     /**
      * List kafka topic messages
      * @param body ServiceKafkaTopicMessageListRequestBody
-     * @return a CompletableFuture of ServiceKafkaTopicMessageListResponse
+     * @return a ServiceKafkaTopicMessageListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaTopicMessageListResponse> post(@jakarta.annotation.Nonnull final ServiceKafkaTopicMessageListRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaTopicMessageListResponse post(@jakarta.annotation.Nonnull final ServiceKafkaTopicMessageListRequestBody body) {
         return post(body, null);
     }
     /**
      * List kafka topic messages
      * @param body ServiceKafkaTopicMessageListRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceKafkaTopicMessageListResponse
+     * @return a ServiceKafkaTopicMessageListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaTopicMessageListResponse> post(@jakarta.annotation.Nonnull final ServiceKafkaTopicMessageListRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaTopicMessageListResponse post(@jakarta.annotation.Nonnull final ServiceKafkaTopicMessageListRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceKafkaTopicMessageListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceKafkaTopicMessageListResponse::createFromDiscriminatorValue);
     }
     /**
      * List kafka topic messages
@@ -74,16 +74,8 @@ public class MessagesRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServiceKafkaTopicMessageListRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

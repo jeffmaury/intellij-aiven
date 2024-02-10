@@ -83,7 +83,7 @@ public class ServicePrivatelinkAzureConnectionApprovalResponse implements Additi
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
         deserializerMap.put("private_endpoint_id", (n) -> { this.setPrivateEndpointId(n.getStringValue()); });
         deserializerMap.put("privatelink_connection_id", (n) -> { this.setPrivatelinkConnectionId(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServicePrivatelinkAzureConnectionApprovalResponseState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServicePrivatelinkAzureConnectionApprovalResponseState::forValue)); });
         deserializerMap.put("user_ip_address", (n) -> { this.setUserIpAddress(n.getStringValue()); });
         return deserializerMap;
     }

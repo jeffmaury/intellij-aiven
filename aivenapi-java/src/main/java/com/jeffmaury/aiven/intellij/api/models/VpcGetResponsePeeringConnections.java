@@ -107,11 +107,11 @@ public class VpcGetResponsePeeringConnections implements AdditionalDataHolder, P
         deserializerMap.put("peer_region", (n) -> { this.setPeerRegion(n.getStringValue()); });
         deserializerMap.put("peer_resource_group", (n) -> { this.setPeerResourceGroup(n.getStringValue()); });
         deserializerMap.put("peer_vpc", (n) -> { this.setPeerVpc(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(VpcGetResponsePeeringConnectionsState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(VpcGetResponsePeeringConnectionsState::forValue)); });
         deserializerMap.put("state_info", (n) -> { this.setStateInfo(n.getObjectValue(VpcGetResponsePeeringConnectionsStateInfo::createFromDiscriminatorValue)); });
         deserializerMap.put("update_time", (n) -> { this.setUpdateTime(n.getStringValue()); });
         deserializerMap.put("user_peer_network_cidrs", (n) -> { this.setUserPeerNetworkCidrs(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("vpc_peering_connection_type", (n) -> { this.setVpcPeeringConnectionType(n.getEnumValue(VpcGetResponsePeeringConnectionsVpcPeeringConnectionType.class)); });
+        deserializerMap.put("vpc_peering_connection_type", (n) -> { this.setVpcPeeringConnectionType(n.getEnumValue(VpcGetResponsePeeringConnectionsVpcPeeringConnectionType::forValue)); });
         return deserializerMap;
     }
     /**

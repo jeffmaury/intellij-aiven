@@ -80,9 +80,9 @@ public class ServiceUserCredentialsModifyRequestBody implements AdditionalDataHo
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("access_control", (n) -> { this.setAccessControl(n.getObjectValue(ServiceUserCredentialsModifyRequestBodyAccessControl::createFromDiscriminatorValue)); });
-        deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getEnumValue(ServiceUserCredentialsModifyRequestBodyAuthentication.class)); });
+        deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getEnumValue(ServiceUserCredentialsModifyRequestBodyAuthentication::forValue)); });
         deserializerMap.put("new_password", (n) -> { this.setNewPassword(n.getStringValue()); });
-        deserializerMap.put("operation", (n) -> { this.setOperation(n.getEnumValue(ServiceUserCredentialsModifyRequestBodyOperation.class)); });
+        deserializerMap.put("operation", (n) -> { this.setOperation(n.getEnumValue(ServiceUserCredentialsModifyRequestBodyOperation::forValue)); });
         return deserializerMap;
     }
     /**

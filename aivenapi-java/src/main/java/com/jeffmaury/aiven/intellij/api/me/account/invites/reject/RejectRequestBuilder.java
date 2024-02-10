@@ -38,29 +38,29 @@ public class RejectRequestBuilder extends BaseRequestBuilder {
     /**
      * Reject invite to a team
      * @param body UserAccountInvitesRejectRequestBody
-     * @return a CompletableFuture of UserAccountInvitesRejectResponse
+     * @return a UserAccountInvitesRejectResponse
      * @deprecated
      * 
      */
-    @jakarta.annotation.Nonnull
+    @jakarta.annotation.Nullable
     @Deprecated
-    public java.util.concurrent.CompletableFuture<UserAccountInvitesRejectResponse> post(@jakarta.annotation.Nonnull final UserAccountInvitesRejectRequestBody body) {
+    public UserAccountInvitesRejectResponse post(@jakarta.annotation.Nonnull final UserAccountInvitesRejectRequestBody body) {
         return post(body, null);
     }
     /**
      * Reject invite to a team
      * @param body UserAccountInvitesRejectRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of UserAccountInvitesRejectResponse
+     * @return a UserAccountInvitesRejectResponse
      * @deprecated
      * 
      */
-    @jakarta.annotation.Nonnull
+    @jakarta.annotation.Nullable
     @Deprecated
-    public java.util.concurrent.CompletableFuture<UserAccountInvitesRejectResponse> post(@jakarta.annotation.Nonnull final UserAccountInvitesRejectRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public UserAccountInvitesRejectResponse post(@jakarta.annotation.Nonnull final UserAccountInvitesRejectRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, UserAccountInvitesRejectResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, UserAccountInvitesRejectResponse::createFromDiscriminatorValue);
     }
     /**
      * Reject invite to a team
@@ -86,16 +86,8 @@ public class RejectRequestBuilder extends BaseRequestBuilder {
     @Deprecated
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UserAccountInvitesRejectRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

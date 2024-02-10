@@ -51,23 +51,23 @@ public class TaskRequestBuilder extends BaseRequestBuilder {
     /**
      * Create a new task for service
      * @param body ServiceTaskCreateRequestBody
-     * @return a CompletableFuture of ServiceTaskCreateResponse
+     * @return a ServiceTaskCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceTaskCreateResponse> post(@jakarta.annotation.Nonnull final ServiceTaskCreateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceTaskCreateResponse post(@jakarta.annotation.Nonnull final ServiceTaskCreateRequestBody body) {
         return post(body, null);
     }
     /**
      * Create a new task for service
      * @param body ServiceTaskCreateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceTaskCreateResponse
+     * @return a ServiceTaskCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceTaskCreateResponse> post(@jakarta.annotation.Nonnull final ServiceTaskCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceTaskCreateResponse post(@jakarta.annotation.Nonnull final ServiceTaskCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceTaskCreateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceTaskCreateResponse::createFromDiscriminatorValue);
     }
     /**
      * Create a new task for service
@@ -87,16 +87,8 @@ public class TaskRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServiceTaskCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

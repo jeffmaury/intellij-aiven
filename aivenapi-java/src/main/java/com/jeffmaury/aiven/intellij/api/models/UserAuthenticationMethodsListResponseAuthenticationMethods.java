@@ -133,7 +133,7 @@ public class UserAuthenticationMethodsListResponseAuthenticationMethods implemen
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("public_remote_identity", (n) -> { this.setPublicRemoteIdentity(n.getStringValue()); });
         deserializerMap.put("remote_provider_id", (n) -> { this.setRemoteProviderId(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(UserAuthenticationMethodsListResponseAuthenticationMethodsState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(UserAuthenticationMethodsListResponseAuthenticationMethodsState::forValue)); });
         deserializerMap.put("update_time", (n) -> { this.setUpdateTime(n.getStringValue()); });
         deserializerMap.put("user_email", (n) -> { this.setUserEmail(n.getStringValue()); });
         return deserializerMap;

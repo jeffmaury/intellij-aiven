@@ -78,42 +78,42 @@ public class WithConnectorNameItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Delete Kafka Connect connector
-     * @return a CompletableFuture of ServiceKafkaConnectDeleteConnectorResponse
+     * @return a ServiceKafkaConnectDeleteConnectorResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaConnectDeleteConnectorResponse> delete() {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaConnectDeleteConnectorResponse delete() {
         return delete(null);
     }
     /**
      * Delete Kafka Connect connector
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceKafkaConnectDeleteConnectorResponse
+     * @return a ServiceKafkaConnectDeleteConnectorResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaConnectDeleteConnectorResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaConnectDeleteConnectorResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceKafkaConnectDeleteConnectorResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceKafkaConnectDeleteConnectorResponse::createFromDiscriminatorValue);
     }
     /**
      * Edit Kafka Connect connector
      * @param body ServiceKafkaConnectEditConnectorRequestBody
-     * @return a CompletableFuture of ServiceKafkaConnectEditConnectorResponse
+     * @return a ServiceKafkaConnectEditConnectorResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaConnectEditConnectorResponse> put(@jakarta.annotation.Nonnull final ServiceKafkaConnectEditConnectorRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaConnectEditConnectorResponse put(@jakarta.annotation.Nonnull final ServiceKafkaConnectEditConnectorRequestBody body) {
         return put(body, null);
     }
     /**
      * Edit Kafka Connect connector
      * @param body ServiceKafkaConnectEditConnectorRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceKafkaConnectEditConnectorResponse
+     * @return a ServiceKafkaConnectEditConnectorResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaConnectEditConnectorResponse> put(@jakarta.annotation.Nonnull final ServiceKafkaConnectEditConnectorRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaConnectEditConnectorResponse put(@jakarta.annotation.Nonnull final ServiceKafkaConnectEditConnectorRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceKafkaConnectEditConnectorResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceKafkaConnectEditConnectorResponse::createFromDiscriminatorValue);
     }
     /**
      * Delete Kafka Connect connector
@@ -130,16 +130,8 @@ public class WithConnectorNameItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -161,16 +153,8 @@ public class WithConnectorNameItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ServiceKafkaConnectEditConnectorRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

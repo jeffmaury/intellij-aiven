@@ -72,9 +72,9 @@ public class ServiceIntegrationUpdateResponseServiceIntegrationIntegrationStatus
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("errors", (n) -> { this.setErrors(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("likely_error_cause", (n) -> { this.setLikelyErrorCause(n.getEnumValue(ServiceIntegrationUpdateResponseServiceIntegrationIntegrationStatusStateLikelyErrorCause.class)); });
+        deserializerMap.put("likely_error_cause", (n) -> { this.setLikelyErrorCause(n.getEnumValue(ServiceIntegrationUpdateResponseServiceIntegrationIntegrationStatusStateLikelyErrorCause::forValue)); });
         deserializerMap.put("nodes", (n) -> { this.setNodes(n.getObjectValue(ServiceIntegrationUpdateResponseServiceIntegrationIntegrationStatusStateNodes::createFromDiscriminatorValue)); });
-        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceIntegrationUpdateResponseServiceIntegrationIntegrationStatusStateStatus.class)); });
+        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceIntegrationUpdateResponseServiceIntegrationIntegrationStatusStateStatus::forValue)); });
         return deserializerMap;
     }
     /**

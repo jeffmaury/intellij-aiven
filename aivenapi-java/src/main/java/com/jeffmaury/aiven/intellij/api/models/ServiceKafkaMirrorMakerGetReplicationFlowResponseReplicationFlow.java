@@ -131,8 +131,8 @@ public class ServiceKafkaMirrorMakerGetReplicationFlowResponseReplicationFlow im
         deserializerMap.put("emit_backward_heartbeats_enabled", (n) -> { this.setEmitBackwardHeartbeatsEnabled(n.getBooleanValue()); });
         deserializerMap.put("emit_heartbeats_enabled", (n) -> { this.setEmitHeartbeatsEnabled(n.getBooleanValue()); });
         deserializerMap.put("enabled", (n) -> { this.setEnabled(n.getBooleanValue()); });
-        deserializerMap.put("offset_syncs_topic_location", (n) -> { this.setOffsetSyncsTopicLocation(n.getEnumValue(ServiceKafkaMirrorMakerGetReplicationFlowResponseReplicationFlowOffsetSyncsTopicLocation.class)); });
-        deserializerMap.put("replication_policy_class", (n) -> { this.setReplicationPolicyClass(n.getEnumValue(ServiceKafkaMirrorMakerGetReplicationFlowResponseReplicationFlowReplicationPolicyClass.class)); });
+        deserializerMap.put("offset_syncs_topic_location", (n) -> { this.setOffsetSyncsTopicLocation(n.getEnumValue(ServiceKafkaMirrorMakerGetReplicationFlowResponseReplicationFlowOffsetSyncsTopicLocation::forValue)); });
+        deserializerMap.put("replication_policy_class", (n) -> { this.setReplicationPolicyClass(n.getEnumValue(ServiceKafkaMirrorMakerGetReplicationFlowResponseReplicationFlowReplicationPolicyClass::forValue)); });
         deserializerMap.put("source_cluster", (n) -> { this.setSourceCluster(n.getStringValue()); });
         deserializerMap.put("sync_group_offsets_enabled", (n) -> { this.setSyncGroupOffsetsEnabled(n.getBooleanValue()); });
         deserializerMap.put("sync_group_offsets_interval_seconds", (n) -> { this.setSyncGroupOffsetsIntervalSeconds(n.getIntegerValue()); });

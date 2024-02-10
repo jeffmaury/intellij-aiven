@@ -88,8 +88,8 @@ public class ServiceListResponseServicesNodeStatesProgressUpdates implements Add
         deserializerMap.put("current", (n) -> { this.setCurrent(n.getIntegerValue()); });
         deserializerMap.put("max", (n) -> { this.setMax(n.getIntegerValue()); });
         deserializerMap.put("min", (n) -> { this.setMin(n.getIntegerValue()); });
-        deserializerMap.put("phase", (n) -> { this.setPhase(n.getEnumValue(ServiceListResponseServicesNodeStatesProgressUpdatesPhase.class)); });
-        deserializerMap.put("unit", (n) -> { this.setUnit(n.getEnumValue(ServiceListResponseServicesNodeStatesProgressUpdatesUnit.class)); });
+        deserializerMap.put("phase", (n) -> { this.setPhase(n.getEnumValue(ServiceListResponseServicesNodeStatesProgressUpdatesPhase::forValue)); });
+        deserializerMap.put("unit", (n) -> { this.setUnit(n.getEnumValue(ServiceListResponseServicesNodeStatesProgressUpdatesUnit::forValue)); });
         return deserializerMap;
     }
     /**

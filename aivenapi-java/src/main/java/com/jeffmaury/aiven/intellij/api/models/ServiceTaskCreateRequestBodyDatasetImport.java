@@ -59,7 +59,7 @@ public class ServiceTaskCreateRequestBodyDatasetImport implements AdditionalData
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("dataset_name", (n) -> { this.setDatasetName(n.getEnumValue(ServiceTaskCreateRequestBodyDatasetImportDatasetName.class)); });
+        deserializerMap.put("dataset_name", (n) -> { this.setDatasetName(n.getEnumValue(ServiceTaskCreateRequestBodyDatasetImportDatasetName::forValue)); });
         return deserializerMap;
     }
     /**

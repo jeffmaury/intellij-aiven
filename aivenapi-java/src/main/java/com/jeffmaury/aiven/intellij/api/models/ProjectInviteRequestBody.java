@@ -55,7 +55,7 @@ public class ProjectInviteRequestBody implements AdditionalDataHolder, Parsable 
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectInviteRequestBodyMemberType.class)); });
+        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectInviteRequestBodyMemberType::forValue)); });
         deserializerMap.put("user_email", (n) -> { this.setUserEmail(n.getStringValue()); });
         return deserializerMap;
     }

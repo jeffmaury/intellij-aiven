@@ -78,8 +78,8 @@ public class ServiceGetMigrationStatusResponseMigrationDetail implements Additio
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("dbname", (n) -> { this.setDbname(n.getStringValue()); });
         deserializerMap.put("error", (n) -> { this.setError(n.getStringValue()); });
-        deserializerMap.put("method", (n) -> { this.setMethod(n.getEnumValue(ServiceGetMigrationStatusResponseMigrationDetailMethod.class)); });
-        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceGetMigrationStatusResponseMigrationDetailStatus.class)); });
+        deserializerMap.put("method", (n) -> { this.setMethod(n.getEnumValue(ServiceGetMigrationStatusResponseMigrationDetailMethod::forValue)); });
+        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceGetMigrationStatusResponseMigrationDetailStatus::forValue)); });
         return deserializerMap;
     }
     /**

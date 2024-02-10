@@ -38,42 +38,42 @@ public class PaymentMethodsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * List credit cards attached as a payment method to the account
-     * @return a CompletableFuture of AccountPaymentMethodsListResponse
+     * @return a AccountPaymentMethodsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountPaymentMethodsListResponse> get() {
+    @jakarta.annotation.Nullable
+    public AccountPaymentMethodsListResponse get() {
         return get(null);
     }
     /**
      * List credit cards attached as a payment method to the account
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountPaymentMethodsListResponse
+     * @return a AccountPaymentMethodsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountPaymentMethodsListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccountPaymentMethodsListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountPaymentMethodsListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountPaymentMethodsListResponse::createFromDiscriminatorValue);
     }
     /**
      * Attach payment method for account
      * @param body AccountAttachPaymentMethodRequestBody
-     * @return a CompletableFuture of AccountAttachPaymentMethodResponse
+     * @return a AccountAttachPaymentMethodResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountAttachPaymentMethodResponse> post(@jakarta.annotation.Nonnull final AccountAttachPaymentMethodRequestBody body) {
+    @jakarta.annotation.Nullable
+    public AccountAttachPaymentMethodResponse post(@jakarta.annotation.Nonnull final AccountAttachPaymentMethodRequestBody body) {
         return post(body, null);
     }
     /**
      * Attach payment method for account
      * @param body AccountAttachPaymentMethodRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountAttachPaymentMethodResponse
+     * @return a AccountAttachPaymentMethodResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountAttachPaymentMethodResponse> post(@jakarta.annotation.Nonnull final AccountAttachPaymentMethodRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccountAttachPaymentMethodResponse post(@jakarta.annotation.Nonnull final AccountAttachPaymentMethodRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountAttachPaymentMethodResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountAttachPaymentMethodResponse::createFromDiscriminatorValue);
     }
     /**
      * List credit cards attached as a payment method to the account
@@ -90,16 +90,8 @@ public class PaymentMethodsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -121,16 +113,8 @@ public class PaymentMethodsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final AccountAttachPaymentMethodRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

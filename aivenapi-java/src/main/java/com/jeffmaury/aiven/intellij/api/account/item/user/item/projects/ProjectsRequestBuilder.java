@@ -36,21 +36,21 @@ public class ProjectsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * List projects associated with this account that user has access to
-     * @return a CompletableFuture of AccountUserProjectsListResponse
+     * @return a AccountUserProjectsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountUserProjectsListResponse> get() {
+    @jakarta.annotation.Nullable
+    public AccountUserProjectsListResponse get() {
         return get(null);
     }
     /**
      * List projects associated with this account that user has access to
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountUserProjectsListResponse
+     * @return a AccountUserProjectsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountUserProjectsListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccountUserProjectsListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountUserProjectsListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountUserProjectsListResponse::createFromDiscriminatorValue);
     }
     /**
      * List projects associated with this account that user has access to
@@ -67,16 +67,8 @@ public class ProjectsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

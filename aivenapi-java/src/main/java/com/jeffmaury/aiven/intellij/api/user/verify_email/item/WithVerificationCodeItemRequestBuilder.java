@@ -36,21 +36,21 @@ public class WithVerificationCodeItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * <p>Confirm user email address after user has received the confirm code via email.</p>
-     * @return a CompletableFuture of UserVerifyEmailResponse
+     * @return a UserVerifyEmailResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserVerifyEmailResponse> post() {
+    @jakarta.annotation.Nullable
+    public UserVerifyEmailResponse post() {
         return post(null);
     }
     /**
      * <p>Confirm user email address after user has received the confirm code via email.</p>
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of UserVerifyEmailResponse
+     * @return a UserVerifyEmailResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserVerifyEmailResponse> post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public UserVerifyEmailResponse post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, UserVerifyEmailResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, UserVerifyEmailResponse::createFromDiscriminatorValue);
     }
     /**
      * <p>Confirm user email address after user has received the confirm code via email.</p>
@@ -67,16 +67,8 @@ public class WithVerificationCodeItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

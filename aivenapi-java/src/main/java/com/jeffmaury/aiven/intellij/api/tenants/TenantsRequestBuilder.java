@@ -12,7 +12,7 @@ import java.util.Objects;
 public class TenantsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.tenants.item collection
-     * @param tenant Unique identifier of the item
+     * @param tenant Aiven tenant ID
      * @return a WithTenantItemRequestBuilder
      */
     @jakarta.annotation.Nonnull

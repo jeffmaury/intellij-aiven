@@ -179,8 +179,8 @@ public class ServiceKafkaTopicCreateRequestBodyConfig implements AdditionalDataH
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(27);
-        deserializerMap.put("cleanup_policy", (n) -> { this.setCleanupPolicy(n.getEnumValue(ServiceKafkaTopicCreateRequestBodyConfigCleanupPolicy.class)); });
-        deserializerMap.put("compression_type", (n) -> { this.setCompressionType(n.getEnumValue(ServiceKafkaTopicCreateRequestBodyConfigCompressionType.class)); });
+        deserializerMap.put("cleanup_policy", (n) -> { this.setCleanupPolicy(n.getEnumValue(ServiceKafkaTopicCreateRequestBodyConfigCleanupPolicy::forValue)); });
+        deserializerMap.put("compression_type", (n) -> { this.setCompressionType(n.getEnumValue(ServiceKafkaTopicCreateRequestBodyConfigCompressionType::forValue)); });
         deserializerMap.put("delete_retention_ms", (n) -> { this.setDeleteRetentionMs(n.getIntegerValue()); });
         deserializerMap.put("file_delete_delay_ms", (n) -> { this.setFileDeleteDelayMs(n.getIntegerValue()); });
         deserializerMap.put("flush_messages", (n) -> { this.setFlushMessages(n.getIntegerValue()); });
@@ -191,9 +191,9 @@ public class ServiceKafkaTopicCreateRequestBodyConfig implements AdditionalDataH
         deserializerMap.put("max_compaction_lag_ms", (n) -> { this.setMaxCompactionLagMs(n.getIntegerValue()); });
         deserializerMap.put("max_message_bytes", (n) -> { this.setMaxMessageBytes(n.getIntegerValue()); });
         deserializerMap.put("message_downconversion_enable", (n) -> { this.setMessageDownconversionEnable(n.getBooleanValue()); });
-        deserializerMap.put("message_format_version", (n) -> { this.setMessageFormatVersion(n.getEnumValue(ServiceKafkaTopicCreateRequestBodyConfigMessageFormatVersion.class)); });
+        deserializerMap.put("message_format_version", (n) -> { this.setMessageFormatVersion(n.getEnumValue(ServiceKafkaTopicCreateRequestBodyConfigMessageFormatVersion::forValue)); });
         deserializerMap.put("message_timestamp_difference_max_ms", (n) -> { this.setMessageTimestampDifferenceMaxMs(n.getIntegerValue()); });
-        deserializerMap.put("message_timestamp_type", (n) -> { this.setMessageTimestampType(n.getEnumValue(ServiceKafkaTopicCreateRequestBodyConfigMessageTimestampType.class)); });
+        deserializerMap.put("message_timestamp_type", (n) -> { this.setMessageTimestampType(n.getEnumValue(ServiceKafkaTopicCreateRequestBodyConfigMessageTimestampType::forValue)); });
         deserializerMap.put("min_cleanable_dirty_ratio", (n) -> { this.setMinCleanableDirtyRatio(n.getDoubleValue()); });
         deserializerMap.put("min_compaction_lag_ms", (n) -> { this.setMinCompactionLagMs(n.getIntegerValue()); });
         deserializerMap.put("min_insync_replicas", (n) -> { this.setMinInsyncReplicas(n.getIntegerValue()); });

@@ -56,7 +56,7 @@ public class OrganizationUpdateRequestBody implements AdditionalDataHolder, Pars
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("tier", (n) -> { this.setTier(n.getEnumValue(OrganizationUpdateRequestBodyTier.class)); });
+        deserializerMap.put("tier", (n) -> { this.setTier(n.getEnumValue(OrganizationUpdateRequestBodyTier::forValue)); });
         return deserializerMap;
     }
     /**

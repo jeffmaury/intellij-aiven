@@ -59,7 +59,7 @@ public class ServiceKafkaAclAddRequestBody implements AdditionalDataHolder, Pars
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("permission", (n) -> { this.setPermission(n.getEnumValue(ServiceKafkaAclAddRequestBodyPermission.class)); });
+        deserializerMap.put("permission", (n) -> { this.setPermission(n.getEnumValue(ServiceKafkaAclAddRequestBodyPermission::forValue)); });
         deserializerMap.put("topic", (n) -> { this.setTopic(n.getStringValue()); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;

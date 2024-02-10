@@ -68,7 +68,7 @@ public class ServiceTaskCreateRequestBodyMigrationCheck implements AdditionalDat
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("ignore_dbs", (n) -> { this.setIgnoreDbs(n.getStringValue()); });
-        deserializerMap.put("method", (n) -> { this.setMethod(n.getEnumValue(ServiceTaskCreateRequestBodyMigrationCheckMethod.class)); });
+        deserializerMap.put("method", (n) -> { this.setMethod(n.getEnumValue(ServiceTaskCreateRequestBodyMigrationCheckMethod::forValue)); });
         deserializerMap.put("source_project_name", (n) -> { this.setSourceProjectName(n.getStringValue()); });
         deserializerMap.put("source_service_name", (n) -> { this.setSourceServiceName(n.getStringValue()); });
         deserializerMap.put("source_service_uri", (n) -> { this.setSourceServiceUri(n.getStringValue()); });

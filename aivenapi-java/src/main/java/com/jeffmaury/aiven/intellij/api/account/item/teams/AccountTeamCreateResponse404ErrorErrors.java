@@ -60,7 +60,7 @@ public class AccountTeamCreateResponse404ErrorErrors implements AdditionalDataHo
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("error_code", (n) -> { this.setErrorCode(n.getEnumValue(AccountTeamCreateResponse404ErrorErrorsErrorCode.class)); });
+        deserializerMap.put("error_code", (n) -> { this.setErrorCode(n.getEnumValue(AccountTeamCreateResponse404ErrorErrorsErrorCode::forValue)); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
         return deserializerMap;
     }

@@ -88,7 +88,7 @@ public class UserOrganizationsListResponseOrganizations implements AdditionalDat
         deserializerMap.put("create_time", (n) -> { this.setCreateTime(n.getStringValue()); });
         deserializerMap.put("organization_id", (n) -> { this.setOrganizationId(n.getStringValue()); });
         deserializerMap.put("organization_name", (n) -> { this.setOrganizationName(n.getStringValue()); });
-        deserializerMap.put("tier", (n) -> { this.setTier(n.getEnumValue(UserOrganizationsListResponseOrganizationsTier.class)); });
+        deserializerMap.put("tier", (n) -> { this.setTier(n.getEnumValue(UserOrganizationsListResponseOrganizationsTier::forValue)); });
         deserializerMap.put("update_time", (n) -> { this.setUpdateTime(n.getStringValue()); });
         return deserializerMap;
     }

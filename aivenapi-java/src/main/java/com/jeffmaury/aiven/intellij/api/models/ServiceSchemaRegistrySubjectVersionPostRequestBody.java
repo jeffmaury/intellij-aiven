@@ -56,7 +56,7 @@ public class ServiceSchemaRegistrySubjectVersionPostRequestBody implements Addit
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("schema", (n) -> { this.setSchema(n.getStringValue()); });
-        deserializerMap.put("schemaType", (n) -> { this.setSchemaType(n.getEnumValue(ServiceSchemaRegistrySubjectVersionPostRequestBodySchemaType.class)); });
+        deserializerMap.put("schemaType", (n) -> { this.setSchemaType(n.getEnumValue(ServiceSchemaRegistrySubjectVersionPostRequestBodySchemaType::forValue)); });
         return deserializerMap;
     }
     /**

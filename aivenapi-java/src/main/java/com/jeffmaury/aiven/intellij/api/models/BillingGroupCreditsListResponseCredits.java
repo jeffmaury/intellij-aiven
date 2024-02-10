@@ -88,7 +88,7 @@ public class BillingGroupCreditsListResponseCredits implements AdditionalDataHol
         deserializerMap.put("expire_time", (n) -> { this.setExpireTime(n.getStringValue()); });
         deserializerMap.put("remaining_value", (n) -> { this.setRemainingValue(n.getStringValue()); });
         deserializerMap.put("start_time", (n) -> { this.setStartTime(n.getStringValue()); });
-        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(BillingGroupCreditsListResponseCreditsType.class)); });
+        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(BillingGroupCreditsListResponseCreditsType::forValue)); });
         deserializerMap.put("value", (n) -> { this.setValue(n.getStringValue()); });
         return deserializerMap;
     }
