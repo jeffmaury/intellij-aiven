@@ -49,29 +49,29 @@ public class StatsRequestBuilder extends BaseRequestBuilder {
     /**
      * <p>DEPRECATED: Use /project/$project/service/$service/pg/query/stats instead</p>
      * @param body PGServiceQueryStatisticsDeprecatedRequestBody
-     * @return a CompletableFuture of PGServiceQueryStatisticsDeprecatedResponse
+     * @return a PGServiceQueryStatisticsDeprecatedResponse
      * @deprecated
      * 
      */
-    @jakarta.annotation.Nonnull
+    @jakarta.annotation.Nullable
     @Deprecated
-    public java.util.concurrent.CompletableFuture<PGServiceQueryStatisticsDeprecatedResponse> post(@jakarta.annotation.Nonnull final PGServiceQueryStatisticsDeprecatedRequestBody body) {
+    public PGServiceQueryStatisticsDeprecatedResponse post(@jakarta.annotation.Nonnull final PGServiceQueryStatisticsDeprecatedRequestBody body) {
         return post(body, null);
     }
     /**
      * <p>DEPRECATED: Use /project/$project/service/$service/pg/query/stats instead</p>
      * @param body PGServiceQueryStatisticsDeprecatedRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of PGServiceQueryStatisticsDeprecatedResponse
+     * @return a PGServiceQueryStatisticsDeprecatedResponse
      * @deprecated
      * 
      */
-    @jakarta.annotation.Nonnull
+    @jakarta.annotation.Nullable
     @Deprecated
-    public java.util.concurrent.CompletableFuture<PGServiceQueryStatisticsDeprecatedResponse> post(@jakarta.annotation.Nonnull final PGServiceQueryStatisticsDeprecatedRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public PGServiceQueryStatisticsDeprecatedResponse post(@jakarta.annotation.Nonnull final PGServiceQueryStatisticsDeprecatedRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, PGServiceQueryStatisticsDeprecatedResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, PGServiceQueryStatisticsDeprecatedResponse::createFromDiscriminatorValue);
     }
     /**
      * <p>DEPRECATED: Use /project/$project/service/$service/pg/query/stats instead</p>
@@ -97,16 +97,8 @@ public class StatsRequestBuilder extends BaseRequestBuilder {
     @Deprecated
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PGServiceQueryStatisticsDeprecatedRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

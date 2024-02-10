@@ -134,12 +134,12 @@ public class BillingGroupInvoiceLinesListResponseLines implements AdditionalData
         deserializerMap.put("line_pre_discount_local", (n) -> { this.setLinePreDiscountLocal(n.getStringValue()); });
         deserializerMap.put("line_total_local", (n) -> { this.setLineTotalLocal(n.getStringValue()); });
         deserializerMap.put("line_total_usd", (n) -> { this.setLineTotalUsd(n.getStringValue()); });
-        deserializerMap.put("line_type", (n) -> { this.setLineType(n.getEnumValue(BillingGroupInvoiceLinesListResponseLinesLineType.class)); });
+        deserializerMap.put("line_type", (n) -> { this.setLineType(n.getEnumValue(BillingGroupInvoiceLinesListResponseLinesLineType::forValue)); });
         deserializerMap.put("local_currency", (n) -> { this.setLocalCurrency(n.getStringValue()); });
         deserializerMap.put("project_name", (n) -> { this.setProjectName(n.getStringValue()); });
         deserializerMap.put("service_name", (n) -> { this.setServiceName(n.getStringValue()); });
         deserializerMap.put("service_plan", (n) -> { this.setServicePlan(n.getStringValue()); });
-        deserializerMap.put("service_type", (n) -> { this.setServiceType(n.getEnumValue(BillingGroupInvoiceLinesListResponseLinesServiceType.class)); });
+        deserializerMap.put("service_type", (n) -> { this.setServiceType(n.getEnumValue(BillingGroupInvoiceLinesListResponseLinesServiceType::forValue)); });
         deserializerMap.put("tags", (n) -> { this.setTags(n.getObjectValue(BillingGroupInvoiceLinesListResponseLinesTags::createFromDiscriminatorValue)); });
         deserializerMap.put("timestamp_begin", (n) -> { this.setTimestampBegin(n.getStringValue()); });
         deserializerMap.put("timestamp_end", (n) -> { this.setTimestampEnd(n.getStringValue()); });

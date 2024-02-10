@@ -61,7 +61,7 @@ public class ServiceUserCredentialsResetResponseServiceAcl implements Additional
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
-        deserializerMap.put("permission", (n) -> { this.setPermission(n.getEnumValue(ServiceUserCredentialsResetResponseServiceAclPermission.class)); });
+        deserializerMap.put("permission", (n) -> { this.setPermission(n.getEnumValue(ServiceUserCredentialsResetResponseServiceAclPermission::forValue)); });
         deserializerMap.put("topic", (n) -> { this.setTopic(n.getStringValue()); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;

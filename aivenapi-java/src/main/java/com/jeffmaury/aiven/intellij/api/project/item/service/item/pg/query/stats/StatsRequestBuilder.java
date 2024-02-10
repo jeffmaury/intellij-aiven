@@ -38,23 +38,23 @@ public class StatsRequestBuilder extends BaseRequestBuilder {
     /**
      * Fetch PostgreSQL service query statistics
      * @param body PGServiceQueryStatisticsRequestBody
-     * @return a CompletableFuture of PGServiceQueryStatisticsResponse
+     * @return a PGServiceQueryStatisticsResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<PGServiceQueryStatisticsResponse> post(@jakarta.annotation.Nonnull final PGServiceQueryStatisticsRequestBody body) {
+    @jakarta.annotation.Nullable
+    public PGServiceQueryStatisticsResponse post(@jakarta.annotation.Nonnull final PGServiceQueryStatisticsRequestBody body) {
         return post(body, null);
     }
     /**
      * Fetch PostgreSQL service query statistics
      * @param body PGServiceQueryStatisticsRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of PGServiceQueryStatisticsResponse
+     * @return a PGServiceQueryStatisticsResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<PGServiceQueryStatisticsResponse> post(@jakarta.annotation.Nonnull final PGServiceQueryStatisticsRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public PGServiceQueryStatisticsResponse post(@jakarta.annotation.Nonnull final PGServiceQueryStatisticsRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, PGServiceQueryStatisticsResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, PGServiceQueryStatisticsResponse::createFromDiscriminatorValue);
     }
     /**
      * Fetch PostgreSQL service query statistics
@@ -74,16 +74,8 @@ public class StatsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PGServiceQueryStatisticsRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

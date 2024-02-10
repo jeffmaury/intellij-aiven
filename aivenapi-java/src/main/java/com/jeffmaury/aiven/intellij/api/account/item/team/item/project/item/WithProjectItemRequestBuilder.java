@@ -40,69 +40,69 @@ public class WithProjectItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Disassociate team from a project
-     * @return a CompletableFuture of AccountTeamProjectDisassociateResponse
+     * @return a AccountTeamProjectDisassociateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountTeamProjectDisassociateResponse> delete() {
+    @jakarta.annotation.Nullable
+    public AccountTeamProjectDisassociateResponse delete() {
         return delete(null);
     }
     /**
      * Disassociate team from a project
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountTeamProjectDisassociateResponse
+     * @return a AccountTeamProjectDisassociateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountTeamProjectDisassociateResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccountTeamProjectDisassociateResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountTeamProjectDisassociateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountTeamProjectDisassociateResponse::createFromDiscriminatorValue);
     }
     /**
      * Associate team to a project
      * @param body AccountTeamProjectAssociateRequestBody
-     * @return a CompletableFuture of AccountTeamProjectAssociateResponse
+     * @return a AccountTeamProjectAssociateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountTeamProjectAssociateResponse> post(@jakarta.annotation.Nonnull final AccountTeamProjectAssociateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public AccountTeamProjectAssociateResponse post(@jakarta.annotation.Nonnull final AccountTeamProjectAssociateRequestBody body) {
         return post(body, null);
     }
     /**
      * Associate team to a project
      * @param body AccountTeamProjectAssociateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountTeamProjectAssociateResponse
+     * @return a AccountTeamProjectAssociateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountTeamProjectAssociateResponse> post(@jakarta.annotation.Nonnull final AccountTeamProjectAssociateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccountTeamProjectAssociateResponse post(@jakarta.annotation.Nonnull final AccountTeamProjectAssociateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountTeamProjectAssociateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountTeamProjectAssociateResponse::createFromDiscriminatorValue);
     }
     /**
      * <p>Use PATCH /organization/{organization_id}/user-groups/{user_group_id}</p>
      * @param body AccountTeamProjectAssociationUpdateRequestBody
-     * @return a CompletableFuture of AccountTeamProjectAssociationUpdateResponse
+     * @return a AccountTeamProjectAssociationUpdateResponse
      * @deprecated
      * 
      */
-    @jakarta.annotation.Nonnull
+    @jakarta.annotation.Nullable
     @Deprecated
-    public java.util.concurrent.CompletableFuture<AccountTeamProjectAssociationUpdateResponse> put(@jakarta.annotation.Nonnull final AccountTeamProjectAssociationUpdateRequestBody body) {
+    public AccountTeamProjectAssociationUpdateResponse put(@jakarta.annotation.Nonnull final AccountTeamProjectAssociationUpdateRequestBody body) {
         return put(body, null);
     }
     /**
      * <p>Use PATCH /organization/{organization_id}/user-groups/{user_group_id}</p>
      * @param body AccountTeamProjectAssociationUpdateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountTeamProjectAssociationUpdateResponse
+     * @return a AccountTeamProjectAssociationUpdateResponse
      * @deprecated
      * 
      */
-    @jakarta.annotation.Nonnull
+    @jakarta.annotation.Nullable
     @Deprecated
-    public java.util.concurrent.CompletableFuture<AccountTeamProjectAssociationUpdateResponse> put(@jakarta.annotation.Nonnull final AccountTeamProjectAssociationUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public AccountTeamProjectAssociationUpdateResponse put(@jakarta.annotation.Nonnull final AccountTeamProjectAssociationUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountTeamProjectAssociationUpdateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountTeamProjectAssociationUpdateResponse::createFromDiscriminatorValue);
     }
     /**
      * Disassociate team from a project
@@ -119,16 +119,8 @@ public class WithProjectItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -150,16 +142,8 @@ public class WithProjectItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final AccountTeamProjectAssociateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
@@ -188,16 +172,8 @@ public class WithProjectItemRequestBuilder extends BaseRequestBuilder {
     @Deprecated
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final AccountTeamProjectAssociationUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

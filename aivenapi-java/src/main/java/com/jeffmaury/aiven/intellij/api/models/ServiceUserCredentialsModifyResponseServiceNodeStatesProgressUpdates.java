@@ -88,8 +88,8 @@ public class ServiceUserCredentialsModifyResponseServiceNodeStatesProgressUpdate
         deserializerMap.put("current", (n) -> { this.setCurrent(n.getIntegerValue()); });
         deserializerMap.put("max", (n) -> { this.setMax(n.getIntegerValue()); });
         deserializerMap.put("min", (n) -> { this.setMin(n.getIntegerValue()); });
-        deserializerMap.put("phase", (n) -> { this.setPhase(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceNodeStatesProgressUpdatesPhase.class)); });
-        deserializerMap.put("unit", (n) -> { this.setUnit(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceNodeStatesProgressUpdatesUnit.class)); });
+        deserializerMap.put("phase", (n) -> { this.setPhase(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceNodeStatesProgressUpdatesPhase::forValue)); });
+        deserializerMap.put("unit", (n) -> { this.setUnit(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceNodeStatesProgressUpdatesUnit::forValue)); });
         return deserializerMap;
     }
     /**

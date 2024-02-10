@@ -38,23 +38,23 @@ public class ParentAccountRequestBuilder extends BaseRequestBuilder {
     /**
      * Move an existing organization unitself
      * @param body AccountMoveRequestBody
-     * @return a CompletableFuture of AccountMoveResponse
+     * @return a AccountMoveResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountMoveResponse> put(@jakarta.annotation.Nonnull final AccountMoveRequestBody body) {
+    @jakarta.annotation.Nullable
+    public AccountMoveResponse put(@jakarta.annotation.Nonnull final AccountMoveRequestBody body) {
         return put(body, null);
     }
     /**
      * Move an existing organization unitself
      * @param body AccountMoveRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountMoveResponse
+     * @return a AccountMoveResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountMoveResponse> put(@jakarta.annotation.Nonnull final AccountMoveRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccountMoveResponse put(@jakarta.annotation.Nonnull final AccountMoveRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountMoveResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountMoveResponse::createFromDiscriminatorValue);
     }
     /**
      * Move an existing organization unitself
@@ -74,16 +74,8 @@ public class ParentAccountRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final AccountMoveRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

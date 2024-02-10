@@ -46,23 +46,23 @@ public class TwofaRequestBuilder extends BaseRequestBuilder {
     /**
      * Configure two-factor authentication
      * @param body TwoFactorAuthConfigureRequestBody
-     * @return a CompletableFuture of TwoFactorAuthConfigureResponse
+     * @return a TwoFactorAuthConfigureResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<TwoFactorAuthConfigureResponse> put(@jakarta.annotation.Nonnull final TwoFactorAuthConfigureRequestBody body) {
+    @jakarta.annotation.Nullable
+    public TwoFactorAuthConfigureResponse put(@jakarta.annotation.Nonnull final TwoFactorAuthConfigureRequestBody body) {
         return put(body, null);
     }
     /**
      * Configure two-factor authentication
      * @param body TwoFactorAuthConfigureRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of TwoFactorAuthConfigureResponse
+     * @return a TwoFactorAuthConfigureResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<TwoFactorAuthConfigureResponse> put(@jakarta.annotation.Nonnull final TwoFactorAuthConfigureRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public TwoFactorAuthConfigureResponse put(@jakarta.annotation.Nonnull final TwoFactorAuthConfigureRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, TwoFactorAuthConfigureResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, TwoFactorAuthConfigureResponse::createFromDiscriminatorValue);
     }
     /**
      * Configure two-factor authentication
@@ -82,16 +82,8 @@ public class TwofaRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final TwoFactorAuthConfigureRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

@@ -51,42 +51,42 @@ public class AuthenticationRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * List authentication methods
-     * @return a CompletableFuture of AccountAuthenticationMethodsListResponse
+     * @return a AccountAuthenticationMethodsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountAuthenticationMethodsListResponse> get() {
+    @jakarta.annotation.Nullable
+    public AccountAuthenticationMethodsListResponse get() {
         return get(null);
     }
     /**
      * List authentication methods
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountAuthenticationMethodsListResponse
+     * @return a AccountAuthenticationMethodsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountAuthenticationMethodsListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccountAuthenticationMethodsListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountAuthenticationMethodsListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountAuthenticationMethodsListResponse::createFromDiscriminatorValue);
     }
     /**
      * Create a new authentication method
      * @param body AccountAuthenticationMethodCreateRequestBody
-     * @return a CompletableFuture of AccountAuthenticationMethodCreateResponse
+     * @return a AccountAuthenticationMethodCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountAuthenticationMethodCreateResponse> post(@jakarta.annotation.Nonnull final AccountAuthenticationMethodCreateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public AccountAuthenticationMethodCreateResponse post(@jakarta.annotation.Nonnull final AccountAuthenticationMethodCreateRequestBody body) {
         return post(body, null);
     }
     /**
      * Create a new authentication method
      * @param body AccountAuthenticationMethodCreateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountAuthenticationMethodCreateResponse
+     * @return a AccountAuthenticationMethodCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountAuthenticationMethodCreateResponse> post(@jakarta.annotation.Nonnull final AccountAuthenticationMethodCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccountAuthenticationMethodCreateResponse post(@jakarta.annotation.Nonnull final AccountAuthenticationMethodCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountAuthenticationMethodCreateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountAuthenticationMethodCreateResponse::createFromDiscriminatorValue);
     }
     /**
      * List authentication methods
@@ -103,16 +103,8 @@ public class AuthenticationRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -134,16 +126,8 @@ public class AuthenticationRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final AccountAuthenticationMethodCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

@@ -99,7 +99,7 @@ public class ServiceIntegrationEndpointListResponseServiceIntegrationEndpoints i
         deserializerMap.put("endpoint_config", (n) -> { this.setEndpointConfig(n.getObjectValue(ServiceIntegrationEndpointListResponseServiceIntegrationEndpointsEndpointConfig::createFromDiscriminatorValue)); });
         deserializerMap.put("endpoint_id", (n) -> { this.setEndpointId(n.getStringValue()); });
         deserializerMap.put("endpoint_name", (n) -> { this.setEndpointName(n.getStringValue()); });
-        deserializerMap.put("endpoint_type", (n) -> { this.setEndpointType(n.getEnumValue(ServiceIntegrationEndpointListResponseServiceIntegrationEndpointsEndpointType.class)); });
+        deserializerMap.put("endpoint_type", (n) -> { this.setEndpointType(n.getEnumValue(ServiceIntegrationEndpointListResponseServiceIntegrationEndpointsEndpointType::forValue)); });
         deserializerMap.put("user_config", (n) -> { this.setUserConfig(n.getObjectValue(ServiceIntegrationEndpointListResponseServiceIntegrationEndpointsUserConfig::createFromDiscriminatorValue)); });
         return deserializerMap;
     }

@@ -102,14 +102,14 @@ public class ServiceOpenSearchIndexListResponseIndexes implements AdditionalData
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
         deserializerMap.put("create_time", (n) -> { this.setCreateTime(n.getStringValue()); });
         deserializerMap.put("docs", (n) -> { this.setDocs(n.getIntegerValue()); });
-        deserializerMap.put("health", (n) -> { this.setHealth(n.getEnumValue(ServiceOpenSearchIndexListResponseIndexesHealth.class)); });
+        deserializerMap.put("health", (n) -> { this.setHealth(n.getEnumValue(ServiceOpenSearchIndexListResponseIndexesHealth::forValue)); });
         deserializerMap.put("index_name", (n) -> { this.setIndexName(n.getStringValue()); });
         deserializerMap.put("number_of_replicas", (n) -> { this.setNumberOfReplicas(n.getIntegerValue()); });
         deserializerMap.put("number_of_shards", (n) -> { this.setNumberOfShards(n.getIntegerValue()); });
         deserializerMap.put("read_only_allow_delete", (n) -> { this.setReadOnlyAllowDelete(n.getBooleanValue()); });
         deserializerMap.put("replication", (n) -> { this.setReplication(n.getObjectValue(ServiceOpenSearchIndexListResponseIndexesReplication::createFromDiscriminatorValue)); });
         deserializerMap.put("size", (n) -> { this.setSize(n.getIntegerValue()); });
-        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceOpenSearchIndexListResponseIndexesStatus.class)); });
+        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceOpenSearchIndexListResponseIndexesStatus::forValue)); });
         return deserializerMap;
     }
     /**

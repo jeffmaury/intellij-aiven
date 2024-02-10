@@ -55,7 +55,7 @@ public class ServiceKafkaConnectGetConnectorStatusResponseStatus implements Addi
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceKafkaConnectGetConnectorStatusResponseStatusState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceKafkaConnectGetConnectorStatusResponseStatusState::forValue)); });
         deserializerMap.put("tasks", (n) -> { this.setTasks(n.getCollectionOfObjectValues(ServiceKafkaConnectGetConnectorStatusResponseStatusTasks::createFromDiscriminatorValue)); });
         return deserializerMap;
     }

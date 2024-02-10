@@ -59,7 +59,7 @@ public class ServiceSchemaRegistryAclAddRequestBody implements AdditionalDataHol
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("permission", (n) -> { this.setPermission(n.getEnumValue(ServiceSchemaRegistryAclAddRequestBodyPermission.class)); });
+        deserializerMap.put("permission", (n) -> { this.setPermission(n.getEnumValue(ServiceSchemaRegistryAclAddRequestBodyPermission::forValue)); });
         deserializerMap.put("resource", (n) -> { this.setResource(n.getStringValue()); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;

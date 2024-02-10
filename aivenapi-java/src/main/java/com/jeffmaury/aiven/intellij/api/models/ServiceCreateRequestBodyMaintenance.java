@@ -63,7 +63,7 @@ public class ServiceCreateRequestBodyMaintenance implements AdditionalDataHolder
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("dow", (n) -> { this.setDow(n.getEnumValue(ServiceCreateRequestBodyMaintenanceDow.class)); });
+        deserializerMap.put("dow", (n) -> { this.setDow(n.getEnumValue(ServiceCreateRequestBodyMaintenanceDow::forValue)); });
         deserializerMap.put("time", (n) -> { this.setTime(n.getStringValue()); });
         return deserializerMap;
     }

@@ -64,7 +64,7 @@ public class OrganizationDomainAddRequestBody implements AdditionalDataHolder, P
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("domain_name", (n) -> { this.setDomainName(n.getStringValue()); });
-        deserializerMap.put("verification_type", (n) -> { this.setVerificationType(n.getEnumValue(OrganizationDomainAddRequestBodyVerificationType.class)); });
+        deserializerMap.put("verification_type", (n) -> { this.setVerificationType(n.getEnumValue(OrganizationDomainAddRequestBodyVerificationType::forValue)); });
         return deserializerMap;
     }
     /**

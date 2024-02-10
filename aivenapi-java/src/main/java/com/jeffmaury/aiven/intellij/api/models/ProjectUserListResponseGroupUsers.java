@@ -60,7 +60,7 @@ public class ProjectUserListResponseGroupUsers implements AdditionalDataHolder, 
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectUserListResponseGroupUsersMemberType.class)); });
+        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectUserListResponseGroupUsersMemberType::forValue)); });
         deserializerMap.put("real_name", (n) -> { this.setRealName(n.getStringValue()); });
         deserializerMap.put("user_email", (n) -> { this.setUserEmail(n.getStringValue()); });
         deserializerMap.put("user_group_id", (n) -> { this.setUserGroupId(n.getStringValue()); });

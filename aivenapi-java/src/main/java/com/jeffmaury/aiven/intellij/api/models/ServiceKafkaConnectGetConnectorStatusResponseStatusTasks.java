@@ -57,7 +57,7 @@ public class ServiceKafkaConnectGetConnectorStatusResponseStatusTasks implements
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("id", (n) -> { this.setId(n.getIntegerValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceKafkaConnectGetConnectorStatusResponseStatusTasksState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceKafkaConnectGetConnectorStatusResponseStatusTasksState::forValue)); });
         deserializerMap.put("trace", (n) -> { this.setTrace(n.getStringValue()); });
         return deserializerMap;
     }

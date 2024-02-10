@@ -61,7 +61,7 @@ public class ServiceUserCredentialsModifyResponseServiceAcl implements Additiona
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
-        deserializerMap.put("permission", (n) -> { this.setPermission(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceAclPermission.class)); });
+        deserializerMap.put("permission", (n) -> { this.setPermission(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceAclPermission::forValue)); });
         deserializerMap.put("topic", (n) -> { this.setTopic(n.getStringValue()); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;

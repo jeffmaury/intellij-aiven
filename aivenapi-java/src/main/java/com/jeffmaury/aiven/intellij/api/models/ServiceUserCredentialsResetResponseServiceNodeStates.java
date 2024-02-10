@@ -66,9 +66,9 @@ public class ServiceUserCredentialsResetResponseServiceNodeStates implements Add
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("progress_updates", (n) -> { this.setProgressUpdates(n.getCollectionOfObjectValues(ServiceUserCredentialsResetResponseServiceNodeStatesProgressUpdates::createFromDiscriminatorValue)); });
-        deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(ServiceUserCredentialsResetResponseServiceNodeStatesRole.class)); });
+        deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(ServiceUserCredentialsResetResponseServiceNodeStatesRole::forValue)); });
         deserializerMap.put("shard", (n) -> { this.setShard(n.getObjectValue(ServiceUserCredentialsResetResponseServiceNodeStatesShard::createFromDiscriminatorValue)); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceUserCredentialsResetResponseServiceNodeStatesState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceUserCredentialsResetResponseServiceNodeStatesState::forValue)); });
         return deserializerMap;
     }
     /**

@@ -40,44 +40,44 @@ public class AdminRequestBuilder extends BaseRequestBuilder {
     /**
      * Enable Opensearch Security Admin by setting the password
      * @param body ServiceOpenSearchSecuritySetRequestBody
-     * @return a CompletableFuture of ServiceOpenSearchSecuritySetResponse
+     * @return a ServiceOpenSearchSecuritySetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceOpenSearchSecuritySetResponse> post(@jakarta.annotation.Nonnull final ServiceOpenSearchSecuritySetRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceOpenSearchSecuritySetResponse post(@jakarta.annotation.Nonnull final ServiceOpenSearchSecuritySetRequestBody body) {
         return post(body, null);
     }
     /**
      * Enable Opensearch Security Admin by setting the password
      * @param body ServiceOpenSearchSecuritySetRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceOpenSearchSecuritySetResponse
+     * @return a ServiceOpenSearchSecuritySetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceOpenSearchSecuritySetResponse> post(@jakarta.annotation.Nonnull final ServiceOpenSearchSecuritySetRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceOpenSearchSecuritySetResponse post(@jakarta.annotation.Nonnull final ServiceOpenSearchSecuritySetRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceOpenSearchSecuritySetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceOpenSearchSecuritySetResponse::createFromDiscriminatorValue);
     }
     /**
      * Change Opensearch Security Admin password
      * @param body ServiceOpenSearchSecurityResetRequestBody
-     * @return a CompletableFuture of ServiceOpenSearchSecurityResetResponse
+     * @return a ServiceOpenSearchSecurityResetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceOpenSearchSecurityResetResponse> put(@jakarta.annotation.Nonnull final ServiceOpenSearchSecurityResetRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceOpenSearchSecurityResetResponse put(@jakarta.annotation.Nonnull final ServiceOpenSearchSecurityResetRequestBody body) {
         return put(body, null);
     }
     /**
      * Change Opensearch Security Admin password
      * @param body ServiceOpenSearchSecurityResetRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceOpenSearchSecurityResetResponse
+     * @return a ServiceOpenSearchSecurityResetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceOpenSearchSecurityResetResponse> put(@jakarta.annotation.Nonnull final ServiceOpenSearchSecurityResetRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceOpenSearchSecurityResetResponse put(@jakarta.annotation.Nonnull final ServiceOpenSearchSecurityResetRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceOpenSearchSecurityResetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceOpenSearchSecurityResetResponse::createFromDiscriminatorValue);
     }
     /**
      * Enable Opensearch Security Admin by setting the password
@@ -97,16 +97,8 @@ public class AdminRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServiceOpenSearchSecuritySetRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
@@ -129,16 +121,8 @@ public class AdminRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ServiceOpenSearchSecurityResetRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

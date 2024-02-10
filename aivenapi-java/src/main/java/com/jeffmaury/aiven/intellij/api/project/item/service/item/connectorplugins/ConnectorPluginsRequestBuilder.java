@@ -12,7 +12,7 @@ import java.util.Objects;
 public class ConnectorPluginsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.service.item.connectorPlugins.item collection
-     * @param connector_name Unique identifier of the item
+     * @param connector_name Connector name
      * @return a WithConnectorNameItemRequestBuilder
      */
     @jakarta.annotation.Nonnull

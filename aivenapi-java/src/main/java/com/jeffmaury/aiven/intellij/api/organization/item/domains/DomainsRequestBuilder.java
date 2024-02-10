@@ -51,42 +51,42 @@ public class DomainsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * <p>Returns a list of all verified domains in an organization.</p>
-     * @return a CompletableFuture of OrganizationDomainsListResponse
+     * @return a OrganizationDomainsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<OrganizationDomainsListResponse> get() {
+    @jakarta.annotation.Nullable
+    public OrganizationDomainsListResponse get() {
         return get(null);
     }
     /**
      * <p>Returns a list of all verified domains in an organization.</p>
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of OrganizationDomainsListResponse
+     * @return a OrganizationDomainsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<OrganizationDomainsListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public OrganizationDomainsListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, OrganizationDomainsListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, OrganizationDomainsListResponse::createFromDiscriminatorValue);
     }
     /**
      * <p>Creates a new domain in an organization.</p>
      * @param body OrganizationDomainAddRequestBody
-     * @return a CompletableFuture of OrganizationDomainAddResponse
+     * @return a OrganizationDomainAddResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<OrganizationDomainAddResponse> post(@jakarta.annotation.Nonnull final OrganizationDomainAddRequestBody body) {
+    @jakarta.annotation.Nullable
+    public OrganizationDomainAddResponse post(@jakarta.annotation.Nonnull final OrganizationDomainAddRequestBody body) {
         return post(body, null);
     }
     /**
      * <p>Creates a new domain in an organization.</p>
      * @param body OrganizationDomainAddRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of OrganizationDomainAddResponse
+     * @return a OrganizationDomainAddResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<OrganizationDomainAddResponse> post(@jakarta.annotation.Nonnull final OrganizationDomainAddRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public OrganizationDomainAddResponse post(@jakarta.annotation.Nonnull final OrganizationDomainAddRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, OrganizationDomainAddResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, OrganizationDomainAddResponse::createFromDiscriminatorValue);
     }
     /**
      * <p>Returns a list of all verified domains in an organization.</p>
@@ -103,16 +103,8 @@ public class DomainsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -134,16 +126,8 @@ public class DomainsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final OrganizationDomainAddRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

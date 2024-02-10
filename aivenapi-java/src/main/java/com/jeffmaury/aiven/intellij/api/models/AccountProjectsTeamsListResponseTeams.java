@@ -88,7 +88,7 @@ public class AccountProjectsTeamsListResponseTeams implements AdditionalDataHold
         deserializerMap.put("create_time", (n) -> { this.setCreateTime(n.getStringValue()); });
         deserializerMap.put("team_id", (n) -> { this.setTeamId(n.getStringValue()); });
         deserializerMap.put("team_name", (n) -> { this.setTeamName(n.getStringValue()); });
-        deserializerMap.put("team_type", (n) -> { this.setTeamType(n.getEnumValue(AccountProjectsTeamsListResponseTeamsTeamType.class)); });
+        deserializerMap.put("team_type", (n) -> { this.setTeamType(n.getEnumValue(AccountProjectsTeamsListResponseTeamsTeamType::forValue)); });
         deserializerMap.put("update_time", (n) -> { this.setUpdateTime(n.getStringValue()); });
         return deserializerMap;
     }

@@ -92,7 +92,7 @@ public class VpcPeeringConnectionWithRegionDeleteResponseStateInfoWarnings imple
         deserializerMap.put("conflicting_aws_vpc_id", (n) -> { this.setConflictingAwsVpcId(n.getStringValue()); });
         deserializerMap.put("conflicting_aws_vpc_peering_connection_id", (n) -> { this.setConflictingAwsVpcPeeringConnectionId(n.getStringValue()); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
-        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(VpcPeeringConnectionWithRegionDeleteResponseStateInfoWarningsType.class)); });
+        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(VpcPeeringConnectionWithRegionDeleteResponseStateInfoWarningsType::forValue)); });
         return deserializerMap;
     }
     /**

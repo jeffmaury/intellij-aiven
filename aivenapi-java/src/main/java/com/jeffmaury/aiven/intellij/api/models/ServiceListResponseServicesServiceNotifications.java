@@ -60,10 +60,10 @@ public class ServiceListResponseServicesServiceNotifications implements Addition
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("level", (n) -> { this.setLevel(n.getEnumValue(ServiceListResponseServicesServiceNotificationsLevel.class)); });
+        deserializerMap.put("level", (n) -> { this.setLevel(n.getEnumValue(ServiceListResponseServicesServiceNotificationsLevel::forValue)); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
         deserializerMap.put("metadata", (n) -> { this.setMetadata(n.getObjectValue(ServiceListResponseServicesServiceNotificationsMetadata::createFromDiscriminatorValue)); });
-        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(ServiceListResponseServicesServiceNotificationsType.class)); });
+        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(ServiceListResponseServicesServiceNotificationsType::forValue)); });
         return deserializerMap;
     }
     /**

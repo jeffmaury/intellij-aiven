@@ -75,7 +75,7 @@ public class ServiceSchemaRegistryGlobalConfigPutResponse implements AdditionalD
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("compatibility", (n) -> { this.setCompatibility(n.getEnumValue(ServiceSchemaRegistryGlobalConfigPutResponseCompatibility.class)); });
+        deserializerMap.put("compatibility", (n) -> { this.setCompatibility(n.getEnumValue(ServiceSchemaRegistryGlobalConfigPutResponseCompatibility::forValue)); });
         deserializerMap.put("errors", (n) -> { this.setErrors(n.getCollectionOfObjectValues(ServiceSchemaRegistryGlobalConfigPutResponseErrors::createFromDiscriminatorValue)); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
         return deserializerMap;

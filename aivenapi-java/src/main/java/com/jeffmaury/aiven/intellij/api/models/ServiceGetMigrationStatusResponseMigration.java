@@ -77,9 +77,9 @@ public class ServiceGetMigrationStatusResponseMigration implements AdditionalDat
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("error", (n) -> { this.setError(n.getStringValue()); });
         deserializerMap.put("master_last_io_seconds_ago", (n) -> { this.setMasterLastIoSecondsAgo(n.getIntegerValue()); });
-        deserializerMap.put("master_link_status", (n) -> { this.setMasterLinkStatus(n.getEnumValue(ServiceGetMigrationStatusResponseMigrationMasterLinkStatus.class)); });
-        deserializerMap.put("method", (n) -> { this.setMethod(n.getEnumValue(ServiceGetMigrationStatusResponseMigrationMethod.class)); });
-        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceGetMigrationStatusResponseMigrationStatus.class)); });
+        deserializerMap.put("master_link_status", (n) -> { this.setMasterLinkStatus(n.getEnumValue(ServiceGetMigrationStatusResponseMigrationMasterLinkStatus::forValue)); });
+        deserializerMap.put("method", (n) -> { this.setMethod(n.getEnumValue(ServiceGetMigrationStatusResponseMigrationMethod::forValue)); });
+        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(ServiceGetMigrationStatusResponseMigrationStatus::forValue)); });
         return deserializerMap;
     }
     /**

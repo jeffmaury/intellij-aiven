@@ -37,39 +37,39 @@ public class WithApplicationVersionItemRequestBuilder extends BaseRequestBuilder
     }
     /**
      * Delete a Flink ApplicationVersion
-     * @return a CompletableFuture of ServiceFlinkDeleteApplicationVersionResponse
+     * @return a ServiceFlinkDeleteApplicationVersionResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceFlinkDeleteApplicationVersionResponse> delete() {
+    @jakarta.annotation.Nullable
+    public ServiceFlinkDeleteApplicationVersionResponse delete() {
         return delete(null);
     }
     /**
      * Delete a Flink ApplicationVersion
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceFlinkDeleteApplicationVersionResponse
+     * @return a ServiceFlinkDeleteApplicationVersionResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceFlinkDeleteApplicationVersionResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceFlinkDeleteApplicationVersionResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceFlinkDeleteApplicationVersionResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceFlinkDeleteApplicationVersionResponse::createFromDiscriminatorValue);
     }
     /**
      * Get a Flink ApplicationVersion
-     * @return a CompletableFuture of ServiceFlinkGetApplicationVersionResponse
+     * @return a ServiceFlinkGetApplicationVersionResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceFlinkGetApplicationVersionResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceFlinkGetApplicationVersionResponse get() {
         return get(null);
     }
     /**
      * Get a Flink ApplicationVersion
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceFlinkGetApplicationVersionResponse
+     * @return a ServiceFlinkGetApplicationVersionResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceFlinkGetApplicationVersionResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceFlinkGetApplicationVersionResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceFlinkGetApplicationVersionResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceFlinkGetApplicationVersionResponse::createFromDiscriminatorValue);
     }
     /**
      * Delete a Flink ApplicationVersion
@@ -86,16 +86,8 @@ public class WithApplicationVersionItemRequestBuilder extends BaseRequestBuilder
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -114,16 +106,8 @@ public class WithApplicationVersionItemRequestBuilder extends BaseRequestBuilder
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

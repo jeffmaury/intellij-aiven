@@ -66,9 +66,9 @@ public class ServiceCreateResponseServiceNodeStates implements AdditionalDataHol
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("progress_updates", (n) -> { this.setProgressUpdates(n.getCollectionOfObjectValues(ServiceCreateResponseServiceNodeStatesProgressUpdates::createFromDiscriminatorValue)); });
-        deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(ServiceCreateResponseServiceNodeStatesRole.class)); });
+        deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(ServiceCreateResponseServiceNodeStatesRole::forValue)); });
         deserializerMap.put("shard", (n) -> { this.setShard(n.getObjectValue(ServiceCreateResponseServiceNodeStatesShard::createFromDiscriminatorValue)); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceCreateResponseServiceNodeStatesState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceCreateResponseServiceNodeStatesState::forValue)); });
         return deserializerMap;
     }
     /**

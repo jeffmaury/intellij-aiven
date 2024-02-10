@@ -100,7 +100,7 @@ public class ServicePrivatelinkAWSGetResponse implements AdditionalDataHolder, P
         deserializerMap.put("errors", (n) -> { this.setErrors(n.getCollectionOfObjectValues(ServicePrivatelinkAWSGetResponseErrors::createFromDiscriminatorValue)); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
         deserializerMap.put("principals", (n) -> { this.setPrincipals(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServicePrivatelinkAWSGetResponseState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServicePrivatelinkAWSGetResponseState::forValue)); });
         return deserializerMap;
     }
     /**

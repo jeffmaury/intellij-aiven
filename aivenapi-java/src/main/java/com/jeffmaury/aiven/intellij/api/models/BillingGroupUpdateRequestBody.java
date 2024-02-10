@@ -181,7 +181,7 @@ public class BillingGroupUpdateRequestBody implements AdditionalDataHolder, Pars
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(13);
         deserializerMap.put("account_id", (n) -> { this.setAccountId(n.getStringValue()); });
         deserializerMap.put("address_lines", (n) -> { this.setAddressLines(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("billing_currency", (n) -> { this.setBillingCurrency(n.getEnumValue(BillingGroupUpdateRequestBodyBillingCurrency.class)); });
+        deserializerMap.put("billing_currency", (n) -> { this.setBillingCurrency(n.getEnumValue(BillingGroupUpdateRequestBodyBillingCurrency::forValue)); });
         deserializerMap.put("billing_emails", (n) -> { this.setBillingEmails(n.getCollectionOfObjectValues(BillingGroupUpdateRequestBodyBillingEmails::createFromDiscriminatorValue)); });
         deserializerMap.put("billing_extra_text", (n) -> { this.setBillingExtraText(n.getStringValue()); });
         deserializerMap.put("billing_group_name", (n) -> { this.setBillingGroupName(n.getStringValue()); });

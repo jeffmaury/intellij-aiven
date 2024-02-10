@@ -140,8 +140,8 @@ public class ProjectTicketListResponseTickets implements AdditionalDataHolder, P
         deserializerMap.put("organization_id", (n) -> { this.setOrganizationId(n.getStringValue()); });
         deserializerMap.put("project_name", (n) -> { this.setProjectName(n.getStringValue()); });
         deserializerMap.put("service_name", (n) -> { this.setServiceName(n.getStringValue()); });
-        deserializerMap.put("severity", (n) -> { this.setSeverity(n.getEnumValue(ProjectTicketListResponseTicketsSeverity.class)); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ProjectTicketListResponseTicketsState.class)); });
+        deserializerMap.put("severity", (n) -> { this.setSeverity(n.getEnumValue(ProjectTicketListResponseTicketsSeverity::forValue)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ProjectTicketListResponseTicketsState::forValue)); });
         deserializerMap.put("submitter", (n) -> { this.setSubmitter(n.getObjectValue(ProjectTicketListResponseTicketsSubmitter::createFromDiscriminatorValue)); });
         deserializerMap.put("ticket_id", (n) -> { this.setTicketId(n.getStringValue()); });
         deserializerMap.put("title", (n) -> { this.setTitle(n.getStringValue()); });

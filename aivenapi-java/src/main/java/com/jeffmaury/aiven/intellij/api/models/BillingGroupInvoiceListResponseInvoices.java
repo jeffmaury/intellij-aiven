@@ -134,14 +134,14 @@ public class BillingGroupInvoiceListResponseInvoices implements AdditionalDataHo
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(12);
         deserializerMap.put("billing_group_id", (n) -> { this.setBillingGroupId(n.getStringValue()); });
         deserializerMap.put("billing_group_name", (n) -> { this.setBillingGroupName(n.getStringValue()); });
-        deserializerMap.put("billing_group_state", (n) -> { this.setBillingGroupState(n.getEnumValue(BillingGroupInvoiceListResponseInvoicesBillingGroupState.class)); });
-        deserializerMap.put("currency", (n) -> { this.setCurrency(n.getEnumValue(BillingGroupInvoiceListResponseInvoicesCurrency.class)); });
+        deserializerMap.put("billing_group_state", (n) -> { this.setBillingGroupState(n.getEnumValue(BillingGroupInvoiceListResponseInvoicesBillingGroupState::forValue)); });
+        deserializerMap.put("currency", (n) -> { this.setCurrency(n.getEnumValue(BillingGroupInvoiceListResponseInvoicesCurrency::forValue)); });
         deserializerMap.put("download_cookie", (n) -> { this.setDownloadCookie(n.getStringValue()); });
         deserializerMap.put("generated_at", (n) -> { this.setGeneratedAt(n.getStringValue()); });
         deserializerMap.put("invoice_number", (n) -> { this.setInvoiceNumber(n.getStringValue()); });
         deserializerMap.put("period_begin", (n) -> { this.setPeriodBegin(n.getStringValue()); });
         deserializerMap.put("period_end", (n) -> { this.setPeriodEnd(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(BillingGroupInvoiceListResponseInvoicesState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(BillingGroupInvoiceListResponseInvoicesState::forValue)); });
         deserializerMap.put("total_inc_vat", (n) -> { this.setTotalIncVat(n.getStringValue()); });
         deserializerMap.put("total_vat_zero", (n) -> { this.setTotalVatZero(n.getStringValue()); });
         return deserializerMap;

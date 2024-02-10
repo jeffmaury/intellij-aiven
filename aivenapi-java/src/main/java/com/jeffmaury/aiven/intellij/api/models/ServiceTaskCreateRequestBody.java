@@ -73,8 +73,8 @@ public class ServiceTaskCreateRequestBody implements AdditionalDataHolder, Parsa
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("dataset_import", (n) -> { this.setDatasetImport(n.getObjectValue(ServiceTaskCreateRequestBodyDatasetImport::createFromDiscriminatorValue)); });
         deserializerMap.put("migration_check", (n) -> { this.setMigrationCheck(n.getObjectValue(ServiceTaskCreateRequestBodyMigrationCheck::createFromDiscriminatorValue)); });
-        deserializerMap.put("target_version", (n) -> { this.setTargetVersion(n.getEnumValue(ServiceTaskCreateRequestBodyTargetVersion.class)); });
-        deserializerMap.put("task_type", (n) -> { this.setTaskType(n.getEnumValue(ServiceTaskCreateRequestBodyTaskType.class)); });
+        deserializerMap.put("target_version", (n) -> { this.setTargetVersion(n.getEnumValue(ServiceTaskCreateRequestBodyTargetVersion::forValue)); });
+        deserializerMap.put("task_type", (n) -> { this.setTaskType(n.getEnumValue(ServiceTaskCreateRequestBodyTaskType::forValue)); });
         return deserializerMap;
     }
     /**

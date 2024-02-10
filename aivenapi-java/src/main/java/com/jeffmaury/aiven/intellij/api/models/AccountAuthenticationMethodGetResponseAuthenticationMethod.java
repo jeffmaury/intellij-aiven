@@ -247,7 +247,7 @@ public class AccountAuthenticationMethodGetResponseAuthenticationMethod implemen
         deserializerMap.put("authentication_method_enabled", (n) -> { this.setAuthenticationMethodEnabled(n.getBooleanValue()); });
         deserializerMap.put("authentication_method_id", (n) -> { this.setAuthenticationMethodId(n.getStringValue()); });
         deserializerMap.put("authentication_method_name", (n) -> { this.setAuthenticationMethodName(n.getStringValue()); });
-        deserializerMap.put("authentication_method_type", (n) -> { this.setAuthenticationMethodType(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodAuthenticationMethodType.class)); });
+        deserializerMap.put("authentication_method_type", (n) -> { this.setAuthenticationMethodType(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodAuthenticationMethodType::forValue)); });
         deserializerMap.put("auto_join_team_id", (n) -> { this.setAutoJoinTeamId(n.getStringValue()); });
         deserializerMap.put("auto_join_user_group_id", (n) -> { this.setAutoJoinUserGroupId(n.getStringValue()); });
         deserializerMap.put("create_time", (n) -> { this.setCreateTime(n.getStringValue()); });
@@ -256,23 +256,23 @@ public class AccountAuthenticationMethodGetResponseAuthenticationMethod implemen
         deserializerMap.put("saml_acs_url", (n) -> { this.setSamlAcsUrl(n.getStringValue()); });
         deserializerMap.put("saml_assertion_signed_enabled", (n) -> { this.setSamlAssertionSignedEnabled(n.getBooleanValue()); });
         deserializerMap.put("saml_authn_requests_signed_enabled", (n) -> { this.setSamlAuthnRequestsSignedEnabled(n.getBooleanValue()); });
-        deserializerMap.put("saml_cert", (n) -> { this.setSamlCert(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodSamlCert.class)); });
+        deserializerMap.put("saml_cert", (n) -> { this.setSamlCert(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodSamlCert::forValue)); });
         deserializerMap.put("saml_certificate", (n) -> { this.setSamlCertificate(n.getStringValue()); });
         deserializerMap.put("saml_certificate_issuer", (n) -> { this.setSamlCertificateIssuer(n.getStringValue()); });
         deserializerMap.put("saml_certificate_not_valid_after", (n) -> { this.setSamlCertificateNotValidAfter(n.getStringValue()); });
         deserializerMap.put("saml_certificate_not_valid_before", (n) -> { this.setSamlCertificateNotValidBefore(n.getStringValue()); });
         deserializerMap.put("saml_certificate_subject", (n) -> { this.setSamlCertificateSubject(n.getStringValue()); });
-        deserializerMap.put("saml_digest_algorithm", (n) -> { this.setSamlDigestAlgorithm(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodSamlDigestAlgorithm.class)); });
+        deserializerMap.put("saml_digest_algorithm", (n) -> { this.setSamlDigestAlgorithm(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodSamlDigestAlgorithm::forValue)); });
         deserializerMap.put("saml_entity_id", (n) -> { this.setSamlEntityId(n.getStringValue()); });
         deserializerMap.put("saml_field_mapping", (n) -> { this.setSamlFieldMapping(n.getObjectValue(AccountAuthenticationMethodGetResponseAuthenticationMethodSamlFieldMapping::createFromDiscriminatorValue)); });
         deserializerMap.put("saml_idp_login_allowed", (n) -> { this.setSamlIdpLoginAllowed(n.getBooleanValue()); });
         deserializerMap.put("saml_idp_url", (n) -> { this.setSamlIdpUrl(n.getStringValue()); });
         deserializerMap.put("saml_metadata_url", (n) -> { this.setSamlMetadataUrl(n.getStringValue()); });
         deserializerMap.put("saml_requested_authn_context_enabled", (n) -> { this.setSamlRequestedAuthnContextEnabled(n.getBooleanValue()); });
-        deserializerMap.put("saml_signature_algorithm", (n) -> { this.setSamlSignatureAlgorithm(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodSamlSignatureAlgorithm.class)); });
+        deserializerMap.put("saml_signature_algorithm", (n) -> { this.setSamlSignatureAlgorithm(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodSamlSignatureAlgorithm::forValue)); });
         deserializerMap.put("saml_sp_certificate", (n) -> { this.setSamlSpCertificate(n.getStringValue()); });
-        deserializerMap.put("saml_variant", (n) -> { this.setSamlVariant(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodSamlVariant.class)); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodState.class)); });
+        deserializerMap.put("saml_variant", (n) -> { this.setSamlVariant(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodSamlVariant::forValue)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(AccountAuthenticationMethodGetResponseAuthenticationMethodState::forValue)); });
         deserializerMap.put("update_time", (n) -> { this.setUpdateTime(n.getStringValue()); });
         return deserializerMap;
     }

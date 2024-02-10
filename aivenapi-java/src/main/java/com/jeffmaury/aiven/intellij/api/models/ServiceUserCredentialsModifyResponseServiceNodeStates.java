@@ -66,9 +66,9 @@ public class ServiceUserCredentialsModifyResponseServiceNodeStates implements Ad
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("progress_updates", (n) -> { this.setProgressUpdates(n.getCollectionOfObjectValues(ServiceUserCredentialsModifyResponseServiceNodeStatesProgressUpdates::createFromDiscriminatorValue)); });
-        deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceNodeStatesRole.class)); });
+        deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceNodeStatesRole::forValue)); });
         deserializerMap.put("shard", (n) -> { this.setShard(n.getObjectValue(ServiceUserCredentialsModifyResponseServiceNodeStatesShard::createFromDiscriminatorValue)); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceNodeStatesState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceNodeStatesState::forValue)); });
         return deserializerMap;
     }
     /**

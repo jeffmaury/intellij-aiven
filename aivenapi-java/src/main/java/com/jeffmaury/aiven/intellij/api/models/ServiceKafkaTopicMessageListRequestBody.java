@@ -63,7 +63,7 @@ public class ServiceKafkaTopicMessageListRequestBody implements AdditionalDataHo
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("format", (n) -> { this.setFormat(n.getEnumValue(ServiceKafkaTopicMessageListRequestBodyFormat.class)); });
+        deserializerMap.put("format", (n) -> { this.setFormat(n.getEnumValue(ServiceKafkaTopicMessageListRequestBodyFormat::forValue)); });
         deserializerMap.put("max_bytes", (n) -> { this.setMaxBytes(n.getIntegerValue()); });
         deserializerMap.put("partitions", (n) -> { this.setPartitions(n.getObjectValue(ServiceKafkaTopicMessageListRequestBodyPartitions::createFromDiscriminatorValue)); });
         deserializerMap.put("timeout", (n) -> { this.setTimeout(n.getIntegerValue()); });

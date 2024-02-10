@@ -112,8 +112,8 @@ public class OrganizationDomainAddResponse implements AdditionalDataHolder, Pars
         deserializerMap.put("domain_id", (n) -> { this.setDomainId(n.getStringValue()); });
         deserializerMap.put("domain_name", (n) -> { this.setDomainName(n.getStringValue()); });
         deserializerMap.put("organization_id", (n) -> { this.setOrganizationId(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(OrganizationDomainAddResponseState.class)); });
-        deserializerMap.put("verification_type", (n) -> { this.setVerificationType(n.getEnumValue(OrganizationDomainAddResponseVerificationType.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(OrganizationDomainAddResponseState::forValue)); });
+        deserializerMap.put("verification_type", (n) -> { this.setVerificationType(n.getEnumValue(OrganizationDomainAddResponseVerificationType::forValue)); });
         return deserializerMap;
     }
     /**

@@ -112,8 +112,8 @@ public class OrganizationDomainUpdateResponse implements AdditionalDataHolder, P
         deserializerMap.put("domain_id", (n) -> { this.setDomainId(n.getStringValue()); });
         deserializerMap.put("domain_name", (n) -> { this.setDomainName(n.getStringValue()); });
         deserializerMap.put("organization_id", (n) -> { this.setOrganizationId(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(OrganizationDomainUpdateResponseState.class)); });
-        deserializerMap.put("verification_type", (n) -> { this.setVerificationType(n.getEnumValue(OrganizationDomainUpdateResponseVerificationType.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(OrganizationDomainUpdateResponseState::forValue)); });
+        deserializerMap.put("verification_type", (n) -> { this.setVerificationType(n.getEnumValue(OrganizationDomainUpdateResponseVerificationType::forValue)); });
         return deserializerMap;
     }
     /**

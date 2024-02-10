@@ -61,7 +61,7 @@ public class UserOrganizationCreateRequestBody implements AdditionalDataHolder, 
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("organization_name", (n) -> { this.setOrganizationName(n.getStringValue()); });
         deserializerMap.put("primary_billing_group_id", (n) -> { this.setPrimaryBillingGroupId(n.getStringValue()); });
-        deserializerMap.put("tier", (n) -> { this.setTier(n.getEnumValue(UserOrganizationCreateRequestBodyTier.class)); });
+        deserializerMap.put("tier", (n) -> { this.setTier(n.getEnumValue(UserOrganizationCreateRequestBodyTier::forValue)); });
         return deserializerMap;
     }
     /**

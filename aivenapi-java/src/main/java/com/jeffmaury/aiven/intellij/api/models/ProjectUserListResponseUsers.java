@@ -103,7 +103,7 @@ public class ProjectUserListResponseUsers implements AdditionalDataHolder, Parsa
         deserializerMap.put("auth", (n) -> { this.setAuth(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("billing_contact", (n) -> { this.setBillingContact(n.getBooleanValue()); });
         deserializerMap.put("create_time", (n) -> { this.setCreateTime(n.getStringValue()); });
-        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectUserListResponseUsersMemberType.class)); });
+        deserializerMap.put("member_type", (n) -> { this.setMemberType(n.getEnumValue(ProjectUserListResponseUsersMemberType::forValue)); });
         deserializerMap.put("real_name", (n) -> { this.setRealName(n.getStringValue()); });
         deserializerMap.put("team_id", (n) -> { this.setTeamId(n.getStringValue()); });
         deserializerMap.put("team_name", (n) -> { this.setTeamName(n.getStringValue()); });

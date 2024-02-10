@@ -21,7 +21,7 @@ import java.util.Objects;
 public class InvoiceRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.invoice.item collection
-     * @param invoice_number Unique identifier of the item
+     * @param invoice_number Invoice number
      * @return a WithInvoiceNumberItemRequestBuilder
      */
     @jakarta.annotation.Nonnull
@@ -49,21 +49,21 @@ public class InvoiceRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * List project invoices
-     * @return a CompletableFuture of ProjectInvoiceListResponse
+     * @return a ProjectInvoiceListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectInvoiceListResponse> get() {
+    @jakarta.annotation.Nullable
+    public ProjectInvoiceListResponse get() {
         return get(null);
     }
     /**
      * List project invoices
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectInvoiceListResponse
+     * @return a ProjectInvoiceListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectInvoiceListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectInvoiceListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectInvoiceListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectInvoiceListResponse::createFromDiscriminatorValue);
     }
     /**
      * List project invoices
@@ -80,16 +80,8 @@ public class InvoiceRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

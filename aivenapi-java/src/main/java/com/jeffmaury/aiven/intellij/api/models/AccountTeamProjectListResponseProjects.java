@@ -53,7 +53,7 @@ public class AccountTeamProjectListResponseProjects implements AdditionalDataHol
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("project_name", (n) -> { this.setProjectName(n.getStringValue()); });
-        deserializerMap.put("team_type", (n) -> { this.setTeamType(n.getEnumValue(AccountTeamProjectListResponseProjectsTeamType.class)); });
+        deserializerMap.put("team_type", (n) -> { this.setTeamType(n.getEnumValue(AccountTeamProjectListResponseProjectsTeamType::forValue)); });
         return deserializerMap;
     }
     /**

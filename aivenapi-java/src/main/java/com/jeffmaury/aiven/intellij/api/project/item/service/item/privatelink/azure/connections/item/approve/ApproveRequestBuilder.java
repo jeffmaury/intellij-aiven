@@ -36,21 +36,21 @@ public class ApproveRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Approve an Azure private endpoint connection pending user approval
-     * @return a CompletableFuture of ServicePrivatelinkAzureConnectionApprovalResponse
+     * @return a ServicePrivatelinkAzureConnectionApprovalResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAzureConnectionApprovalResponse> post() {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAzureConnectionApprovalResponse post() {
         return post(null);
     }
     /**
      * Approve an Azure private endpoint connection pending user approval
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServicePrivatelinkAzureConnectionApprovalResponse
+     * @return a ServicePrivatelinkAzureConnectionApprovalResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAzureConnectionApprovalResponse> post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAzureConnectionApprovalResponse post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServicePrivatelinkAzureConnectionApprovalResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServicePrivatelinkAzureConnectionApprovalResponse::createFromDiscriminatorValue);
     }
     /**
      * Approve an Azure private endpoint connection pending user approval
@@ -67,16 +67,8 @@ public class ApproveRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

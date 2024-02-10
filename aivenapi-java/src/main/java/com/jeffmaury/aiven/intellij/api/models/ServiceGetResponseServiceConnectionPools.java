@@ -86,7 +86,7 @@ public class ServiceGetResponseServiceConnectionPools implements AdditionalDataH
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("connection_uri", (n) -> { this.setConnectionUri(n.getStringValue()); });
         deserializerMap.put("database", (n) -> { this.setDatabase(n.getStringValue()); });
-        deserializerMap.put("pool_mode", (n) -> { this.setPoolMode(n.getEnumValue(ServiceGetResponseServiceConnectionPoolsPoolMode.class)); });
+        deserializerMap.put("pool_mode", (n) -> { this.setPoolMode(n.getEnumValue(ServiceGetResponseServiceConnectionPoolsPoolMode::forValue)); });
         deserializerMap.put("pool_name", (n) -> { this.setPoolName(n.getStringValue()); });
         deserializerMap.put("pool_size", (n) -> { this.setPoolSize(n.getIntegerValue()); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });

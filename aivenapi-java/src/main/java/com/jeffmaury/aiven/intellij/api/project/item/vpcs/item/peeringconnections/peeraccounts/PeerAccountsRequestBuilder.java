@@ -12,7 +12,7 @@ import java.util.Objects;
 public class PeerAccountsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.vpcs.item.peeringConnections.peerAccounts.item collection
-     * @param peer_cloud_account Unique identifier of the item
+     * @param peer_cloud_account AWS account ID, Google project name, Azure subscription ID, or string &quot;upcloud&quot; for UpCloud peering connections
      * @return a WithPeerCloudAccountItemRequestBuilder
      */
     @jakarta.annotation.Nonnull

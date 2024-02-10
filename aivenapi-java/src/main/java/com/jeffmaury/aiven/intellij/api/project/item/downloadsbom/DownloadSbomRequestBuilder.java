@@ -12,7 +12,7 @@ import java.util.Objects;
 public class DownloadSbomRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.downloadSbom.item collection
-     * @param file_format Unique identifier of the item
+     * @param file_format of the SBOM report
      * @return a WithFileFormatItemRequestBuilder
      */
     @jakarta.annotation.Nonnull

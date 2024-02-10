@@ -99,7 +99,7 @@ public class ServiceKafkaTopicListResponseTopics implements AdditionalDataHolder
         deserializerMap.put("replication", (n) -> { this.setReplication(n.getIntegerValue()); });
         deserializerMap.put("retention_bytes", (n) -> { this.setRetentionBytes(n.getIntegerValue()); });
         deserializerMap.put("retention_hours", (n) -> { this.setRetentionHours(n.getIntegerValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceKafkaTopicListResponseTopicsState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceKafkaTopicListResponseTopicsState::forValue)); });
         deserializerMap.put("tags", (n) -> { this.setTags(n.getCollectionOfObjectValues(ServiceKafkaTopicListResponseTopicsTags::createFromDiscriminatorValue)); });
         deserializerMap.put("topic_name", (n) -> { this.setTopicName(n.getStringValue()); });
         return deserializerMap;

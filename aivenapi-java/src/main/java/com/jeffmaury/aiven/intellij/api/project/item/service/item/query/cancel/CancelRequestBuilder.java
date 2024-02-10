@@ -38,23 +38,23 @@ public class CancelRequestBuilder extends BaseRequestBuilder {
     /**
      * Cancel specified query from service
      * @param body ServiceCancelQueryRequestBody
-     * @return a CompletableFuture of ServiceCancelQueryResponse
+     * @return a ServiceCancelQueryResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceCancelQueryResponse> post(@jakarta.annotation.Nonnull final ServiceCancelQueryRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceCancelQueryResponse post(@jakarta.annotation.Nonnull final ServiceCancelQueryRequestBody body) {
         return post(body, null);
     }
     /**
      * Cancel specified query from service
      * @param body ServiceCancelQueryRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceCancelQueryResponse
+     * @return a ServiceCancelQueryResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceCancelQueryResponse> post(@jakarta.annotation.Nonnull final ServiceCancelQueryRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceCancelQueryResponse post(@jakarta.annotation.Nonnull final ServiceCancelQueryRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceCancelQueryResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceCancelQueryResponse::createFromDiscriminatorValue);
     }
     /**
      * Cancel specified query from service
@@ -74,16 +74,8 @@ public class CancelRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServiceCancelQueryRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

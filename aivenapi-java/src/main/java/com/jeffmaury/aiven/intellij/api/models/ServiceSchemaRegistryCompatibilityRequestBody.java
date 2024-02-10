@@ -56,7 +56,7 @@ public class ServiceSchemaRegistryCompatibilityRequestBody implements Additional
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("schema", (n) -> { this.setSchema(n.getStringValue()); });
-        deserializerMap.put("schemaType", (n) -> { this.setSchemaType(n.getEnumValue(ServiceSchemaRegistryCompatibilityRequestBodySchemaType.class)); });
+        deserializerMap.put("schemaType", (n) -> { this.setSchemaType(n.getEnumValue(ServiceSchemaRegistryCompatibilityRequestBodySchemaType::forValue)); });
         return deserializerMap;
     }
     /**

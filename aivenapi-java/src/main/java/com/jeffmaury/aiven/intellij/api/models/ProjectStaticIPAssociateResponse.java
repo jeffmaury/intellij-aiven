@@ -100,7 +100,7 @@ public class ProjectStaticIPAssociateResponse implements AdditionalDataHolder, P
         deserializerMap.put("ip_address", (n) -> { this.setIpAddress(n.getStringValue()); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
         deserializerMap.put("service_name", (n) -> { this.setServiceName(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ProjectStaticIPAssociateResponseState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ProjectStaticIPAssociateResponseState::forValue)); });
         deserializerMap.put("static_ip_address_id", (n) -> { this.setStaticIpAddressId(n.getStringValue()); });
         deserializerMap.put("termination_protection", (n) -> { this.setTerminationProtection(n.getBooleanValue()); });
         return deserializerMap;

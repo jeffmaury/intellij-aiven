@@ -39,60 +39,60 @@ public class WithTargetClusterItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Delete a replication flow
-     * @return a CompletableFuture of ServiceKafkaMirrorMakerDeleteReplicationFlowResponse
+     * @return a ServiceKafkaMirrorMakerDeleteReplicationFlowResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaMirrorMakerDeleteReplicationFlowResponse> delete() {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaMirrorMakerDeleteReplicationFlowResponse delete() {
         return delete(null);
     }
     /**
      * Delete a replication flow
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceKafkaMirrorMakerDeleteReplicationFlowResponse
+     * @return a ServiceKafkaMirrorMakerDeleteReplicationFlowResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaMirrorMakerDeleteReplicationFlowResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaMirrorMakerDeleteReplicationFlowResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceKafkaMirrorMakerDeleteReplicationFlowResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceKafkaMirrorMakerDeleteReplicationFlowResponse::createFromDiscriminatorValue);
     }
     /**
      * Get a replication flow
-     * @return a CompletableFuture of ServiceKafkaMirrorMakerGetReplicationFlowResponse
+     * @return a ServiceKafkaMirrorMakerGetReplicationFlowResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaMirrorMakerGetReplicationFlowResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaMirrorMakerGetReplicationFlowResponse get() {
         return get(null);
     }
     /**
      * Get a replication flow
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceKafkaMirrorMakerGetReplicationFlowResponse
+     * @return a ServiceKafkaMirrorMakerGetReplicationFlowResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaMirrorMakerGetReplicationFlowResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaMirrorMakerGetReplicationFlowResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceKafkaMirrorMakerGetReplicationFlowResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceKafkaMirrorMakerGetReplicationFlowResponse::createFromDiscriminatorValue);
     }
     /**
      * Update a replication flow
      * @param body ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody
-     * @return a CompletableFuture of ServiceKafkaMirrorMakerPatchReplicationFlowResponse
+     * @return a ServiceKafkaMirrorMakerPatchReplicationFlowResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaMirrorMakerPatchReplicationFlowResponse> put(@jakarta.annotation.Nonnull final ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaMirrorMakerPatchReplicationFlowResponse put(@jakarta.annotation.Nonnull final ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody body) {
         return put(body, null);
     }
     /**
      * Update a replication flow
      * @param body ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceKafkaMirrorMakerPatchReplicationFlowResponse
+     * @return a ServiceKafkaMirrorMakerPatchReplicationFlowResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceKafkaMirrorMakerPatchReplicationFlowResponse> put(@jakarta.annotation.Nonnull final ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceKafkaMirrorMakerPatchReplicationFlowResponse put(@jakarta.annotation.Nonnull final ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceKafkaMirrorMakerPatchReplicationFlowResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceKafkaMirrorMakerPatchReplicationFlowResponse::createFromDiscriminatorValue);
     }
     /**
      * Delete a replication flow
@@ -109,16 +109,8 @@ public class WithTargetClusterItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -137,16 +129,8 @@ public class WithTargetClusterItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -168,16 +152,8 @@ public class WithTargetClusterItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ServiceKafkaMirrorMakerPatchReplicationFlowRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

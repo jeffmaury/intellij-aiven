@@ -142,7 +142,7 @@ public class ServiceFlinkJobDetailsResponse implements AdditionalDataHolder, Par
         deserializerMap.put("now", (n) -> { this.setNow(n.getIntegerValue()); });
         deserializerMap.put("plan", (n) -> { this.setPlan(n.getObjectValue(ServiceFlinkJobDetailsResponsePlan::createFromDiscriminatorValue)); });
         deserializerMap.put("start-time", (n) -> { this.setStartTime(n.getIntegerValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceFlinkJobDetailsResponseState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceFlinkJobDetailsResponseState::forValue)); });
         deserializerMap.put("status-counts", (n) -> { this.setStatusCounts(n.getObjectValue(ServiceFlinkJobDetailsResponseStatusCounts::createFromDiscriminatorValue)); });
         deserializerMap.put("timestamps", (n) -> { this.setTimestamps(n.getObjectValue(ServiceFlinkJobDetailsResponseTimestamps::createFromDiscriminatorValue)); });
         deserializerMap.put("vertices", (n) -> { this.setVertices(n.getCollectionOfObjectValues(ServiceFlinkJobDetailsResponseVertices::createFromDiscriminatorValue)); });

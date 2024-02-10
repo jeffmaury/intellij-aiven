@@ -106,7 +106,7 @@ public class ServiceKafkaConnectGetAvailableConnectorsResponsePlugins implements
         deserializerMap.put("preview", (n) -> { this.setPreview(n.getBooleanValue()); });
         deserializerMap.put("preview_info", (n) -> { this.setPreviewInfo(n.getStringValue()); });
         deserializerMap.put("title", (n) -> { this.setTitle(n.getStringValue()); });
-        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(ServiceKafkaConnectGetAvailableConnectorsResponsePluginsType.class)); });
+        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(ServiceKafkaConnectGetAvailableConnectorsResponsePluginsType::forValue)); });
         deserializerMap.put("version", (n) -> { this.setVersion(n.getStringValue()); });
         return deserializerMap;
     }

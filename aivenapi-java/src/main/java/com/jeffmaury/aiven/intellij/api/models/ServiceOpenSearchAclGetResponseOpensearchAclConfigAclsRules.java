@@ -53,7 +53,7 @@ public class ServiceOpenSearchAclGetResponseOpensearchAclConfigAclsRules impleme
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("index", (n) -> { this.setIndex(n.getStringValue()); });
-        deserializerMap.put("permission", (n) -> { this.setPermission(n.getEnumValue(ServiceOpenSearchAclGetResponseOpensearchAclConfigAclsRulesPermission.class)); });
+        deserializerMap.put("permission", (n) -> { this.setPermission(n.getEnumValue(ServiceOpenSearchAclGetResponseOpensearchAclConfigAclsRulesPermission::forValue)); });
         return deserializerMap;
     }
     /**

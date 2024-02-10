@@ -329,7 +329,7 @@ public class OrganizationProjectsListResponseProjects implements AdditionalDataH
         deserializerMap.put("address_lines", (n) -> { this.setAddressLines(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("available_credits", (n) -> { this.setAvailableCredits(n.getStringValue()); });
         deserializerMap.put("billing_address", (n) -> { this.setBillingAddress(n.getStringValue()); });
-        deserializerMap.put("billing_currency", (n) -> { this.setBillingCurrency(n.getEnumValue(OrganizationProjectsListResponseProjectsBillingCurrency.class)); });
+        deserializerMap.put("billing_currency", (n) -> { this.setBillingCurrency(n.getEnumValue(OrganizationProjectsListResponseProjectsBillingCurrency::forValue)); });
         deserializerMap.put("billing_emails", (n) -> { this.setBillingEmails(n.getCollectionOfObjectValues(OrganizationProjectsListResponseProjectsBillingEmails::createFromDiscriminatorValue)); });
         deserializerMap.put("billing_extra_text", (n) -> { this.setBillingExtraText(n.getStringValue()); });
         deserializerMap.put("billing_group_id", (n) -> { this.setBillingGroupId(n.getStringValue()); });

@@ -38,23 +38,23 @@ public class LoginOptionsRequestBuilder extends BaseRequestBuilder {
     /**
      * <p>Get available user login options</p>
      * @param body UserAuthLoginOptionsRequestBody
-     * @return a CompletableFuture of UserAuthLoginOptionsResponse
+     * @return a UserAuthLoginOptionsResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserAuthLoginOptionsResponse> post(@jakarta.annotation.Nonnull final UserAuthLoginOptionsRequestBody body) {
+    @jakarta.annotation.Nullable
+    public UserAuthLoginOptionsResponse post(@jakarta.annotation.Nonnull final UserAuthLoginOptionsRequestBody body) {
         return post(body, null);
     }
     /**
      * <p>Get available user login options</p>
      * @param body UserAuthLoginOptionsRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of UserAuthLoginOptionsResponse
+     * @return a UserAuthLoginOptionsResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<UserAuthLoginOptionsResponse> post(@jakarta.annotation.Nonnull final UserAuthLoginOptionsRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public UserAuthLoginOptionsResponse post(@jakarta.annotation.Nonnull final UserAuthLoginOptionsRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, UserAuthLoginOptionsResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, UserAuthLoginOptionsResponse::createFromDiscriminatorValue);
     }
     /**
      * <p>Get available user login options</p>
@@ -74,16 +74,8 @@ public class LoginOptionsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UserAuthLoginOptionsRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

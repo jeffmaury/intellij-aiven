@@ -51,42 +51,42 @@ public class VersionsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Get Schema Registry subject versions
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectVersionsGetResponse
+     * @return a ServiceSchemaRegistrySubjectVersionsGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectVersionsGetResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectVersionsGetResponse get() {
         return get(null);
     }
     /**
      * Get Schema Registry subject versions
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectVersionsGetResponse
+     * @return a ServiceSchemaRegistrySubjectVersionsGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectVersionsGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectVersionsGetResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectVersionsGetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceSchemaRegistrySubjectVersionsGetResponse::createFromDiscriminatorValue);
     }
     /**
      * Register a new Schema in Schema Registry
      * @param body ServiceSchemaRegistrySubjectVersionPostRequestBody
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectVersionPostResponse
+     * @return a ServiceSchemaRegistrySubjectVersionPostResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectVersionPostResponse> post(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectVersionPostRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectVersionPostResponse post(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectVersionPostRequestBody body) {
         return post(body, null);
     }
     /**
      * Register a new Schema in Schema Registry
      * @param body ServiceSchemaRegistrySubjectVersionPostRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectVersionPostResponse
+     * @return a ServiceSchemaRegistrySubjectVersionPostResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectVersionPostResponse> post(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectVersionPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectVersionPostResponse post(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectVersionPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectVersionPostResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceSchemaRegistrySubjectVersionPostResponse::createFromDiscriminatorValue);
     }
     /**
      * Get Schema Registry subject versions
@@ -103,16 +103,8 @@ public class VersionsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -134,16 +126,8 @@ public class VersionsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectVersionPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

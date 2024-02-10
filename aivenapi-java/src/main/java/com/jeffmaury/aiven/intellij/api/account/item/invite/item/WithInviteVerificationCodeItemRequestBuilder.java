@@ -36,21 +36,21 @@ public class WithInviteVerificationCodeItemRequestBuilder extends BaseRequestBui
     }
     /**
      * Confirm account team invite
-     * @return a CompletableFuture of AccountTeamMemberVerifyInviteResponse
+     * @return a AccountTeamMemberVerifyInviteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountTeamMemberVerifyInviteResponse> post() {
+    @jakarta.annotation.Nullable
+    public AccountTeamMemberVerifyInviteResponse post() {
         return post(null);
     }
     /**
      * Confirm account team invite
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of AccountTeamMemberVerifyInviteResponse
+     * @return a AccountTeamMemberVerifyInviteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<AccountTeamMemberVerifyInviteResponse> post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public AccountTeamMemberVerifyInviteResponse post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, AccountTeamMemberVerifyInviteResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, AccountTeamMemberVerifyInviteResponse::createFromDiscriminatorValue);
     }
     /**
      * Confirm account team invite
@@ -67,16 +67,8 @@ public class WithInviteVerificationCodeItemRequestBuilder extends BaseRequestBui
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

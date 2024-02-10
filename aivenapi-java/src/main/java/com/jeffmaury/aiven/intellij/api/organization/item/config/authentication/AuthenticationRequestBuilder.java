@@ -38,42 +38,42 @@ public class AuthenticationRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * <p>Retrieve current authentication configuration for an organization.</p>
-     * @return a CompletableFuture of OrganizationAuthenticationConfigGetResponse
+     * @return a OrganizationAuthenticationConfigGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<OrganizationAuthenticationConfigGetResponse> get() {
+    @jakarta.annotation.Nullable
+    public OrganizationAuthenticationConfigGetResponse get() {
         return get(null);
     }
     /**
      * <p>Retrieve current authentication configuration for an organization.</p>
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of OrganizationAuthenticationConfigGetResponse
+     * @return a OrganizationAuthenticationConfigGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<OrganizationAuthenticationConfigGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public OrganizationAuthenticationConfigGetResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, OrganizationAuthenticationConfigGetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, OrganizationAuthenticationConfigGetResponse::createFromDiscriminatorValue);
     }
     /**
      * <p>Update current authentication configuration for an organization.</p>
      * @param body OrganizationAuthenticationConfigUpdateRequestBody
-     * @return a CompletableFuture of OrganizationAuthenticationConfigUpdateResponse
+     * @return a OrganizationAuthenticationConfigUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<OrganizationAuthenticationConfigUpdateResponse> patch(@jakarta.annotation.Nonnull final OrganizationAuthenticationConfigUpdateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public OrganizationAuthenticationConfigUpdateResponse patch(@jakarta.annotation.Nonnull final OrganizationAuthenticationConfigUpdateRequestBody body) {
         return patch(body, null);
     }
     /**
      * <p>Update current authentication configuration for an organization.</p>
      * @param body OrganizationAuthenticationConfigUpdateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of OrganizationAuthenticationConfigUpdateResponse
+     * @return a OrganizationAuthenticationConfigUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<OrganizationAuthenticationConfigUpdateResponse> patch(@jakarta.annotation.Nonnull final OrganizationAuthenticationConfigUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public OrganizationAuthenticationConfigUpdateResponse patch(@jakarta.annotation.Nonnull final OrganizationAuthenticationConfigUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, OrganizationAuthenticationConfigUpdateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, OrganizationAuthenticationConfigUpdateResponse::createFromDiscriminatorValue);
     }
     /**
      * <p>Retrieve current authentication configuration for an organization.</p>
@@ -90,16 +90,8 @@ public class AuthenticationRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -121,16 +113,8 @@ public class AuthenticationRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final OrganizationAuthenticationConfigUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PatchRequestConfiguration requestConfig = new PatchRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PATCH;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

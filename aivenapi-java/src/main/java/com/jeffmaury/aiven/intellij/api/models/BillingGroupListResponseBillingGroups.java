@@ -256,7 +256,7 @@ public class BillingGroupListResponseBillingGroups implements AdditionalDataHold
         deserializerMap.put("account_name", (n) -> { this.setAccountName(n.getStringValue()); });
         deserializerMap.put("address_lines", (n) -> { this.setAddressLines(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("billing_address", (n) -> { this.setBillingAddress(n.getStringValue()); });
-        deserializerMap.put("billing_currency", (n) -> { this.setBillingCurrency(n.getEnumValue(BillingGroupListResponseBillingGroupsBillingCurrency.class)); });
+        deserializerMap.put("billing_currency", (n) -> { this.setBillingCurrency(n.getEnumValue(BillingGroupListResponseBillingGroupsBillingCurrency::forValue)); });
         deserializerMap.put("billing_emails", (n) -> { this.setBillingEmails(n.getCollectionOfObjectValues(BillingGroupListResponseBillingGroupsBillingEmails::createFromDiscriminatorValue)); });
         deserializerMap.put("billing_extra_text", (n) -> { this.setBillingExtraText(n.getStringValue()); });
         deserializerMap.put("billing_group_id", (n) -> { this.setBillingGroupId(n.getStringValue()); });
@@ -268,7 +268,7 @@ public class BillingGroupListResponseBillingGroups implements AdditionalDataHold
         deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
         deserializerMap.put("estimated_balance_local", (n) -> { this.setEstimatedBalanceLocal(n.getStringValue()); });
         deserializerMap.put("estimated_balance_usd", (n) -> { this.setEstimatedBalanceUsd(n.getStringValue()); });
-        deserializerMap.put("payment_method", (n) -> { this.setPaymentMethod(n.getEnumValue(BillingGroupListResponseBillingGroupsPaymentMethod.class)); });
+        deserializerMap.put("payment_method", (n) -> { this.setPaymentMethod(n.getEnumValue(BillingGroupListResponseBillingGroupsPaymentMethod::forValue)); });
         deserializerMap.put("state", (n) -> { this.setState(n.getStringValue()); });
         deserializerMap.put("vat_id", (n) -> { this.setVatId(n.getStringValue()); });
         deserializerMap.put("zip_code", (n) -> { this.setZipCode(n.getStringValue()); });

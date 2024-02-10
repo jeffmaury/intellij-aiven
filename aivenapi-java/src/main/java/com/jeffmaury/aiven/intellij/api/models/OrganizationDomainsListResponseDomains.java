@@ -109,8 +109,8 @@ public class OrganizationDomainsListResponseDomains implements AdditionalDataHol
         deserializerMap.put("domain_id", (n) -> { this.setDomainId(n.getStringValue()); });
         deserializerMap.put("domain_name", (n) -> { this.setDomainName(n.getStringValue()); });
         deserializerMap.put("organization_id", (n) -> { this.setOrganizationId(n.getStringValue()); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(OrganizationDomainsListResponseDomainsState.class)); });
-        deserializerMap.put("verification_type", (n) -> { this.setVerificationType(n.getEnumValue(OrganizationDomainsListResponseDomainsVerificationType.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(OrganizationDomainsListResponseDomainsState::forValue)); });
+        deserializerMap.put("verification_type", (n) -> { this.setVerificationType(n.getEnumValue(OrganizationDomainsListResponseDomainsVerificationType::forValue)); });
         return deserializerMap;
     }
     /**

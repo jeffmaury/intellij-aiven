@@ -300,7 +300,7 @@ public class ServiceListResponseServices implements AdditionalDataHolder, Parsab
         deserializerMap.put("service_type_description", (n) -> { this.setServiceTypeDescription(n.getStringValue()); });
         deserializerMap.put("service_uri", (n) -> { this.setServiceUri(n.getStringValue()); });
         deserializerMap.put("service_uri_params", (n) -> { this.setServiceUriParams(n.getObjectValue(ServiceListResponseServicesServiceUriParams::createFromDiscriminatorValue)); });
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceListResponseServicesState.class)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(ServiceListResponseServicesState::forValue)); });
         deserializerMap.put("tags", (n) -> { this.setTags(n.getObjectValue(ServiceListResponseServicesTags::createFromDiscriminatorValue)); });
         deserializerMap.put("termination_protection", (n) -> { this.setTerminationProtection(n.getBooleanValue()); });
         deserializerMap.put("topics", (n) -> { this.setTopics(n.getCollectionOfObjectValues(ServiceListResponseServicesTopics::createFromDiscriminatorValue)); });

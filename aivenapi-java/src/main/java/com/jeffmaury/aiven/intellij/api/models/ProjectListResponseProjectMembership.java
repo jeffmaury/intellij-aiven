@@ -59,7 +59,7 @@ public class ProjectListResponseProjectMembership implements AdditionalDataHolde
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("ANY", (n) -> { this.setANY(n.getEnumValue(ProjectListResponseProjectMembershipANY.class)); });
+        deserializerMap.put("ANY", (n) -> { this.setANY(n.getEnumValue(ProjectListResponseProjectMembershipANY::forValue)); });
         return deserializerMap;
     }
     /**

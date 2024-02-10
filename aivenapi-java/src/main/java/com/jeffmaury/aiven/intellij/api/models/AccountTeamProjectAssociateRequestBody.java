@@ -51,7 +51,7 @@ public class AccountTeamProjectAssociateRequestBody implements AdditionalDataHol
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("team_type", (n) -> { this.setTeamType(n.getEnumValue(AccountTeamProjectAssociateRequestBodyTeamType.class)); });
+        deserializerMap.put("team_type", (n) -> { this.setTeamType(n.getEnumValue(AccountTeamProjectAssociateRequestBodyTeamType::forValue)); });
         return deserializerMap;
     }
     /**

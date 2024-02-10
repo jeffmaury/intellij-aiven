@@ -38,23 +38,23 @@ public class PasswordStrengthRequestBuilder extends BaseRequestBuilder {
     /**
      * Check password strength for a new user
      * @param body CheckPasswordStrengthNewUserRequestBody
-     * @return a CompletableFuture of CheckPasswordStrengthNewUserResponse
+     * @return a CheckPasswordStrengthNewUserResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<CheckPasswordStrengthNewUserResponse> post(@jakarta.annotation.Nonnull final CheckPasswordStrengthNewUserRequestBody body) {
+    @jakarta.annotation.Nullable
+    public CheckPasswordStrengthNewUserResponse post(@jakarta.annotation.Nonnull final CheckPasswordStrengthNewUserRequestBody body) {
         return post(body, null);
     }
     /**
      * Check password strength for a new user
      * @param body CheckPasswordStrengthNewUserRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of CheckPasswordStrengthNewUserResponse
+     * @return a CheckPasswordStrengthNewUserResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<CheckPasswordStrengthNewUserResponse> post(@jakarta.annotation.Nonnull final CheckPasswordStrengthNewUserRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public CheckPasswordStrengthNewUserResponse post(@jakarta.annotation.Nonnull final CheckPasswordStrengthNewUserRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, CheckPasswordStrengthNewUserResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, CheckPasswordStrengthNewUserResponse::createFromDiscriminatorValue);
     }
     /**
      * Check password strength for a new user
@@ -74,16 +74,8 @@ public class PasswordStrengthRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CheckPasswordStrengthNewUserRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

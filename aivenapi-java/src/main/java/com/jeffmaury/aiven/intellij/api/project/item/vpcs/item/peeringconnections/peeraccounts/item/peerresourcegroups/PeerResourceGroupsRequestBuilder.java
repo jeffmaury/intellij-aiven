@@ -12,7 +12,7 @@ import java.util.Objects;
 public class PeerResourceGroupsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.vpcs.item.peeringConnections.peerAccounts.item.peerResourceGroups.item collection
-     * @param peer_resource_group Unique identifier of the item
+     * @param peer_resource_group Azure resource group
      * @return a WithPeerResourceGroupItemRequestBuilder
      */
     @jakarta.annotation.Nonnull

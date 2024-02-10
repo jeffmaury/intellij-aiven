@@ -60,10 +60,10 @@ public class ServiceUserCredentialsModifyResponseServiceServiceNotifications imp
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("level", (n) -> { this.setLevel(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceServiceNotificationsLevel.class)); });
+        deserializerMap.put("level", (n) -> { this.setLevel(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceServiceNotificationsLevel::forValue)); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
         deserializerMap.put("metadata", (n) -> { this.setMetadata(n.getObjectValue(ServiceUserCredentialsModifyResponseServiceServiceNotificationsMetadata::createFromDiscriminatorValue)); });
-        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceServiceNotificationsType.class)); });
+        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceServiceNotificationsType::forValue)); });
         return deserializerMap;
     }
     /**

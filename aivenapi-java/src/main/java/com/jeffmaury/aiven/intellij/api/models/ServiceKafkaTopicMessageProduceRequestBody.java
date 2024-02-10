@@ -71,7 +71,7 @@ public class ServiceKafkaTopicMessageProduceRequestBody implements AdditionalDat
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
-        deserializerMap.put("format", (n) -> { this.setFormat(n.getEnumValue(ServiceKafkaTopicMessageProduceRequestBodyFormat.class)); });
+        deserializerMap.put("format", (n) -> { this.setFormat(n.getEnumValue(ServiceKafkaTopicMessageProduceRequestBodyFormat::forValue)); });
         deserializerMap.put("key_schema", (n) -> { this.setKeySchema(n.getStringValue()); });
         deserializerMap.put("key_schema_id", (n) -> { this.setKeySchemaId(n.getIntegerValue()); });
         deserializerMap.put("records", (n) -> { this.setRecords(n.getCollectionOfObjectValues(ServiceKafkaTopicMessageProduceRequestBodyRecords::createFromDiscriminatorValue)); });

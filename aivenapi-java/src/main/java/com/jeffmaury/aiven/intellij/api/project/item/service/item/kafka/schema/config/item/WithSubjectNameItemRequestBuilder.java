@@ -38,42 +38,42 @@ public class WithSubjectNameItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Get configuration for Schema Registry subject
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectConfigGetResponse
+     * @return a ServiceSchemaRegistrySubjectConfigGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigGetResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectConfigGetResponse get() {
         return get(null);
     }
     /**
      * Get configuration for Schema Registry subject
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectConfigGetResponse
+     * @return a ServiceSchemaRegistrySubjectConfigGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectConfigGetResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectConfigGetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceSchemaRegistrySubjectConfigGetResponse::createFromDiscriminatorValue);
     }
     /**
      * Edit configuration for Schema Registry subject
      * @param body ServiceSchemaRegistrySubjectConfigPutRequestBody
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectConfigPutResponse
+     * @return a ServiceSchemaRegistrySubjectConfigPutResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigPutResponse> put(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectConfigPutResponse put(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body) {
         return put(body, null);
     }
     /**
      * Edit configuration for Schema Registry subject
      * @param body ServiceSchemaRegistrySubjectConfigPutRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceSchemaRegistrySubjectConfigPutResponse
+     * @return a ServiceSchemaRegistrySubjectConfigPutResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceSchemaRegistrySubjectConfigPutResponse> put(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceSchemaRegistrySubjectConfigPutResponse put(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceSchemaRegistrySubjectConfigPutResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceSchemaRegistrySubjectConfigPutResponse::createFromDiscriminatorValue);
     }
     /**
      * Get configuration for Schema Registry subject
@@ -90,16 +90,8 @@ public class WithSubjectNameItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -121,16 +113,8 @@ public class WithSubjectNameItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ServiceSchemaRegistrySubjectConfigPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

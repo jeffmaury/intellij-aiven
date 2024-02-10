@@ -40,63 +40,63 @@ public class TagsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * List all tags attached to the service
-     * @return a CompletableFuture of ProjectServiceTagsListResponse
+     * @return a ProjectServiceTagsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectServiceTagsListResponse> get() {
+    @jakarta.annotation.Nullable
+    public ProjectServiceTagsListResponse get() {
         return get(null);
     }
     /**
      * List all tags attached to the service
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectServiceTagsListResponse
+     * @return a ProjectServiceTagsListResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectServiceTagsListResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectServiceTagsListResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectServiceTagsListResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectServiceTagsListResponse::createFromDiscriminatorValue);
     }
     /**
      * Update one or more tags, creating ones that don't exist, and deleting ones given NULL value
      * @param body ProjectServiceTagsUpdateRequestBody
-     * @return a CompletableFuture of ProjectServiceTagsUpdateResponse
+     * @return a ProjectServiceTagsUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectServiceTagsUpdateResponse> patch(@jakarta.annotation.Nonnull final ProjectServiceTagsUpdateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ProjectServiceTagsUpdateResponse patch(@jakarta.annotation.Nonnull final ProjectServiceTagsUpdateRequestBody body) {
         return patch(body, null);
     }
     /**
      * Update one or more tags, creating ones that don't exist, and deleting ones given NULL value
      * @param body ProjectServiceTagsUpdateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectServiceTagsUpdateResponse
+     * @return a ProjectServiceTagsUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectServiceTagsUpdateResponse> patch(@jakarta.annotation.Nonnull final ProjectServiceTagsUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectServiceTagsUpdateResponse patch(@jakarta.annotation.Nonnull final ProjectServiceTagsUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectServiceTagsUpdateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectServiceTagsUpdateResponse::createFromDiscriminatorValue);
     }
     /**
      * Replace all project tags with a new set of tags, deleting old ones
      * @param body ProjectServiceTagsReplaceRequestBody
-     * @return a CompletableFuture of ProjectServiceTagsReplaceResponse
+     * @return a ProjectServiceTagsReplaceResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectServiceTagsReplaceResponse> put(@jakarta.annotation.Nonnull final ProjectServiceTagsReplaceRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ProjectServiceTagsReplaceResponse put(@jakarta.annotation.Nonnull final ProjectServiceTagsReplaceRequestBody body) {
         return put(body, null);
     }
     /**
      * Replace all project tags with a new set of tags, deleting old ones
      * @param body ProjectServiceTagsReplaceRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectServiceTagsReplaceResponse
+     * @return a ProjectServiceTagsReplaceResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectServiceTagsReplaceResponse> put(@jakarta.annotation.Nonnull final ProjectServiceTagsReplaceRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectServiceTagsReplaceResponse put(@jakarta.annotation.Nonnull final ProjectServiceTagsReplaceRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectServiceTagsReplaceResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectServiceTagsReplaceResponse::createFromDiscriminatorValue);
     }
     /**
      * List all tags attached to the service
@@ -113,16 +113,8 @@ public class TagsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -144,16 +136,8 @@ public class TagsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final ProjectServiceTagsUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PatchRequestConfiguration requestConfig = new PatchRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PATCH;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
@@ -176,16 +160,8 @@ public class TagsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ProjectServiceTagsReplaceRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

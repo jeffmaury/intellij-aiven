@@ -135,7 +135,7 @@ public class ServiceUserCreateResponseUser implements AdditionalDataHolder, Pars
         deserializerMap.put("access_cert_not_valid_after_time", (n) -> { this.setAccessCertNotValidAfterTime(n.getStringValue()); });
         deserializerMap.put("access_control", (n) -> { this.setAccessControl(n.getObjectValue(ServiceUserCreateResponseUserAccessControl::createFromDiscriminatorValue)); });
         deserializerMap.put("access_key", (n) -> { this.setAccessKey(n.getStringValue()); });
-        deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getEnumValue(ServiceUserCreateResponseUserAuthentication.class)); });
+        deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getEnumValue(ServiceUserCreateResponseUserAuthentication::forValue)); });
         deserializerMap.put("expiring_cert_not_valid_after_time", (n) -> { this.setExpiringCertNotValidAfterTime(n.getStringValue()); });
         deserializerMap.put("password", (n) -> { this.setPassword(n.getStringValue()); });
         deserializerMap.put("type", (n) -> { this.setType(n.getStringValue()); });

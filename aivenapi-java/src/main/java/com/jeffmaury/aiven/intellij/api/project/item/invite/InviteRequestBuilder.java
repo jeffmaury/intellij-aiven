@@ -2,7 +2,7 @@ package com.jeffmaury.aiven.intellij.api.project.item.invite;
 
 import com.jeffmaury.aiven.intellij.api.models.ProjectInviteRequestBody;
 import com.jeffmaury.aiven.intellij.api.models.ProjectInviteResponse;
-import com.jeffmaury.aiven.intellij.api.project.item.invite.item.WithInvitedEmailItemRequestBuilder;
+import com.jeffmaury.aiven.intellij.api.project.item.invite.item.InviteItemRequestBuilder;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -22,15 +22,15 @@ import java.util.Objects;
 public class InviteRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.jeffmaury.aiven.intellij.api.project.item.invite.item collection
-     * @param invited_email Email address of user to be invited
-     * @return a WithInvitedEmailItemRequestBuilder
+     * @param inviteId Email address of user to be invited
+     * @return a InviteItemRequestBuilder
      */
     @jakarta.annotation.Nonnull
-    public WithInvitedEmailItemRequestBuilder byInvited_email(@jakarta.annotation.Nonnull final String invited_email) {
-        Objects.requireNonNull(invited_email);
+    public InviteItemRequestBuilder byInviteId(@jakarta.annotation.Nonnull final String inviteId) {
+        Objects.requireNonNull(inviteId);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("invited_email", invited_email);
-        return new WithInvitedEmailItemRequestBuilder(urlTplParams, requestAdapter);
+        urlTplParams.put("invite%2Did", inviteId);
+        return new InviteItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**
      * Instantiates a new InviteRequestBuilder and sets the default values.
@@ -51,23 +51,23 @@ public class InviteRequestBuilder extends BaseRequestBuilder {
     /**
      * Send project membership invitation
      * @param body ProjectInviteRequestBody
-     * @return a CompletableFuture of ProjectInviteResponse
+     * @return a ProjectInviteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectInviteResponse> post(@jakarta.annotation.Nonnull final ProjectInviteRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ProjectInviteResponse post(@jakarta.annotation.Nonnull final ProjectInviteRequestBody body) {
         return post(body, null);
     }
     /**
      * Send project membership invitation
      * @param body ProjectInviteRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ProjectInviteResponse
+     * @return a ProjectInviteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ProjectInviteResponse> post(@jakarta.annotation.Nonnull final ProjectInviteRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ProjectInviteResponse post(@jakarta.annotation.Nonnull final ProjectInviteRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ProjectInviteResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ProjectInviteResponse::createFromDiscriminatorValue);
     }
     /**
      * Send project membership invitation
@@ -87,16 +87,8 @@ public class InviteRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ProjectInviteRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

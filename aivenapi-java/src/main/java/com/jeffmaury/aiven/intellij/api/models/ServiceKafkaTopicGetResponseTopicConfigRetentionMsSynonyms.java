@@ -57,7 +57,7 @@ public class ServiceKafkaTopicGetResponseTopicConfigRetentionMsSynonyms implemen
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("source", (n) -> { this.setSource(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigRetentionMsSynonymsSource.class)); });
+        deserializerMap.put("source", (n) -> { this.setSource(n.getEnumValue(ServiceKafkaTopicGetResponseTopicConfigRetentionMsSynonymsSource::forValue)); });
         deserializerMap.put("value", (n) -> { this.setValue(n.getBooleanValue()); });
         return deserializerMap;
     }

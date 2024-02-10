@@ -39,60 +39,60 @@ public class WithIntegrationEndpointItemRequestBuilder extends BaseRequestBuilde
     }
     /**
      * Delete a service integration endpoint
-     * @return a CompletableFuture of ServiceIntegrationEndpointDeleteResponse
+     * @return a ServiceIntegrationEndpointDeleteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceIntegrationEndpointDeleteResponse> delete() {
+    @jakarta.annotation.Nullable
+    public ServiceIntegrationEndpointDeleteResponse delete() {
         return delete(null);
     }
     /**
      * Delete a service integration endpoint
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceIntegrationEndpointDeleteResponse
+     * @return a ServiceIntegrationEndpointDeleteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceIntegrationEndpointDeleteResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceIntegrationEndpointDeleteResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceIntegrationEndpointDeleteResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceIntegrationEndpointDeleteResponse::createFromDiscriminatorValue);
     }
     /**
      * Get service integration endpoint
-     * @return a CompletableFuture of ServiceIntegrationEndpointGetResponse
+     * @return a ServiceIntegrationEndpointGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceIntegrationEndpointGetResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceIntegrationEndpointGetResponse get() {
         return get(null);
     }
     /**
      * Get service integration endpoint
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceIntegrationEndpointGetResponse
+     * @return a ServiceIntegrationEndpointGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceIntegrationEndpointGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceIntegrationEndpointGetResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceIntegrationEndpointGetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceIntegrationEndpointGetResponse::createFromDiscriminatorValue);
     }
     /**
      * Update service integration endpoint
      * @param body ServiceIntegrationEndpointUpdateRequestBody
-     * @return a CompletableFuture of ServiceIntegrationEndpointUpdateResponse
+     * @return a ServiceIntegrationEndpointUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceIntegrationEndpointUpdateResponse> put(@jakarta.annotation.Nonnull final ServiceIntegrationEndpointUpdateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceIntegrationEndpointUpdateResponse put(@jakarta.annotation.Nonnull final ServiceIntegrationEndpointUpdateRequestBody body) {
         return put(body, null);
     }
     /**
      * Update service integration endpoint
      * @param body ServiceIntegrationEndpointUpdateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceIntegrationEndpointUpdateResponse
+     * @return a ServiceIntegrationEndpointUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceIntegrationEndpointUpdateResponse> put(@jakarta.annotation.Nonnull final ServiceIntegrationEndpointUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceIntegrationEndpointUpdateResponse put(@jakarta.annotation.Nonnull final ServiceIntegrationEndpointUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceIntegrationEndpointUpdateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceIntegrationEndpointUpdateResponse::createFromDiscriminatorValue);
     }
     /**
      * Delete a service integration endpoint
@@ -109,16 +109,8 @@ public class WithIntegrationEndpointItemRequestBuilder extends BaseRequestBuilde
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -137,16 +129,8 @@ public class WithIntegrationEndpointItemRequestBuilder extends BaseRequestBuilde
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -168,16 +152,8 @@ public class WithIntegrationEndpointItemRequestBuilder extends BaseRequestBuilde
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ServiceIntegrationEndpointUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

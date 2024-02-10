@@ -76,7 +76,7 @@ public class ServiceUserCreateRequestBody implements AdditionalDataHolder, Parsa
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("access_control", (n) -> { this.setAccessControl(n.getObjectValue(ServiceUserCreateRequestBodyAccessControl::createFromDiscriminatorValue)); });
-        deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getEnumValue(ServiceUserCreateRequestBodyAuthentication.class)); });
+        deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getEnumValue(ServiceUserCreateRequestBodyAuthentication::forValue)); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;
     }

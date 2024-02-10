@@ -112,12 +112,12 @@ public class ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSc
         deserializerMap.put("display_name", (n) -> { this.setDisplayName(n.getStringValue()); });
         deserializerMap.put("documentation", (n) -> { this.setDocumentation(n.getStringValue()); });
         deserializerMap.put("group", (n) -> { this.setGroup(n.getStringValue()); });
-        deserializerMap.put("importance", (n) -> { this.setImportance(n.getEnumValue(ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSchemaImportance.class)); });
+        deserializerMap.put("importance", (n) -> { this.setImportance(n.getEnumValue(ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSchemaImportance::forValue)); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("order", (n) -> { this.setOrder(n.getIntegerValue()); });
         deserializerMap.put("required", (n) -> { this.setRequired(n.getBooleanValue()); });
-        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSchemaType.class)); });
-        deserializerMap.put("width", (n) -> { this.setWidth(n.getEnumValue(ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSchemaWidth.class)); });
+        deserializerMap.put("type", (n) -> { this.setType(n.getEnumValue(ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSchemaType::forValue)); });
+        deserializerMap.put("width", (n) -> { this.setWidth(n.getEnumValue(ServiceKafkaConnectGetConnectorConfigurationResponseConfigurationSchemaWidth::forValue)); });
         return deserializerMap;
     }
     /**

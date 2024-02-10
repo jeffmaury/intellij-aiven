@@ -49,81 +49,81 @@ public class AwsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Delete an AWS Privatelink Endpoint Service
-     * @return a CompletableFuture of ServicePrivatelinkAWSDeleteResponse
+     * @return a ServicePrivatelinkAWSDeleteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAWSDeleteResponse> delete() {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAWSDeleteResponse delete() {
         return delete(null);
     }
     /**
      * Delete an AWS Privatelink Endpoint Service
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServicePrivatelinkAWSDeleteResponse
+     * @return a ServicePrivatelinkAWSDeleteResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAWSDeleteResponse> delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAWSDeleteResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServicePrivatelinkAWSDeleteResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServicePrivatelinkAWSDeleteResponse::createFromDiscriminatorValue);
     }
     /**
      * Get AWS Privatelink Endpoint Service information
-     * @return a CompletableFuture of ServicePrivatelinkAWSGetResponse
+     * @return a ServicePrivatelinkAWSGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAWSGetResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAWSGetResponse get() {
         return get(null);
     }
     /**
      * Get AWS Privatelink Endpoint Service information
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServicePrivatelinkAWSGetResponse
+     * @return a ServicePrivatelinkAWSGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAWSGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAWSGetResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServicePrivatelinkAWSGetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServicePrivatelinkAWSGetResponse::createFromDiscriminatorValue);
     }
     /**
      * Create an AWS Privatelink Endpoint Service
      * @param body ServicePrivatelinkAWSCreateRequestBody
-     * @return a CompletableFuture of ServicePrivatelinkAWSCreateResponse
+     * @return a ServicePrivatelinkAWSCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAWSCreateResponse> post(@jakarta.annotation.Nonnull final ServicePrivatelinkAWSCreateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAWSCreateResponse post(@jakarta.annotation.Nonnull final ServicePrivatelinkAWSCreateRequestBody body) {
         return post(body, null);
     }
     /**
      * Create an AWS Privatelink Endpoint Service
      * @param body ServicePrivatelinkAWSCreateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServicePrivatelinkAWSCreateResponse
+     * @return a ServicePrivatelinkAWSCreateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAWSCreateResponse> post(@jakarta.annotation.Nonnull final ServicePrivatelinkAWSCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAWSCreateResponse post(@jakarta.annotation.Nonnull final ServicePrivatelinkAWSCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServicePrivatelinkAWSCreateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServicePrivatelinkAWSCreateResponse::createFromDiscriminatorValue);
     }
     /**
      * Update an AWS Privatelink Endpoint Service
      * @param body ServicePrivatelinkAWSUpdateRequestBody
-     * @return a CompletableFuture of ServicePrivatelinkAWSUpdateResponse
+     * @return a ServicePrivatelinkAWSUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAWSUpdateResponse> put(@jakarta.annotation.Nonnull final ServicePrivatelinkAWSUpdateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAWSUpdateResponse put(@jakarta.annotation.Nonnull final ServicePrivatelinkAWSUpdateRequestBody body) {
         return put(body, null);
     }
     /**
      * Update an AWS Privatelink Endpoint Service
      * @param body ServicePrivatelinkAWSUpdateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServicePrivatelinkAWSUpdateResponse
+     * @return a ServicePrivatelinkAWSUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServicePrivatelinkAWSUpdateResponse> put(@jakarta.annotation.Nonnull final ServicePrivatelinkAWSUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServicePrivatelinkAWSUpdateResponse put(@jakarta.annotation.Nonnull final ServicePrivatelinkAWSUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServicePrivatelinkAWSUpdateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServicePrivatelinkAWSUpdateResponse::createFromDiscriminatorValue);
     }
     /**
      * Delete an AWS Privatelink Endpoint Service
@@ -140,16 +140,8 @@ public class AwsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final DeleteRequestConfiguration requestConfig = new DeleteRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.DELETE;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -168,16 +160,8 @@ public class AwsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -199,16 +183,8 @@ public class AwsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServicePrivatelinkAWSCreateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
@@ -231,16 +207,8 @@ public class AwsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ServicePrivatelinkAWSUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

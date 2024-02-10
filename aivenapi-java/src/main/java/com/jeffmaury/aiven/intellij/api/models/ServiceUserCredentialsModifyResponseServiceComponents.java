@@ -90,13 +90,13 @@ public class ServiceUserCredentialsModifyResponseServiceComponents implements Ad
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
         deserializerMap.put("component", (n) -> { this.setComponent(n.getStringValue()); });
         deserializerMap.put("host", (n) -> { this.setHost(n.getStringValue()); });
-        deserializerMap.put("kafka_authentication_method", (n) -> { this.setKafkaAuthenticationMethod(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceComponentsKafkaAuthenticationMethod.class)); });
+        deserializerMap.put("kafka_authentication_method", (n) -> { this.setKafkaAuthenticationMethod(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceComponentsKafkaAuthenticationMethod::forValue)); });
         deserializerMap.put("path", (n) -> { this.setPath(n.getStringValue()); });
         deserializerMap.put("port", (n) -> { this.setPort(n.getIntegerValue()); });
         deserializerMap.put("privatelink_connection_id", (n) -> { this.setPrivatelinkConnectionId(n.getStringValue()); });
-        deserializerMap.put("route", (n) -> { this.setRoute(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceComponentsRoute.class)); });
+        deserializerMap.put("route", (n) -> { this.setRoute(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceComponentsRoute::forValue)); });
         deserializerMap.put("ssl", (n) -> { this.setSsl(n.getBooleanValue()); });
-        deserializerMap.put("usage", (n) -> { this.setUsage(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceComponentsUsage.class)); });
+        deserializerMap.put("usage", (n) -> { this.setUsage(n.getEnumValue(ServiceUserCredentialsModifyResponseServiceComponentsUsage::forValue)); });
         return deserializerMap;
     }
     /**

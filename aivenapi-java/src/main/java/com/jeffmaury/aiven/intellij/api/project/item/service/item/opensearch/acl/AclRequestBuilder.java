@@ -40,63 +40,63 @@ public class AclRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Show OpenSearch ACL configuration
-     * @return a CompletableFuture of ServiceOpenSearchAclGetResponse
+     * @return a ServiceOpenSearchAclGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceOpenSearchAclGetResponse> get() {
+    @jakarta.annotation.Nullable
+    public ServiceOpenSearchAclGetResponse get() {
         return get(null);
     }
     /**
      * Show OpenSearch ACL configuration
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceOpenSearchAclGetResponse
+     * @return a ServiceOpenSearchAclGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceOpenSearchAclGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceOpenSearchAclGetResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceOpenSearchAclGetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceOpenSearchAclGetResponse::createFromDiscriminatorValue);
     }
     /**
      * Set OpenSearch ACL configuration
      * @param body ServiceOpenSearchAclSetRequestBody
-     * @return a CompletableFuture of ServiceOpenSearchAclSetResponse
+     * @return a ServiceOpenSearchAclSetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceOpenSearchAclSetResponse> post(@jakarta.annotation.Nonnull final ServiceOpenSearchAclSetRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceOpenSearchAclSetResponse post(@jakarta.annotation.Nonnull final ServiceOpenSearchAclSetRequestBody body) {
         return post(body, null);
     }
     /**
      * Set OpenSearch ACL configuration
      * @param body ServiceOpenSearchAclSetRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceOpenSearchAclSetResponse
+     * @return a ServiceOpenSearchAclSetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceOpenSearchAclSetResponse> post(@jakarta.annotation.Nonnull final ServiceOpenSearchAclSetRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceOpenSearchAclSetResponse post(@jakarta.annotation.Nonnull final ServiceOpenSearchAclSetRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceOpenSearchAclSetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceOpenSearchAclSetResponse::createFromDiscriminatorValue);
     }
     /**
      * Update OpenSearch ACL configuration
      * @param body ServiceOpenSearchAclUpdateRequestBody
-     * @return a CompletableFuture of ServiceOpenSearchAclUpdateResponse
+     * @return a ServiceOpenSearchAclUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceOpenSearchAclUpdateResponse> put(@jakarta.annotation.Nonnull final ServiceOpenSearchAclUpdateRequestBody body) {
+    @jakarta.annotation.Nullable
+    public ServiceOpenSearchAclUpdateResponse put(@jakarta.annotation.Nonnull final ServiceOpenSearchAclUpdateRequestBody body) {
         return put(body, null);
     }
     /**
      * Update OpenSearch ACL configuration
      * @param body ServiceOpenSearchAclUpdateRequestBody
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of ServiceOpenSearchAclUpdateResponse
+     * @return a ServiceOpenSearchAclUpdateResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<ServiceOpenSearchAclUpdateResponse> put(@jakarta.annotation.Nonnull final ServiceOpenSearchAclUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public ServiceOpenSearchAclUpdateResponse put(@jakarta.annotation.Nonnull final ServiceOpenSearchAclUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, ServiceOpenSearchAclUpdateResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, ServiceOpenSearchAclUpdateResponse::createFromDiscriminatorValue);
     }
     /**
      * Show OpenSearch ACL configuration
@@ -113,16 +113,8 @@ public class AclRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -144,16 +136,8 @@ public class AclRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ServiceOpenSearchAclSetRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PostRequestConfiguration requestConfig = new PostRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.POST;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
@@ -176,16 +160,8 @@ public class AclRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ServiceOpenSearchAclUpdateRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final PutRequestConfiguration requestConfig = new PutRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.PUT;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;

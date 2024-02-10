@@ -1,5 +1,6 @@
 package com.jeffmaury.aiven.intellij.api.billinggroup.item.invoice.item;
 
+import com.jeffmaury.aiven.intellij.api.billinggroup.item.invoice.item.csvescaped.CsvRequestBuilder;
 import com.jeffmaury.aiven.intellij.api.billinggroup.item.invoice.item.download_cookie6.DownloadCookie6RequestBuilder;
 import com.jeffmaury.aiven.intellij.api.billinggroup.item.invoice.item.lines.LinesRequestBuilder;
 import com.jeffmaury.aiven.intellij.api.models.BillingGroupInvoiceGetResponse;
@@ -60,21 +61,21 @@ public class WithInvoiceNumberItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Get a single invoice
-     * @return a CompletableFuture of BillingGroupInvoiceGetResponse
+     * @return a BillingGroupInvoiceGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<BillingGroupInvoiceGetResponse> get() {
+    @jakarta.annotation.Nullable
+    public BillingGroupInvoiceGetResponse get() {
         return get(null);
     }
     /**
      * Get a single invoice
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a CompletableFuture of BillingGroupInvoiceGetResponse
+     * @return a BillingGroupInvoiceGetResponse
      */
-    @jakarta.annotation.Nonnull
-    public java.util.concurrent.CompletableFuture<BillingGroupInvoiceGetResponse> get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public BillingGroupInvoiceGetResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.sendAsync(requestInfo, BillingGroupInvoiceGetResponse::createFromDiscriminatorValue, null);
+        return this.requestAdapter.send(requestInfo, null, BillingGroupInvoiceGetResponse::createFromDiscriminatorValue);
     }
     /**
      * Get a single invoice
@@ -91,16 +92,8 @@ public class WithInvoiceNumberItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation();
-        if (requestConfiguration != null) {
-            final GetRequestConfiguration requestConfig = new GetRequestConfiguration();
-            requestConfiguration.accept(requestConfig);
-            requestInfo.headers.putAll(requestConfig.headers);
-            requestInfo.addRequestOptions(requestConfig.options);
-        }
-        requestInfo.httpMethod = HttpMethod.GET;
-        requestInfo.urlTemplate = urlTemplate;
-        requestInfo.pathParameters = pathParameters;
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }

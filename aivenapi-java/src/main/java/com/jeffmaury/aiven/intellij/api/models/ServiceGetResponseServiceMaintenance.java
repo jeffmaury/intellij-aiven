@@ -67,7 +67,7 @@ public class ServiceGetResponseServiceMaintenance implements AdditionalDataHolde
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("dow", (n) -> { this.setDow(n.getEnumValue(ServiceGetResponseServiceMaintenanceDow.class)); });
+        deserializerMap.put("dow", (n) -> { this.setDow(n.getEnumValue(ServiceGetResponseServiceMaintenanceDow::forValue)); });
         deserializerMap.put("time", (n) -> { this.setTime(n.getStringValue()); });
         deserializerMap.put("updates", (n) -> { this.setUpdates(n.getCollectionOfObjectValues(ServiceGetResponseServiceMaintenanceUpdates::createFromDiscriminatorValue)); });
         return deserializerMap;
