@@ -91,7 +91,7 @@ dependencies {
             "com.microsoft.kiota:microsoft-kiota-serialization-json:${kiotaVersion}",
             "com.microsoft.kiota:microsoft-kiota-serialization-text:${kiotaVersion}",
             "com.microsoft.kiota:microsoft-kiota-serialization-multipart:${kiotaVersion}",
-            'jakarta.annotation:jakarta.annotation-api:2.1.1')
+            'jakarta.annotation:jakarta.annotation-api:3.0.0')
     implementation("com.microsoft.kiota:microsoft-kiota-http-okHttp:${kiotaVersion}") {
         exclude group: 'org.jetbrains.kotlin'
     }
