@@ -14,8 +14,8 @@ repositories {
     maven { url 'https://packages.jetbrains.team/maven/p/ij/intellij-dependencies' }
 }
 
-sourceCompatibility = '11'
-targetCompatibility = '11'
+sourceCompatibility = '17'
+targetCompatibility = '17'
 
 intellij {
     version = ideaVersion //for a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
@@ -95,7 +95,7 @@ dependencies {
     implementation("com.microsoft.kiota:microsoft-kiota-http-okHttp:${kiotaVersion}") {
         exclude group: 'org.jetbrains.kotlin'
     }
-    implementation('com.redhat.devtools.intellij:intellij-common:1.9.3') {
+    implementation('com.redhat.devtools.intellij:intellij-common:1.9.4') {
         exclude group: 'io.fabric8'
     }
     testImplementation(
