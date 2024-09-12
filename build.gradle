@@ -95,7 +95,7 @@ dependencies {
     implementation("com.microsoft.kiota:microsoft-kiota-http-okHttp:${kiotaVersion}") {
         exclude group: 'org.jetbrains.kotlin'
     }
-    implementation('com.redhat.devtools.intellij:intellij-common:1.9.5') {
+    implementation('com.redhat.devtools.intellij:intellij-common:1.9.6') {
         exclude group: 'io.fabric8'
     }
     testImplementation(
